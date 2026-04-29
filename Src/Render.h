@@ -16,5 +16,5 @@ void	SceneRender();
 
 void	DrawText(int x, int y, TCHAR* msg, ...);
 
-
+void SetLineStartPos(POINT pt);
 /****************** end of file "Render.h" ***********************************/

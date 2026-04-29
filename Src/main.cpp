@@ -86,6 +86,14 @@ LRESULT CALLBACK MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch(msg)
 	{ 
+	case WM_LBUTTONDOWN: //마우스 왼 클릭 눌렀을 때
+		{
+			POINT pt;
+			pt.x = LOWORD(lParam);
+			pt.y = HIWORD(lParam);
+			SetLineStartPos(pt); // 시작 좌표 전달
+		}
+		break;
 	case WM_KEYDOWN:
 		switch(wParam)
 		{
@@ -98,6 +106,7 @@ LRESULT CALLBACK MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	case WM_DESTROY:
 		PostQuitMessage(0); 
 		return 0;
+
 	}
 
 	return DefWindowProc(hwnd, msg, wParam, lParam);

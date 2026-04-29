@@ -171,7 +171,14 @@ void DrawText(int x, int y, TCHAR* msg, ...)
 	ReleaseDC(g_hWnd, hdc);
 }
 
+void SetLineStartPos(POINT pt)
+{
+	//DrawText(pt.x, pt.y, _T("점 시작"));
+	auto dc = GetDC(g_hWnd);
 
+	MoveToEx(dc, pt.x-1, pt.y, nullptr);
+	LineTo(dc, pt.x, pt.y);
+}
 
 
 /////////////////////////////////////////////////////////////////////////////// 
@@ -225,10 +232,12 @@ void SceneRender()
 	//-------------------------------
 	// 장면 그리기 시작
 	//-------------------------------
-
 	//장면 렌더링 : 주인공, 몬스터, 지형.. 
 	//... 
 
+	//auto dc = GetDC(g_hWnd);
+	//LineDDA(10, 10, 300, 300);
+	//LineTo(dc, 900, 900);
 	//도움말 출력.
 	ShowInfo();
 
