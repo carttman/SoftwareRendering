@@ -46,8 +46,13 @@ DWORD g_PtCheck = PT_NONE_; // 점 몇개 설정됐는지 체크
 
 
 //출력화면 DC (렌더타겟)
-HDC g_hDC;
+//HDC g_hDC;
 
+// 렌더타겟 백버퍼
+HBITMAP g_hBmpRT = nullptr; // 비트맵 리소스를 가리키는 핸들 
+HDC g_hSurfaceRT = nullptr;
+COLORREF g_BKColor = RGB(0, 0, 255);
+#define g_hRT g_hSurfaceRT
 
 
 
@@ -145,17 +150,17 @@ void PutFPS(int x, int y)
 	static float fps = 0.0f;
 	++frm;
 	static ULONGLONG oldtime = GetTickCount64();
-	ULONGLONG		 nowtime = GetTickCount64();	
+	ULONGLONG		 nowtime = GetTickCount64();
 
 	UINT time = (UINT)(nowtime - oldtime);
-	if (time >= 1000) 
+	if (time >= 1000)
 	{
 		fps = (float)(frm * 1000) / (float)time;
 		frm = 0;
 		oldtime = nowtime;
 	}
 
-	DrawText(x, y, _T("FPS=%.1f/%d      "), fps, time);
+	DrawText(x, y, RGB(255, 255, 255), _T("FPS=%.1f/%d      "), fps, time);
 }
 
 
@@ -169,7 +174,7 @@ void PutFPS(int x, int y)
 //! \param	msg		출력 문자열 (형식화 문자열 지원)
 //! \return	없음.
 //
-void DrawText(int x, int y, TCHAR* msg, ...)
+void DrawText(int x, int y, COLORREF col, TCHAR* msg, ...)
 {
 	TCHAR buff[128] = _T("");
 	va_list vl;
@@ -177,52 +182,47 @@ void DrawText(int x, int y, TCHAR* msg, ...)
 	_vstprintf(buff, msg, vl);
 	va_end(vl);
 
-	//COLORREF col = RGB(128, 128, 128);
-	COLORREF col = RGB(64, 64, 64);
-	COLORREF col2 = RGB(255, 255, 255);
+	RECT rc = { x, y, x + 800, y + 600 };
 
-	HDC hdc = GetDC(g_hWnd);
+	//HDC hdc = GetDC(g_hWnd);
 	//col = GetSysColor(COLOR_BACKGROUND+1);
 	//SetBkColor(hdc, RGB(128, 128, 128));
 	//SetBkMode(hdc, TRANSPARENT);
-	SetBkColor(hdc, col);
-	SetTextColor(hdc, col2);
-	TextOut(hdc, x, y, buff, (int)_tcslen(buff)); 
-	ReleaseDC(g_hWnd, hdc);
+	//SetBkColor(g_hRT, col);
+	SetTextColor(g_hRT, col);
+	//TextOut(g_hRT, x, y, buff, (int)_tcslen(buff));
+	DrawText(g_hRT, buff, (int)_tcslen(buff), &rc, DT_WORDBREAK);
+	SetTextColor(g_hRT, RGB(255, 255, 255));
+	//ReleaseDC(g_hWnd, hdc);
 }
 
 void BeginScene() // 렌더링에 필요한 초기화
 {
-	g_hDC = GetDC(g_hWnd);
-	SetBkMode(g_hDC, TRANSPARENT); // 투명으로 
+	//g_hDC = GetDC(g_hWnd); -> 화면 DC 사용하지 않는다. 렌더 타겟을 사용한다
+	SetBkMode(g_hRT, TRANSPARENT); // 투명으로 
 }
 
-void Clear(COLORREF col)
+void Clear(COLORREF col) // 렌더타겟 지운다
 {
 	HBRUSH hBrush = CreateSolidBrush(col); // 단색으로 채워진 브러시 오브젝트 생성
 	RECT rc;
 	GetClientRect(g_hWnd, &rc); // 윈도우의 그림이 그려지는 영역
-	FillRect(g_hDC, &rc, hBrush); // 브러시로 영역 색칠
+	FillRect(g_hRT, &rc, hBrush); // 브러시로 영역 색칠
 	DeleteObject(hBrush); // 브러시 삭제
 }
 
 void EndScene() 
 {
-	ReleaseDC(g_hWnd, g_hDC); // getDC로 얻은 hdc를 시스템에 반환
+	//ReleaseDC(g_hWnd, g_hDC); // getDC로 얻은 hdc를 시스템에 반환 -> 화면 dc 사용 안함. 렌더타겟을 사용
 }
 
 void Present()
 {
-	Sleep(5);
-}
-
-void SetLineStartPos(POINT pt)
-{
-	//DrawText(pt.x, pt.y, _T("점 시작"));
-	auto dc = GetDC(g_hWnd);
-
-	MoveToEx(dc, pt.x-1, pt.y, nullptr);
-	LineTo(dc, pt.x, pt.y);
+	RECT rc;
+	GetClientRect(g_hWnd, &rc);
+	HDC hdc = GetDC(g_hWnd);
+	BitBlt(hdc, 0, 0, rc.right, rc.bottom, g_hRT, 0, 0, SRCCOPY);
+	ReleaseDC(g_hWnd, hdc);
 }
 
 void LineDraw()
@@ -238,8 +238,8 @@ void LineDraw()
 
 	case PT_COMPLETED_: // 모든 점 있다 -> 시작점, 끝점까지 점 찍고, 그 경로에 선 긋는다
 		CrossDraw(g_Sp);
-		MoveToEx(g_hDC, g_Sp.x, g_Sp.y, nullptr);
-		LineTo(g_hDC, g_Ep.x, g_Ep.y);
+		MoveToEx(g_hRT, g_Sp.x, g_Sp.y, nullptr);
+		LineTo(g_hRT, g_Ep.x, g_Ep.y);
 		CrossDraw(g_Ep);
 		break;
 	}
@@ -248,11 +248,11 @@ void LineDraw()
 // 마우스 위치에 십자선 찍는다
 void CrossDraw(POINT pt) 
 {
-	MoveToEx(g_hDC, pt.x - 5, pt.y, nullptr); // 가로 선 긋기
-	LineTo(g_hDC, pt.x + 5, pt.y);
+	MoveToEx(g_hRT, pt.x - 5, pt.y, nullptr); // 가로 선 긋기
+	LineTo(g_hRT, pt.x + 5, pt.y);
 
-	MoveToEx(g_hDC, pt.x, pt.y - 5, nullptr); // 세로 선 긋기
-	LineTo(g_hDC, pt.x, pt.y + 5);
+	MoveToEx(g_hRT, pt.x, pt.y - 5, nullptr); // 세로 선 긋기
+	LineTo(g_hRT, pt.x, pt.y + 5);
 }
 
 void LineUpdate(POINT pt)
@@ -274,6 +274,25 @@ void LineUpdate(POINT pt)
 	}
 }
 
+int RenderTargetCreate(HWND hwnd)
+{
+	RECT rc;
+	GetClientRect(hwnd, &rc);
+	HDC hdc = GetDC(hwnd);
+	g_hRT = CreateCompatibleDC(hdc); // 렌더타겟, DC 핸들 생성
+	g_hBmpRT = CreateCompatibleBitmap(hdc, rc.right, rc.bottom); // 렌더타겟, 비트맵 생성
+	SelectObject(g_hRT, g_hBmpRT);
+	ReleaseDC(hwnd, hdc);
+
+	return TRUE;
+}
+
+void RenderTargetRelease() // 렌더타겟 제거
+{
+	DeleteObject(g_hBmpRT);
+	DeleteDC(g_hRT);
+}
+
 
 /////////////////////////////////////////////////////////////////////////////// 
 //
@@ -284,21 +303,30 @@ void LineUpdate(POINT pt)
 //
 void ShowInfo()
 {
+	static bool bShow = true;
+	//if (IsKeyUp(VK_F1)) bShow ^= true;
+
 	PutFPS(1, 1);
 
-	int x = 300, y = 0;	
-	DrawText(x, y += 20, _T("■ %s"), g_WindowName);
-	y += 20;
-	DrawText(x, y += 20, _T("예제 실습용 프레임워크를 제작합니다."));
-	DrawText(x, y += 20, _T("이곳에 3D 렌더링용 프레임워크를 추가합니다."));
-	DrawText(x, y += 20, _T("여기단계별 튜토리얼을 진행할 것입니다."));
-	DrawText(x, y += 20, _T("Idle Time 에 출력중으로 메세지가 깜빡거립니다."));
-	DrawText(x, y += 20, _T("1. 윈도 프레임워크 구축"));
-	DrawText(x, y += 20, _T("2. Device 준비용"));
-	y += 20;
-	DrawText(x, y += 20, _T("[연구] 출력 문자열이 깜빡거리는 이유는?"));
-	DrawText(x, y += 20, _T("더블 버퍼링(Double Buffering)으로 깜빡거림(Flickering)을 해결 할 수 있습니다."));
-	DrawText(x, y += 20, _T("렌더링 프레임수(FPS) 출력 중. (좌측상단)"));
+	if (!bShow) return;
+
+	// Today's Topic.	 
+	int x = 300, y = 1;
+	COLORREF col = RGB(255, 255, 255);
+	COLORREF col2 = RGB(255, 255, 0);
+	DrawText(x, y, col, _T("■ %s"), g_WindowName);
+	DrawText(x, y += 16, col, _T("1. 점 2개를 이용한 직선 그리기"));
+	DrawText(x, y += 16, col2, _T("2. 더블버퍼링 : \"BackBuffer\" 추가."));
+	DrawText(x, y += 16, col2, _T("   + 속도/깜박거림 비교."));
+
+	x = 1, y = 1;
+	DrawText(x, y += 16, col, _T("도움말: F1"));
+
+	y += 16;
+	DrawText(x, y += 16, col, _T("[Line]"));
+	DrawText(x, y += 16, col, _T("좌표입력 : L-Button"));
+	DrawText(x, y += 16, col, _T("Sp = {%d, %d}"), g_Sp.x, g_Sp.y);
+	DrawText(x, y += 16, col, _T("Ep = {%d, %d}"), g_Ep.x, g_Ep.y);
 }
 
  
@@ -341,7 +369,7 @@ void SceneRender()
 	//... 
 	EndScene();
 
-	Present(); // flickering 약화
+	Present(); 
 }//end of void SceneRender()
 
 

@@ -52,6 +52,8 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 	//기본 윈도 생성.
 	if (!InitWindow(960, 600)) return 0;
 	 
+	// 백버퍼 렌더타겟 생성
+	RenderTargetCreate(g_hWnd);
 
 	//데이터 로딩.
 	if(!DataLoading())
@@ -70,8 +72,8 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 
 	//애플리케이션 종료.
 	DataRelease();				//데이터 제거.
-	
-
+	//백 버퍼 렌더타겟 제거
+	RenderTargetRelease();
 	return 0;
 }
 
