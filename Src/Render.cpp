@@ -341,17 +341,17 @@ void LineDraw(const POINT sp, const POINT ep)
 
 	float length = sqrt(dx * dx + dy * dy);
 
-	float stepX = dx / length; // 한 걸음
-	float stepY = dy / length;
+	float unitX = dx / length; // 단위벡터
+	float unitY = dy / length;
 
 	float curX = (float)sp.x;
 	float curY = (float)sp.y;
 
-	for (int i=0; i<= (int)length; i++)
+	for (int i=0; i<= (int)length; i++) // 거리만큼 단위벡터를 더해가면서 점을 찍는다
 	{
 		SetPixel(g_hRT, (int)(curX), (int)(curY + 0.5f), RGB(255, 0, 0));
-		curX += stepX;
-		curY += stepY;
+		curX += unitX;
+		curY += unitY;
 	}
 
 	/*MoveToEx(g_hRT, sp.x, sp.y, nullptr);
