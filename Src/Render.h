@@ -16,5 +16,12 @@ void	SceneRender();
 
 void	DrawText(int x, int y, TCHAR* msg, ...);
 
+void BeginScene();
+void Clear(COLORREF col);
+void EndScene();
+
 void SetLineStartPos(POINT pt);
+void LineDraw();
+void CrossDraw(POINT pt);
+void LineUpdate(POINT pt);
 /****************** end of file "Render.h" ***********************************/

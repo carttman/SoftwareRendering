@@ -27,9 +27,26 @@ TCHAR* g_WindowName = _T("Yena::SW Renderer Tutorial 00 BasicFrameworks");
 /////////////////////////////////////////////////////////////////////////////
 //
 //  전역 데이터들.
-//  
+//  extern으로 헤더에 이름표 달기
 extern HWND g_hWnd; 
 
+//출발 좌표, 끝 좌표
+POINT g_Sp, g_Ep;
+
+enum 
+{
+	PT_NONE_ = 0x00, // 점 없음
+	PT_SP_ = 0x01, // 첫번째 점 설정됨
+	PT_EP_ = 0x02, // 두번째 점 설정됨
+
+	PT_COMPLETED_ = (PT_SP_|PT_EP_) // 모든 점 설정 됨
+};
+
+DWORD g_PtCheck = PT_NONE_; // 점 몇개 설정됐는지 체크
+
+
+//출력화면 DC (렌더타겟)
+HDC g_hDC;
 
 
 
@@ -55,8 +72,11 @@ extern HWND g_hWnd;
 int DataLoading()
 { 
 	// 데이터 로딩/생성 코드는 여기에...
-	// ...
-	 
+	// 초기화
+	g_Sp.x = 0; g_Sp.y = 0;
+	g_Ep.x = 0; g_Ep.y = 0;
+
+	g_PtCheck = PT_NONE_;
 
 	return TRUE;
 }
@@ -171,6 +191,26 @@ void DrawText(int x, int y, TCHAR* msg, ...)
 	ReleaseDC(g_hWnd, hdc);
 }
 
+void BeginScene() // 렌더링에 필요한 초기화
+{
+	g_hDC = GetDC(g_hWnd);
+	SetBkMode(g_hDC, TRANSPARENT); // 투명으로 
+}
+
+void Clear(COLORREF col)
+{
+	HBRUSH hBrush = CreateSolidBrush(col); // 단색으로 채워진 브러시 오브젝트 생성
+	RECT rc;
+	GetClientRect(g_hWnd, &rc); // 윈도우의 그림이 그려지는 영역
+	FillRect(g_hDC, &rc, hBrush); // 브러시로 영역 색칠
+	DeleteObject(hBrush); // 브러시 삭제
+}
+
+void EndScene() 
+{
+	ReleaseDC(g_hWnd, g_hDC); // getDC로 얻은 hdc를 시스템에 반환
+}
+
 void SetLineStartPos(POINT pt)
 {
 	//DrawText(pt.x, pt.y, _T("점 시작"));
@@ -178,6 +218,55 @@ void SetLineStartPos(POINT pt)
 
 	MoveToEx(dc, pt.x-1, pt.y, nullptr);
 	LineTo(dc, pt.x, pt.y);
+}
+
+void LineDraw()
+{
+	switch (g_PtCheck)
+	{
+	case PT_NONE_: // 점 없음
+		break;
+
+	case PT_SP_: // 시작점
+		CrossDraw(g_Sp);
+		break;
+
+	case PT_COMPLETED_: // 모든 점 있다 -> 시작점, 끝점까지 점 찍고, 그 경로에 선 긋는다
+		CrossDraw(g_Sp);
+		MoveToEx(g_hDC, g_Sp.x, g_Sp.y, nullptr);
+		LineTo(g_hDC, g_Ep.x, g_Ep.y);
+		CrossDraw(g_Ep);
+		break;
+	}
+}
+
+// 마우스 위치에 십자선 찍는다
+void CrossDraw(POINT pt) 
+{
+	MoveToEx(g_hDC, pt.x - 5, pt.y, nullptr); // 가로 선 긋기
+	LineTo(g_hDC, pt.x + 5, pt.y);
+
+	MoveToEx(g_hDC, pt.x, pt.y - 5, nullptr); // 세로 선 긋기
+	LineTo(g_hDC, pt.x, pt.y + 5);
+}
+
+void LineUpdate(POINT pt)
+{
+	switch (g_PtCheck)
+	{
+	case PT_NONE_: // 맨 처음
+	case PT_COMPLETED_: //새로 시작할 때
+		g_Sp = pt; // 시작점 좌표
+		g_PtCheck = PT_SP_; // 현재 시작점
+		g_Ep.x = 0;
+		g_Ep.y = 0;
+		break;
+
+	case PT_SP_: // 끝점 입력
+		g_Ep = pt; 
+		g_PtCheck = PT_COMPLETED_; // 모든 점 입력 완료
+		break;
+	}
 }
 
 
@@ -234,18 +323,18 @@ void SceneRender()
 	//-------------------------------
 	//장면 렌더링 : 주인공, 몬스터, 지형.. 
 	//... 
+	BeginScene(); 
+	Clear(RGB(128, 128, 128)); // 회색으로 배경 채운다
 
-	//auto dc = GetDC(g_hWnd);
-	//LineDDA(10, 10, 300, 300);
-	//LineTo(dc, 900, 900);
+	LineDraw();
+
 	//도움말 출력.
 	ShowInfo();
-
 	//-------------------------------
 	// 장면 그리기 종료.
 	//------------------------------- 
 	//... 
-
+	EndScene();
 
 }//end of void SceneRender()
 

@@ -91,7 +91,8 @@ LRESULT CALLBACK MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			POINT pt;
 			pt.x = LOWORD(lParam);
 			pt.y = HIWORD(lParam);
-			SetLineStartPos(pt); // 시작 좌표 전달
+			LineUpdate(pt); //점 좌표 갱신
+			//SetLineStartPos(pt); // 시작 좌표 전달
 		}
 		break;
 	case WM_KEYDOWN:
