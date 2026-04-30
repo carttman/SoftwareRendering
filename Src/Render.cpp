@@ -19,7 +19,9 @@
 #include "stdio.h"
 #include "tchar.h"
 #include "Render.h"
- 
+
+#include <cmath>
+
 TCHAR* g_WindowName = _T("Yena::SW Renderer Tutorial 00 BasicFrameworks");
 
 
@@ -36,11 +38,38 @@ POINT g_Sp, g_Ep;
 enum 
 {
 	PT_NONE_ = 0x00, // 점 없음
-	PT_SP_ = 0x01, // 첫번째 점 설정됨
-	PT_EP_ = 0x02, // 두번째 점 설정됨
+	PT_V0_ = 0x01, // 첫 번째 점 설정됨
+	PT_V1_ = 0x02, // 두 번째 점 설정됨
+	PT_V2_ = 0x04, // 세 번째 점 설정됨
 
-	PT_COMPLETED_ = (PT_SP_|PT_EP_) // 모든 점 설정 됨
+	PT_MAX_ = 3,
+	PT_1_ = PT_V0_,
+	PT_2_ = (PT_V0_ | PT_V1_),
+	PT_3_ = (PT_V0_ | PT_V1_ | PT_V2_),
+	PT_COMPLETED_ = (PT_V0_ | PT_V1_ | PT_V2_) // 모든 점 설정 됨
 };
+// =====================================================
+
+POINT my_g_Sp;
+POINT my_g_Ep;
+
+enum
+{
+	MYPT_NONE = 0,
+	MYPT_V0,
+	MYPT_V1,
+	MYPT_ALL
+	
+};
+
+int my_ptState = MYPT_NONE;
+
+// ========================================================
+
+// 입력된 삼각형 정점
+POINT g_Vtx[PT_MAX_];
+POINT g_VtxClear = {0, 0};
+POINT g_VtxTemp = {0, 0};
 
 DWORD g_PtCheck = PT_NONE_; // 점 몇개 설정됐는지 체크
 
@@ -55,7 +84,13 @@ COLORREF g_BKColor = RGB(0, 0, 255);
 #define g_hRT g_hSurfaceRT
 
 
+//라인 그리기 팬
+HPEN g_hPenDash;
+HPEN g_hPenWhite;
+HPEN g_hPenGreen;
 
+//정점정보 보기
+BOOL g_bShowVtxInfo = TRUE;
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -78,10 +113,12 @@ int DataLoading()
 { 
 	// 데이터 로딩/생성 코드는 여기에...
 	// 초기화
-	g_Sp.x = 0; g_Sp.y = 0;
-	g_Ep.x = 0; g_Ep.y = 0;
 
-	g_PtCheck = PT_NONE_;
+	//라인용 팬 생성
+	//g_hPenDash = CreatePen(PS_DASH, 1, RGB(64, 64, 64));   
+	g_hPenDash = CreatePen(PS_DASH, 1, RGB(255, 255, 255));
+	g_hPenWhite = CreatePen(PS_SOLID, 1, RGB(255, 255, 255));
+	g_hPenGreen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
 
 	return TRUE;
 }
@@ -100,6 +137,10 @@ void DataRelease()
 	// 데이터 해제 코드는 여기에..
 	// ... 
 
+	// 라인용 팬 제거
+	DeleteObject(g_hPenDash);
+	DeleteObject(g_hPenWhite);
+	DeleteObject(g_hPenGreen);
 }
 
 
@@ -211,10 +252,10 @@ void Clear(COLORREF col) // 렌더타겟 지운다
 	DeleteObject(hBrush); // 브러시 삭제
 }
 
-void EndScene() 
-{
-	//ReleaseDC(g_hWnd, g_hDC); // getDC로 얻은 hdc를 시스템에 반환 -> 화면 dc 사용 안함. 렌더타겟을 사용
-}
+//void EndScene() 
+//{
+//	//ReleaseDC(g_hWnd, g_hDC); // getDC로 얻은 hdc를 시스템에 반환 -> 화면 dc 사용 안함. 렌더타겟을 사용
+//}
 
 void Present()
 {
@@ -225,53 +266,179 @@ void Present()
 	ReleaseDC(g_hWnd, hdc);
 }
 
+void LineClear() // 모든 정점 초기화
+{
+	for (int i=0; i<PT_MAX_; i++)
+	{
+		g_Vtx[i] = g_VtxClear;
+	}
+	g_VtxTemp = g_VtxClear;
+
+	g_PtCheck = PT_NONE_;
+}
+
 void LineDraw()
 {
-	switch (g_PtCheck)
+	switch (my_ptState)
 	{
-	case PT_NONE_: // 점 없음
+	case MYPT_NONE:
 		break;
-
-	case PT_SP_: // 시작점
-		CrossDraw(g_Sp);
+	case MYPT_V0:
+		SetPixel(g_hRT, my_g_Sp.x, my_g_Sp.y, RGB(255, 0, 0));
 		break;
-
-	case PT_COMPLETED_: // 모든 점 있다 -> 시작점, 끝점까지 점 찍고, 그 경로에 선 긋는다
-		CrossDraw(g_Sp);
-		MoveToEx(g_hRT, g_Sp.x, g_Sp.y, nullptr);
-		LineTo(g_hRT, g_Ep.x, g_Ep.y);
-		CrossDraw(g_Ep);
+	case MYPT_V1:
+		SetPixel(g_hRT, my_g_Sp.x, my_g_Sp.y, RGB(255, 0, 0));
+		SetPixel(g_hRT, my_g_Ep.x, my_g_Ep.y, RGB(255, 0, 0));
+		break;
+	case MYPT_ALL:
+		SetPixel(g_hRT, my_g_Sp.x, my_g_Sp.y, RGB(255, 0, 0));
+		SetPixel(g_hRT, my_g_Ep.x, my_g_Ep.y, RGB(255, 0, 0));
+		LineDraw(my_g_Sp, my_g_Ep);
 		break;
 	}
+
+	//=========================================================================
+	//switch (g_PtCheck)
+	//{
+	//case PT_NONE_:								//그리기 없음.
+	//	break;
+
+	//case PT_1_:
+	//	//CrossDraw(g_Vtx[0], _T("v0"));			//첫번째 표시.
+
+	//	//LineDashDraw(g_Vtx[0], g_VtxTemp);		//임시라인 표시..(쇄선)		
+	//	break;
+
+	//case PT_2_:
+	//	//CrossDraw(g_Vtx[0], _T("v0"));			//첫번째 표시.
+	//	//CrossDraw(g_Vtx[1], _T("v1"));			//두번째 표시.
+
+	//	//LineDashDraw(g_Vtx[0], g_VtxTemp);		//임시라인 표시..(쇄선)
+	//	//LineDashDraw(g_Vtx[1], g_VtxTemp);
+
+	//	LineDraw(g_Vtx[0], g_Vtx[1]);			//라인 그리기 : V0 -> V1
+
+	//	break;
+
+	//case PT_COMPLETED_:							//완료. 모두 그리기.
+
+	//	if (g_bShowVtxInfo)						//정점 정보 출력..
+	//	{
+	//		//for (int i = 0; i < PT_MAX_; i++)
+	//			//CrossDraw(g_Vtx[i], _T("v%d"), i);
+	//	}
+
+	//	//FaceDraw();  							//삼각형 그리기..★
+
+	//	break;
+	//}
+}
+
+void LineDraw(const POINT sp, const POINT ep)
+{
+	int dx = ep.x - sp.x;
+	int dy = ep.y - sp.y;
+
+	float length = sqrt(dx * dx + dy * dy);
+
+	float stepX = dx / length; // 한 걸음
+	float stepY = dy / length;
+
+	float curX = (float)sp.x;
+	float curY = (float)sp.y;
+
+	for (int i=0; i<= (int)length; i++)
+	{
+		SetPixel(g_hRT, (int)(curX), (int)(curY + 0.5f), RGB(255, 0, 0));
+		curX += stepX;
+		curY += stepY;
+	}
+
+	/*MoveToEx(g_hRT, sp.x, sp.y, nullptr);
+	LineTo(g_hRT, ep.x, ep.y);*/
+
+
+
 }
 
 // 마우스 위치에 십자선 찍는다
-void CrossDraw(POINT pt) 
+void CrossDraw(POINT pt, TCHAR* name, ...)
 {
-	MoveToEx(g_hRT, pt.x - 5, pt.y, nullptr); // 가로 선 긋기
+	HPEN hOldPen = (HPEN)SelectObject(g_hRT, g_hPenGreen);
+
+	MoveToEx(g_hRT, pt.x - 5, pt.y, NULL);
 	LineTo(g_hRT, pt.x + 5, pt.y);
 
-	MoveToEx(g_hRT, pt.x, pt.y - 5, nullptr); // 세로 선 긋기
+	MoveToEx(g_hRT, pt.x, pt.y - 5, NULL);
 	LineTo(g_hRT, pt.x, pt.y + 5);
+
+	va_list  vl;
+	TCHAR buff[80] = _T("");
+	va_start(vl, name);
+	_vstprintf(buff, name, vl);
+	//va_end(vl);
+	TextOut(g_hRT, pt.x, pt.y, buff, _tcslen(buff));
+
+	SelectObject(g_hRT, hOldPen);
 }
 
 void LineUpdate(POINT pt)
 {
-	switch (g_PtCheck)
+	switch (my_ptState)
 	{
-	case PT_NONE_: // 맨 처음
-	case PT_COMPLETED_: //새로 시작할 때
-		g_Sp = pt; // 시작점 좌표
-		g_PtCheck = PT_SP_; // 현재 시작점
-		g_Ep.x = 0;
-		g_Ep.y = 0;
+	case MYPT_NONE:
+	case MYPT_ALL:
+		my_g_Sp = {0, 0};
+		my_g_Ep = {0, 0};
+
+		my_g_Sp = pt;
+		my_ptState = MYPT_V0;
+		break;
+	case MYPT_V0:
+		my_g_Ep = pt;
+		my_ptState = MYPT_ALL;
 		break;
 
-	case PT_SP_: // 끝점 입력
-		g_Ep = pt; 
-		g_PtCheck = PT_COMPLETED_; // 모든 점 입력 완료
-		break;
 	}
+
+
+
+	//switch (g_PtCheck)
+	//{
+	//	//초기 새로 시작할 경우..
+	//case PT_NONE_:
+	//	//입력완료후 새로 입력할 경우..
+	//case PT_COMPLETED_:
+	//	g_Vtx[0] = pt;
+	//	g_Vtx[1] = g_VtxClear;
+	//	g_Vtx[2] = g_VtxClear;
+	//	g_PtCheck = PT_1_;				//첫번째 점
+	//	break;
+
+	//	//2번째 입력시...
+	//case PT_1_:
+	//	g_Vtx[1] = pt;
+	//	g_PtCheck = PT_2_;				//두번째 점
+	//	break;
+
+	//	//3번째 입력시..
+	//case PT_2_:
+	//	g_Vtx[2] = pt;
+	//	g_PtCheck = PT_COMPLETED_;		//입력 완료 처리.
+	//	break;
+	//}
+}
+
+void FaceDraw()
+{
+	//라인 그리기.. : v0->v1
+	LineDraw(g_Vtx[0], g_Vtx[1]);
+
+	//라인 그리기.. : v0->v2
+	LineDraw(g_Vtx[0], g_Vtx[2]);
+
+	//라인 그리기.. : v1->v2
+	LineDraw(g_Vtx[1], g_Vtx[2]);
 }
 
 int RenderTargetCreate(HWND hwnd)
@@ -367,7 +534,7 @@ void SceneRender()
 	// 장면 그리기 종료.
 	//------------------------------- 
 	//... 
-	EndScene();
+	//EndScene();
 
 	Present(); 
 }//end of void SceneRender()

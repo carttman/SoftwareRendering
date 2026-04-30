@@ -14,7 +14,13 @@
 // 헤더파일에서 extern을 사용하면 여러 cpp파일에서 쓸수있는 전역 변수가 된다
 extern HWND g_hWnd;
 //출발 좌표, 끝 좌표
-extern POINT g_Sp, g_Ep;
+extern POINT g_Sp,g_Ep;
+extern POINT g_Vtx[3];
+extern POINT g_VtxTemp;
+
+extern POINT my_g_Sp;
+extern POINT my_g_Ep;
+
 
 int		DataLoading();
 void	DataRelease();
@@ -25,12 +31,17 @@ void DrawText(int x, int y, COLORREF col, TCHAR* msg, ...);
 
 void BeginScene();
 void Clear(COLORREF col);
-void EndScene();
+//void EndScene();
 void Present();
 
+void LineClear();
 void LineDraw();
-void CrossDraw(POINT pt);
+void LineDraw(POINT sp, POINT ep);
+
+void CrossDraw(POINT pt, TCHAR* name, ...);
 void LineUpdate(POINT pt);
+void FaceDraw();
+
 
 int RenderTargetCreate(HWND hwnd);
 void RenderTargetRelease();
