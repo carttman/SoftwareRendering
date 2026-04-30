@@ -211,6 +211,11 @@ void EndScene()
 	ReleaseDC(g_hWnd, g_hDC); // getDC로 얻은 hdc를 시스템에 반환
 }
 
+void Present()
+{
+	Sleep(5);
+}
+
 void SetLineStartPos(POINT pt)
 {
 	//DrawText(pt.x, pt.y, _T("점 시작"));
@@ -336,6 +341,7 @@ void SceneRender()
 	//... 
 	EndScene();
 
+	Present(); // flickering 약화
 }//end of void SceneRender()
 
 

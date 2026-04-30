@@ -19,6 +19,8 @@ void	DrawText(int x, int y, TCHAR* msg, ...);
 void BeginScene();
 void Clear(COLORREF col);
 void EndScene();
+void Present();
+
 
 void SetLineStartPos(POINT pt);
 void LineDraw();
