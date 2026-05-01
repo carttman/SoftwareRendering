@@ -17,9 +17,11 @@ extern HWND g_hWnd;
 extern POINT g_Sp,g_Ep;
 extern POINT g_Vtx[3];
 extern POINT g_VtxTemp;
-
+// ====================================================
 extern POINT my_g_Sp;
 extern POINT my_g_Ep;
+extern POINT my_g_Vtx[3];
+void MyTriangleDraw();
 
 
 int		DataLoading();

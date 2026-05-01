@@ -48,7 +48,7 @@ enum
 	PT_3_ = (PT_V0_ | PT_V1_ | PT_V2_),
 	PT_COMPLETED_ = (PT_V0_ | PT_V1_ | PT_V2_) // 모든 점 설정 됨
 };
-// =====================================================
+// ===============================================================
 
 POINT my_g_Sp;
 POINT my_g_Ep;
@@ -58,12 +58,13 @@ enum
 	MYPT_NONE = 0,
 	MYPT_V0,
 	MYPT_V1,
+	MYPT_V2,
 	MYPT_ALL
 	
 };
 
 int my_ptState = MYPT_NONE;
-
+POINT my_g_Vtx[3] = {};
 // ========================================================
 
 // 입력된 삼각형 정점
@@ -102,6 +103,13 @@ BOOL g_bShowVtxInfo = TRUE;
 // 렌더링 데이터 불러오기 및 해제.
 //
 ////////////////////////////////////////////////////////////////////////////////
+
+void MyTriangleDraw() // 삼각형 그리기 : 저장한 세 좌표를 잇는다 
+{
+	LineDraw(my_g_Vtx[0], my_g_Vtx[1]);
+	LineDraw(my_g_Vtx[1], my_g_Vtx[2]);
+	LineDraw(my_g_Vtx[0], my_g_Vtx[2]);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -279,21 +287,22 @@ void LineClear() // 모든 정점 초기화
 
 void LineDraw()
 {
-	switch (my_ptState)
+	switch (my_ptState) // 현재 어느점까지 찍었는지 상태에 따른 처리
 	{
 	case MYPT_NONE:
 		break;
 	case MYPT_V0:
-		SetPixel(g_hRT, my_g_Sp.x, my_g_Sp.y, RGB(255, 0, 0));
+		SetPixel(g_hRT, my_g_Vtx[0].x, my_g_Vtx[0].y, RGB(255, 0, 0));
 		break;
 	case MYPT_V1:
-		SetPixel(g_hRT, my_g_Sp.x, my_g_Sp.y, RGB(255, 0, 0));
-		SetPixel(g_hRT, my_g_Ep.x, my_g_Ep.y, RGB(255, 0, 0));
+		SetPixel(g_hRT, my_g_Vtx[0].x, my_g_Vtx[0].y, RGB(255, 0, 0));
+		SetPixel(g_hRT, my_g_Vtx[1].x, my_g_Vtx[1].y, RGB(255, 0, 0));
 		break;
+	case MYPT_V2:
+		SetPixel(g_hRT, my_g_Vtx[2].x, my_g_Vtx[2].y, RGB(255, 0, 0));
 	case MYPT_ALL:
-		SetPixel(g_hRT, my_g_Sp.x, my_g_Sp.y, RGB(255, 0, 0));
-		SetPixel(g_hRT, my_g_Ep.x, my_g_Ep.y, RGB(255, 0, 0));
-		LineDraw(my_g_Sp, my_g_Ep);
+		MyTriangleDraw();
+		//LineDraw(my_g_Sp, my_g_Ep);
 		break;
 	}
 
@@ -390,12 +399,20 @@ void LineUpdate(POINT pt)
 	case MYPT_ALL:
 		my_g_Sp = {0, 0};
 		my_g_Ep = {0, 0};
+		//my_g_Sp = pt;
 
-		my_g_Sp = pt;
+		my_g_Vtx[0] = pt;
 		my_ptState = MYPT_V0;
 		break;
 	case MYPT_V0:
-		my_g_Ep = pt;
+		//my_g_Ep = pt;
+
+		my_g_Vtx[1] = pt;
+		my_ptState = MYPT_V1;
+		break;
+	case MYPT_V1:
+
+		my_g_Vtx[2] = pt;
 		my_ptState = MYPT_ALL;
 		break;
 
@@ -429,17 +446,17 @@ void LineUpdate(POINT pt)
 	//}
 }
 
-void FaceDraw()
-{
-	//라인 그리기.. : v0->v1
-	LineDraw(g_Vtx[0], g_Vtx[1]);
-
-	//라인 그리기.. : v0->v2
-	LineDraw(g_Vtx[0], g_Vtx[2]);
-
-	//라인 그리기.. : v1->v2
-	LineDraw(g_Vtx[1], g_Vtx[2]);
-}
+//void FaceDraw()
+//{
+//	//라인 그리기.. : v0->v1
+//	LineDraw(g_Vtx[0], g_Vtx[1]);
+//
+//	//라인 그리기.. : v0->v2
+//	LineDraw(g_Vtx[0], g_Vtx[2]);
+//
+//	//라인 그리기.. : v1->v2
+//	LineDraw(g_Vtx[1], g_Vtx[2]);
+//}
 
 int RenderTargetCreate(HWND hwnd)
 {
