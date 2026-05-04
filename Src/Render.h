@@ -21,7 +21,6 @@ extern POINT g_VtxTemp;
 extern POINT my_g_Sp;
 extern POINT my_g_Ep;
 extern POINT my_g_Vtx[3];
-void MyTriangleDraw();
 
 
 int		DataLoading();
@@ -36,6 +35,8 @@ void Clear(COLORREF col);
 //void EndScene();
 void Present();
 
+void TriangleDraw();
+float EdgeFunction(const POINT& sp, const POINT& ep, const POINT& p);
 void LineClear();
 void LineDraw();
 void LineDraw(POINT sp, POINT ep);

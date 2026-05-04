@@ -104,11 +104,52 @@ BOOL g_bShowVtxInfo = TRUE;
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-void MyTriangleDraw() // 삼각형 그리기 : 저장한 세 좌표를 잇는다 
+void TriangleDraw() // 삼각형 그리기 : 저장한 세 좌표를 잇는다 
 {
-	LineDraw(my_g_Vtx[0], my_g_Vtx[1]);
-	LineDraw(my_g_Vtx[1], my_g_Vtx[2]);
-	LineDraw(my_g_Vtx[0], my_g_Vtx[2]);
+	//LineDraw(my_g_Vtx[0], my_g_Vtx[1]);
+	//LineDraw(my_g_Vtx[1], my_g_Vtx[2]);
+	//LineDraw(my_g_Vtx[0], my_g_Vtx[2]);
+	
+	// bounding box : 세 좌표의 최대, 최소 범위를 구하여 그에 따른 사각 범위안에서만 순회하여 점을 찍는다
+	int minX = (int)(((my_g_Vtx[0].x) < (my_g_Vtx[1].x)) ? (my_g_Vtx[0].x) : (my_g_Vtx[1].x));
+	minX = (int)(((minX) < (my_g_Vtx[2].x)) ? (minX) : (my_g_Vtx[2].x));
+	
+	int minY = (int)(((my_g_Vtx[0].y) < (my_g_Vtx[1].y)) ? (my_g_Vtx[0].y) : (my_g_Vtx[1].y));
+	minY = (int)(((minY) < (my_g_Vtx[2].y)) ? (minY) : (my_g_Vtx[2].y));
+	
+	int maxX = (int)(((my_g_Vtx[0].x) > (my_g_Vtx[1].x)) ? (my_g_Vtx[0].x) : (my_g_Vtx[1].x));
+	maxX = (int)(((maxX) > (my_g_Vtx[2].x)) ? (maxX) : (my_g_Vtx[2].x));
+	
+	int maxY = (int)(((my_g_Vtx[0].y) > (my_g_Vtx[1].y)) ? (my_g_Vtx[0].y) : (my_g_Vtx[1].y));
+	maxY = (int)(((maxY) > (my_g_Vtx[2].y)) ? (maxY) : (my_g_Vtx[2].y));
+	
+	for (int i = minY; i <= maxY; i++)
+	{
+		for (int j = minX; j <= maxX; j++)
+		{
+			POINT p = { j , i };
+			
+			float w0 = EdgeFunction(my_g_Vtx[1], my_g_Vtx[2], p);
+			float w1 = EdgeFunction(my_g_Vtx[2], my_g_Vtx[0], p);
+			float w2 = EdgeFunction(my_g_Vtx[0], my_g_Vtx[1], p);
+			
+			// 반시계방향, 시계방향에 따른 처리
+			if (w0 >= 0 && w1 >= 0 && w2 >= 0 || w0 <= 0 && w1 <= 0 && w2 <= 0)
+			{
+				SetPixel(g_hRT,p.x, p.y, RGB(255, 255, 255));
+			}
+		}
+	}
+}
+
+// 두 점을 잇는 선분에 대해 해당 점이 어느 쪽에 있는지 판단
+// 외적을 이용한다
+float EdgeFunction(const POINT& sp, const POINT& ep, const POINT& p)
+{
+	const POINT a = {ep.x - sp.x, ep.y - sp.y };
+	const POINT b = {p.x - sp.x, p.y - sp.y };
+	
+	return (a.x * b.y) - (a.y * b.x);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -292,17 +333,20 @@ void LineDraw()
 	case MYPT_NONE:
 		break;
 	case MYPT_V0:
-		SetPixel(g_hRT, my_g_Vtx[0].x, my_g_Vtx[0].y, RGB(255, 0, 0));
+		CrossDraw(my_g_Vtx[0], _T("v0"));
 		break;
 	case MYPT_V1:
-		SetPixel(g_hRT, my_g_Vtx[0].x, my_g_Vtx[0].y, RGB(255, 0, 0));
-		SetPixel(g_hRT, my_g_Vtx[1].x, my_g_Vtx[1].y, RGB(255, 0, 0));
+		CrossDraw(my_g_Vtx[0], _T("v0"));
+		CrossDraw(my_g_Vtx[1], _T("v1"));
+		LineDraw(my_g_Vtx[0], my_g_Vtx[1]);
 		break;
 	case MYPT_V2:
-		SetPixel(g_hRT, my_g_Vtx[2].x, my_g_Vtx[2].y, RGB(255, 0, 0));
+		CrossDraw(my_g_Vtx[2], _T("v2"));
 	case MYPT_ALL:
-		MyTriangleDraw();
-		//LineDraw(my_g_Sp, my_g_Ep);
+		CrossDraw(my_g_Vtx[0], _T("v0"));
+		CrossDraw(my_g_Vtx[1], _T("v1"));
+		CrossDraw(my_g_Vtx[2], _T("v2"));
+		TriangleDraw();
 		break;
 	}
 
