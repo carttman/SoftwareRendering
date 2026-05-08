@@ -1,19 +1,3 @@
-//! 
-//! \file	Render.cpp
-//! \brief	기본 렌더링 프레임워크 소스
-//!			DirectX 기준 버전 : DX12
-//! 
-//! \author	김기홍 Kihong Kim / onlysonim@gmail.com 
-//! \date   2003.11.04. Updated. DX9.x 
-//! \date	2005.09.23. Updated (.Net)
-//! \date   2009.12.01. Updated.
-//! \date   2010.12.01. Updated. DX11, Jun.2010
-//! \date   2016.12.27. Updated. DX11/12, Window SDK 8.1 / Window 10 SDK 10.0.18362
-//! \date   2018.12.30. Updated. DX12.x, Windows 10 SDK 10.0.18362
-//! \date   2020.08.22. Updated. DX12.x, Windows 10 SDK 10.0.19041 
-//! \date   2024.12.10. Updated. DX12.x, Windows 10 SDK 10.0.22621 (VS22)
-//!
-//
 #pragma warning(disable:4996)
 #include "Windows.h"
 #include "stdio.h"
@@ -35,19 +19,19 @@ extern HWND g_hWnd;
 //출발 좌표, 끝 좌표
 POINT g_Sp, g_Ep;
 
-enum 
-{
-	PT_NONE_ = 0x00, // 점 없음
-	PT_V0_ = 0x01, // 첫 번째 점 설정됨
-	PT_V1_ = 0x02, // 두 번째 점 설정됨
-	PT_V2_ = 0x04, // 세 번째 점 설정됨
-
-	PT_MAX_ = 3,
-	PT_1_ = PT_V0_,
-	PT_2_ = (PT_V0_ | PT_V1_),
-	PT_3_ = (PT_V0_ | PT_V1_ | PT_V2_),
-	PT_COMPLETED_ = (PT_V0_ | PT_V1_ | PT_V2_) // 모든 점 설정 됨
-};
+// enum 
+// {
+// 	PT_NONE_ = 0x00, // 점 없음
+// 	PT_V0_ = 0x01, // 첫 번째 점 설정됨
+// 	PT_V1_ = 0x02, // 두 번째 점 설정됨
+// 	PT_V2_ = 0x04, // 세 번째 점 설정됨
+//
+// 	PT_MAX_ = 3,
+// 	PT_1_ = PT_V0_,
+// 	PT_2_ = (PT_V0_ | PT_V1_),
+// 	PT_3_ = (PT_V0_ | PT_V1_ | PT_V2_),
+// 	PT_COMPLETED_ = (PT_V0_ | PT_V1_ | PT_V2_) // 모든 점 설정 됨
+// };
 // ===============================================================
 
 POINT my_g_Sp;
@@ -68,12 +52,12 @@ POINT my_g_Vtx[3] = {};
 // ========================================================
 
 // 입력된 삼각형 정점
-POINT g_Vtx[PT_MAX_];
-POINT g_VtxClear = {0, 0};
-POINT g_VtxTemp = {0, 0};
-
-DWORD g_PtCheck = PT_NONE_; // 점 몇개 설정됐는지 체크
-
+// POINT g_Vtx[PT_MAX_];
+// POINT g_VtxClear = {0, 0};
+// POINT g_VtxTemp = {0, 0};
+//
+// DWORD g_PtCheck = PT_NONE_; // 점 몇개 설정됐는지 체크
+//
 
 //출력화면 DC (렌더타겟)
 //HDC g_hDC;
@@ -129,6 +113,7 @@ void TriangleDraw() // 삼각형 그리기 : 저장한 세 좌표를 잇는다
 		{
 			POINT p = { j , i };
 			
+			// 세 EdgeFunction의 값이 전부 음수거나 양수이면 그 점은 삼각형 안에 있는걸로 판단
 			float w0 = EdgeFunction(my_g_Vtx[1], my_g_Vtx[2], p);
 			float w1 = EdgeFunction(my_g_Vtx[2], my_g_Vtx[0], p);
 			float w2 = EdgeFunction(my_g_Vtx[0], my_g_Vtx[1], p);
@@ -315,16 +300,16 @@ void Present()
 	ReleaseDC(g_hWnd, hdc);
 }
 
-void LineClear() // 모든 정점 초기화
-{
-	for (int i=0; i<PT_MAX_; i++)
-	{
-		g_Vtx[i] = g_VtxClear;
-	}
-	g_VtxTemp = g_VtxClear;
-
-	g_PtCheck = PT_NONE_;
-}
+// void LineClear() // 모든 정점 초기화
+// {
+// 	for (int i=0; i<PT_MAX_; i++)
+// 	{
+// 		g_Vtx[i] = g_VtxClear;
+// 	}
+// 	g_VtxTemp = g_VtxClear;
+//
+// 	g_PtCheck = PT_NONE_;
+// }
 
 void LineDraw()
 {
@@ -409,9 +394,6 @@ void LineDraw(const POINT sp, const POINT ep)
 
 	/*MoveToEx(g_hRT, sp.x, sp.y, nullptr);
 	LineTo(g_hRT, ep.x, ep.y);*/
-
-
-
 }
 
 // 마우스 위치에 십자선 찍는다
@@ -459,11 +441,8 @@ void LineUpdate(POINT pt)
 		my_g_Vtx[2] = pt;
 		my_ptState = MYPT_ALL;
 		break;
-
 	}
-
-
-
+	
 	//switch (g_PtCheck)
 	//{
 	//	//초기 새로 시작할 경우..
