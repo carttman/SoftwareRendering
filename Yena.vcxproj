@@ -19,21 +19,38 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Device.cpp" />
     <ClCompile Include="Src\main.cpp" />
     <ClCompile Include="Src\Render.cpp" />
+    <ClCompile Include="Yena\Yena.cpp" />
+    <ClCompile Include="Yena\ynError.cpp" />
+    <ClCompile Include="Yena\ynGUID.cpp" />
+    <ClCompile Include="Yena\ynMath.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Device.h" />
     <ClInclude Include="Src\Render.h" />
+    <ClInclude Include="Yena\Yena.h" />
+    <ClInclude Include="Yena\ynDefine.h" />
+    <ClInclude Include="Yena\ynError.h" />
+    <ClInclude Include="Yena\ynGUID.h" />
+    <ClInclude Include="Yena\ynMath.h" />
+    <ClInclude Include="Yena\ynUnknownbase.h" />
+    <ClInclude Include="Yena\ynx9.h" />
+    <ClInclude Include="Yena\ynx9types.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="작업내용.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.md" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{25EF2E57-4BCB-4479-AD88-E53100D9555C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>B3Yena</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>T00_BasicFrameworks</ProjectName>
+    <ProjectName>T05_Rasterization_01_DiffuseColor_(과제제작용3)(GDI)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -104,6 +121,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>.\Yena</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -122,6 +140,7 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>.\Yena</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -142,6 +161,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>.\Yena</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -164,6 +184,7 @@
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>.\Yena</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

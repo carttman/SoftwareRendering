@@ -13,6 +13,21 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Basic_Frameworks\Yena">
+      <UniqueIdentifier>{975db873-3278-4ee0-9992-fac1a2c71688}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Basic_Frameworks\Yena\Device">
+      <UniqueIdentifier>{f94aaaa1-4966-4179-9a8e-74444fbba1ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Basic_Frameworks\Yena\Math">
+      <UniqueIdentifier>{ac793d76-bd64-41d9-a83f-24fd26fffe0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Basic_Frameworks\Yena\Dbg">
+      <UniqueIdentifier>{18653a5c-63b2-4d47-a734-e4af0d7929a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Basic_Frameworks\Yena\Core">
+      <UniqueIdentifier>{bcad0049-8fdf-474c-a09a-63a499c96966}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\main.cpp">
@@ -21,13 +36,58 @@
     <ClCompile Include="Src\Render.cpp">
       <Filter>Demo</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Device.cpp">
+      <Filter>Basic_Frameworks</Filter>
+    </ClCompile>
+    <ClCompile Include="Yena\Yena.cpp">
+      <Filter>Basic_Frameworks\Yena</Filter>
+    </ClCompile>
+    <ClCompile Include="Yena\ynMath.cpp">
+      <Filter>Basic_Frameworks\Yena\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Yena\ynError.cpp">
+      <Filter>Basic_Frameworks\Yena\Dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="Yena\ynGUID.cpp">
+      <Filter>Basic_Frameworks\Yena\Device</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Render.h">
       <Filter>Demo</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Device.h">
+      <Filter>Basic_Frameworks</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\Yena.h">
+      <Filter>Basic_Frameworks\Yena</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynUnknownbase.h">
+      <Filter>Basic_Frameworks\Yena\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynx9.h">
+      <Filter>Basic_Frameworks\Yena\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynMath.h">
+      <Filter>Basic_Frameworks\Yena\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynx9types.h">
+      <Filter>Basic_Frameworks\Yena\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynError.h">
+      <Filter>Basic_Frameworks\Yena\Dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynGUID.h">
+      <Filter>Basic_Frameworks\Yena\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynDefine.h">
+      <Filter>Basic_Frameworks\Yena\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="작업내용.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.md" />
   </ItemGroup>
 </Project>

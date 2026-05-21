@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['safedelarry_0',['SafeDelArry',['../yn_define_8h_a2430d27742ac5e2a2ec42b82656a06d9.html#a2430d27742ac5e2a2ec42b82656a06d9',1,'ynDefine.h']]],
+  ['safedelete_1',['SafeDelete',['../yn_define_8h_a745d31a3deb911352bfef34e5124fa8e.html#a745d31a3deb911352bfef34e5124fa8e',1,'ynDefine.h']]],
+  ['saferelease_2',['SafeRelease',['../yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6',1,'ynDefine.h']]],
+  ['sample_2dimage_2dsize_2etxt_3',['sample-image-size.txt',['../sample-image-size_8txt.html',1,'']]],
+  ['scenerender_4',['SceneRender',['../_render_8cpp_a6d72e579f5eb095a38091a15d586f1a9.html#a6d72e579f5eb095a38091a15d586f1a9',1,'SceneRender():&#160;Render.cpp'],['../_render_8h_a6d72e579f5eb095a38091a15d586f1a9.html#a6d72e579f5eb095a38091a15d586f1a9',1,'SceneRender():&#160;Render.cpp']]],
+  ['setfvf_5',['SetFVF',['../class_b3_yena_device9_a6383ddefa8525f2c0a67338621763751.html#a6383ddefa8525f2c0a67338621763751',1,'B3YenaDevice9::SetFVF()'],['../class_i_yena_device9_a3ef0e1146efd76c21cfd595d50a50a16.html#a3ef0e1146efd76c21cfd595d50a50a16',1,'IYenaDevice9::SetFVF()']]],
+  ['setrenderstate_6',['SetRenderState',['../class_b3_yena_device9_a903ccbaec298a089fbbe02a6f1d54b01.html#a903ccbaec298a089fbbe02a6f1d54b01',1,'B3YenaDevice9::SetRenderState()'],['../class_i_yena_device9_ad4b7ec568e20690d2569736ba86c7b7f.html#ad4b7ec568e20690d2569736ba86c7b7f',1,'IYenaDevice9::SetRenderState()']]],
+  ['setstreamsource_7',['SetStreamSource',['../class_b3_yena_device9_ae407a24e49ce972dfb8916752daa6c0e.html#ae407a24e49ce972dfb8916752daa6c0e',1,'B3YenaDevice9::SetStreamSource()'],['../class_i_yena_device9_a1fc2ad1f91fc6a74c13c4910ebe07a91.html#a1fc2ad1f91fc6a74c13c4910ebe07a91',1,'IYenaDevice9::SetStreamSource()']]],
+  ['showinfo_8',['ShowInfo',['../_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc',1,'Render.cpp']]],
+  ['size_9',['Size',['../struct_b3_y_v_e_r_t_e_x_b_u_f_f_e_r___d_e_s_c_aa19a7fd3cfbc79636c0c0344c567b0ab.html#aa19a7fd3cfbc79636c0c0344c567b0ab',1,'B3YVERTEXBUFFER_DESC']]],
+  ['struct_5fb3ycolor_10',['struct_B3YCOLOR',['../_yena-structs_8dox_a8c5d821dce027d022d025454f3d1d0e6.html#a8c5d821dce027d022d025454f3d1d0e6',1,'Yena-structs.dox']]],
+  ['struct_5fb3yfloat4_11',['struct_B3YFLOAT4',['../_yena-structs_8dox_a4cdfaed4a637dddd1c7b23b9ac7f940e.html#a4cdfaed4a637dddd1c7b23b9ac7f940e',1,'Yena-structs.dox']]],
+  ['struct_5fb3ymatrix_12',['struct_B3YMATRIX',['../_yena-structs_8dox_a69fecd0620bd5cfd750b27b099c9e24e.html#a69fecd0620bd5cfd750b27b099c9e24e',1,'Yena-structs.dox']]],
+  ['struct_5fcolvtx_13',['struct_COLVTX',['../_yena-structs_8dox_a69d318002509ec2a0856a4eabc0a76ad.html#a69d318002509ec2a0856a4eabc0a76ad',1,'Yena-structs.dox']]],
+  ['struct_5fvsout2_14',['struct_VSOUT2',['../_yena-structs_8dox_a668ed4981e3abf3400492c5ceb50ff27.html#a668ed4981e3abf3400492c5ceb50ff27',1,'Yena-structs.dox']]],
+  ['struct_5fvsout3_15',['struct_VSOUT3',['../_yena-structs_8dox_a1ab2d55edbf6147ba4ecb4bb4cd2e951.html#a1ab2d55edbf6147ba4ecb4bb4cd2e951',1,'Yena-structs.dox']]],
+  ['struct_5fynid_16',['struct_YNID',['../_yena-structs_8dox_a3913f1f8b3dcee7db9203d93ee7c87c6.html#a3913f1f8b3dcee7db9203d93ee7c87c6',1,'Yena-structs.dox']]],
+  ['sw_20renderer_20tutorials_20v1_205_20x_17',['Yena SW Renderer Tutorials v1.5.x',['../index.html#autotoc_md4',1,'']]],
+  ['swr_18',['Yena SWR',['../index.html',1,'']]],
+  ['swr_20개요_19',['01. Yena SWR 개요',['../group___project.html',1,'']]],
+  ['swr_20engine_20',['Yena SWR Engine',['../group___yena_s_w_r.html',1,'']]],
+  ['systemupdate_21',['SystemUpdate',['../_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20',1,'Render.cpp']]]
+];

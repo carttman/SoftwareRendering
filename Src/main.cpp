@@ -1,9 +1,23 @@
-
+//
+//! \file   main.cpp 
+//! \brief  예제 애플리케이션 메인 / 윈도 프레임워크 소스 
+//!	\version Yena SW Renderer v1.x
+//!
+//! \author	김기홍 Kihong Kim / onlysonim@gmail.com 
+//! \date   2003.11.04. Updated. DX9.x 
+//! \date   2010.12.01. Updated. DX11, Jun.2010
+//! \date   2016.12.27. Updated. DX11/12, Window SDK 8.1 / Window 10 SDK 10.0.18362
+//! \date   2018.12.30. Updated. DX12.x, Windows 10 SDK 10.0.18362
+//! \date   2020.08.22. Updated. DX12.x, Windows 10 SDK 10.0.19041 
+//! \date   2024.12.10. Updated. DX12.x, Windows 10 SDK 10.0.22621 (VS22)
+//! \ingroup Demo
+//! 
 #include "windows.h"
 #include "tchar.h"
-#include "Render.h"		//렌더링 관련 코드들..
-   
+#include "Device.h"		
+#include "Render.h"
  
+
 //////////////////////////////////////////////////////////////////////////////
 //
 // 전역 데이터들.
@@ -36,32 +50,42 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 					 LPSTR     lpCmdLine,
 					 int       nCmdShow)
 {
- 
-	//기본 윈도 생성.
-	if (!InitWindow(960, 600)) return 0;
-	 
-	// 백버퍼 렌더타겟 생성
-	RenderTargetCreate(g_hWnd);
+	//------------------------------------------------------------------//
+	// 기본적인 윈도우 프레임 생성..										//
+	//------------------------------------------------------------------//
+	if(!InitWindow(g_Mode.Width, g_Mode.Height)) return 0;
 
-	//데이터 로딩.
+	//------------------------------------------------------------------//
+	// Yena 및 관련 객체 초기화.											//
+	//------------------------------------------------------------------//
+	if(FAILED(YenaSetup(g_hWnd)))
+		return 0;
+
+	//------------------------------------------------------------------//
+	// 데이터 로딩														//
+	//------------------------------------------------------------------//
 	if(!DataLoading())
 	{
 		g_bLoop = FALSE;  
 	}
  
-	//메인 게임 루프.
-	while(g_bLoop)
+	//------------------------------------------------------------------//
+	// 메인  루프														//
+	//------------------------------------------------------------------//
+	while(g_bLoop) 
 	{
-		if(!MessagePump())		//메세지 펌프.
+		if(!MessagePump())		// 메세지 펌프.
 			break;
  
-		SceneRender();			//장면 렌더링.	 
+		SceneRender();			//렌더링.	 
 	}
 
-	//애플리케이션 종료.
+	//------------------------------------------------------------------//
+	// 어플리케이션 종료													// 
+	//------------------------------------------------------------------//
 	DataRelease();				//데이터 제거.
-	//백 버퍼 렌더타겟 제거
-	RenderTargetRelease();
+	YenaRelease();				//예나 제거.
+
 	return 0;
 }
 
@@ -70,20 +94,13 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-//! 윈도 메시지 콜백 함수. 윈도 메세지를 처리합니다.
+//! 윈도 메시지 콜백 함수.  
+//! 윈도 메세지 처리.
 //
 LRESULT CALLBACK MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch(msg)
 	{ 
-	case WM_LBUTTONDOWN: //마우스 왼 클릭 눌렀을 때
-		{
-			POINT pt;
-			pt.x = LOWORD(lParam);
-			pt.y = HIWORD(lParam);
-			LineUpdate(pt); //점 좌표 갱신
-		}
-		break;
 	case WM_KEYDOWN:
 		switch(wParam)
 		{
@@ -96,12 +113,13 @@ LRESULT CALLBACK MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	case WM_DESTROY:
 		PostQuitMessage(0); 
 		return 0;
-
 	}
 
 	return DefWindowProc(hwnd, msg, wParam, lParam);
 
 }
+
+
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -149,6 +167,7 @@ BOOL InitWindow(int width, int height)
 
 
 
+
 /////////////////////////////////////////////////////////////////////////////
 // 
 //! 메세지 펌핑 함수.  \n
@@ -181,7 +200,6 @@ int MessagePump()
 
 	return FALSE;
 }
-
 
 
 
@@ -232,7 +250,8 @@ void ResizeWindow(HWND hWnd, UINT width, UINT height)
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-//! MoveToCenter 윈도우를 화면 중앙으로 이동시킵니다.
+//! \fn		MoveToCenter 
+//! \brief	윈도우를 화면 중앙으로 이동시킵니다.
 //! 
 //! \param	hwnd	이동할 윈도우 핸들
 //! \param	width	윈도우 창 가로 크기
@@ -249,6 +268,7 @@ void MoveToCenter(HWND hwnd, int width, int height)
 	::MoveWindow(hwnd, rc.left, rc.top, width, height, TRUE);
 	//::SetWindowPos(hwnd, HWND_NOTOPMOST, rc.left, rc.top, width, height, SWP_SHOWWINDOW);
 }
+
 
 
 

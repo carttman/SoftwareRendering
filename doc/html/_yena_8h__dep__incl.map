@@ -1,0 +1,15 @@
+<map id="Yena/Yena.h" name="Yena/Yena.h">
+<area shape="rect" id="Node000001" title="\u{2b50} Yena SWR 기본 헤더 파일 (v1.x)" alt="" coords="276,5,371,32"/>
+<area shape="rect" id="Node000002" href="$_device_8h.html" title="예제 렌더링 장치 운용 헤더" alt="" coords="148,80,246,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="290,42,221,82,218,77,287,38"/>
+<area shape="rect" id="Node000006" href="$_yena_8cpp.html" title="\u{2b50} Yena SWR 기본 소스 파일 (v1.x)" alt="" coords="270,80,378,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="326,48,326,80,321,80,321,48"/>
+<area shape="rect" id="Node000007" href="$yn_error_8cpp.html" title="에러, 예외 및 로그 처리 소스 파일" alt="" coords="402,80,523,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="363,37,439,77,437,82,360,42"/>
+<area shape="rect" id="Node000003" href="$_device_8cpp.html" title="예제 렌더링 장치 운용 소스." alt="" coords="5,155,117,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="161,117,86,156,84,152,159,112"/>
+<area shape="rect" id="Node000004" href="$_render_8cpp.html" title="\u{2b50} 예제 기본 렌더링/프레임웍 소스" alt="" coords="141,155,253,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="200,122,200,154,194,154,194,122"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title="예제 애플리케이션 메인 / 윈도 프레임워크 소스" alt="" coords="277,155,376,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="234,112,305,152,302,156,231,117"/>
+</map>

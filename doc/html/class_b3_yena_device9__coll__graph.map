@@ -1,0 +1,14 @@
+<map id="B3YenaDevice9" name="B3YenaDevice9">
+<area shape="rect" id="Node000001" title="\u{2b50} Yena 렌더링 장치 Device 구현 클래스 : IDirect3DDevice9 대응" alt="" coords="99,281,214,308"/>
+<area shape="rect" id="Node000002" href="$class_i_yena_device9.html" title="\u{2b50} Yena 렌더링 디바이스 운용 인터페이스 : IDirect3DDevice9 대응" alt="" coords="5,132,108,159"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,173,80,208,112,249,144,279,140,283,108,252,76,211,60,175"/>
+<area shape="rect" id="Node000003" href="$classyn_i_unknown.html" title="Yena SWR COM 최상위 인터페이스 &lt;간략&gt;" alt="" coords="27,5,121,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="73,48,61,132,56,131,67,47"/>
+<area shape="rect" id="Node000006" href="$class_i_yena_resource9.html" title="&lt; Yena SWR 자료형 정의 : D3D9 대응 (d3d9types.h)" alt="" coords="96,81,214,108"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="101,41,143,79,140,83,97,45"/>
+<area shape="rect" id="Node000004" href="$struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s.html" title="스왑체인 정보기술 구조체 : D3DPRESENT_PARAMETERS 대응" alt="" coords="246,183,456,209"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="314,219,183,283,181,278,311,214"/>
+<area shape="rect" id="Node000005" href="$class_i_yena_vertex_buffer9.html" title="정점 버퍼 운용 인터페이스 : IDirect3DVertexBuffer9 대응" alt="" coords="90,183,223,209"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="159,225,159,281,154,281,154,225"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="158,124,159,183,154,183,153,124"/>
+</map>

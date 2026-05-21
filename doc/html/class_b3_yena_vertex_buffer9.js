@@ -1,0 +1,28 @@
+var class_b3_yena_vertex_buffer9 =
+[
+    [ "B3YenaVertexBuffer9", "class_b3_yena_vertex_buffer9_ad2429e25fe458f4c68f6333164d1cc2a.html#ad2429e25fe458f4c68f6333164d1cc2a", null ],
+    [ "~B3YenaVertexBuffer9", "class_b3_yena_vertex_buffer9_a9ea13462360e88e1c22a7917b5b37ea1.html#a9ea13462360e88e1c22a7917b5b37ea1", null ],
+    [ "_Create", "class_b3_yena_vertex_buffer9_aa537dc57b7fc42e0f74180099de0d133.html#aa537dc57b7fc42e0f74180099de0d133", null ],
+    [ "_Create", "class_b3_yena_vertex_buffer9_a31586053ab39b0119e6603bc745bb367.html#a31586053ab39b0119e6603bc745bb367", null ],
+    [ "_GetFVF", "class_b3_yena_vertex_buffer9_aa74b4125550d6a7caf40f19fd11bf4fd.html#aa74b4125550d6a7caf40f19fd11bf4fd", null ],
+    [ "_GetSizeInByte", "class_b3_yena_vertex_buffer9_acd00e32217ce3104b3a6fbc615feec45.html#acd00e32217ce3104b3a6fbc615feec45", null ],
+    [ "_GetStride", "class_b3_yena_vertex_buffer9_a11f29b0ec17df9e1590075c58c079591.html#a11f29b0ec17df9e1590075c58c079591", null ],
+    [ "_GetVBuffer", "class_b3_yena_vertex_buffer9_a9a37e57f4b6da72319f00c3f6ade4f9a.html#a9a37e57f4b6da72319f00c3f6ade4f9a", null ],
+    [ "AddRef", "class_b3_yena_vertex_buffer9_a0649a5d29ac1dec96d8b5b559f619114.html#a0649a5d29ac1dec96d8b5b559f619114", null ],
+    [ "GetBuffer", "class_b3_yena_vertex_buffer9_ae68f61c1ce980b64a50a99946c6adb7b.html#ae68f61c1ce980b64a50a99946c6adb7b", null ],
+    [ "GetDesc", "class_b3_yena_vertex_buffer9_ab5ac966dd798930fc68be68b8bd4df50.html#ab5ac966dd798930fc68be68b8bd4df50", null ],
+    [ "GetPrivateData", "class_b3_yena_vertex_buffer9_ab70d6d7b615b42ddcc5bc2a196c6daa6.html#ab70d6d7b615b42ddcc5bc2a196c6daa6", null ],
+    [ "GetVertexCount", "class_b3_yena_vertex_buffer9_ae36f04452754d092e4d5717d984e1c03.html#ae36f04452754d092e4d5717d984e1c03", null ],
+    [ "Lock", "class_b3_yena_vertex_buffer9_a7c8ae3143b274beb582fd5ec122b1381.html#a7c8ae3143b274beb582fd5ec122b1381", null ],
+    [ "QueryInterface", "class_b3_yena_vertex_buffer9_a9271775c74dfb8077732d782b270f728.html#a9271775c74dfb8077732d782b270f728", null ],
+    [ "Release", "class_b3_yena_vertex_buffer9_a72f2fc3d4dcd88c51aa4d2545040c16d.html#a72f2fc3d4dcd88c51aa4d2545040c16d", null ],
+    [ "Unlock", "class_b3_yena_vertex_buffer9_ab99dfd96f001615afbabdda0ba95c3da.html#ab99dfd96f001615afbabdda0ba95c3da", null ],
+    [ "B3YenaDevice9", "class_b3_yena_vertex_buffer9_ab190b19331f0f9cc68628e0e90abf4fc.html#ab190b19331f0f9cc68628e0e90abf4fc", null ],
+    [ "m_bLocked", "class_b3_yena_vertex_buffer9_a50291cf2ea9a9da55f3a43d2c34ec1c2.html#a50291cf2ea9a9da55f3a43d2c34ec1c2", null ],
+    [ "m_Desc", "class_b3_yena_vertex_buffer9_af9b2eabb439d0c56885ed82fbda7490f.html#af9b2eabb439d0c56885ed82fbda7490f", null ],
+    [ "m_FVF", "class_b3_yena_vertex_buffer9_af576dcd87e0613673dbdc845669bb75e.html#af576dcd87e0613673dbdc845669bb75e", null ],
+    [ "m_pVBuffer", "class_b3_yena_vertex_buffer9_a6101cc70fe58a52a974e573c6030e9e0.html#a6101cc70fe58a52a974e573c6030e9e0", null ],
+    [ "m_ref", "class_b3_yena_vertex_buffer9_ae82345d92e73d19e41c61a46a926b1fd.html#ae82345d92e73d19e41c61a46a926b1fd", null ],
+    [ "m_SizeInByte", "class_b3_yena_vertex_buffer9_a72842907742ac13802aa4c26ac2874f5.html#a72842907742ac13802aa4c26ac2874f5", null ],
+    [ "m_Stride", "class_b3_yena_vertex_buffer9_a9611f457cd50ae297b69eb90c1240ed3.html#a9611f457cd50ae297b69eb90c1240ed3", null ]
+];

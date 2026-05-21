@@ -1,0 +1,26 @@
+var yn_math_8h =
+[
+    [ "B3YCOLOR", "struct_b3_y_c_o_l_o_r.html", "struct_b3_y_c_o_l_o_r" ],
+    [ "B3YVECTOR2", "struct_b3_y_v_e_c_t_o_r2.html", "struct_b3_y_v_e_c_t_o_r2" ],
+    [ "B3YVECTOR3", "struct_b3_y_v_e_c_t_o_r3.html", "struct_b3_y_v_e_c_t_o_r3" ],
+    [ "B3YVECTOR4", "struct_b3_y_v_e_c_t_o_r4.html", "struct_b3_y_v_e_c_t_o_r4" ],
+    [ "B3YXCOLOR", "class_b3_y_x_c_o_l_o_r.html", "class_b3_y_x_c_o_l_o_r" ],
+    [ "B3YXVECTOR2", "class_b3_y_x_v_e_c_t_o_r2.html", "class_b3_y_x_v_e_c_t_o_r2" ],
+    [ "B3YXVECTOR3", "class_b3_y_x_v_e_c_t_o_r3.html", "class_b3_y_x_v_e_c_t_o_r3" ],
+    [ "B3YXVECTOR4", "class_b3_y_x_v_e_c_t_o_r4.html", "class_b3_y_x_v_e_c_t_o_r4" ],
+    [ "YN_PI", "yn_math_8h_ac9cd3154855a2a9281a85bebab485d23.html#ac9cd3154855a2a9281a85bebab485d23", null ],
+    [ "YnLerp", "yn_math_8h_a7878f714e47de5769226587eca1d5dbc.html#a7878f714e47de5769226587eca1d5dbc", null ],
+    [ "YNToAngle", "yn_math_8h_a25a3a4101b44b8f548819e368506acbd.html#a25a3a4101b44b8f548819e368506acbd", null ],
+    [ "ynToAngle", "yn_math_8h_a2d7f153621ffde7936e2859f64ad53a3.html#a2d7f153621ffde7936e2859f64ad53a3", null ],
+    [ "YNToDegree", "yn_math_8h_ae4befc72a1dd2f541a91cc42139c4cc6.html#ae4befc72a1dd2f541a91cc42139c4cc6", null ],
+    [ "ynToDegree", "yn_math_8h_ab8e0ef5d2d3df4c8632fd58b6e2e6835.html#ab8e0ef5d2d3df4c8632fd58b6e2e6835", null ],
+    [ "YNToRadian", "yn_math_8h_a81975d31e479f51006db4bb504d10dda.html#a81975d31e479f51006db4bb504d10dda", null ],
+    [ "ynToRadian", "yn_math_8h_aff0f7c9620e74ac8b86dc5d7019dcce8.html#aff0f7c9620e74ac8b86dc5d7019dcce8", null ],
+    [ "COLOR", "yn_math_8h_a58713dc0a3eb7622ddd9b74b8758b5fa.html#a58713dc0a3eb7622ddd9b74b8758b5fa", null ],
+    [ "VECTOR2", "yn_math_8h_ad7b37a8f36fdc394ef5184d0dc183f5d.html#ad7b37a8f36fdc394ef5184d0dc183f5d", null ],
+    [ "VECTOR3", "yn_math_8h_a9deeffe0e16534d7f6dfe2d888db72b3.html#a9deeffe0e16534d7f6dfe2d888db72b3", null ],
+    [ "VECTOR4", "yn_math_8h_a3744477c840ee4a832f5f156dcdc6e40.html#a3744477c840ee4a832f5f156dcdc6e40", null ],
+    [ "B3YXVec2CCW", "yn_math_8h_a89e31da65b4263dc188d888ae164223c.html#a89e31da65b4263dc188d888ae164223c", null ],
+    [ "ynLerp", "yn_math_8h_a41fa03fc59d711fcee47dbfa42b11e6e.html#a41fa03fc59d711fcee47dbfa42b11e6e", null ],
+    [ "ynLerp", "yn_math_8h_a01e53cf166f0028b7bd002beca127d6f.html#a01e53cf166f0028b7bd002beca127d6f", null ]
+];

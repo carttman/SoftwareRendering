@@ -1,0 +1,10 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="B3YPRESENT_PARAMETERS",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s.html",tooltip="스왑체인 정보기술 구조체 : D3DPRESENT_PARAMETERS 대응"];
+}
