@@ -1,18 +1,3 @@
-//! 
-//! \file	ynMath.cpp
-//! \brief	Yena Math Library for DirectX / OpenGL
-//!			Yens SW Renderer v2.x
-//! 
-//! \author	Kihong Kim / mad_dog@hanmail.net
-//! \date	2004.05.07. Updated.
-//! \date	2010.07.20. Updatee.
-//! \date	2010.10.10. Updated. glyVec3Add, glyVec3Sub
-//! \date	2015.11.20. Updated.
-//! \date	2025.04.28. Updated. (v1.x)(VS22)
-//
-//
-//
-//
 #include "Windows.h"  
 #include "stdio.h"
 #include "stdlib.h" 
@@ -68,20 +53,21 @@ B3YXCOLOR::B3YXCOLOR(DWORD col)
 {
 	// 필요 코드를 완성하십시요.
 	//
-
 	//<Blue> 변환.★
-	b = (float)(col & 0x000000ff);		//정수형.blue 채널값 얻기.  0 ~ 255
-	b = b / 255.0f;						//여기서 다시 실수형으로 전환.  0~ 1.0f 
-
+	b = (float)(col & 0x00'00'00'ff);		//정수형.blue 채널값 얻기.  0 ~ 255
+	b /= 255.0f;						//여기서 다시 실수형으로 전환.  0~ 1.0f 
+	
 	//<Green> 변환.★
-	//...
+	g = (float)((col & 0x00'00'ff'00) >> 8);
+	g /= 255.0f;
 
 	//<Red> 변환.★
-	//...
+	r = (float)((col & 0x00'ff'00'00) >> 16);
+	r /= 255.0f;
 
 	//<Alpha> 변환.★
-	//...
-
+	a = (float)((col & 0xff'00'00'00) >> 24);
+	a /= 255.0f;
 }
 
 
@@ -97,11 +83,20 @@ B3YXCOLOR::B3YXCOLOR(DWORD col)
 //! 색상 채널별 곱셈.  
 B3YXCOLOR B3YXCOLOR::operator * (B3YXCOLOR rhs)
 {
-	B3YXCOLOR v;
+	B3YXCOLOR v(*this);
 
 	//함수의 바디(Body) 를 완성하십시요..★
 	//...
+	v.a *= rhs.a;
+	v.r *= rhs.r;
+	v.g *= rhs.g;
+	v.b *= rhs.b;
 
+	// 포화도 제한 (0.0f ~ 1.0f)
+	v.a = min(max(v.a, 0.0f), 1.0f);
+	v.r = min(max(v.r, 0.0f), 1.0f);
+	v.g = min(max(v.g, 0.0f), 1.0f);
+	v.b = min(max(v.b, 0.0f), 1.0f);
 	return v;
 }
 
@@ -109,48 +104,84 @@ B3YXCOLOR B3YXCOLOR::operator * (B3YXCOLOR rhs)
 //! 색상 스칼라 곱.: ★ 
 B3YXCOLOR B3YXCOLOR::operator * (float rhs)
 {
-	B3YXCOLOR v;
+	B3YXCOLOR v(*this);
 
 	//함수의 바디(Body) 를 완성하십시요..★
-	//...
-
+	// 스칼라 곱, 포화도 제한 (0.0f ~ 1.0f)
+	v.a = min(max(a * rhs, 0.0f), 1.0f);
+	v.r = min(max(r * rhs, 0.0f), 1.0f);
+	v.g = min(max(g * rhs, 0.0f), 1.0f);
+	v.b = min(max(b * rhs, 0.0f), 1.0f);
 	return v;
 }
 
 //! 색상 혼합.★
 B3YXCOLOR B3YXCOLOR::operator + (B3YXCOLOR rhs)
 {
-	B3YXCOLOR v;
+	B3YXCOLOR v(*this);
 
 	//함수의 바디(Body) 를 완성하십시요..★
 	//...
+	v.a += rhs.a;
+	v.r += rhs.r;
+	v.g += rhs.g;
+	v.b += rhs.b;
 
+	// 포화도 제한 (0.0f ~ 1.0f)
+	v.a = min(max(v.a, 0.0f), 1.0f);
+	v.r = min(max(v.r, 0.0f), 1.0f);
+	v.g = min(max(v.g, 0.0f), 1.0f);
+	v.b = min(max(v.b, 0.0f), 1.0f);
 	return v;
 }
 
 //! 색상 뺄셈.★
 B3YXCOLOR B3YXCOLOR::operator - (B3YXCOLOR rhs)
 {
-	B3YXCOLOR v;
+	B3YXCOLOR v(*this);
 
 	//함수의 바디(Body) 를 완성하십시요..★
-	//...
+	v.a -= rhs.a;
+	v.r -= rhs.r;
+	v.g -= rhs.g;
+	v.b -= rhs.b;
 
+	// 포화도 제한 (0.0f ~ 1.0f)
+	v.a = min(max(v.a, 0.0f), 1.0f);
+	v.r = min(max(v.r, 0.0f), 1.0f);
+	v.g = min(max(v.g, 0.0f), 1.0f);
+	v.b = min(max(v.b, 0.0f), 1.0f);
 	return v;
 }
 
 
 //! [ GDI 대응 형변환 ]★
 //! float(r, g, b, a) -> DWORD(a, b, g, r) 로 전환. (GDI용) 
+// 1, 8, 16, 24
 //! Blue 채널이 16번비트..주의.★
 //
 B3YXCOLOR::operator DWORD ()
 {
-	COLORREF col;
+	COLORREF col = RGB(0, 0, 0);
 
 	//함수의 바디(Body) 를 완성하십시요..★
 	//...
+	// Red 채널
+	DWORD R = (DWORD)(r * 255.0f);
+	col |= R;
 
+	 // Green 채널
+	DWORD G = (DWORD)(g * 255.0f);
+	col |= (G << 8);
+
+	// Blue 채널
+	DWORD B = (DWORD)(b * 255.0f);
+	col |= (B << 16);
+
+	// Alpha 채널
+	DWORD A = (DWORD)(a * 255.0f);
+	// col |= (A << 24);
+	
 	return col;
 }
 

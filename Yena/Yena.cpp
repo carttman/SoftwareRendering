@@ -1,21 +1,3 @@
-//! 
-//! \file	Yena.cpp
-//! \brief	\emoji :star: 
-//!			Yena SWR 기본 소스 파일 (v1.x) 
-//!	\version Yena SW Renderer v1.5.x  
-//! 
-//! \author	김기홍 / Kihong Kim / onlysonim@gmail.com
-//! \date	2003.11.4. Kihong Kim / mad_dog@hanmail.net
-//! \date	2004.05.07. Updated.
-//! \date	2005.09.23. Update (.Net) 
-//! \date	2010.07.20. Update
-//! \date	2015.11.20. Update
-//! \date	2020.08.22. Updated. (DX12.x Windows 10 SDK 10.0.x)
-//! \date	2024.04.28. Updated. (VS22)
-//! \date	2025.05.20. Updated. (VS22)(v1.5.x)
-//
-
-
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Yena SWR 인터페이스 헤더 선언 : ynIUnknown / ynInterface 전용 
@@ -224,8 +206,8 @@ protected:
 	int _DrawFace	(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2);
 	//int _DrawFace	(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2, DWORD c0, DWORD c1, DWORD c2);				//+정점색(DWORD 타입) -> 제거. B3YXCOLOR 로 통합.★
 	int _DrawFace	(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2, B3YXCOLOR c0, B3YXCOLOR c1, B3YXCOLOR c2);	//정점색 (B3YXCOLOR 타입)★
-
-	float EdgeFunction(const B3YXVECTOR2& v0, const B3YXVECTOR2& v1, const B3YXVECTOR2& p);
+	
+	float _EdgeFunction(const B3YXVECTOR2& v0, const B3YXVECTOR2& v1, const B3YXVECTOR2& p);
 
 	// 렌더링 상태 함수.
 	void _InitRenderState	();
@@ -1075,21 +1057,24 @@ int B3YenaDevice9::_PixelPipeLine()
 		//첫번째 정점 
  		pCurrVtx = pCurrVB;			
   		B3YVECTOR2  v0 = *(B3YVECTOR2*)pCurrVtx;		//좌표 얻기.
-		DWORD c0 = RGB(255, 255, 0);				//<--- 색상 얻기. 지금은 임의 지정.(과제)(DWORD type), 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의.★
+		DWORD c0 = 0xFF'FF'00'00;				//<--- 색상 얻기. 지금은 임의 지정.(과제)(DWORD type), 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의.★
+		//DWORD c0 = RGB(255, 0, 0);				//<--- 색상 얻기. 지금은 임의 지정.(과제)(DWORD type), 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의.★
 		//B3YXCOLOR c0(1.0f, 1.0f, 1.0f, 1.0f);		//<--- 색상 얻기. 지금은 임의 지정.(과제)(B3YXCOLOR type), 정점 버퍼 내의 색상이 B3YXCOLOR 형이라면 이 연산이 필요... ★
 
 
 		//2번째 정점..
 		pCurrVtx = pCurrVB + m_Stride;					//1개 크기만큼 이동. 
  		B3YVECTOR2  v1 = *(B3YVECTOR2*)pCurrVtx;		//좌표 얻기.
-		DWORD c1 = RGB(255, 255, 0);				//<--- 색상 얻기. 지금은 임의 지정.(과제)(DWORD type), 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의.★
+		DWORD c1 = 0xFF'00'FF'00;
+		// DWORD c1 = RGB(255, 255, 0);				//<--- 색상 얻기. 지금은 임의 지정.(과제)(DWORD type), 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의.★
 		//B3YXCOLOR c1(1.0f, 1.0f, 1.0f, 1.0f);		//<--- 색상 얻기. 지금은 임의 지정.(과제)(B3YXCOLOR type), 정점 버퍼 내의 색상이 B3YXCOLOR 형이라면 이 연산이 필요... ★
 
 
 		//3번째 정점..
 		pCurrVtx = pCurrVB + (2)*m_Stride;				//1개 크기만큼 이동. 
  		B3YVECTOR2  v2 = *(B3YVECTOR2*)pCurrVtx;		//좌표 얻기.
-		DWORD c2 = RGB(255, 255, 0);				//<--- 색상 얻기. 지금은 임의 지정.(과제)(DWORD type), 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의.★
+		DWORD c2 = 0xFF'00'FF'FF;
+		// DWORD c2 = RGB(255, 255, 0);				//<--- 색상 얻기. 지금은 임의 지정.(과제)(DWORD type), 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의.★
 		//B3YXCOLOR c2(1.0f, 1.0f, 1.0f, 1.0f);		//<--- 색상 얻기. 지금은 임의 지정.(과제)(B3YXCOLOR type), 정점 버퍼 내의 색상이 B3YXCOLOR 형이라면 이 연산이 필요... ★
 
 
@@ -1136,20 +1121,14 @@ int B3YenaDevice9::_PixelPipeLine()
 			//VB 내부의 색상(DWORD 타입)이, B3YXCOLOR 타입으로 
 			//(자동,암묵적) 형변환되도록 연산자를 오버로딩합시다.★
 			//코드의 가독성 증가, 생산성 증대, 등등...의 목적입니다..★
-			//_DrawLine(v0, v1, c0, c1); 		//정점색 추가.★
-			//_DrawLine(v0, v2, c0, c2);  	//정점색 추가.★	
-			//_DrawLine(v1, v2, c1, c2);		//정점색 추가.★
-
-			_DrawLine(v0, v1);
-			_DrawLine(v0, v2);
-			_DrawLine(v1, v2);
-
+			_DrawLine(v0, v1, c0, c1); 		//정점색 추가.★
+			_DrawLine(v0, v2, c0, c2);  	//정점색 추가.★	
+			_DrawLine(v1, v2, c1, c2);		//정점색 추가.★
 		}
 		else
 		{
 			//삼각형 그리기 : 정점색 추가.(과제)★★★
-			_DrawFace(v0, v1, v2);
-			//_DrawFace(v0, v1, v2, c0, c1, c2);
+			_DrawFace(v0, v1, v2, c0, c1, c2);
 		}
 
 
@@ -1175,15 +1154,13 @@ int B3YenaDevice9::_DrawLine(B3YXVECTOR2 v0, B3YXVECTOR2 v1)
 	//...과제...★
 	//GDI 대신 사용자 그리기 함수로 처리합니다.
 	//SetPixel 은 사용가능합니다. 색상은 자유.
-	//...
-	
-	int dx = v0.x - v1.x;
-	int dy = v0.y - v1.y;
+	const int dx = v0.x - v1.x;
+	const int dy = v0.y - v1.y;
 
-	float length = sqrt(dx * dx + dy * dy);
+	const float length = sqrt(dx * dx + dy * dy);
 
-	float unitX = dx / length; // 단위벡터
-	float unitY = dy / length;
+	const float unitX = dx / length; // 단위벡터
+	const float unitY = dy / length;
 
 	float curX = v1.x;
 	float curY = v1.y;
@@ -1194,9 +1171,7 @@ int B3YenaDevice9::_DrawLine(B3YXVECTOR2 v0, B3YXVECTOR2 v1)
 		curX += unitX;
 		curY += unitY;
 	}
-	//MoveToEx(m_hSurfaceRT, (int)v0.x, (int)v0.y, NULL);
-	//LineTo(m_hSurfaceRT, (int)v1.x, (int)v1.y);
-
+	
 	return YN_OK;
 }
 
@@ -1212,10 +1187,8 @@ int B3YenaDevice9::_DrawFace(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2)
 	//...과제...★
 	//GDI 대신 사용자 그리기 함수로 처리합니다.
 	//SetPixel 은 사용가능합니다. 색상은 자유.
-	//...
-	//POINT pt[3] = { v0, v1, v2 };	//연산자 오버로딩.
-	//Polygon(m_hSurfaceRT, pt, 3);
-	
+
+	// Bounding Box
 	int minX = int(v0.x < v1.x ? v0.x : v1.x);
 	minX = int(minX < v2.x ? minX : v2.x);
 	
@@ -1234,14 +1207,13 @@ int B3YenaDevice9::_DrawFace(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2)
 		{
 			B3YXVECTOR2 p = {(float)j, (float)i};
 
-			float w0 = EdgeFunction(v1, v2, p);
-			float w1 = EdgeFunction(v2, v0, p);
-			float w2 = EdgeFunction(v0, v1, p);
+			float area0 = _EdgeFunction(v1, v2, p);
+			float area1 = _EdgeFunction(v2, v0, p);
+			float area2 = _EdgeFunction(v0, v1, p);
 
-
-			if (w0 >= 0 && w1 >= 0 && w2 >= 0 || w0 <= 0 && w1 <= 0 && w2 <= 0)
+			if (area0 >= 0 && area1 >= 0 && area2 >= 0 || area0 <= 0 && area1 <= 0 && area2 <= 0)
 			{
-				SetPixel(m_hSurfaceRT, j, i, RGB(255, 0, 0));
+				SetPixel(m_hSurfaceRT, j, i, RGB(255, 255, 255));
 			}
 		}
 	}
@@ -1269,11 +1241,31 @@ int B3YenaDevice9::_DrawLine(B3YXVECTOR2 v0, B3YXVECTOR2 v1,
 	//! 함수 시그니쳐(Signature : 인자/리턴값/이름) 의 변경없이,
 	//! 함수의 Body 를 완성 하십시오.★
 	// ...
+	int dx = v0.x - v1.x;
+	int dy = v0.y - v1.y;
 
-	//임시 그리기..(삭제후 과제 수행)★
-	//_DrawLine(v0, v1);
+	float length = sqrt(dx * dx + dy * dy);
 
+	float unitX = dx / length; // 단위벡터
+	float unitY = dy / length;
 
+	float curX = v1.x;
+	float curY = v1.y;
+
+	for (int i = 0; i <= (int)length; i++) // 거리만큼 단위벡터를 더해가면서 점을 찍는다
+	{
+		float t = i / length;
+		
+		B3YXCOLOR color;
+		color.r = c0.r + (c1.r - c0.r) * t;
+		color.g = c0.g + (c1.g - c0.g) * t;
+		color.b = c0.b + (c1.b - c0.b) * t;
+		color.a = c0.a + (c1.a - c0.a) * t;
+
+		SetPixel(m_hSurfaceRT, (int)(curX), (int)(curY + 0.5f), color);
+		curX += unitX;
+		curY += unitY;
+	}
 	return YN_OK;
 }
 
@@ -1296,22 +1288,57 @@ int B3YenaDevice9::_DrawFace(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2,
 	//
 	//! 함수 시그니쳐(Signature : 인자/리턴값/이름) 의 변경없이,
 	//! 함수의 Body 를 완성 하십시오.★
-	// ...
 
-	// <GDI 버전> 임시 그리기.. (삭제후 과제 수행)★
-	// ...
-	//POINT pt[3] = { v0, v1, v2 };	//연산자 오버로딩.
-	//Polygon(m_hSurfaceRT, pt, 3);
+	// Bounding box
+	int minX = int(v0.x < v1.x ? v0.x : v1.x);
+	minX = int(minX < v2.x ? minX : v2.x);
 
+	int maxX = int(v0.x > v1.x ? v0.x : v1.x);
+	maxX = int(maxX > v2.x ? maxX : v2.x);
+
+	int minY = int(v0.y < v1.y ? v0.y : v1.y);
+	minY = int(minY < v2.y ? minY : v2.y);
+
+	int maxY = int(v0.y > v1.y ? v0.y : v1.y);
+	maxY = int(maxY > v2.y ? maxY : v2.y);
+
+	for (int i = minY; i <= maxY; i++)
+	{
+		for (int j = minX; j <= maxX; j++)
+		{
+			B3YXVECTOR2 p = { (float)j, (float)i };
+
+			// 세 직선에 대한 EdgeFunction
+			const float area0 = _EdgeFunction(v1, v2, p);
+			const float area1 = _EdgeFunction(v2, v0, p);
+			const float area2 = _EdgeFunction(v0, v1, p);
+
+			// 무게 중심 좌표
+			const float center = area0 + area1 + area2;
+
+			const float w0 = area0 / center;
+			const float w1 = area1 / center;
+			const float w2 = area2 / center;
+
+			
+			if (area0 >= 0 && area1 >= 0 && area2 >= 0 || area0 <= 0 && area1 <= 0 && area2 <= 0)
+			{
+				// 색 보간
+				B3YXCOLOR color = c0 * w0 + c1 * w1 + c2 * w2;
+				SetPixel(m_hSurfaceRT, j, i, color);
+			}
+		}
+	}
 	return YN_OK;
 }
 
-float B3YenaDevice9::EdgeFunction(const B3YXVECTOR2& v0, const B3YXVECTOR2& v1, const B3YXVECTOR2& p)
+// 점이 직선을 기준으로 어느 분면에 있는지 판단
+float B3YenaDevice9::_EdgeFunction(const B3YXVECTOR2& v0, const B3YXVECTOR2& v1, const B3YXVECTOR2& p)
 {
 	B3YXVECTOR2 a = {v1.x - v0.x, v1.y - v0.y};
 	B3YXVECTOR2 b = {p.x - v0.x, p.y - v0.y};
 
-	return (a.x * b.y) - (a.y * b.x);
+	return((a.x * b.y) - (a.y * b.x)) / 2;
 }
 
 
