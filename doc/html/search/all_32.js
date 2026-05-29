@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['프로젝트_20개요_0',['프로젝트 개요',['../index.html#autotoc_md11',1,'']]]
+  ['클래스_0',['03. Yena B3 구현 클래스',['../group___yena-_class.html',1,'']]]
 ];

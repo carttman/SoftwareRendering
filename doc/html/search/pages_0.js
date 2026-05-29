@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['01_20diffuse_20color_20과제제작용3_20gdi_0',['01 Diffuse Color (과제제작용3)(GDI)',['../index.html#autotoc_md3',1,'']]]
+  ['03_20world_20rotation_20dx_20math_20gdi_0',['T06 Transform (I) 03 World + Rotation (DX.Math)(GDI)',['../index.html#autotoc_md2',1,'']]]
 ];

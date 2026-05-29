@@ -1,11 +1,20 @@
 <map id="B3Yena::CreateDevice" name="B3Yena::CreateDevice">
-<area shape="rect" id="Node000001" title="Yena SWR 렌더링 디바이스 개체 생성 : D3D9 대응" alt="" coords="5,43,160,69"/>
-<area shape="rect" id="Node000002" href="$class_b3_yena_device9_a7041b60c0ace95f1d43573a13097dc31.html#a7041b60c0ace95f1d43573a13097dc31" title=" " alt="" coords="208,5,416,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,44,192,39,193,45,160,49"/>
-<area shape="rect" id="Node000003" href="$class_b3_yena_device9_a3448d8c5c0b5227fc04e5280e55bb37d.html#a3448d8c5c0b5227fc04e5280e55bb37d" title=" " alt="" coords="208,72,416,99"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,63,193,67,192,73,160,68"/>
-<area shape="rect" id="Node000004" href="$class_b3_yena_device9_aca6b4939afea95dbfb5dab21406d0000.html#aca6b4939afea95dbfb5dab21406d0000" title=" " alt="" coords="464,47,630,73"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="416,71,448,68,448,73,417,77"/>
-<area shape="rect" id="Node000005" href="$group___yena-_c_o_m_ga9e2aa2b3bba79319041923d1db833f2a.html#ga9e2aa2b3bba79319041923d1db833f2a" title=" " alt="" coords="498,97,596,124"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="417,94,483,101,483,106,416,99"/>
+<area shape="rect" id="Node000001" title="Yena SWR 렌더링 디바이스 개체 생성 : D3D9 대응" alt="" coords="5,176,160,203"/>
+<area shape="rect" id="Node000002" href="$class_b3_yena_device9_aafc83e4f63d48757c495d33009513e38.html#aafc83e4f63d48757c495d33009513e38" title="지정 렌더링 디바이스 개체 생성 메소드." alt="" coords="228,113,396,140"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,173,245,142,246,147,135,178"/>
+<area shape="rect" id="Node000007" href="$class_b3_yena_device9_a3448d8c5c0b5227fc04e5280e55bb37d.html#a3448d8c5c0b5227fc04e5280e55bb37d" title=" " alt="" coords="208,205,416,232"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="160,197,193,201,192,206,160,202"/>
+<area shape="rect" id="Node000003" href="$class_b3_yena_graphics_engine9_aad14572abb8c674cf9eff7646d42bb6f.html#aad14572abb8c674cf9eff7646d42bb6f" title=" " alt="" coords="464,5,630,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,110,463,58,477,52,479,57,465,62,345,115"/>
+<area shape="rect" id="Node000004" href="$class_b3_yena_graphics_engine9_a8fcaaf43ea2dd7bd85c07df5988cbfe3.html#a8fcaaf43ea2dd7bd85c07df5988cbfe3" title="백버퍼용 렌더타겟을 생성." alt="" coords="464,72,630,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="396,112,448,105,449,110,397,117"/>
+<area shape="rect" id="Node000005" href="$class_b3_yena_graphics_engine9_a30de4268f29c1354c0e520c2e16e6027.html#a30de4268f29c1354c0e520c2e16e6027" title=" " alt="" coords="464,139,630,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="397,136,449,143,448,149,396,141"/>
+<area shape="rect" id="Node000006" href="$class_b3_yena_graphics_engine9_ab190b19331f0f9cc68628e0e90abf4fc.html#ab190b19331f0f9cc68628e0e90abf4fc" title=" " alt="" coords="678,139,844,181"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="630,157,663,157,663,163,630,163"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="720,139,719,129,725,120,740,114,761,112,784,114,798,121,796,125,783,120,761,117,741,119,729,124,724,130,725,138"/>
+<area shape="rect" id="Node000008" href="$class_b3_yena_device9_aca6b4939afea95dbfb5dab21406d0000.html#aca6b4939afea95dbfb5dab21406d0000" title=" " alt="" coords="464,205,630,232"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="417,216,448,216,448,221,417,221"/>
+<area shape="rect" id="Node000009" href="$group___yena-_c_o_m_ga9e2aa2b3bba79319041923d1db833f2a.html#ga9e2aa2b3bba79319041923d1db833f2a" title=" " alt="" coords="498,256,596,283"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="378,230,484,253,483,258,377,235"/>
 </map>

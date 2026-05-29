@@ -2,6 +2,11 @@ var dir_a5ea00ba5896504f8f43349154ede880 =
 [
     [ "Yena.cpp", "_yena_8cpp.html", "_yena_8cpp" ],
     [ "Yena.h", "_yena_8h.html", null ],
+    [ "ynB3Class.h", "yn_b3_class_8h.html", "yn_b3_class_8h" ],
+    [ "ynB3Graphics.cpp", "yn_b3_graphics_8cpp.html", "yn_b3_graphics_8cpp" ],
+    [ "ynB3Graphics.h", "yn_b3_graphics_8h.html", "yn_b3_graphics_8h" ],
+    [ "ynB3VertexBuffer.cpp", "yn_b3_vertex_buffer_8cpp.html", null ],
+    [ "ynB3VertexBuffer.h", "yn_b3_vertex_buffer_8h.html", "yn_b3_vertex_buffer_8h" ],
     [ "ynDefine.h", "yn_define_8h.html", "yn_define_8h" ],
     [ "ynError.cpp", "yn_error_8cpp.html", "yn_error_8cpp" ],
     [ "ynError.h", "yn_error_8h.html", "yn_error_8h" ],

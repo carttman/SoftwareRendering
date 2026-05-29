@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['yenacreate_0',['YENACREATE',['../ynx9types_8h_ac499f15919b359cad8ca310e573270d7.html#ac499f15919b359cad8ca310e573270d7',1,'ynx9types.h']]],
-  ['yenadevice9_1',['YENADEVICE9',['../group___yena-_interfaces_ga79a0c728db3314812544e3f78348b26d.html#ga79a0c728db3314812544e3f78348b26d',1,'ynx9.h']]],
-  ['yenadisplaymode_2',['YENADISPLAYMODE',['../ynx9types_8h_a5913be8dd39c1a93bc6549920138cc88.html#a5913be8dd39c1a93bc6549920138cc88',1,'ynx9types.h']]],
-  ['yenapresent_5fparameters_3',['YENAPRESENT_PARAMETERS',['../ynx9types_8h_a290e0a590dd684630a8c9c08735919aa.html#a290e0a590dd684630a8c9c08735919aa',1,'ynx9types.h']]],
-  ['ynclsid_4',['YNCLSID',['../yn_g_u_i_d_8h_aab207a1bdace9bc4606e8227961a70b9.html#aab207a1bdace9bc4606e8227961a70b9',1,'ynGUID.h']]],
-  ['yniid_5',['YNIID',['../yn_g_u_i_d_8h_aa3e4d53c12df8f77c03e6d1b9b8be2de.html#aa3e4d53c12df8f77c03e6d1b9b8be2de',1,'ynGUID.h']]],
-  ['ynpresent_5fparam_6',['YNPRESENT_PARAM',['../ynx9types_8h_aadc63424e3391c3e92e923f453a43470.html#aadc63424e3391c3e92e923f453a43470',1,'ynx9types.h']]]
+  ['vector2_0',['VECTOR2',['../group___yena-_math_gad7b37a8f36fdc394ef5184d0dc183f5d.html#gad7b37a8f36fdc394ef5184d0dc183f5d',1,'ynMath.h']]],
+  ['vector3_1',['VECTOR3',['../group___yena-_math_ga9deeffe0e16534d7f6dfe2d888db72b3.html#ga9deeffe0e16534d7f6dfe2d888db72b3',1,'ynMath.h']]],
+  ['vector4_2',['VECTOR4',['../group___yena-_math_ga3744477c840ee4a832f5f156dcdc6e40.html#ga3744477c840ee4a832f5f156dcdc6e40',1,'ynMath.h']]],
+  ['vsouts_3',['VSOUTS',['../yn_b3_graphics_8h_a405e5f9461de3241b62d1367c2ee4e2a.html#a405e5f9461de3241b62d1367c2ee4e2a',1,'ynB3Graphics.h']]]
 ];

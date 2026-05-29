@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['성능_20개량_0',['성능 개량',['../group___issue-_perf.html',1,'']]]
+  ['설정_0',['Yena GUID 설정',['../struct_y_n_i_d.html#autotoc_md1',1,'']]]
 ];

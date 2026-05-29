@@ -83,12 +83,19 @@ EXTERN_C const YNIID IID_IYena;
 EXTERN_C const YNIID IID_IYenaDevice9;
 EXTERN_C const YNIID IID_IYenaVertexBuffer9;
 
+//! Yena Interface 구현 클래스 ID (CID) 
+EXTERN_C const YNCLSID CLSID_Yena;
+EXTERN_C const YNCLSID CLSID_YenaDevice9;
+EXTERN_C const YNCLSID CLSID_YenaVertexBuffer9;
 
 //! Yena IID 동일 여부 검사 함수
 //! [참고] IsEqualGUID, IsEqualIID (https://learn.microsoft.com/en-us/windows/win32/api/guiddef/nf-guiddef-isequaliid)
 //! 
 BOOL ynIsEqualIID(const YNIID& id1, const YNIID& id2);
 
+
+//! \def Yena CLSID 동일 여부 검사 
+#define ynIsEqualCLSID  ynIsEqualIID
 
 
 /*

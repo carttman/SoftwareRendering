@@ -21,5 +21,10 @@ var searchData=
   ['b3yrtype_5findexbuffer_18',['B3YRTYPE_INDEXBUFFER',['../ynx9types_8h_aef5f05930754330389af9384c26b8ff0.html#aef5f05930754330389af9384c26b8ff0a9cade4582dc569aef4c08810bac351fa',1,'ynx9types.h']]],
   ['b3yrtype_5fsurface_19',['B3YRTYPE_SURFACE',['../ynx9types_8h_aef5f05930754330389af9384c26b8ff0.html#aef5f05930754330389af9384c26b8ff0a63b9877702f1ceed7ea1170f6005b393',1,'ynx9types.h']]],
   ['b3yrtype_5ftexture_20',['B3YRTYPE_TEXTURE',['../ynx9types_8h_aef5f05930754330389af9384c26b8ff0.html#aef5f05930754330389af9384c26b8ff0a2b5a87e65fab8c805e80b726a4a4252c',1,'ynx9types.h']]],
-  ['b3yrtype_5fvertexbuffer_21',['B3YRTYPE_VERTEXBUFFER',['../ynx9types_8h_aef5f05930754330389af9384c26b8ff0.html#aef5f05930754330389af9384c26b8ff0a594b6e09d71f71f8645accea91fe35aa',1,'ynx9types.h']]]
+  ['b3yrtype_5fvertexbuffer_21',['B3YRTYPE_VERTEXBUFFER',['../ynx9types_8h_aef5f05930754330389af9384c26b8ff0.html#aef5f05930754330389af9384c26b8ff0a594b6e09d71f71f8645accea91fe35aa',1,'ynx9types.h']]],
+  ['b3yts_5fmax_5f_22',['B3YTS_MAX_',['../ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096da5caa4f7a12598b840800c92a9f5de032',1,'ynx9types.h']]],
+  ['b3yts_5fnone_23',['B3YTS_NONE',['../ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096da555985f7a8550a602324d6479e48117c',1,'ynx9types.h']]],
+  ['b3yts_5fprojection_24',['B3YTS_PROJECTION',['../ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096dadcc3271cf733b58b8223039c7875f127',1,'ynx9types.h']]],
+  ['b3yts_5fview_25',['B3YTS_VIEW',['../ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096da6cc92963cf0e7a4dafdfa64a669475ff',1,'ynx9types.h']]],
+  ['b3yts_5fworld_26',['B3YTS_WORLD',['../ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096dab827c53af4ded3a80d21e8a4ac3c1a08',1,'ynx9types.h']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['v1_205_20x_0',['Yena SW Renderer Tutorials v1.5.x',['../index.html#autotoc_md4',1,'']]]
+  ['uuid_20정의_0',['GUID/UUID 정의',['../struct_y_n_i_d.html#autotoc_md0',1,'']]]
 ];

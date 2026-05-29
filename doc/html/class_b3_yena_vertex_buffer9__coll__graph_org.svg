@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_i_yena_resource9.html" target="_top" xlink:title="&lt; Yena SWR 자료형 정의 : D3D9 대응 (d3d9types.h)">
+<g id="a_Node000003"><a xlink:href="class_i_yena_resource9.html" target="_top" xlink:title="렌더링 자원 기반 인터페이스 : IDirect3DResource9 대응">
 <polygon fill="white" stroke="#666666" points="93.62,-151 5.62,-151 5.62,-131 93.62,-131 93.62,-151"/>
 <text xml:space="preserve" text-anchor="middle" x="49.62" y="-137.5" font-family="Helvetica,sans-Serif" font-size="10.00">IYenaResource9</text>
 </a>

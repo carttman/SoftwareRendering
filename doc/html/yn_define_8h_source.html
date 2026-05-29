@@ -188,45 +188,50 @@ $(function(){initNavTree('yn_define_8h_source.html','',''); });
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="yn_define_8h_ab2ddfe3c96e19c17cf7e66091a3fea26.html#ab2ddfe3c96e19c17cf7e66091a3fea26">   93</a></span><span class="preprocessor">#define YN_FAIL    YN_FALSE</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="yn_define_8h_ab13d6001e856b58cc1c1813d11c9c586.html#ab13d6001e856b58cc1c1813d11c9c586">   94</a></span><span class="preprocessor">#define YN_NULL     nullptr</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment"></span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">//</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="yn_define_8h_aeabd81e2ddb26b004586752672dd2033.html#aeabd81e2ddb26b004586752672dd2033">  100</a></span><span class="preprocessor">#define _LOGFILE_ON_            </span><span class="comment">//로그 파일 생성하기..</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">//렌더링 상태/오류</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="yn_define_8h_a6cb42d9601682d09476ff65144528bf5.html#a6cb42d9601682d09476ff65144528bf5">   97</a></span><span class="preprocessor">#define YN_CULLED   0x80000010</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="yn_define_8h_a82434a113fcf53f35f4cf3504770cdb5.html#a82434a113fcf53f35f4cf3504770cdb5">   98</a></span><span class="preprocessor">#define YN_CLIPPED  0x80000020</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="yn_define_8h_aa8b5336fbd60484f7844d53d82d35c4d.html#aa8b5336fbd60484f7844d53d82d35c4d">   99</a></span><span class="preprocessor">#define YN_CHECK(res, v) (((res) &amp; (v)) == (v))</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment"></span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">//</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">// DXUtil.h 의 것을 사용함. 2004.06.07. </span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">//</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#ifndef SafeDelete</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="yn_define_8h_a745d31a3deb911352bfef34e5124fa8e.html#a745d31a3deb911352bfef34e5124fa8e">  109</a></span><span class="preprocessor">#define SafeDelete(pBuff)   if((pBuff)){ delete (pBuff);     (pBuff) = NULL; }</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="yn_define_8h_a2430d27742ac5e2a2ec42b82656a06d9.html#a2430d27742ac5e2a2ec42b82656a06d9">  110</a></span><span class="preprocessor">#define SafeDelArry(pBuff)  if((pBuff)){ delete [] (pBuff);  (pBuff) = NULL; }</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">  111</a></span><span class="preprocessor">#define SafeRelease(pBuff)  if((pBuff)){ (pBuff)-&gt;Release(); (pBuff) = NULL; }</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment"></span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">//</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">// 각도-호도/라디안 변환 매크로</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">// pi : 180 = r : 1 </span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">// r = pi / 180      즉  1 라디안 : 0.017444444444444444</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">// </span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="yn_define_8h_ac9cd3154855a2a9281a85bebab485d23.html#ac9cd3154855a2a9281a85bebab485d23">  122</a></span><span class="preprocessor">#define YN_PI   3.141592f </span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="yn_define_8h_a9b578a2f6169c3cc2248ecfa6a68b184.html#a9b578a2f6169c3cc2248ecfa6a68b184">  123</a></span><span class="preprocessor">#define ynConvertToRadian(deg)  ((float)(YN_PI/180.0f)*((float)(deg)))  </span><span class="comment">//!&lt; 각도-라디안 변환 매크로</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="yn_define_8h_a5d5f59ca25a2f406d4958b29ff4caed7.html#a5d5f59ca25a2f406d4958b29ff4caed7">  124</a></span><span class="preprocessor">#define ynConvertToDegree(rad)  ((rad) * 180.0f / YN_PI)                </span><span class="comment">//!&lt; 라디안-각도 변환 매크로</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment">//#define ynConvertToAngle(r)  </span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">//구형 호환성 유지.</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="yn_define_8h_a81ae5234898b499494541a912f145382.html#a81ae5234898b499494541a912f145382">  128</a></span><span class="preprocessor">#define B3Y_PI  YN_PI               </span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="yn_define_8h_abf1c3889fe106c762d412cc7dd88cd92.html#abf1c3889fe106c762d412cc7dd88cd92">  129</a></span><span class="preprocessor">#define MAKERADIAN  ynConvertToRadian</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment"></span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">//</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="yn_define_8h_aeabd81e2ddb26b004586752672dd2033.html#aeabd81e2ddb26b004586752672dd2033">  105</a></span><span class="preprocessor">#define _LOGFILE_ON_            </span><span class="comment">//로그 파일 생성하기..</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment"></span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">//</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">// DXUtil.h 의 것을 사용함. 2004.06.07. </span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">//</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#ifndef SafeDelete</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="yn_define_8h_a745d31a3deb911352bfef34e5124fa8e.html#a745d31a3deb911352bfef34e5124fa8e">  114</a></span><span class="preprocessor">#define SafeDelete(pBuff)   if((pBuff)){ delete (pBuff);     (pBuff) = NULL; }</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="yn_define_8h_a2430d27742ac5e2a2ec42b82656a06d9.html#a2430d27742ac5e2a2ec42b82656a06d9">  115</a></span><span class="preprocessor">#define SafeDelArry(pBuff)  if((pBuff)){ delete [] (pBuff);  (pBuff) = NULL; }</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">  116</a></span><span class="preprocessor">#define SafeRelease(pBuff)  if((pBuff)){ (pBuff)-&gt;Release(); (pBuff) = NULL; }</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment"></span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">//</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment">// 각도-호도/라디안 변환 매크로</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment">// pi : 180 = r : 1 </span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment">// r = pi / 180      즉  1 라디안 : 0.017444444444444444</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment">// </span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="yn_define_8h_ac9cd3154855a2a9281a85bebab485d23.html#ac9cd3154855a2a9281a85bebab485d23">  127</a></span><span class="preprocessor">#define YN_PI   3.141592f </span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="yn_define_8h_a9b578a2f6169c3cc2248ecfa6a68b184.html#a9b578a2f6169c3cc2248ecfa6a68b184">  128</a></span><span class="preprocessor">#define ynConvertToRadian(deg)  ((float)(YN_PI/180.0f)*((float)(deg)))  </span><span class="comment">//!&lt; 각도-라디안 변환 매크로</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="yn_define_8h_a5d5f59ca25a2f406d4958b29ff4caed7.html#a5d5f59ca25a2f406d4958b29ff4caed7">  129</a></span><span class="preprocessor">#define ynConvertToDegree(rad)  ((rad) * 180.0f / YN_PI)                </span><span class="comment">//!&lt; 라디안-각도 변환 매크로</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">//#define ynConvertToAngle(r)  </span></div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">/*********** end of file &quot;ynDefine.h&quot; *******************************/</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">//구형 호환성 유지.</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="yn_define_8h_a81ae5234898b499494541a912f145382.html#a81ae5234898b499494541a912f145382">  133</a></span><span class="preprocessor">#define B3Y_PI  YN_PI               </span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="yn_define_8h_abf1c3889fe106c762d412cc7dd88cd92.html#abf1c3889fe106c762d412cc7dd88cd92">  134</a></span><span class="preprocessor">#define MAKERADIAN  ynConvertToRadian</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">/*********** end of file &quot;ynDefine.h&quot; *******************************/</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

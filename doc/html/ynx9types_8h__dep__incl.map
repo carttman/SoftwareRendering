@@ -1,20 +1,24 @@
 <map id="Yena/ynx9types.h" name="Yena/ynx9types.h">
-<area shape="rect" id="Node000001" title="\u{2b50} Yena SW 엔진 자료형 정의 : DX9 (d3d9types.h) 대응" alt="" coords="261,5,386,32"/>
-<area shape="rect" id="Node000002" href="$_yena_8h.html" title="\u{2b50} Yena SWR 기본 헤더 파일 (v1.x)" alt="" coords="276,155,371,181"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="318,47,310,80,312,121,322,154,316,155,307,121,305,80,312,46"/>
-<area shape="rect" id="Node000009" href="$ynx9_8h.html" title="\u{2b50} Yena SWR 인터페이스 헤더 : DX9 (d3d9.h) 대응" alt="" coords="320,80,413,107"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="341,44,361,78,357,81,336,47"/>
+<area shape="rect" id="Node000001" title="\u{2b50} Yena SW 엔진 자료형 정의 : DX9 (d3d9types.h) 대응" alt="" coords="420,5,545,32"/>
+<area shape="rect" id="Node000002" href="$_yena_8h.html" title="\u{2b50} Yena SWR 기본 헤더 파일 (v1.x)" alt="" coords="435,155,530,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="476,47,469,80,471,121,480,154,475,155,466,121,464,80,471,46"/>
+<area shape="rect" id="Node000011" href="$ynx9_8h.html" title="\u{2b50} Yena SWR 인터페이스 헤더 : DX9 (d3d9.h) 대응" alt="" coords="478,80,572,107"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="500,44,520,78,515,81,495,47"/>
 <area shape="rect" id="Node000003" href="$_device_8h.html" title="예제 렌더링 장치 운용 헤더" alt="" coords="148,229,246,256"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="290,192,221,231,218,226,287,187"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="420,188,247,232,245,226,419,183"/>
 <area shape="rect" id="Node000007" href="$_yena_8cpp.html" title="\u{2b50} Yena SWR 기본 소스 파일 (v1.x)" alt="" coords="270,229,378,256"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="326,197,326,229,321,229,321,197"/>
-<area shape="rect" id="Node000008" href="$yn_error_8cpp.html" title="에러, 예외 및 로그 처리 소스 파일" alt="" coords="402,229,523,256"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="363,187,439,226,437,231,360,191"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="442,191,353,231,350,226,440,186"/>
+<area shape="rect" id="Node000008" href="$yn_b3_graphics_8cpp.html" title="Yena 그래픽스 엔진 소스 파일" alt="" coords="402,229,563,256"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="485,197,485,229,480,229,480,197"/>
+<area shape="rect" id="Node000009" href="$yn_b3_vertex_buffer_8cpp.html" title="정점 버퍼 운용 클래스 소스" alt="" coords="587,229,767,256"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="531,185,644,226,642,231,529,190"/>
+<area shape="rect" id="Node000010" href="$yn_error_8cpp.html" title="에러, 예외 및 로그 처리 소스 파일" alt="" coords="791,229,912,256"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="545,179,791,227,790,232,544,184"/>
 <area shape="rect" id="Node000004" href="$_device_8cpp.html" title="예제 렌더링 장치 운용 소스." alt="" coords="5,304,117,331"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="161,266,86,306,84,301,159,261"/>
-<area shape="rect" id="Node000005" href="$_render_8cpp.html" title="\u{2b50} 예제 기본 렌더링/프레임웍 소스" alt="" coords="141,304,253,331"/>
+<area shape="rect" id="Node000005" href="$_render_8cpp.html" title="예제 기본 렌더링/프레임웍 소스" alt="" coords="141,304,253,331"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="200,272,200,304,194,304,194,272"/>
 <area shape="rect" id="Node000006" href="$main_8cpp.html" title="예제 애플리케이션 메인 / 윈도 프레임워크 소스" alt="" coords="277,304,376,331"/>
 <area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="234,262,305,301,302,306,231,266"/>
-<area shape="poly" id="edge9_Node000009_Node000002" title=" " alt="" coords="354,122,333,156,329,153,349,119"/>
+<area shape="poly" id="edge11_Node000011_Node000002" title=" " alt="" coords="512,122,492,156,487,153,508,119"/>
 </map>

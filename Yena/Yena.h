@@ -1,3 +1,21 @@
+//! 
+//! \file	Yena.h
+//! \bstar	Yena SWR 기본 헤더 파일 (v1.x)   
+//!	\details Yena SWR 인터페이스 및 헬퍼 클레스 선언 및 플랫폼 헤더 포함.  
+//!			 사용자 Yena 기본 표준 헤더.  
+//!	\version Yena SW Renderer v1.5.x  
+//!	\warning 개발자 (내부)용 클래스 (ynB3xxx) 는 노출시키지 않음에 유의.
+//! 
+//! \author	김기홍 / Kihong Kim / onlysonim@gmail.com
+//! \date	2003.11.4. Kihong Kim / mad_dog@hanmail.net
+//! \date	2004.05.07. Updated.
+//! \date	2005.09.23. Update (.Net) 
+//! \date	2010.07.20. Update
+//! \date	2015.11.20. Update
+//! \date	2020.08.22. Updated. (DX12.x Windows 10 SDK 10.0.x)
+//! \date	2024.04.28. Updated. (VS22)
+//! \date	2025.05.20. Updated. (VS22)(v1.5.x)
+//
 #pragma once
 
 
@@ -14,8 +32,6 @@
 #include "vector"
 #include "algorithm"
 using namespace std;
-
-
 
 
 /////////////////////////////////////////////////////////////////////////////// 
@@ -41,14 +57,14 @@ using namespace std;
 //#include "ynLight.h"		// 조명 관리 
 //#include "ynShader.h"		// 쉐이더 관련.
 
+//#include "ynGraphics.h"		//Yena SWR 그래픽스 엔진
+
+
 // Yena 서비스 클래스들
 //#include "ynGrid.h"		//그리드.
 //#include "ynAxis.h"		//방향축.
 
 using namespace YENA;
-
-
-
 
 
 

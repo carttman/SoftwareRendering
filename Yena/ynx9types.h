@@ -1,7 +1,6 @@
 //! 
 //! \file	ynx9Types.h
-//! \brief	\emoji :star: 
-//!			Yena SW 엔진 자료형 정의 : DX9 (d3d9types.h) 대응  
+//! \bstar	Yena SW 엔진 자료형 정의 : DX9 (d3d9types.h) 대응  
 //!	\version Yena SW Renderer v1.x
 //! 
 //! \author	김기홍 / Kihong Kim / onlysonim@gmail.com / mad_dog@hanmail.net
@@ -104,7 +103,7 @@ enum B3YRESOURCETYPE {
 //! Release 후 수동 복구(Restore) 해야 합니다. 보다 상세한 내용은 아래 문서를 참고하십시오.
 //! 
 //! <Yena> 시스템 메모리만을 사용합니다 
-//! <주> 메모리 관리는 중요한 요소이지만, Yena SWR 를 만드는 동안은 "그려려니" 합시다.★
+//! <주> 메모리 관리는 중요한 요소이지만, Yena SWR 를 만드는 동안은 "그려려니" 합시다.
 //! 
 //! \see [D3DPOOL](https://learn.microsoft.com/en-us/windows/win32/direct3d9/d3dpool)
 //! 
@@ -163,7 +162,7 @@ typedef B3YPOOL	B3YENAPOOL;			//구형 호환성 유지.
 
 /////////////////////////////////////////////////////////////////////////////// 
 //
-//! 기하도형 타입 : D3DPRIMITIVETYPE 대응, <Yena> 미지원 기능 생략 ★
+//! 기하도형 타입 : D3DPRIMITIVETYPE 대응, <Yena> 미지원 기능 생략 
 //!
 //! \see [D3DPRIMITIVETYPE](https://learn.microsoft.com/en-us/windows/win32/direct3d9/d3dprimitivetype)
 //
@@ -181,24 +180,58 @@ enum B3YPRIMITIVETYPE
 
 
 
+/////////////////////////////////////////////////////////////////////////////// 
+//
+//! 변환 상태 설정 타입. : D3DTRANSFORMSTATETYPE  대응.★
+//
+enum B3YTRANSFORMSTATETYPE 
+{
+	B3YTS_NONE			= 0,
+	B3YTS_WORLD			= 1,		//월드 변환 : 아래 주석블럭 [도움2] 참고
+	B3YTS_VIEW			= 2,		//뷰 변환.
+	B3YTS_PROJECTION	= 3,		//투영 변환.
+/*	B3YTS_TEXTURE0      = 16,       //텍스처 변환. 이하 추후 사용.
+	B3YTS_TEXTURE1      = 17,
+	B3YTS_TEXTURE2      = 18,
+	B3YTS_TEXTURE3      = 19,
+	B3YTS_TEXTURE4      = 20,
+	B3YTS_TEXTURE5      = 21,
+	B3YTS_TEXTURE6      = 22,
+	B3YTS_TEXTURE7      = 23,
+*/
+	B3YTS_MAX_
+};
+
+//! [도움2] B3YTS_WORLD 매크로 정의 : D3DTS_WORLD 대응.★
+//! : DX 에서는 아래와 같이 정의 되어있으나 (Vertex Blending 용) 
+//!   우리에게는 불필요, 사용 안 함.
+//#define B3YTS_WORLDMATRIX(index) (B3YTRANSFORMSTATETYPE)(index + 256)
+//#define B3YTS_WORLD  B3YTS_WORLDMATRIX(0)
+//#define B3YTS_WORLD1 B3YTS_WORLDMATRIX(1)
+//#define B3YTS_WORLD2 B3YTS_WORLDMATRIX(2)
+//#define B3YTS_WORLD3 B3YTS_WORLDMATRIX(3)
+
+
+
+
 
 /////////////////////////////////////////////////////////////////////////////// 
 //
 //! 렌더링 상태 옵션. : D3DRENDERSTATETYPE 대응. 
 //!
-//! [참고] D3DBLENDSTATETYPE (https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3drenderstatetype)
+//! \see [D3DBLENDSTATETYPE](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3drenderstatetype)
 // 
 enum B3YRENDERSTATETYPE {
-	//B3YRS_ZENABLE                   = 7,    
-	B3YRS_FILLMODE					  = 8,    // Fill Mode State.
-	//B3YRS_ZWRITEENABLE              = 14,   // TRUE to enable z writes 
-	//B3YRS_ALPHATESTENABLE           = 15,   // TRUE to enable alpha tests 
-	B3YRS_CULLMODE                    = 22,	  // Culling State  
-	//B3YRS_ALPHABLENDENABLE          = 27,   // TRUE to enable alpha blending 
-	//B3YRS_FOGENABLE                 = 28,   // TRUE to enable fog blending  
-	//B3YRS_SPECULARENABLE            = 29,   // TRUE to enable specular  
-	//B3YRS_LIGHTING                  = 137,
-	//B3YRS_AMBIENT                   = 139, 
+	//B3YRS_ZENABLE             = 7,    
+	B3YRS_FILLMODE				= 8,    // Fill Mode State.
+	//B3YRS_ZWRITEENABLE        = 14,   // TRUE to enable z writes 
+	//B3YRS_ALPHATESTENABLE     = 15,   // TRUE to enable alpha tests 
+	B3YRS_CULLMODE              = 22,	// Culling State  
+	//B3YRS_ALPHABLENDENABLE    = 27,   // TRUE to enable alpha blending 
+	//B3YRS_FOGENABLE           = 28,   // TRUE to enable fog blending  
+	//B3YRS_SPECULARENABLE      = 29,   // TRUE to enable specular  
+	//B3YRS_LIGHTING            = 137,
+	//B3YRS_AMBIENT             = 139, 
 
 	//렌더링 상태값이 계속 추가될 예정.
 	//..
@@ -208,11 +241,12 @@ enum B3YRENDERSTATETYPE {
 
 
 
+
 /////////////////////////////////////////////////////////////////////////////// 
 //
-//! Fill Mode 별 옵션. : D3DFILLMODE  대응. 
+//! \brief Fill Mode 별 옵션. : D3DFILLMODE  대응.  
 //!
-//! [참고] D3DFILLMODE (https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dfillmode)
+//! \see [D3DFILLMODE](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/d3d9types/ne-d3d9types-_d3dfillmode)
 //
 enum B3YFILLMODE {
 	B3YFILL_POINT		= 1,		//점으로 그리기.
@@ -224,8 +258,12 @@ enum B3YFILLMODE {
 
 
 
+
+/////////////////////////////////////////////////////////////////////////////// 
 //
-// Culling Mode 별 옵션.: D3DCULL 대응  
+//! Culling Mode 별 옵션.: D3DCULL 대응  
+//! 
+//! \see [D3DCULL](https://learn.microsoft.com/en-us/windows/win32/direct3d9/d3dcull)
 //
 enum B3YCULL {
 	B3YCULL_NONE	= 1,	//컬링 없음. 
@@ -240,10 +278,10 @@ enum B3YCULL {
 
 /////////////////////////////////////////////////////////////////////////////// 
 //
-//! 정점 규격 정의 (하나 이상의 규격 조합 가능) : D3DFVF 대응 
+//! 정점 규격 정의 (하나 이상의 규격 조합 가능) : D3DFVF 대응  
 // 
 #define  B3YFVF_XY			 0x0001		//!< 2D 좌표.(DX 미지원, Yena 전용)
-//#define  B3YFVF_XYZ		 0x0002		//!< 3D 좌표.(미 변환)(Local)
+#define  B3YFVF_XYZ			 0x0002		//!< 3D 좌표.(미 변환)(Local) 
 //#define  B3YFVF_XYZRHW	 0x0004		//!< 3D 좌표.(변환 완료) XY + Depth
 //#define  B3YFVF_NORMAL	 0x0010		//!< 노멀 (Normal) 
 #define  B3YFVF_DIFFUSE		 0x0040		//!< 확산색(Diffuse) 색상

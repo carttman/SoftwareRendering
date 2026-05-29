@@ -1,8 +1,7 @@
 
 \mainpage
 
-## T05 Rasterization
-# 01 Diffuse Color (과제제작용3)(GDI)
+# T06 Transform (I) 03 World + Rotation (DX.Math)(GDI)
 ### Yena SW Renderer Tutorials v1.5.x
 
 * 김기홍 Kihong.Kim / onlysonim@gmail.com
@@ -10,79 +9,52 @@
 
 ---------------------------------------------------------------------------
 
-<img src="T05_Rasterization_00_DiffuseColor_(과제제작용3)(GDI).png"  style="max-width: 100%; height:auto" />
-<img src="T05_Rasterization_01_DiffuseColor_(과제완성).png"  style="max-width: 100%; height:auto" />
-
+<img src="T06_Transform_I_03_World+Rot_DX.Math.GDI.135.png"  style="max-width: 100%; height:auto" />
 
 
 ### 예제 내용 
 
-* 과제 제작용
-  - 그리기 함수 GDI 사용.
-  - 사용자 그리기 함수로 변경.(과제)★
+### 렌더링 파이프라인 구축
 
-* 렌더링 파이프라인 구축
-  - 2D 정점 운용, 변환 없음
-  - 정점 버퍼 생성 및 운용
-  - 정점 구조(FVF) 설정
-  - 렌더링 상태 조절 
-  - 렌더링 API 추가 및 개정
+* <GDI> 사용 버전 ★
+  - 과제 제작용
+   
+* <DX> 수학 라이브러리 사용 버전 ★
+  - 과제 제작용
 
-* 정점색 적용 (과제) ★ 
-  - 정점 구조(FVF) 변경
-  - 정점색 추가 (DWORD) 
-  - 정점색 추가 (B3YXCOLOR) ★
-  - 색상 구조체/클래스 연산자 추가
-  - B3YXCOLOR 와 DWORD 호환성 증대 (+연산자추가) ★
-
-* 개정 내역 
-  ```
-  struct COLVXT   : 색상 추가
-  struct B3YCOLOR : 연산자 추가
-  struct B3YXCOLOR : 연산자 추가
-  ynMath
-  IYenaDevice9
-  ```
-
-* Yena 개정 (25.0619)
-  - Yena 운용 함수명 접두어 변경
-  - 구형 호환성 유지용 재정의 포함
-  ```
-  (구) YnSort
-  (신) ynSort
-  #define YnSort ynSort
-  ```
+* <Yena> 수학 라이브러리 제작 및 적용.
+ 
+* 정점 파이프라인 Vertex-PipeLine
+  - 월드변환  : 회전 시키기 ★
+  - 뷰 변환   : 변환 없음 - 단위 행렬
+  - 투영 변환 : 변환 없음 - 단위 행렬
+  
 
 
 ### 목표 및 과제
 
-* SWR 렌더링 파이프라인 구성 (1)
-* SWR 기하 버퍼 구성 (1)
-* 삼각형 그리기, 채우기 (사용자 함수)
-* 삼각형 선별 : Wireframe, Back-Face Culling (사용자 함수)
-* 삼각형 색상 채우기 : 정점색 처리.
-  
+* 변환 파이프라인의 이해	
+  - 변환 행렬 적용
+  - 정점 투영의 이해
 
-  
-* todo
-\todo2	정점색 적용 (과제)
-        - 정점 구조(FVF) 변경
-        - 정점색 추가 (DWORD) 
-        - 정점색 추가 (B3YXCOLOR) ★
-        - 삼각형 6개 그리기		
+*todo
+\todo2 	기하도형 변환
+  		- World + Rotation 변환
+  		- 변환 행렬 적용
+  		- 정점 투영의 이해
 
-\todo2 색상클래스 제작
-        - 색상 구조체/클래스 연산자 추가
-        - B3YXCOLOR 와 DWORD 호환성 증대 (+연산자추가) ★		
+\todo2 	수학 라이브러리 클래스 갱신
+  		- 벡터/행렬 클래스형 화
+  		- 행렬 클래스 완성 ★
+    		+ B3XYMATRIX : ( D3DXMATRIX 대응 )
+  		- 행렬 함수 추가 제작 ★
+    		+ B3YXMatrixRotationX
+    		+ B3YXMatrixRotationY
+    		+ B3YXMatrixRotationZ  
+  		- 기타 필요 기능 확장 하기
 
-\todo2 사용자 그리기 함수 제작
-        - B3YenaDevice9::_DrawLine
-        - B3YenaDevice9::_DrawFace
-        - GDI 사용 안함 (SetPixel 제외)
-        - 색상 보간 : 정점 버퍼내 색상 준수 ★
-        - GDI 색상구조 변환 주의.
-        - ![참고: Yena_SWR_ColorFormat.png](./img/Yena_SWR_ColorFormat.png)
-
+\todo2 	DirectX 수학 클래스 사용하지 않기.★
+  		- 직접 만들기 (과제)
 
 
 ---------------------------------------------------------------------------

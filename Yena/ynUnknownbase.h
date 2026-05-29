@@ -172,5 +172,73 @@ extern "C++"
 
 
 
+////////////////////////////////////////////////////////////////////////////////
+//
+//! \fn     ynGetClassObject 
+//! \brief  Yena 인터페이스와 연결된 실제 구현 클래스 객체를 획득합니다.  
+//!         B3Yena 및 ynIUnknown 을 상속한 구현 클래스만 획득이 가능합니다.
+//! 
+//! Windows/COM 의 GetClassObject 함수는 CLSID 의 객체 인터페이스를 리턴합니다.  
+//! Yena 는 Windows/COM 과는 다르게 실제 구현 클래스 객체를 리턴합니다.  
+//! \see [참고] DLLGetClassObject (https://learn.microsoft.com/en-us/windows/win32/api/combaseapi/nf-combaseapi-dllgetclassobject)
+//!
+//! \remarks 이 함수는 Yena 개발팀 내부 전용으로 외부 사용자에게는 노출되지 않습니다.
+//! \tparam	 ypInterface	구현 클래스 인터페이스 포인터
+//! \return	 성공시 구현 클래스 포인터, 실패시 NULL.
+//
+template<class T>
+T* ynGetClassObject(ynIUnknown* ypInterface)
+{
+    T* pObj = dynamic_cast<T*>(ypInterface);
+    if (YN_INVALIED(pObj))
+    {
+        //에러 처리...
+        return YN_NULL;
+    }
+
+    //참조 카운트 증가
+    //...
+
+    return pObj;
+}
+
+
+
+
+/*
+////////////////////////////////////////////////////////////////////////////////
+//
+//! ynGetObject 
+//! Yena 인터페이스로 실제 구현 클래스 객체를 획득합니다.
+//! B3Yena 및 ynIUnknown 을 상속한 구현 클래스만 획득이 가능합니다.
+//! \remarks 이 함수는 Yena 개발팀 내부 전용으로 외부 사용자에게는 노출되지 않습니다.
+//! 
+//! Windows/COM 의 GetClassObject 함수는 CLSID 의 객체 인터페이스를 리턴합니다.
+//! Yena 는 Windows/COM 과는 살짝 다르게 만들겠습니다.
+//! \see [참고] DLLGetClassObject (https://learn.microsoft.com/en-us/windows/win32/api/combaseapi/nf-combaseapi-dllgetclassobject)
+//!  
+//! \param	ypInterface	구현 클래스 인터페이스 포인터
+//! \return	성공시 구현 클래스 포인터, 실패시 NULL.
+//
+int ynGetClassObject(YNCLSID clsid, void* ypInterface)
+{
+    T* pObj = dynamic_cast<T*>(ypInterface);
+    if (YN_INVALIED(pObj))
+    {
+        //에러 처리...
+        return YN_FALSE;
+    }
+
+    //참조 카운트 증가
+    //...
+
+    return YN_OK;
+}*/
+
+
+
+
+
+
 //!	\}	end of group Yena-COM
 /**************** end of "ynUnknownbase.h" ***********************************/

@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$struct_y_n_i_d.html" title="Yena GUID 정의 구조체 : Windows/GUID 대응" alt="" coords="5,5,60,32"/>
+<area shape="rect" id="Node000000" href="$struct_b3_y_v_e_c_t_o_r2.html" title=" " alt="" coords="5,5,115,32"/>
+<area shape="rect" id="Node000001" href="$class_b3_y_x_v_e_c_t_o_r2.html" title="벡터 클래스 (2성분)" alt="" coords="163,5,281,32"/>
+<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="130,16,162,16,162,21,130,21"/>
 </map>

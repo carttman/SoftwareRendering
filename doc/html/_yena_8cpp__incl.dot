@@ -50,6 +50,23 @@ digraph "Yena/Yena.cpp"
   Node2 -> Node18 [id="edge26_Node000002_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="ynx9.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ynx9_8h.html",tooltip="\\u{2b50} Yena SWR 인터페이스 헤더 : DX9 (d3d9.h) 대응"];
   Node18 -> Node17 [id="edge27_Node000018_Node000017",color="steelblue1",style="solid",tooltip=" "];
-  Node2 -> Node19 [id="edge28_Node000002_Node000019",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="ynMath.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_math_8h.html",tooltip="Yena Math Library for DirectX / OpenGL Yens SW Renderer v2.x."];
+  Node18 -> Node19 [id="edge28_Node000018_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="ynMath.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_math_8h.html",tooltip="\\u{2b50} Yena 수학 라이브러리 Yena Math Library for DirectX / OpenGL"];
+  Node19 -> Node10 [id="edge29_Node000019_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node19 -> Node20 [id="edge30_Node000019_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="DirectXmath.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node2 -> Node19 [id="edge31_Node000002_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node21 [id="edge32_Node000001_Node000021",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="ynB3Class.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_b3_class_8h.html",tooltip="B3Yena 클래스 선행 선언 헤더."];
+  Node1 -> Node22 [id="edge33_Node000001_Node000022",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="ynB3VertexBuffer.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_b3_vertex_buffer_8h.html",tooltip="정점 버퍼 운용 클래스 헤더"];
+  Node22 -> Node3 [id="edge34_Node000022_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node22 -> Node4 [id="edge35_Node000022_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node22 -> Node5 [id="edge36_Node000022_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node22 -> Node6 [id="edge37_Node000022_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node22 -> Node7 [id="edge38_Node000022_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node22 -> Node8 [id="edge39_Node000022_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node22 -> Node9 [id="edge40_Node000022_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node23 [id="edge41_Node000001_Node000023",color="steelblue1",style="solid",tooltip=" "];
+  Node23 [id="Node000023",label="ynB3Graphics.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_b3_graphics_8h.html",tooltip="\\u{2b50} Yena 그래픽스 엔진 헤더 파일"];
 }

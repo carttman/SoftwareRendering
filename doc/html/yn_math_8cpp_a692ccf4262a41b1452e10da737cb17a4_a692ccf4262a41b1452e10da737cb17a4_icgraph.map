@@ -1,0 +1,21 @@
+<map id="ynLerp" name="ynLerp">
+<area shape="rect" id="Node000001" title="선형보간 (Linear Interpolation) 함수" alt="" coords="859,143,919,169"/>
+<area shape="rect" id="Node000002" href="$class_b3_yena_graphics_engine9_aba9159be985678d17c68343609158f55.html#aba9159be985678d17c68343609158f55" title=" " alt="" coords="432,5,597,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="876,129,851,82,832,59,809,41,758,20,703,11,648,9,598,13,598,8,648,4,704,5,760,15,812,36,836,55,855,79,880,127"/>
+<area shape="rect" id="Node000005" href="$class_b3_yena_graphics_engine9_a0a5e0617f78fc8258ed3681b40e54d2f.html#a0a5e0617f78fc8258ed3681b40e54d2f" title=" " alt="" coords="645,51,811,93"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="850,137,809,114,774,96,776,92,812,110,852,132"/>
+<area shape="rect" id="Node000006" href="$class_b3_yena_graphics_engine9_ae6dcfe218b309e6c35e5ebfc8d2d25a7.html#ae6dcfe218b309e6c35e5ebfc8d2d25a7" title=" " alt="" coords="432,84,597,127"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="843,153,597,119,598,114,844,147"/>
+<area shape="rect" id="Node000007" href="$yn_math_8cpp_ab2c73f58aab9838f1c03246a6c3d1055.html#ab2c73f58aab9838f1c03246a6c3d1055" title=" " alt="" coords="687,168,769,195"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="843,166,770,178,769,172,843,160"/>
+<area shape="rect" id="Node000008" href="$yn_math_8cpp_ab59de7dba0161c2522b91b007c788683.html#ab59de7dba0161c2522b91b007c788683" title=" " alt="" coords="693,219,763,245"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="859,181,812,209,764,226,762,221,810,204,857,176"/>
+<area shape="rect" id="Node000009" href="$yn_math_8cpp_a0b334395c09fbc1b9841abcb1159adc9.html#a0b334395c09fbc1b9841abcb1159adc9" title=" " alt="" coords="698,269,758,296"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="876,184,850,223,832,243,812,260,786,273,759,281,757,276,784,268,809,255,828,239,845,220,871,181"/>
+<area shape="rect" id="Node000003" href="$class_b3_yena_graphics_engine9_aeebbaf1081457875a8f5923ba8569424.html#aeebbaf1081457875a8f5923ba8569424" title="픽셀 파이프 라인 연산을 수행. \u{2b50}" alt="" coords="219,5,384,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="417,29,385,29,385,24,417,24"/>
+<area shape="rect" id="Node000004" href="$class_b3_yena_graphics_engine9_a9124b197c0763305a85b3d27dc71ac87.html#a9124b197c0763305a85b3d27dc71ac87" title="그래픽 엔진, 렌더링 시작. \u{2b50}" alt="" coords="5,5,171,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="203,29,171,29,171,24,203,24"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="630,54,597,47,598,42,631,49"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="631,90,598,95,598,90,630,85"/>
+</map>

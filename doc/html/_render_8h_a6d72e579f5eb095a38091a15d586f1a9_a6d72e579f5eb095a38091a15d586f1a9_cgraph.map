@@ -1,15 +1,23 @@
 <map id="SceneRender" name="SceneRender">
-<area shape="rect" id="Node000001" title="장면 그리기" alt="" coords="5,81,106,108"/>
-<area shape="rect" id="Node000002" href="$_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388" title="오브젝트 그리기" alt="" coords="172,5,244,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,79,152,42,162,37,165,41,155,46,84,83"/>
-<area shape="rect" id="Node000003" href="$_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15" title=" " alt="" coords="174,56,242,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,84,158,75,159,80,107,89"/>
-<area shape="rect" id="Node000005" href="$_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc" title="도움말 출력" alt="" coords="170,107,246,133"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="107,100,155,109,154,114,106,106"/>
-<area shape="rect" id="Node000006" href="$_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20" title="엔진 및 시스템 상태 갱신." alt="" coords="154,157,262,184"/>
-<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="84,106,155,143,165,148,162,153,152,148,81,111"/>
-<area shape="rect" id="Node000004" href="$_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182" title=" " alt="" coords="310,81,387,108"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="242,73,295,82,294,88,241,78"/>
-<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="324,82,320,73,323,63,333,57,349,55,366,57,375,64,372,68,364,62,349,60,334,62,327,66,325,72,329,80"/>
-<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="246,111,294,102,295,107,247,116"/>
+<area shape="rect" id="Node000001" title="장면 그리기" alt="" coords="5,132,106,159"/>
+<area shape="rect" id="Node000002" href="$_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31.html#a76c4195d88ec690c4da612bbd6d55f31" title="엔진 타이머 : 프레임 시간 획득." alt="" coords="154,5,265,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,130,101,88,152,42,159,38,162,42,155,46,105,92,69,133"/>
+<area shape="rect" id="Node000003" href="$_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388" title="오브젝트 그리기" alt="" coords="173,56,246,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="81,129,152,92,162,87,165,92,155,97,84,134"/>
+<area shape="rect" id="Node000004" href="$_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6.html#a71264aa9be3cdedfc23d807cca7e27e6" title="오브젝트 : 상태 갱신" alt="" coords="168,107,251,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="106,134,152,127,153,132,107,140"/>
+<area shape="rect" id="Node000007" href="$_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15" title=" " alt="" coords="176,157,243,184"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="107,151,161,160,160,165,106,156"/>
+<area shape="rect" id="Node000009" href="$_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc" title="도움말 출력" alt="" coords="171,208,248,235"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="84,157,155,194,165,198,162,203,152,198,81,162"/>
+<area shape="rect" id="Node000010" href="$_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20" title="엔진 및 시스템 상태 갱신." alt="" coords="155,259,264,285"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="69,157,105,199,155,245,162,249,159,253,152,249,101,203,65,161"/>
+<area shape="rect" id="Node000005" href="$group___yena-_math_ga3828aa23962df7cb6bd24519416b70f3.html#ga3828aa23962df7cb6bd24519416b70f3" title="\u{2b50} Z 축 기준 회전행렬 생성함수 (ver.YN) 단 회전량은 라디안." alt="" coords="313,107,461,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="251,117,297,117,297,123,251,123"/>
+<area shape="rect" id="Node000006" href="$group___yena-_math_ga02a75a42a0bae280a3396ecdb1c124e7.html#ga02a75a42a0bae280a3396ecdb1c124e7" title="행렬 단위화(초기화) 함수" alt="" coords="509,107,644,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="462,117,494,117,494,123,462,123"/>
+<area shape="rect" id="Node000008" href="$_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182" title=" " alt="" coords="348,195,426,221"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="244,175,334,194,333,199,243,180"/>
+<area shape="poly" id="edge8_Node000008_Node000008" title=" " alt="" coords="357,196,351,186,355,176,367,170,387,168,409,171,420,177,417,182,407,176,387,173,369,175,359,180,357,185,361,193"/>
+<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="248,216,333,209,333,215,248,221"/>
 </map>

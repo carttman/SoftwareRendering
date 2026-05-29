@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="_render_8cpp.html" target="_top" xlink:title="\u{2b50} 예제 기본 렌더링/프레임웍 소스">
+<g id="a_Node000003"><a xlink:href="_render_8cpp.html" target="_top" xlink:title="예제 기본 렌더링/프레임웍 소스">
 <polygon fill="white" stroke="#666666" points="185.88,-20 101.62,-20 101.62,0 185.88,0 185.88,-20"/>
 <text xml:space="preserve" text-anchor="middle" x="143.75" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Src/Render.cpp</text>
 </a>

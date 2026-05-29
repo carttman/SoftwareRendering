@@ -7,5 +7,6 @@ var searchData=
   ['b3ypool_4',['B3YPOOL',['../ynx9types_8h_acdc725ca686a1fad75f38d4866e0363c.html#acdc725ca686a1fad75f38d4866e0363c',1,'ynx9types.h']]],
   ['b3yprimitivetype_5',['B3YPRIMITIVETYPE',['../ynx9types_8h_a05d3e54044f5bd8cf72271ae864e6318.html#a05d3e54044f5bd8cf72271ae864e6318',1,'ynx9types.h']]],
   ['b3yrenderstatetype_6',['B3YRENDERSTATETYPE',['../ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bff',1,'ynx9types.h']]],
-  ['b3yresourcetype_7',['B3YRESOURCETYPE',['../ynx9types_8h_aef5f05930754330389af9384c26b8ff0.html#aef5f05930754330389af9384c26b8ff0',1,'ynx9types.h']]]
+  ['b3yresourcetype_7',['B3YRESOURCETYPE',['../ynx9types_8h_aef5f05930754330389af9384c26b8ff0.html#aef5f05930754330389af9384c26b8ff0',1,'ynx9types.h']]],
+  ['b3ytransformstatetype_8',['B3YTRANSFORMSTATETYPE',['../ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096d',1,'ynx9types.h']]]
 ];

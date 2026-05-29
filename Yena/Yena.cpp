@@ -1,10 +1,103 @@
+//! 
+//! \file	Yena.cpp
+//! \brief	\emoji :star: 
+//!			Yena SWR 기본 소스 파일 (v1.x) 
+//!	\version Yena SW Renderer v1.5.x  
+//! 
+//! \author	김기홍 / Kihong Kim / onlysonim@gmail.com
+//! \date	2003.11.4. Kihong Kim / mad_dog@hanmail.net
+//! \date	2004.05.07. Updated.
+//! \date	2005.09.23. Update (.Net) 
+//! \date	2010.07.20. Update
+//! \date	2015.11.20. Update
+//! \date	2020.08.22. Updated. (DX12.x Windows 10 SDK 10.0.x)
+//! \date	2024.04.28. Updated. (VS22)
+//! \date	2025.05.20. Updated. (VS22)(v1.5.x)
+//
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
 // Yena SWR 인터페이스 헤더 선언 : ynIUnknown / ynInterface 전용 
+//
 #include "Yena.h"
 
 
 
-/////////////////////////////////////////////////////////////////////////////// 
+///////////////////////////////////////////////////////////////////////////////
+//
+// Yena SWR 구현 클래스 선언 : B3Class / B3xxx 클래스 전용, 외부 노출 방지용.
+// (Yena v1.5.3 이상)
+//
+#include "ynB3Class.h"
+#include "ynB3VertexBuffer.h"
+#include "ynB3Graphics.h"
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// B3YenaGraphicsEngine 데이터 접근 재정의
+// - 구형 / 신형 호환성 유지 (v1.2 이전)
+// - 가독성 향상.
 // 
+///////////////////////////////////////////////////////////////////////////////
+// B3YenaDevice9 전용
+//#define m_pGraphics		this
+
+#define m_pVB				m_pGraphics->m_input.pVB
+#define m_FVF				m_pGraphics->m_input.FVF
+#define m_Stride			m_pGraphics->m_input.Stride
+#define m_TopologyVtxSize	m_pGraphics->m_input.TopologyVtxSize
+//#define m_PrimVtxCnt		m_pGraphics->m_input.PrimTypeVtxSize
+
+//#undef m_mWorld
+//#undef m_mView
+//#undef m_mProj
+#define m_mWorld			m_pGraphics->m_tms.mTFM[B3YTS_WORLD]
+#define m_mView				m_pGraphics->m_tms.mTFM[B3YTS_VIEW] 
+#define m_mProj				m_pGraphics->m_tms.mTFM[B3YTS_PROJECTION]
+#define m_mTFM				m_pGraphics->m_tms.mTFM
+//#define m_mInvProj		m_pGraphics->m_tms.mInvProj
+
+//#define m_Light			m_pGraphics->m_lits.Light
+//#define m_LightEnable		m_pGraphics->m_lits.LightEnable
+//#define m_bLighting		m_pGraphics->m_lits.bLighting
+//#define m_GlobalAmbient	m_pGraphics->m_lits.GlobalAmbient
+//#define m_Mtrl			m_pGraphics->m_lits.Mtrl
+//
+//#define m_Sampler			m_pGraphics->m_texs.Sampler
+//#define m_TSState			m_pGraphics->m_texs.TSState
+
+#define m_RState			m_pGraphics->m_pso.RState
+
+//#define m_hWnd			m_pGraphics->m_om.hWnd
+#define m_PresentParam		m_pGraphics->m_om.PresentParam
+//#define m_hBmpRT			m_pGraphics->m_om.hBmpRT
+//#define m_hRT				m_pGraphics->m_om.hRT
+//#define m_hSurfaceRT		m_pGraphics->m_om.hRT
+//#define m_pRT				m_pGraphics->m_om.pRT
+//#define m_pDepth			m_pGraphics->m_om.pDepth
+//#define m_Viewport		m_pGraphics->m_om.Viewport
+//#define m_hClipRgn		m_pGraphics->m_om.hClipRgn
+
+//#define m_DbgInfo			(*m_pDbgInfo)
+//#define m_dbgInfo			(*m_pDbgInfo)
+//
+//#define _DrawLine			m_pGraphics->_Line
+//#define _DrawFace			m_pGraphics->_Face
+//#define _HLine			m_pGraphics->_HLine
+//#define _VLine			m_pGraphics->_VLine
+
+//#define m_DbgInfo			(*m_pDbgInfo)
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////// 
+//
 //! \class	B3Yena 
 //! \bstar	Yena 3D 운용 기반, 구현 클래스, IDirect3D9 대응 
 //! 
@@ -27,15 +120,16 @@
 //! \remarks Yena 는 DX 인터페이스와 메소드의 시그니쳐(Signature)를 가능한 동일하게 준수합니다.  
 //!			 구현 클래스 B3Yena 을 참고하십시오.
 //! \ingroup Yena-Class
-
-
+//! 
+//
+/////////////////////////////////////////////////////////////////////////////// 
+//
 class B3Yena : public IYena					
 {
 protected:
 	//레퍼런스 참조 카운트 
 	ULONG m_ref = 0;
 
-//protected:
 public:
 	B3Yena(void);
 	virtual ~B3Yena(void);
@@ -71,6 +165,18 @@ public:
 
 
 
+
+
+
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+
+/////////////////////////////////////////////////////////////////////////////// 
+//
 //! \class	B3YenaDevice9 
 //! \bstar	Yena 렌더링 장치 Device 구현 클래스 
 //!			 : IDirect3DDevice9 대응   
@@ -112,8 +218,10 @@ public:
 //! \remarks Yena 는 DX 인터페이스와 메소드의 시그니쳐(Signature)를 가능한 동일하게 준수합니다.  
 //!			 구현 클래스 B3YenaDevice9 을 참고하십시오.
 //! \ingroup Yena-Class
-
-
+//!
+//
+/////////////////////////////////////////////////////////////////////////////// 
+//
 class B3YenaDevice9 : public IYenaDevice9			
 {
 	friend class B3Yena;
@@ -122,69 +230,56 @@ protected:
 	//레퍼런스 참조 카운트 
 	ULONG m_ref = 0;
 
-
 protected:
-
 	// 장치 운용 기본 정보.
-	HWND		 m_hWnd;
-	YENAPRESENT_PARAMETERS m_PresentParam;
-	DWORD		 m_VertexProcessing;
+	HWND  m_hWnd;							//!< 출력 윈도우 핸들
+	DWORD m_VertexProcessing;				//!< 정점 연산 방식
 	//YENADISPLAYMODE  m_Display; 
 
-
 	// 렌더타겟(Back-Buffer) 구성용 핸들.
-	HBITMAP  m_hBmpRT;
-	HDC		 m_hSurfaceRT;
-	COLORREF m_BkColor;
-
-		
-	// 정점 버퍼 관련 데이터 
-	// 외부, 사용자 지정(장치에 등록), 렌더링시 변경 가능.
-	//IYenaVertexBuffer9*	m_pVB[16];	//!< 정점 버퍼 (인터페이스) <DX9> 다중 버퍼 지원 (max.16)
-	IYenaVertexBuffer9* 	m_pVB[1];	//!< 정점 버퍼 (인터페이스) <Yena> 1개만 사용 
-	DWORD m_FVF;						//!< 정점 규격
-	UINT  m_Stride;						//!< 정점 1마디의 크기
-	
-
-	// 렌더링 옵션 
-	UINT  m_PrimCnt;					//!< 이번에 그려질 Face 개수.
-	UINT  m_StartVtx;					//!< 이번에 그려질 (시작) 정점 번호.
-	UINT  m_VtxNum;						//!< 현재 작업중인 정점 번호.(디버깅용)
-	UINT  m_FaceNum;					//!< 현재 작업중인 페이스 번호.(디버깅용)
+	//HBITMAP  m_hBmpRT;
+	HDC		 m_hRT;							//!< 렌더타겟 DC 핸들
+	COLORREF m_BkColor;						//!< 렌더타겟 지우기 색
+	#define m_hSurfaceRT m_hRT				//!< 렌더타겟 DC 핸들 (구형호환 재정의)
 
 
-	// 렌더링 상태값 
-	DWORD  m_RState[B3YRS_MAX_];
+	//! 렌더링 그래픽스 엔진 \star
+	B3YenaGraphicsEngine9* m_pGraphics;
+	#define m_pGX	m_pGraphics
+
+	//카피 엔진 
+	//B3YenaCopyEngine9* m_pCopy;
+
+	//컴퓨트 엔진
+	//B3YenaComputeEngine9* m_pCompute;
 
 
 protected:
 	// 내부 메소드들. '밑줄 _ '을 접두어로 표시합니다.
 	//
-	int  _RenderTargetCreate	();
-	void _RenderTargetRelease	();
+	int _Create(HWND hwnd, YENAPRESENT_PARAMETERS* pp, DWORD vp);
 
-	// 렌더링 파이프 라인 별 연산 메소드.
-	int	_VertexPipeLine			();		//!< 정점 파이프 라인.
-	int _GeometryPipeLine		();		//!< 기하 파이프 라인.	
-	int _PixelPipeLine			();		//!< 픽셀 파이프 라인.	
 
-	// 그리기 함수.
-	//int _DrawLine	(B3YVECTOR2& start, B3YVECTOR2& end);
-	int _DrawLine	(B3YXVECTOR2 v0, B3YXVECTOR2 v1);
-	//int _DrawLine	(B3YXVECTOR2 v0, B3YXVECTOR2 v1, DWORD c0, DWORD c1);			//+정점색(DWORD 타입) -> 제거. B3YXCOLOR 로 통합.★
-	int _DrawLine	(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXCOLOR c0, B3YXCOLOR c1);	//정점색 버전(B3YXCOLOR 타입)★
-	
-	//int _DrawLine(B3YVECTOR2& v0, B3YVECTOR2& v1);	
-	int _DrawFace	(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2);
-	//int _DrawFace	(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2, DWORD c0, DWORD c1, DWORD c2);				//+정점색(DWORD 타입) -> 제거. B3YXCOLOR 로 통합.★
-	int _DrawFace	(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2, B3YXCOLOR c0, B3YXCOLOR c1, B3YXCOLOR c2);	//정점색 (B3YXCOLOR 타입)★
-	
-	float _EdgeFunction(const B3YXVECTOR2& v0, const B3YXVECTOR2& v1, const B3YXVECTOR2& p);
+	//----------------------------------------
+	// 렌더링 파이프 라인 : 스테이지 메소드.
+	//----------------------------------------
+	// --> Graphics Engine 으로 이동 ...
 
+	//----------------------------------------
+	// 스왑체인 : 렌더타겟 메소드
+	//----------------------------------------
+	// --> Graphics Engine 으로 이동 ...
+
+	//----------------------------------------
+	// 그리기 함수
+	//----------------------------------------
+	// --> 클래스 B3XVECTOR 타입으로 갱신. 
+	// --> Graphics Engine 으로 이동 ...
+
+	//----------------------------------------
 	// 렌더링 상태 함수.
-	void _InitRenderState	();
-	bool _FaceCulling		(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2);		//페이스 컬링. false 리턴시, 그리기 동작 없음.
-
+	//----------------------------------------
+	// --> Graphics Engine 으로 이동 ...
 
 
 public:
@@ -192,43 +287,49 @@ public:
 	virtual ~B3YenaDevice9(void);
 	
 	
-	
+	//-----------------------------------------------------------------
 	// 인터페이스 재정의
 	// DX 와 (거의)동일한 시그니쳐(Signature) 를 구현하는 것이 목표입니다. 
-	
-	
+	//-----------------------------------------------------------------
+	//--------------------------------
 	// 스왑체인 및 렌더타겟 운용 메소드들
-	
+	//--------------------------------
 	virtual int BeginScene	();
 	virtual int EndScene	();
 	virtual int Clear		(COLORREF col);
 	virtual int Present		();
 
-	
+	//--------------------------------
 	// 기하 버퍼 및 렌더링 메소드들 
-	
+	//--------------------------------
 	virtual int CreateVertexBuffer	(UINT Length, DWORD Usage, DWORD FVF, B3YENAPOOL Pool, _out_ IYenaVertexBuffer9** ppVB, _in_opt_ HANDLE* pSharedHandle);
 	virtual int SetStreamSource		(UINT SteamNumber, IYenaVertexBuffer9* pVB, UINT OffsetBytes, UINT Stride);
 	virtual int SetFVF				(DWORD FVF);
 	virtual int DrawPrimitive		(B3YPRIMITIVETYPE PrimitiveType, UINT StartVertex, UINT PrimitiveCount);
 	
-	
+	//--------------------------------
 	// 렌더링 상태 조절 메소드들.
-	
+	//--------------------------------
 	virtual int SetRenderState	(B3YRENDERSTATETYPE	State, DWORD Value);
 	virtual int GetRenderState	(B3YRENDERSTATETYPE State, DWORD* pValue);
 
+	//--------------------------------
+	// 변환 행렬 설정.★
+	//--------------------------------
+	virtual int SetTransform	(B3YTRANSFORMSTATETYPE ts, B3YXMATRIX* mTM);
+	virtual int GetTransform	(B3YTRANSFORMSTATETYPE ts, B3YXMATRIX* mTM);
+
 		
-	
+	//--------------------------------
 	// 멤버데이터 접근자 Accessors : Yena 전용
-	
+	//--------------------------------
 	virtual HDC		 GetRT		();
 	virtual COLORREF GetBkColor	();
 
 
-	
+	//--------------------------------
 	// 참조 카운트 메소드 재정의 
-	
+	//--------------------------------
 	virtual ULONG AddRef		(void);
 	virtual ULONG Release		(void);
 	virtual int   QueryInterface(YN_IID riid, _out_ void** ppvObject);
@@ -237,17 +338,18 @@ public:
 
 //typedef B3YenaDevice9* LPB3YENADEVICE9;		//DX9 대응.
 
-
-#define CHECKSTATE( state, val ) (m_RState[(state)] == (val))	
-
+//#define CHECKSTATE( state, val ) (m_RState[(state)] == (val))	
 
 
 
 
 
 
- 
 
+
+
+/////////////////////////////////////////////////////////////////////////////// 
+//
 //! \class	B3YenaVertexBuffer9
 //! \bstar	정점 버퍼 구현 클래스
 //!			: IDirect3DVertexBuffer9 대응  
@@ -272,70 +374,31 @@ public:
 //! \see	IYenaVertexBuffer9
 //! \see	[IDirect3DVertexBuffer9](https://learn.microsoft.com/en-us/windows/win32/api/d3d9/nn-d3d9-idirect3dvertexbuffer9)
 //! \remarks Yena 는 DX 인터페이스와 메소드의 시그니쳐(Signature)를 가능한 동일하게 준수합니다.
-//! \ingroup 	Yena-Class
+//! \ingroup 	Yena-Class 
 // 
-
-class B3YenaVertexBuffer9 : public IYenaVertexBuffer9		
-{
-	friend class B3YenaDevice9;
-
-protected:
-	//레퍼런스 참조 카운트 
-	ULONG m_ref = 0;
-
-protected:
-	void* m_pVBuffer;				//!< 정점 버퍼 : 실제 데이터가 저장됨.
-	DWORD m_SizeInByte;				//!< 정점 버퍼 크기 (바이트)
-	DWORD m_FVF;					//!< 정점 버퍼 규격 조합 플래그.
-	UINT  m_Stride;					//!< 정점 버퍼 안의 1마디(정점 구조 하나) 의 크기.
-	BOOL  m_bLocked;				//!< 버퍼 잠금 상태 (On/Off)
-
-	B3YVERTEXBUFFER_DESC m_Desc;	//!< 정점 버퍼 정보 
-
-protected:
-	//(내부) 버퍼 운용 함수들 
-	int		_Create			(B3YVERTEXBUFFER_DESC desc);
-	int		_Create			(UINT Length, DWORD FVF, B3YPOOL Pool);		//구형 호환.
-	
-	void*	_GetVBuffer		(){ return m_pVBuffer;	}
-	DWORD	_GetSizeInByte	(){ return m_SizeInByte;}
-	DWORD	_GetFVF			(){ return m_FVF;		}	
-	DWORD	_GetStride		(){ return m_Stride;	}	
-
-public:
-	B3YenaVertexBuffer9(void);
-	virtual ~B3YenaVertexBuffer9(void);
-
-
-	//-----------------------------------------------------------------
-	// 인터페이스 재정의
-	// DX 와 (거의)동일한 시그니쳐(Signature) 를 구현하는 것이 목표입니다. 
-	//-----------------------------------------------------------------
-	virtual int   Lock			(UINT OffsetToLock, UINT SizeToLock, void** ppbData, DWORD Flags);
-	virtual int   Unlock		(void);
-	virtual int   GetDesc		(_out_ B3YVERTEXBUFFER_DESC* pDesc);
-
-	//자원 버퍼 획득 : Yena 전용
-	virtual void* GetBuffer		(void);
-	virtual UINT  GetVertexCount(void);
-	virtual int	  GetPrivateData(_out_ void** ppBuffer, _out_ UINT* pSizeData);
-
-	//--------------------------------
-	// 참조 카운트 메소드 재정의 
-	//--------------------------------
-	virtual ULONG AddRef		(void);
-	virtual ULONG Release		(void);
-	virtual int   QueryInterface(YN_IID riid, _out_ void** ppvObject);
-
-
-};
-
-typedef B3YenaVertexBuffer9* LPB3YENAVERTEXBUFFER9;
+/////////////////////////////////////////////////////////////////////////////// 
+/*
+*   B3YenaVertexBuffer9 : 클래스 선언 
+*
+*		-> ynB3YenaVertexBuffer.h 로 이동
+*
+*/
 
 
 
 
 
+
+
+
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+
+////////////////////////////////////////////////////////////////////////////////
 //
 //! YenaCreate9 : B3Yena 최상위 인터페이스 생성 함수
 //! 
@@ -373,13 +436,90 @@ IYena* YenaCreate9(DWORD ver)
 
 
 
+/*
+////////////////////////////////////////////////////////////////////////////////
+//
+//! ynGetObject 
+//! Yena 인터페이스와 연결된 실제 구현 클래스 객체를 획득합니다.
+//! B3Yena 및 ynIUnknown 을 상속한 구현 클래스만 획득이 가능합니다.
+//! 
+//! Windows/COM 의 GetClassObject 함수는 CLSID 의 객체 인터페이스를 리턴합니다.
+//! Yena 는 Windows/COM 과는 다르게 실제 구현 클래스 객체를 리턴합니다.
+//! \see [참고] DLLGetClassObject (https://learn.microsoft.com/en-us/windows/win32/api/combaseapi/nf-combaseapi-dllgetclassobject)
+//!
+//! \remarks 이 함수는 Yena 개발팀 내부 전용으로 외부 사용자에게는 노출되지 않습니다.
+//! \param	 ypInterface	구현 클래스 인터페이스 포인터
+//! \return	 성공시 구현 클래스 포인터, 실패시 NULL.
+//
+template<class T> 
+T* ynGetClassObject(ynIUnknown* ypInterface)
+{
+	T* pObj = dynamic_cast<T*>(ypInterface);
+	if (YN_INVALIED(pObj))
+	{
+		//에러 처리...
+		return YN_NULL;
+	}
+
+	//참조 카운트 증가
+	//...
+
+	return pObj;
+}
+*/
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//! ynGetObject 
+//! Yena 인터페이스로 실제 구현 클래스 객체를 획득합니다.
+//! B3Yena 및 ynIUnknown 을 상속한 구현 클래스만 획득이 가능합니다.
+//! \remarks 이 함수는 Yena 개발팀 내부 전용으로 외부 사용자에게는 노출되지 않습니다.
+//! 
+//! Windows/COM 의 GetClassObject 함수는 CLSID 의 객체 인터페이스를 리턴합니다.
+//! Yena 는 Windows/COM 과는 살짝 다르게 만들겠습니다.
+//! \see [참고] DLLGetClassObject (https://learn.microsoft.com/en-us/windows/win32/api/combaseapi/nf-combaseapi-dllgetclassobject)
+//!  
+//! \param	ypInterface	구현 클래스 인터페이스 포인터
+//! \return	성공시 구현 클래스 포인터, 실패시 NULL.
+//
+/*int ynGetClassObject(YNCLSID clsid, void* ypInterface)
+{
+	T* pObj = dynamic_cast<T*>(ypInterface);
+	if (YN_INVALIED(pObj))
+	{
+		//에러 처리...
+		return YN_FALSE;
+	}
+
+	//참조 카운트 증가
+	//...
+
+	return YN_OK;
+}*/
 
 
 
 
+
+
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+
+/////////////////////////////////////////////////////////////////////////////// 
+//
 // class B3Yena : 정의 와 구현
 //	            : IDirect3D9 대응
+//
+/////////////////////////////////////////////////////////////////////////////// 
 
+
+///////////////////////////////////////////////////////////////////////////////
+//
 B3Yena::B3Yena(void)
 {
 #ifdef _DEBUG
@@ -389,8 +529,8 @@ B3Yena::B3Yena(void)
 
 
 
-
-
+///////////////////////////////////////////////////////////////////////////////
+//
 B3Yena::~B3Yena(void)
 {
 #ifdef _DEBUG
@@ -401,7 +541,7 @@ B3Yena::~B3Yena(void)
 
 
 
- 
+/////////////////////////////////////////////////////////////////////////////// 
 //
 //! Yena SWR 렌더링 디바이스 개체 생성 : D3D9 대응
 //! 
@@ -423,15 +563,10 @@ int B3Yena::CreateDevice(HWND hwnd,
 	if(ppDevice == NULL) return YN_FAIL;
 
 
-	//디바이스 COM 객체 생성.
+	//디바이스 개체 생성. : DX9 대응
 	B3YenaDevice9* pB3Dev = new B3YenaDevice9;
-	assert(pB3Dev != NULL);
-
-	//디바이스 초기화..
-	pB3Dev->m_hWnd = hwnd;
-	pB3Dev->m_PresentParam = *pp;
-	pB3Dev->m_VertexProcessing = vp;
-	pB3Dev->_RenderTargetCreate();			//렌더타겟(백버퍼) 생성 : 현재는 1개만 만들어 집니다.
+	ASSERT(pB3Dev);
+	pB3Dev->_Create(hwnd, pp, vp);
 
 
 	/*//인터페이스 생성 "RTTI" 
@@ -462,9 +597,9 @@ int B3Yena::CreateDevice(HWND hwnd,
 
 
 
-
-
-//! AddRef : Yena COM 참조 카운트 증가 
+////////////////////////////////////////////////////////////////////////////////
+//
+//! Yena COM 참조 카운트 증가 
 //! 
 //! \return	현재 참조 카운트
 //
@@ -476,9 +611,9 @@ ULONG B3Yena::AddRef(void)
 
 
 
-
-
-//! Release : Yena COM 참조 카운트 감소, 0 이하면 객체 제거. 
+////////////////////////////////////////////////////////////////////////////////
+//
+//! Yena COM 참조 카운트 감소, 0 이하면 객체 제거. 
 //! 
 //! \return	현재 참조 카운트
 //
@@ -492,9 +627,9 @@ ULONG B3Yena::Release(void)
 
 
 
-
-
-//! QueryInterface : Yena COM 인터페이스 획득.
+////////////////////////////////////////////////////////////////////////////////
+//
+//! Yena COM 인터페이스 획득.
 //! 
 //! <COM> 객체에 인터페이스를 질의하고 유효한 경우 해당 인터페이스가 리턴됩니다. 
 //!	지정 인터페이스 ID 로 참조되는 (원본) 객체는 참조 카운트가 증가되므로 
@@ -530,30 +665,31 @@ int B3Yena::QueryInterface(YN_IID riid, _out_ void** ppvObject)
 
 
 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////// 
 
+/////////////////////////////////////////////////////////////////////////////// 
+// 
 // class B3YenaDevice9 : 정의 와 구현
 //					   : IDirect3DDevice9대응
+//
+/////////////////////////////////////////////////////////////////////////////// 
 
+///////////////////////////////////////////////////////////////////////////////
+//
 B3YenaDevice9::B3YenaDevice9(void)
 {
 	m_hWnd = NULL;
-	ZeroMemory(&m_PresentParam, sizeof(m_PresentParam));
+	m_VertexProcessing = 0;
 
-	m_hBmpRT = NULL;				
-	m_hSurfaceRT = NULL;		 
+	m_hRT = NULL;		 
 	m_BkColor = RGB(0, 0, 255);	
 
-	m_pVB[0] = NULL;	 
-	m_FVF    = 0;			 
-	m_Stride = 0;		 
-
-	m_PrimCnt  = 0;		
-	m_StartVtx = 0;		
-	m_VtxNum   = 0;
-	m_FaceNum  = 0;
-
-	//렌더상태 초기화.
-	_InitRenderState();
+	m_pGraphics = nullptr;
 
 #ifdef _DEBUG
 	ynLog(_T("B3YenaDevice9 생성됨..."));
@@ -563,14 +699,12 @@ B3YenaDevice9::B3YenaDevice9(void)
 
 
 
-
+///////////////////////////////////////////////////////////////////////////////
+//
 B3YenaDevice9::~B3YenaDevice9(void)
 { 
-	//Back-Buffer : Render Target 제거.
-	_RenderTargetRelease();	
 
-	//장치에 등록된 정점 버퍼의 제거는 사용자가 책임을 집니다.
-	//...SafeRelease(m_pVB);
+	SafeDelete(m_pGraphics);	
 
 #ifdef _DEBUG
 	ynLog(_T("B3YenaDevice9 제거됨..."));
@@ -580,15 +714,73 @@ B3YenaDevice9::~B3YenaDevice9(void)
 
 
 
+/////////////////////////////////////////////////////////////////////////////// 
+//
+//! 지정 렌더링 디바이스 개체 생성 메소드.
+//
+int B3YenaDevice9::_Create(	HWND hwnd,
+							YENAPRESENT_PARAMETERS* pp,
+							DWORD vp
+						)
+{
+	//입력 정보 확인 : 오류별로 리턴값을 다르게 하는 것을 추천.
+	if (YN_INVALIED(hwnd)) return YN_FAIL;
+	if (YN_INVALIED(pp))   return YN_FAIL;
 
+
+	//그래픽스 엔진 생성 (v1.5.3) 
+	LPB3YENAGRAPHICSENGINE9 pGraphics = new B3YenaGraphicsEngine9;
+	ASSERT(pGraphics);
+
+	//디바이스/그래픽스 엔진 초기화.
+	B3YenaGraphicsEngine9::OUTPUT_MERGE om = {};
+	om.hWnd = hwnd;
+	om.PresentParam = *pp;
+	pGraphics->m_om = om;
+	//pGraphics->m_om.VertexProcessing = vp;
+	pGraphics->_RenderTargetCreate();			//렌더타겟(백버퍼) 생성 <Yena> 1개만 지원.
+
+
+	//디바이스 - 그래픽스 엔진 바인딩.
+	pGraphics->SetDev(this);
+
+	//디바이스 - 그래픽스 엔진 정보 참조.
+	m_hWnd = hwnd;
+	m_VertexProcessing = vp;
+	m_pGraphics = pGraphics;
+	m_hSurfaceRT= pGraphics->_GetDCRT();
+	m_BkColor	= B3YXCOLOR(0.25f, 0.25f, 0.25f, 1);
+	//m_pDbgInfo = pGraphics->_GetDbgInfo();
+
+	//외부에 리턴..
+	//*ppDevice = pDev;
+
+	return YN_OK;
+}
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//! 렌더타겟 DC 핸들 획득
+//! 
+//! \return	렌더타겟 DC 핸들
+//
 HDC B3YenaDevice9::GetRT()
 { 
-	return m_hSurfaceRT; 
+	m_hSurfaceRT = m_pGraphics->_GetDCRT(); 
+	return m_hSurfaceRT;
+
 }
 
  
 
 
+///////////////////////////////////////////////////////////////////////////////
+//
+//! 렌더타겟 배경색 획득
+//
 COLORREF B3YenaDevice9::GetBkColor()
 { 
 	return m_BkColor; 
@@ -597,53 +789,13 @@ COLORREF B3YenaDevice9::GetBkColor()
 
 
 
-
-//! 백버퍼용 렌더타겟을 생성.
-//!
-//! <Yena> DX IDirect3DSwapChain9 인터페이스를 통해 스왑체인을 구축하는 등의 
-//! 저수준 작업이 필요하지만 가능한 간략히 표현합니다. 
-//! 더블 버퍼링을 통한 깜박임을 없애는 목적과 결과는 동일합니다.
-//! [참고] IDirect3DSwapChain9 (https://learn.microsoft.com/en-us/windows/win32/api/d3d9/nn-d3d9-idirect3dswapchain9)
-//! 
-int B3YenaDevice9::_RenderTargetCreate()
-{
-	HDC hdc = GetDC(m_hWnd);
-
-	m_hSurfaceRT = CreateCompatibleDC(hdc);
-	m_hBmpRT = (HBITMAP)CreateCompatibleBitmap(hdc, m_PresentParam.Width, m_PresentParam.Height);
-	SelectObject(m_hSurfaceRT, m_hBmpRT);
-
-	ReleaseDC(m_hWnd, hdc);
-
-	return YN_OK;  
-}
-
-
-
-
-//! 렌더타겟 제거.
+///////////////////////////////////////////////////////////////////////////////
 //
-void B3YenaDevice9::_RenderTargetRelease()
-{  	
-	DeleteObject(m_hBmpRT);
-	DeleteDC(m_hSurfaceRT); 
-}
-
-
-
-
-
 //! 장면 그리기 시작 : 렌더링에 필요한 (디바이스의) 선위 작업을 수행.
 //
 int B3YenaDevice9::BeginScene()
 { 
-	//폰트 배경색 기본값 
-	//SetBkColor(m_hSurfaceRT, m_BkColor);
-	SetBkMode(m_hSurfaceRT, TRANSPARENT);	
-
-	//기본 펜 색상 .
-	HPEN  hPen = (HPEN)GetStockObject(WHITE_PEN);
-	SelectObject(m_hSurfaceRT, hPen);
+	m_pGraphics->_BeginScene();
 
 	return YN_OK;
 }
@@ -651,11 +803,13 @@ int B3YenaDevice9::BeginScene()
 
 
 
+///////////////////////////////////////////////////////////////////////////////
+//
 //! 장면 그리기 종료 : 렌더링 종료에 필요한 (디바이스의) 후위 작업을 수행.
 //
 int B3YenaDevice9::EndScene()
 {
-	//...
+	m_pGraphics->_EndScene();
 
 	return YN_OK;  
 }
@@ -663,7 +817,8 @@ int B3YenaDevice9::EndScene()
 
 
 
-
+///////////////////////////////////////////////////////////////////////////////
+//
 //! 렌더타겟 클리어.
 //!
 //! \param  col	RT 을 지울 지정색.
@@ -671,39 +826,36 @@ int B3YenaDevice9::EndScene()
 //
 int B3YenaDevice9::Clear(COLORREF col)
 { 	
-	HBRUSH hBrush = CreateSolidBrush(col); 
-	RECT rc = { 0, 0, (LONG)m_PresentParam.Width,  (LONG)m_PresentParam.Height};
-	FillRect(m_hSurfaceRT, &rc, hBrush); 
-	DeleteObject(hBrush);
-
 	m_BkColor = col;
+	m_pGraphics->_Clear(col);
 
 	return YN_OK;  
 }
 
 
- 
 
 
+///////////////////////////////////////////////////////////////////////////////
+//
 //! RT 의 내용(렌더링된 장면)을 Front Buffer 에 출력합니다. "Flipping", "Swapping"
 //!
 //! \param   없음
 //! \return  오류시 YN_OK 이외의 값.
+//! \note <Yena> 주요 렌더링 작업은 Yena GraphicsEngine 에서 처리합니다. (v1.5.3 이상)
+//! \see	B3YenaGraphicsEngine9::_Present
 //
 int B3YenaDevice9::Present() 
 {
-	HDC hdc = GetDC(m_hWnd);
-	BitBlt(hdc, 0, 0, m_PresentParam.Width, m_PresentParam.Height, m_hSurfaceRT, 0, 0, SRCCOPY); 
-	ReleaseDC(m_hWnd, hdc); 
-
-	return YN_OK;
+	return m_pGraphics->_Present();
 }
 
 
 
 
-
-//! CreateVertexBuffer : 정점 버퍼 생성.
+////////////////////////////////////////////////////////////////////////////////
+//
+//! 정점 버퍼 생성.
+//! \note 생성된 정점 버퍼는 렌더링 전, 장치(Device)에 설정(Binding) 되어야 합니다.
 //! 
 //! \param	Length			정점 버퍼의 전체 크기 (바이트)	
 //! \param	Usage			버퍼 용도 (미지정은 0)
@@ -778,50 +930,37 @@ int B3YenaDevice9::CreateVertexBuffer( UINT Length,
 
 
 
-/*
+
 ////////////////////////////////////////////////////////////////////////////////
 //
-//! SetVertexBuffer : 정점 버퍼를 디바이스에 등록.
+//! 정점 버퍼를 디바이스에 등록.  
 //! 
-//! \param	pVB		렌더링 할 정점 버퍼 포인터.
-//! \param	Stride	렌더링 할 버퍼의 1마디(정점 데이터) 크기
-//! \return		성공시 OK, 실패시 FALSE
-//
-int B3YenaDevice9::SetVertexBuffer( IYenaVertexBuffer9* pVB, UINT Stride )
-{
-	if(YN_INVALIED(pVB)) return YN_FAIL;
-
-	m_pVB = pVB;
-	m_Stride = Stride;			
-
-	return YN_OK;  
-}
-*/
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//! SetStreamSource : 정점 버퍼를 디바이스에 등록.
+//! <DX> 복수의 정점 버퍼로 동시 '기하 스트리밍'을 지원합니다. (DX9, 최대 16)
+//! 또는 지정 VB 내의 데이터중 부분 렌더링(OffsetBytes)도 가능합니다.  
+//! \code
+//!      GraphicsEngine.pVB[StreamNumber] = pVB; 
+//! \endcode
+//! <Yena> 1개의 정점 버퍼만 사용합니다. 
+//! 
 //! 
 //! \param	StreamNumber	(기하, 정점)스트리밍 색인 (Yena 기본값은 0)
 //! \param	pVB				렌더링 할 정점 버퍼 포인터.
 //! \param	OffsetBytes		(기하,정점) 스트리밍 시작 색인 (Yena 기본값은 0)
 //! \param	Stride			렌더링 할 버퍼의 1마디(정점 데이터) 크기
 //! \return		성공시 OK, 실패시 FALSE
+//! \note <Yena> 주요 렌더링 작업은 Yena GraphicsEngine 에서 처리합니다. (v1.5.3 이상)
+//! \see	B3YenaGraphicsEngine9::_SetVertexBuffer
 //
 int B3YenaDevice9::SetStreamSource(UINT StreamNumber, IYenaVertexBuffer9* pVB, UINT OffsetBytes, UINT Stride)
 {
 	if (YN_INVALIED(pVB)) return YN_FAIL;
 
-	// <DX> 복수의 정점 버퍼로 동시 '기하 스트리밍'을 지원합니다. (DX9, 최대 16)
-	// 또는 지정 VB 내의 데이터중 부분 렌더링(OffsetBytes)도 가능합니다.
-	// m_pVB[StreamNumber] = pVB;
-	// 
-	// <Yena> 1개의 정점 버퍼만 사용합니다.
-	m_pVB[0] = pVB;
-	m_Stride = Stride;
+	// <Yena> 1개의 정점 버퍼만 사용합니다. 
+	// 그래픽엔진에 설정 : 바인딩 Binding 
+	m_pGraphics->_SetVertexBuffer(pVB, Stride);
 
-	// 이하 생략..
+
+	// 이하 생략.. <Yena> 미지원
 	// ... = StreamNumber
 	// ... = OffsetBytes
 
@@ -834,11 +973,14 @@ int B3YenaDevice9::SetStreamSource(UINT StreamNumber, IYenaVertexBuffer9* pVB, U
 ///////////////////////////////////////////////////////////////////////////////
 //
 //! 정점 규격을 설정합니다. 
-//! 렌더링시 SetStreamSource 로 등록된 또는 등록할 버퍼 내 정점과 동일 규격을 명시해야 합니다.
+//! 
+//! \note 렌더링시 장치에 설정된 정점버퍼 내 정점과 동일 규격을 명시해야 합니다.
+//!		  그렇지 않다면 정상적인 렌더링 결과를 기대할 수 없습니다.
+//! \see  B3YenaGraphicsEngine9::_SetFVF
 //
 int B3YenaDevice9::SetFVF(DWORD fvf)
 {	
-	m_FVF = fvf;
+	m_pGraphics->_SetFVF(fvf);
 
 	return YN_OK;
 }
@@ -848,440 +990,59 @@ int B3YenaDevice9::SetFVF(DWORD fvf)
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-//! \bstar	기하 데이터를 렌더링합니다.
-//! \note	이 메소드의 호출 이전에 정점버퍼, FVF, 마디 크기(Stride) 등 렌더링에 필요한
-//!			모든 정보가 디바이스에 등록(Binding)되어 있어야 합니다.
+//! 렌더링 작업을 시작합니다.  
+//! 
+//! 이 메소드의 호출 이전에 정점버퍼, FVF, 마디 크기(Stride) 등 렌더링에 필요한
+//! 모든 정보가 디바이스에 등록되어 있어야 합니다.  
 //! 
 //! \param	PrimitiveType	렌더링 기하 타입.
 //! \param	StartVertex		렌더링 정점 시작번호 (정점 버퍼 안)
 //! \param	PrimitiveCount	렌더링 기하 개수.
 //! \return		성공시 OK, 실패시 FALSE
+//! \note <Yena> 주요 렌더링 작업은 Yena GraphicsEngine 에서 처리합니다. (v1.5.3 이상)
+//! \see	B3YenaGraphicsEngine9::Draw
 //
-int B3YenaDevice9::DrawPrimitive( B3YPRIMITIVETYPE PrimitiveType, UINT StartVertex, UINT PrimitiveCount ) 
+int B3YenaDevice9::DrawPrimitive(B3YPRIMITIVETYPE PrimitiveType, UINT StartVertex, UINT PrimitiveCount)
 {
-	if(YN_INVALIED(m_pVB)) return YN_FAIL;
-	//if(YN_INVALIED(m_Stride)) return YN_FAIL;
+	if (YN_INVALIED(m_pVB)) return YN_FAIL;
+	if (YN_INVALIED(m_Stride)) return YN_FAIL;
 
-	//렌더링 기초 옵션 저장.
-	m_PrimCnt  = PrimitiveCount;	 
-	m_StartVtx = StartVertex;	 
+	//------------------------------------------------------------
+	// 렌더링 준비
+	// 렌더링 전 디바이스에 공급된 개별 데이터를 재구성하여
+	// 렌더링 각 단계별 반복적으로 계산되는 상수 데이터를 
+	// 미리 계산합니다.  파이프라인의 연산 속도 개선이 목적.
+	//------------------------------------------------------------
+	//------------------------------------------------------------
+	// 그래픽 엔진 정보 구성
+	//------------------------------------------------------------ 
+	m_pGraphics->PreDraw(PrimitiveType, StartVertex, PrimitiveCount);
 
 
-	//-------------------------------------------------
+	//------------------------------------------------------------
+	// 렌더링 시작
 	// 각 렌더링 파이프라인 단계별 적절한 연산이 수행되며
+	// 그 결과를 다음 파이프라인으로 공급합니다.
 	// Yena 는 각 기능을 가능한 상세하게 구현하겠습니다.
-	//-------------------------------------------------
-	//1.정점 파이프 라인...
-	_VertexPipeLine();
-
-	//2.기하 파이프 라인...
-	_GeometryPipeLine();
-	
-	//3.픽셀 파이프 라인...
-	_PixelPipeLine();
-	
-	//4.최종 출력...
-	//...
-
-	return YN_OK; 
-}
+	// 
+	// 각 변환에 필요한 데이터는 DrawPrimitive 함수가 호출되기 전에
+	// Device 에 공급되어야 합니다. 
+	//------------------------------------------------------------
+	m_pGraphics->Draw();
 
 
+	//------------------------------------------------------------
+	// 렌더링 종료 - 파이프라인 종료 후처리 
+	// 임시 버퍼 해제, 디버깅 정보 정리 등...
+	//------------------------------------------------------------
+	m_pGraphics->PostDraw();
 
-
-///////////////////////////////////////////////////////////////////////////////
-//
-//! 정점 파이프 라인 연산을 수행 : 출력결과는 GP 으로 넘어감니다.
-//
-int B3YenaDevice9::_VertexPipeLine()		
-{
-	
-	//이번 데모는 이미 2D 좌표를 가지고 있으므로
-	//추가 변환이 필요없고, 바로 화면에 출력합니다.
-	//...
 
 	return YN_OK;
 }
 
-
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-//! 기하 파이프 라인 연산을 수행 : 출력결과는 PP 으로 넘어감니다.
-//
-int B3YenaDevice9::_GeometryPipeLine()		
-{
-
-	//이번 데모는 이미 2D 좌표를 가지고 있으므로
-	//추가 변환이 필요없고, 바로 화면에 출력합니다.
-	//...
- 
-	return YN_OK;
-}
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-//! 픽셀 파이프 라인 연산을 수행 : 출력결과는 RT 에 픽셀로 기록됩니다.
-//
-int B3YenaDevice9::_PixelPipeLine()		
-{
-
-	//이번 데모는 이미 2D 좌표를 가지고 있으므로
-	//추가 변환이 필요없고, 바로 화면에 출력합니다.
-	//...
-
-	//---------------------------------------------
-	// 기하(정점) 버퍼 접근, 정점 처리 "스트리밍"
-	//---------------------------------------------
-	// <DX9> 다중 버퍼 동시 '스트리밍' 지원 (max.16)
-	// <Yena> 1개의 정점 버퍼만 사용합니다.
-	B3YVERTEXBUFFER_DESC desc;							
-	m_pVB[0]->GetDesc(&desc);							//(장치에 등록된) 정점 버퍼 정보 획득..
-	UINT  vtxCnt = desc.Size / m_Stride;				//(장치에 등록된) 정점 개수 확인.
-	void* pOrgVB = m_pVB[0]->GetBuffer();				//(장치에 등록된) 원본 버퍼 접근.
 
  
-	//---------------------------------------------
-	// 현제 데모는 Triangle-List 만 처리합니다.
-	// Triangle-List 은 Face 마다 3개의 정점을 사용합니다.  
-	//---------------------------------------------
-	BYTE* pCurrVB  = (BYTE*)pOrgVB;						//현재 처리 중인 정점버퍼 주소. 
-	BYTE* pCurrVtx = NULL;								//현재 처리 중인 정점의 주소.
-	UINT  faceCnt  = 0;
-	m_FaceNum = -1;
-
-	//for(int i=0; i<vtxCnt; i+=3)						//3개씩 처리..(전부 다 그리기..)
-	for(UINT i=m_StartVtx; i<vtxCnt; i+=3)				//지정 정점부터, 그리기.
-	{
-		//m_VtxNum = i;
-		m_FaceNum++;
-
-
-		//--------------------------------------------------------------- 
-		// 외부에서 설정된 정점버퍼에서 정점 데이터를 구합니다. 
-		// 단 정점 버퍼의 FVF 규격을 '믿고' 정점별 정보를 구합니다.  
-		// GPU (개발자) 입장에서는 FVF 대로 POS, COLOR 가 들어온다..믿을 수 밖에 없겠지요★
-		// 순서가 틀리면, 오류가 한가득...
-		//
-		// 정확한 데이터 획득을 위해서는  FVF 검사가 필요하지만 
-		// 이번 데모는 간결한 진행을 위해 이를 생략합니다. 
-		//---------------------------------------------------------------- 
-		//----------------- 
-		// 기하 정보 획득 : 정점 버퍼 읽기.
-		//----------------- 
-		//현재 기하데이터(삼각형) 포인터 얻기...
-		pCurrVB = (BYTE*)pOrgVB + (i)*m_Stride;
-
-		//첫번째 정점 
- 		pCurrVtx = pCurrVB;			
-  		B3YVECTOR2  v0 = *(B3YVECTOR2*)pCurrVtx;		//좌표 얻기.
-		DWORD c0 = 0xFF'FF'00'00;				//<--- 색상 얻기. 지금은 임의 지정.(과제)(DWORD type), 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의.★
-		//DWORD c0 = RGB(255, 0, 0);				//<--- 색상 얻기. 지금은 임의 지정.(과제)(DWORD type), 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의.★
-		//B3YXCOLOR c0(1.0f, 1.0f, 1.0f, 1.0f);		//<--- 색상 얻기. 지금은 임의 지정.(과제)(B3YXCOLOR type), 정점 버퍼 내의 색상이 B3YXCOLOR 형이라면 이 연산이 필요... ★
-
-
-		//2번째 정점..
-		pCurrVtx = pCurrVB + m_Stride;					//1개 크기만큼 이동. 
- 		B3YVECTOR2  v1 = *(B3YVECTOR2*)pCurrVtx;		//좌표 얻기.
-		DWORD c1 = 0xFF'00'FF'00;
-		// DWORD c1 = RGB(255, 255, 0);				//<--- 색상 얻기. 지금은 임의 지정.(과제)(DWORD type), 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의.★
-		//B3YXCOLOR c1(1.0f, 1.0f, 1.0f, 1.0f);		//<--- 색상 얻기. 지금은 임의 지정.(과제)(B3YXCOLOR type), 정점 버퍼 내의 색상이 B3YXCOLOR 형이라면 이 연산이 필요... ★
-
-
-		//3번째 정점..
-		pCurrVtx = pCurrVB + (2)*m_Stride;				//1개 크기만큼 이동. 
- 		B3YVECTOR2  v2 = *(B3YVECTOR2*)pCurrVtx;		//좌표 얻기.
-		DWORD c2 = 0xFF'00'FF'FF;
-		// DWORD c2 = RGB(255, 255, 0);				//<--- 색상 얻기. 지금은 임의 지정.(과제)(DWORD type), 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의.★
-		//B3YXCOLOR c2(1.0f, 1.0f, 1.0f, 1.0f);		//<--- 색상 얻기. 지금은 임의 지정.(과제)(B3YXCOLOR type), 정점 버퍼 내의 색상이 B3YXCOLOR 형이라면 이 연산이 필요... ★
-
-
-
-		//--------------------------------------------------------------- 
-		// n번째 삼각형의 정보를 모두 구했습니다.
-		//
-		// 삼각형의 가시성(Visualization) 판정을 통해 보이지 않는
-		// 삼각형들을 렌더링 파이프라인에서 제외시키면 전반적인 
-		// 렌더링 속도 향상을 이끌어 낼 수 있습니다.
-		// 
-		// 이러한 동작은 대부분 Geometry Pipeline 에서 처리되지만 
-		// 일단 이 곳에서 처리해 봅시다.
-		//---------------------------------------------------------------  
-
-		// 컬링 체크 : 지오메트리 파이프라인에서 해야 하지만, 
-		//             일단 여기서...추후 이동..
-		if (_FaceCulling(v0, v1, v2))
-		{
-			//true 가 리턴되면, 컬링해야 하는 삼각형으로 판정, 다음 삼각형으로 넘어간다.
-			//....
-
-			//지정 개수 이상의 삼각형이 그려지면, 작업 종료... 			
-			if (++faceCnt >= m_PrimCnt)
-				break;
-			else
-				continue;
-		}
-
-
-		//--------------------------------------------------------------- 
-		// n번째 삼각형의 정보를 모두 구했으니, 삼각형을 그려봅시다. 
-		//
-		// 정점색을 보간하여, 완전한 레스터(Rasterization) 구현이
-		// 목표입니다.
-		//--------------------------------------------------------------- 
-
-		//기하 도형 그리기..(렌더링 상태 적용)
-		//
-		if (m_RState[B3YRS_FILLMODE] == B3YFILL_WIREFRAME)	
-		{
-			//라인 그리기 : 정점색 추가.(과제) ★★★
-			//정점색 추가.(B3YXCOLOR 타입으로 처리해 봅시다)★
-			//VB 내부의 색상(DWORD 타입)이, B3YXCOLOR 타입으로 
-			//(자동,암묵적) 형변환되도록 연산자를 오버로딩합시다.★
-			//코드의 가독성 증가, 생산성 증대, 등등...의 목적입니다..★
-			_DrawLine(v0, v1, c0, c1); 		//정점색 추가.★
-			_DrawLine(v0, v2, c0, c2);  	//정점색 추가.★	
-			_DrawLine(v1, v2, c1, c2);		//정점색 추가.★
-		}
-		else
-		{
-			//삼각형 그리기 : 정점색 추가.(과제)★★★
-			_DrawFace(v0, v1, v2, c0, c1, c2);
-		}
-
-
-		//지정 개수 이상의 삼각형이 그려지면, 작업 종료... 
-		if(++faceCnt >= m_PrimCnt )	
-			break; 
-	}
-
-
-	return YN_OK;
-}
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-//! \bstar 라인 그리기. (ver.GDI) ★
-//
-int B3YenaDevice9::_DrawLine(B3YXVECTOR2 v0, B3YXVECTOR2 v1)
-{  
-	//...과제...★
-	//GDI 대신 사용자 그리기 함수로 처리합니다.
-	//SetPixel 은 사용가능합니다. 색상은 자유.
-	const int dx = v0.x - v1.x;
-	const int dy = v0.y - v1.y;
-
-	const float length = sqrt(dx * dx + dy * dy);
-
-	const float unitX = dx / length; // 단위벡터
-	const float unitY = dy / length;
-
-	float curX = v1.x;
-	float curY = v1.y;
-
-	for (int i = 0; i <= (int)length; i++) // 거리만큼 단위벡터를 더해가면서 점을 찍는다
-	{
-		SetPixel(m_hSurfaceRT, (int)(curX), (int)(curY + 0.5f), RGB(255, 0, 0));
-		curX += unitX;
-		curY += unitY;
-	}
-	
-	return YN_OK;
-}
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-//! \bstar 삼각형 그리기 (ver.GDI) ★
-//
-int B3YenaDevice9::_DrawFace(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2)
-{
-	//...과제...★
-	//GDI 대신 사용자 그리기 함수로 처리합니다.
-	//SetPixel 은 사용가능합니다. 색상은 자유.
-
-	// Bounding Box
-	int minX = int(v0.x < v1.x ? v0.x : v1.x);
-	minX = int(minX < v2.x ? minX : v2.x);
-	
-	int maxX = int(v0.x > v1.x ? v0.x : v1.x);
-	maxX = int(maxX > v2.x ? maxX : v2.x);
-
-	int minY = int(v0.y < v1.y ? v0.y : v1.y);
-	minY = int(minY < v2.y ? minY : v2.y);
-
-	int maxY = int(v0.y > v1.y ? v0.y : v1.y);
-	maxY = int(maxY > v2.y ? maxY : v2.y);
-
-	for (int i=minY; i<=maxY; i++)
-	{
-		for (int j=minX; j<=maxX; j++)
-		{
-			B3YXVECTOR2 p = {(float)j, (float)i};
-
-			// Edge Function으로 삼각형 내,외부 판별
-			const float area0 = _EdgeFunction(v1, v2, p);
-			const float area1 = _EdgeFunction(v2, v0, p);
-			const float area2 = _EdgeFunction(v0, v1, p);
-
-			if (area0 >= 0 && area1 >= 0 && area2 >= 0 || area0 <= 0 && area1 <= 0 && area2 <= 0)
-			{
-				SetPixel(m_hSurfaceRT, j, i, RGB(255, 255, 255));
-			}
-		}
-	}
-
-	return YN_OK;
-}
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-//! \bstar 라인 그리기 : 정점색 추가.(B3YXCOLOR 타입)(과제) ★★★
-//!
-//! <주> 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의, 클래스 연산자 오버로딩으로 호환성 유지.★
-//
-int B3YenaDevice9::_DrawLine(B3YXVECTOR2 v0, B3YXVECTOR2 v1,
-							 B3YXCOLOR c0, B3YXCOLOR c1		//정점색 버전(B3YXCOLOR 타입)★
-)
-{
-	//! \todo2 <과제> ★★★
-	//!	정점 사이의 간격만큼 각 정점색상을 보간하여 라인색을 출력합니다. 
-	// ... 
-	//
-	//! 함수 시그니쳐(Signature : 인자/리턴값/이름) 의 변경없이,
-	//! 함수의 Body 를 완성 하십시오.★
-	// ...
-	const int dx = v0.x - v1.x;
-	const int dy = v0.y - v1.y;
-
-	const float length = sqrt(dx * dx + dy * dy);
-
-	const float unitX = dx / length; // 단위벡터
-	const float unitY = dy / length;
-	 
-	float curX = v1.x;
-	float curY = v1.y;
-
-	for (int i = 0; i <= (int)length; i++) // 거리만큼 단위벡터를 더해가면서 점을 찍는다
-	{
-		const float t = i / length;
-		
-		B3YXCOLOR color;
-		color.r = c0.r + (c1.r - c0.r) * t;
-		color.g = c0.g + (c1.g - c0.g) * t;
-		color.b = c0.b + (c1.b - c0.b) * t;
-		color.a = c0.a + (c1.a - c0.a) * t;
-
-		SetPixel(m_hSurfaceRT, (int)(curX), (int)(curY + 0.5f), color);
-		curX += unitX;
-		curY += unitY;
-	}
-	return YN_OK;
-}
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-//! \bstar 삼각형 그리기 : 정점색 추가.(B3YXCOLOR 타입)(과제) ★★★
-//! 
-//! <주> 정점 버퍼 내의 색상은 여전히 DWORD 형임에 주의, 클래스 연산자 오버로딩으로 호환성 유지.★
-//
-int B3YenaDevice9::_DrawFace(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2,
-							 B3YXCOLOR   c0, B3YXCOLOR   c1, B3YXCOLOR   c2		//정점색 추가(B3YXCOLOR 타입)★
-)
-{
-	//!\todo2 <과제> ★★★
-	//! 정점 3개와 색상 3개를 이용해 삼각형에 색상을 채웁니다.★
-	// ...
-	//
-	//! 함수 시그니쳐(Signature : 인자/리턴값/이름) 의 변경없이,
-	//! 함수의 Body 를 완성 하십시오.★
-
-	// Bounding box
-	int minX = int(v0.x < v1.x ? v0.x : v1.x);
-	minX = int(minX < v2.x ? minX : v2.x);
-
-	int maxX = int(v0.x > v1.x ? v0.x : v1.x);
-	maxX = int(maxX > v2.x ? maxX : v2.x);
-
-	int minY = int(v0.y < v1.y ? v0.y : v1.y);
-	minY = int(minY < v2.y ? minY : v2.y);
-
-	int maxY = int(v0.y > v1.y ? v0.y : v1.y);
-	maxY = int(maxY > v2.y ? maxY : v2.y);
-
-	for (int i = minY; i <= maxY; i++)
-	{
-		for (int j = minX; j <= maxX; j++)
-		{
-			B3YXVECTOR2 p = { (float)j, (float)i };
-
-			// 세 직선에 대한 EdgeFunction
-			const float area0 = _EdgeFunction(v1, v2, p);
-			const float area1 = _EdgeFunction(v2, v0, p);
-			const float area2 = _EdgeFunction(v0, v1, p);
-
-			// 무게 중심 좌표
-			const float center = area0 + area1 + area2;
-
-			const float w0 = area0 / center;
-			const float w1 = area1 / center;
-			const float w2 = area2 / center;
-
-			
-			if (area0 >= 0 && area1 >= 0 && area2 >= 0 || area0 <= 0 && area1 <= 0 && area2 <= 0)
-			{
-				// 색 보간
-				B3YXCOLOR color = c0 * w0 + c1 * w1 + c2 * w2;
-				SetPixel(m_hSurfaceRT, j, i, color);
-			}
-		}
-	}
-	return YN_OK;
-}
-
-// 점이 직선을 기준으로 어느 분면에 있는지 판단
-float B3YenaDevice9::_EdgeFunction(const B3YXVECTOR2& v0, const B3YXVECTOR2& v1, const B3YXVECTOR2& p)
-{
-	const B3YXVECTOR2 a = {v1.x - v0.x, v1.y - v0.y};
-	const B3YXVECTOR2 b = {p.x - v0.x, p.y - v0.y};
-
-	return((a.x * b.y) - (a.y * b.x)) / 2;
-}
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-//! 렌더링 상태별 초기화. 
-//
-void B3YenaDevice9::_InitRenderState()
-{
-	::ZeroMemory(m_RState, sizeof(DWORD) * B3YRS_MAX_);
-
-	// 렌더링 장치, 상태 기본값 설정
-	//
-	m_RState[B3YRS_FILLMODE] = B3YFILL_SOLID;	//단일색 채우기 
-	m_RState[B3YRS_CULLMODE] = B3YCULL_CCW;		//반시계 방향(CCW) 컬링 
-}
-
-
-
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1289,8 +1050,7 @@ void B3YenaDevice9::_InitRenderState()
 //
 int B3YenaDevice9::SetRenderState(B3YRENDERSTATETYPE state, DWORD value)
 {
-	m_RState[state] = value;
-
+	m_pGraphics->_SetRenderState(state, value);
 	return YN_OK;
 }
 
@@ -1302,7 +1062,7 @@ int B3YenaDevice9::SetRenderState(B3YRENDERSTATETYPE state, DWORD value)
 //
 int B3YenaDevice9::GetRenderState(B3YRENDERSTATETYPE state, DWORD* value)
 {
-	*value = m_RState[state];
+	m_pGraphics->_GetRenderState(state, value);
 	 
 	return YN_OK;
 }
@@ -1310,62 +1070,32 @@ int B3YenaDevice9::GetRenderState(B3YRENDERSTATETYPE state, DWORD* value)
 
 
 
-////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 //
-//! _FaceCulling : 삼각형 컬링, 2D(Screen) 좌표 기준. 
-//! 
-//! 2D Screen 좌표계 정점으로 컬링판정을 수행합니다.
-//!	기본 컬링 모드는 반시계방향(CCW)으로 이를 만족하면 true 를 리턴합니다. 
-//! 이 결과는 렌더링 파이프라인에서 해당 기하(삼각형)을 제외하는 조건으로 사용됩니다. 
-//!				
-//! \warning	2D(Screen) 좌표계는 +Y 축이 화면아랫 방향으로 3D 좌표계와 다름에 주의!
-//! 
-//! \param	v0	컬링할 삼각형의 첫번째 정점
-//! \param	v1	컬링할 삼각형의 두번째 정점
-//! \param	v2	컬링할 삼각형의 세번째 정점
-//! \return	컬링 조건 만족시 TRUE, 아니면 FALSE 리턴.
+//! 변환 행렬 설정   
 //
-bool B3YenaDevice9::_FaceCulling(B3YXVECTOR2 v0, B3YXVECTOR2 v1, B3YXVECTOR2 v2)
+int B3YenaDevice9::SetTransform(B3YTRANSFORMSTATETYPE ts, B3YXMATRIX* m)
 {
-	bool bCull = false;
+	m_pGraphics->_SetTransform(ts, m);
+	//m_mTFM[ts] = *m;
 
-	switch (m_RState[B3YRS_CULLMODE])
-	{
-		case B3YCULL_NONE:				//컬링 없음. 무조건 그리기.
-			bCull = false;		
-			break;
+	return YN_OK;
+}
 
-		case B3YCULL_CW:				//정점 순서가 시계 방향(CW)이면, 컬링. 그리지 않음.
-		{
-			B3YXVECTOR2 v01 = v1 - v0;	//방향 계산 (연산자 오버로딩 추가)
-			B3YXVECTOR2 v02 = v2 - v0;
+///////////////////////////////////////////////////////////////////////////////
+//
+//! 변환 행렬 얻기  
+//
+int B3YenaDevice9::GetTransform(B3YTRANSFORMSTATETYPE ts, B3YXMATRIX* m)
+{
+	m_pGraphics->_GetTransform(ts, m);
+	//*m = m_mTFM[ts];
 
-			float z = B3YXVec2CCW(&v01, &v02);
-
-			if (z > 0)					// 외적의 결과가 양수면, 'CW' 				
-				bCull = true;			//곧, 컬링되어야 함.	  
-		}
-		break;
-
-		case B3YCULL_CCW:				//정점 순서가 반시계 방향(CCW)이면, 컬링. 그리지 않음.
-		{
-			B3YXVECTOR2 v01 = v1 - v0;
-			B3YXVECTOR2 v02 = v2 - v0;
-
-			float z = B3YXVec2CCW(&v01, &v02);
-
-			if (z < 0)					// 외적의 결과가 음수면, 'CCW' 
-				bCull = true;			//곧, 컬링되어야 함.	
-		}
-		break;
-	}
-
-
-	return bCull;
+	return YN_OK;
 }
 
 
-
+ 
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -1433,385 +1163,71 @@ int B3YenaDevice9::QueryInterface(YN_IID riid, _out_ void** ppvObject)
 
 
 
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////// 
-/////////////////////////////////////////////////////////////////////////////// 
-/////////////////////////////////////////////////////////////////////////////// 
-/////////////////////////////////////////////////////////////////////////////// 
-/////////////////////////////////////////////////////////////////////////////// 
-/////////////////////////////////////////////////////////////////////////////// 
-
-/////////////////////////////////////////////////////////////////////////////// 
+////////////////////////////////////////////////////////////////////////////////
 //
-// class B3YenaVertexBuffer : 정점 버퍼.관리 클래스
-//						    : IDirect3DVertexBuffer9 대응
-//
-/////////////////////////////////////////////////////////////////////////////// 
-
-///////////////////////////////////////////////////////////////////////////////
-//
-B3YenaVertexBuffer9::B3YenaVertexBuffer9(void)
-{
-	m_pVBuffer = NULL;
-	m_SizeInByte = 0;
-	m_FVF = 0;
-	m_Stride = 0;
-	m_bLocked = FALSE;
-	
-	ZeroMemory(&m_Desc, sizeof(m_Desc));
 
 
-#ifdef _DEBUG
-	ynLog(_T("B3YenaVertexBuffer9 생성됨..."));
-#endif
-}
+/*  
+*   B3YenaVertexBuffer9 : 인터페이스 구현
+* 
+*		-> B3YenaVertexBuffer9.cpp 로 이동
+* 
+*/
+
 
 
 
 ///////////////////////////////////////////////////////////////////////////////
 //
-B3YenaVertexBuffer9::~B3YenaVertexBuffer9(void)
-{
-	SafeDelArry(m_pVBuffer);
+// B3YenaGraphicsEngine 의 정의와 구별용 정의 해제
+// B3YenaDevice9 전용
+// 
+///////////////////////////////////////////////////////////////////////////////
+//#undef m_pGraphics	this
 
-#ifdef _DEBUG
-	ynLog(_T("B3YenaVertexBuffer9 제거됨..."));
-#endif
-}
+#undef m_pVB 
+#undef m_FVF	
+#undef m_Stride 
+#undef m_TopologyVtxSize
+//#undef m_PrimVtxCnt
 
-
-
-
-////////////////////////////////////////////////////////////////////////////////
+#undef m_mWorld 
+#undef m_mView 
+#undef m_mProj 
+#undef m_mTFM 
+//#undef m_mInvProj
 //
-//! 사용자가 지정한 옵션으로 버퍼를 생성합니다.
-//! <DX> 주어진 옵션에 맞추어 VRAM 을 확보합니다. 
-//! <Yena> 일반 시스템 메모리를 생성합니다.
-//! 
-//! \param	desc 생성할 정점버퍼 정보기술 구조체 
-//! \return		성공시 OK, 실패시 FALSE
+//#undef m_Light 
+//#undef m_LightEnable 
+//#undef m_bLighting 
+//#undef m_GlobalAmbient 
+//#undef m_Mtrl 
 //
-int B3YenaVertexBuffer9::_Create( B3YVERTEXBUFFER_DESC desc )
-{
-	//이미 만들어져 있다면 오류..사용자에게 해결을 요구. 
-	//예외처리 추가를 추천합니다. ex) YN_ERR_NOTEMPTY
-	if (YN_VALIED(m_pVBuffer)) return YN_FAIL;
-
-	//정점 버퍼 메모리 확보. 
-	//DX 처럼 VRAM 을 확보할 수 없으므로, Pool 옵션은 무시합니다. 
-	m_pVBuffer = static_cast<void*>(new BYTE[desc.Size]);	assert(m_pVBuffer);
-	m_SizeInByte = desc.Size;
-	m_FVF = desc.FVF;
-	m_Desc = desc;
-
-	//정점 1개의 크기(바이트) 계산하기.
-	//지정된 정점규격(FVF) 기준 계산, 가능한 단순하게 처리합니다.
-	m_Stride = 0;
-	if (CHECK(m_FVF, B3YFVF_XY))	  m_Stride += sizeof(float) * 2;	//2d 좌표.(필수)
-	if (CHECK(m_FVF, B3YFVF_DIFFUSE)) m_Stride += sizeof(DWORD);		//색상이 있다면? 크기 변경.★
-
-
-	//오류 체크..
-	if (m_Stride <= 0) {  /* Error!!...  */  return YN_FAIL; }
-
-
-	return YN_OK;
-}
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//! 사용자가 지정한 옵션으로 버퍼를 생성합니다.
-//! <DX> 주어진 옵션에 맞추어 VRAM 을 확보합니다. 
-//! <Yena> 일반 시스템 메모리를 생성합니다.
-//! 
-//! \param	Length	'정점 버퍼'의 전체 크기 (바이트)	
-//! \param	FVF		'정점' 규격. 
-//! \param	Pool	메모리 사용 옵션.  	
-//! \return		성공시 OK, 실패시 FALSE
-//
-int B3YenaVertexBuffer9::_Create( UINT Length, DWORD FVF, B3YPOOL Pool )
-{
-	// 생성할 정점 버퍼 정보 기술
-	// <Yena> 시스템 메모리를 사용하므로 유의미한 동작은 없으나, 구조의 일관성을 위해 사용.
-	// GPU 메모리(VRAM) 확보를 위해서 이 정도의 수고는 필요하다...정도로 이해해 봅시다.
-	B3YVERTEXBUFFER_DESC desc = {}; 
-	desc.Format = B3YFMT_VERTEXDATA;
-	desc.Type   = B3YRTYPE_VERTEXBUFFER;
-	desc.Usage  = B3YUSAGE_WRITEONLY;			//정점버퍼는 CPU "쓰기전용", GPU "읽기 전용" 임을 상기합시다.
-	desc.Pool	= Pool;
-	desc.Size	= Length;
-	desc.FVF	= FVF;
-	int res = _Create(desc);
-
-	return res;
-}
-
-
-/*int B3YenaVertexBuffer9::_Create(UINT Length, DWORD FVF, B3YENAPOOL Pool)
-{
-	//이미 만들어져 있다면 오류..사용자에게 해결을 요구. 
-	//예외처리 추가를 추천합니다. ex) YN_ERR_NOTEMPTY
-	if(YN_VALIED(m_pVBuffer)) return YN_FAIL; 
-
-	//정점 버퍼 메모리 확보. 
-	//DX 처럼 VRAM 을 확보할 수 없으므로, Pool 옵션은 무시합니다. 
-	m_pVBuffer = static_cast<void*>(new BYTE[ Length ]);	assert(m_pVBuffer);
-	m_SizeInByte = Length; 
-	m_FVF = FVF;
-	
-	//정점 1개의 크기(바이트) 계산하기.
-	//지정된 정점규격(FVF) 기준 계산, 가능한 단순하게 처리합니다.
-	m_Stride = 0; 
-	if(CHECK(m_FVF, B3YFVF_XY))	 m_Stride += sizeof(float)*2;		//2d 좌표.
-	//if(CHECK(m_FVF, B3YFVF_DIFFUSE))  m_Stride += sizeof(DWORD);	//색상
-	 
-	//오류 체크..
-	if(m_Stride <= 0) {  // Error!!... /  return YN_FAIL;}
-
-
-	return YN_OK;
-}*/
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//! 정점 버퍼 잠그기.
-//! 
-//! <DX> 정점 버퍼(VRAM) 에 데이터를 입력하기 위해서는 CPU 가 접근 가능해야 합니다.
-//! Lock 함수는 버퍼를 CPU 의 "쓰기 또는 읽기" 가능 상태로 변경합니다.
-//! 전체 버퍼 및 부분 잠금이 가능하며 잠금된 영역은 GPU 의 접근이 제한됩니다.("접근 잠금")
-//! 사용이 끝난 버퍼는 UnLock 함수로 잠금을 해제해야 합니다.
-//! 
-//! <Yena> "잠금" 및 "해제" 동작을 SW 로 구현,묘사 가능하겠으나
-//! 시스템 메모리를 사용중으로 특별한 기능은 추가하지 않겠습니다.
-//! DX 의 실제 역활과는 다르지만, 동작의 흐름은 유지합니다.
-//! 
-//! [참고] DX9::Lock (https://learn.microsoft.com/en-us/windows/win32/api/d3d9/nf-d3d9-idirect3dvertexbuffer9-lock)
-//! 
-//! \param	OffsetToLock	'잠금' 할 버퍼 (옵셋) 주소. 기본값 0,
-//! \param	SizeToLock		'잠금' 할 버퍼 크기
-//! \param	ppbData			리턴받을 버퍼 포인터
-//! \param	Flags			'잠금' 옵션. 기본값 0.	
-//! \return		성공시 OK, 실패시 FALSE
-//
-int B3YenaVertexBuffer9::Lock( UINT OffsetToLock, UINT SizeToLock, void** ppbData, DWORD Flags )
-{
-	if (YN_ENABLED(m_bLocked))							//잠금 상태 확인...
-	{
-		ynLog(_T("이 버퍼는 이미 잠겨(Locked) 있습니다. %s=%x)"), ynToString(m_pVBuffer), m_pVBuffer);
-		//return YN_FAIL;		//지속적인 경고 출력을 위해 리턴하지 않음.
-	}
-
-	if (YN_INVALIED(*ppbData)) return YN_FAIL;			//유효성 검사.
-
-	BYTE* pVB = (BYTE*)m_pVBuffer + OffsetToLock;		//지정 주소 계산.
-	*ppbData = (void*)pVB;								//주소 넘김. 
-	 
-	//잠금 상태 설정.
-	m_bLocked = TRUE;
-
-	return YN_OK;
-}
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//! Unlock 정점 버퍼 잠금 해재 
-//! 
-//! <DX> 현재 버퍼의 잠금 상태를 해제 합니다.
-//! 이후 버퍼는 원 상태 - CPU "쓰기 불가", GPU "읽기/접근 가능" 상태가 되며
-//! 파이프라인에서 사용가능해 집니다.
-//! Lock 과 UnLock 함수는 쌍(Pair) 로 사용되어야 합니다.
-//! 
-//! <Yena> "잠금" 및 "해제" 동작을 SW 로 구현,묘사 가능하겠으나
-//! 시스템 메모리를 사용중으로 특별한 기능은 추가하지 않겠습니다.
-//! 
-//! \return		성공시 OK, 실패시 FALSE
-//
-int B3YenaVertexBuffer9::Unlock(void)
-{
-	if (YN_DISABLED(m_bLocked))							//잠금 상태 확인...
-	{
-		ynLog(_T("이 버퍼는 이미 잠금 해제(Unlocked) 상태 입니다. %s=%x)"), ynToString(m_pVBuffer), m_pVBuffer);
-		//return YN_FAIL;		//지속적인 경고 출력을 위해 리턴하지 않음.
-	}
-
-	//<Yena> "잠금" 및 "해제" 동작을 SW 로 구현,묘사 가능하겠으나
-	//시스템 메모리를 사용중으로 특별한 기능은 추가하지 않겠습니다.
-	//...
-
-	//잠금 상태 설정.
-	m_bLocked = FALSE;
-
-	return YN_OK;
-}
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//! GetDesc 정점 버퍼 정보 획득 
-//! 
-//! \param[out]	pDesc	정점 버퍼 정보기술 구조체
-//! \return		성공시 OK, 실패시 FALSE
-//
-int B3YenaVertexBuffer9::GetDesc( _out_ B3YVERTEXBUFFER_DESC* pDesc )
-{
-	if (YN_INVALIED(pDesc)) return YN_FAIL;			//유효성 검사.
-	
-	*pDesc = m_Desc;
-
-	return YN_OK;
-}
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//! GetBuffer : 버퍼 획득 <Yena> 전용
-//! 
-//! \return	정점 버퍼 포인터
-//
-void* B3YenaVertexBuffer9::GetBuffer()
-{
-	if (YN_INVALIED(m_pVBuffer))
-	{
-		ynLog(_T(" NULL 객체를 참조하고 있습니다 : %s = NULL, Size=%d, Stride=%d"),
-				ynToString(m_pVBuffer), m_Desc.Size, m_Stride);
-	}
-
-	return m_pVBuffer;
-}
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//! GetVertexCount : 정점 개수 획득 <Yena> 전용
-//! 
-//! \return	정점 개수
-//
-UINT B3YenaVertexBuffer9::GetVertexCount()
-{
-	if (YN_INVALIED(m_pVBuffer))
-	{
-		ynLog(_T(" NULL 객체를 참조하고 있습니다 : %s = NULL, Size=%d, Stride=%d"), 
-				ynToString(m_pVBuffer), m_Desc.Size, m_Stride);
-	}
-
-	if (m_Desc.Size <= 0 || m_Stride == 0)
-	{
-		ynLog(_T(" 미설정 객체를 참조하고 있습니다 : %s = %x , Size=%d, Stride=%d"), 
-				ynToString(m_pVBuffer), m_pVBuffer, m_Desc.Size, m_Stride);
-	}
-
-	return m_Desc.Size / m_Stride; 
-}
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//! GetPrivateData : 버퍼 정보 획득 <Yena> 용 재구성
-//! 
-//! \param[out]	ppBuffer	정점 버퍼 포인터
-//! \param[out]	pSizeData	정점 개수
-//! \return		성공시 OK, 실패시 FALSE
-//
-int B3YenaVertexBuffer9::GetPrivateData(_out_ void** ppBuffer, _out_ UINT* pSizeData)
-{
-	void* pVB = GetBuffer();
-	UINT  vtxs = GetVertexCount();
-
-	//외부로 리턴.
-	*ppBuffer = pVB;
-	*pSizeData = vtxs;
-	 
-	return YN_OK;
-}
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//! AddRef : Yena COM 참조 카운트 증가 
-//! 
-//! \return	현재 참조 카운트
-//
-ULONG B3YenaVertexBuffer9::AddRef(void)
-{
-	return ++m_ref;
-};
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//! Release : Yena COM 참조 카운트 감소, 0 이하면 객체 제거.
-//! 
-//! \return	현재 참조 카운트
-//
-ULONG B3YenaVertexBuffer9::Release(void)
-{
-	if (--m_ref <= 0) delete this; 
-
-	return m_ref;
-};
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//! QueryInterface : Yena COM 인터페이스 획득.
-//! 
-//! <COM> 객체에 인터페이스를 질의하고 유효한 경우 해당 인터페이스가 리턴됩니다. 
-//!	지정 인터페이스 ID 로 참조되는 (원본) 객체는 참조 카운트가 증가되므로 
-//! 인터페이스 사용 후 안전한 메모리 해제를 위해 Release 를 호출해야 합니다.
-//! 
-//! <Yena> Yena 전용 GUID 를 통해 해당 ynInterface 를 획득하며 
-//! 기본적인 기능은 Windows / COM 과 동일합니다.
-//! 
-//! \param	riid		Yena 인터페이스 ID
-//! \param	ppvObject	(생성된) Yena 인터페이스 포인터.
-//! \return		성공시 OK, 실패시 FALSE
-//
-int B3YenaVertexBuffer9::QueryInterface(YN_IID riid, _out_ void** ppvObject)
-{
-	//void* pInterface = nullptr;
-
-	//지정 ID 의 유효성 검사..(간략)
-	//if(riid == IID_IYena)
-	//if (IsEqualGUID((GUID&)riid, (GUID&)IID_IYena))	//GUID 동일 검사
-	//if (IsEqualIID((IID&)riid, (IID&)IID_IYena))		//IID 동일 검사 <상동>
-	if (ynIsEqualIID(riid, IID_IYenaVertexBuffer9))		//IID 동일 검사 <상동>
-	{
-		AddRef();												//참조 카운트 증가.
-		*ppvObject = dynamic_cast<IYenaVertexBuffer9*>(this);	//지정 인터페이스 리턴.
-	}
-
-	return YN_OK;
-}
-
-
-
+//#undef m_Sampler 
+//#undef m_TSState 
+
+#undef m_RState
+
+//#undef m_hWnd
+#undef m_PresentParam 
+//#undef m_hBmpRT
+//#undef m_hRT 
+//#undef m_hSurfaceRT 
+//#undef m_pRT
+//#undef m_pDepth
+//#undef m_Viewport
+//#undef m_hClipRgn
+
+//#undef _DrawLine
+//#undef _DrawFace
+//#undef _HLine
+//#undef _VLine
+
+//#undef m_DbgInfo
 
 
 
 
 
 /**************** end of "Yena.h" *********************************************/
+

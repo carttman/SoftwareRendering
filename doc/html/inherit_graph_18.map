@@ -1,0 +1,27 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classyn_i_unknown.html" title="Yena SWR COM 최상위 인터페이스 &lt;간략&gt;" alt="" coords="5,183,100,209"/>
+<area shape="rect" id="Node000001" href="$class_i_yena.html" title="Yena SWR 3D 운용 기반, 인터페이스 : IDirect3D9 대응" alt="" coords="179,5,234,32"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="62,167,94,105,118,72,146,42,177,24,180,29,149,46,122,75,99,108,67,170"/>
+<area shape="rect" id="Node000003" href="$class_i_yena_device10.html" title=" " alt="" coords="152,56,261,83"/>
+<area shape="poly" id="edge10_Node000000_Node000003" title=" " alt="" coords="71,169,104,130,146,93,166,81,169,86,149,97,107,134,75,172"/>
+<area shape="rect" id="Node000004" href="$class_i_yena_device11.html" title=" " alt="" coords="152,107,260,133"/>
+<area shape="poly" id="edge11_Node000000_Node000004" title=" " alt="" coords="90,172,146,143,172,131,174,136,149,148,93,177"/>
+<area shape="rect" id="Node000005" href="$class_i_yena_device12.html" title=" " alt="" coords="152,157,261,184"/>
+<area shape="poly" id="edge12_Node000000_Node000005" title=" " alt="" coords="114,183,151,177,152,182,115,188"/>
+<area shape="rect" id="Node000006" href="$class_i_yena_device9.html" title="\u{2b50} Yena 렌더링 디바이스 운용 인터페이스 : IDirect3DDevice9 대응" alt="" coords="155,208,258,235"/>
+<area shape="poly" id="edge13_Node000000_Node000006" title=" " alt="" coords="116,204,155,210,154,216,115,209"/>
+<area shape="rect" id="Node000008" href="$class_i_yena_device_g_l.html" title=" " alt="" coords="150,259,262,285"/>
+<area shape="poly" id="edge15_Node000000_Node000008" title=" " alt="" coords="93,215,149,244,174,256,172,261,146,249,90,220"/>
+<area shape="rect" id="Node000009" href="$class_i_yena_device_v_k.html" title=" " alt="" coords="150,309,263,336"/>
+<area shape="poly" id="edge16_Node000000_Node000009" title=" " alt="" coords="75,220,107,258,149,295,169,306,166,311,146,299,104,262,71,223"/>
+<area shape="rect" id="Node000010" href="$class_i_yena_resource9.html" title="렌더링 자원 기반 인터페이스 : IDirect3DResource9 대응" alt="" coords="148,360,265,387"/>
+<area shape="poly" id="edge17_Node000000_Node000010" title=" " alt="" coords="67,222,99,284,122,317,149,346,166,357,163,362,146,350,118,320,94,287,62,225"/>
+<area shape="rect" id="Node000002" href="$class_b3_yena.html" title="\u{2b50} Yena 3D 운용 기반, 구현 클래스, IDirect3D9 대응" alt="" coords="346,5,412,32"/>
+<area shape="poly" id="edge9_Node000001_Node000002" title=" " alt="" coords="249,16,345,16,345,21,249,21"/>
+<area shape="rect" id="Node000007" href="$class_b3_yena_device9.html" title="\u{2b50} Yena 렌더링 장치 Device 구현 클래스 : IDirect3DDevice9 대응" alt="" coords="322,208,436,235"/>
+<area shape="poly" id="edge14_Node000006_Node000007" title=" " alt="" coords="273,219,321,219,321,224,273,224"/>
+<area shape="rect" id="Node000011" href="$class_i_yena_vertex_buffer9.html" title="정점 버퍼 운용 인터페이스 : IDirect3DVertexBuffer9 대응" alt="" coords="313,360,445,387"/>
+<area shape="poly" id="edge18_Node000010_Node000011" title=" " alt="" coords="281,371,313,371,313,376,281,376"/>
+<area shape="rect" id="Node000012" href="$class_b3_yena_vertex_buffer9.html" title="\u{2b50} 정점 버퍼 구현 클래스 : IDirect3DVertexBuffer9 대응" alt="" coords="493,360,638,387"/>
+<area shape="poly" id="edge19_Node000011_Node000012" title=" " alt="" coords="461,371,493,371,493,376,461,376"/>
+</map>

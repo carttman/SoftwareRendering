@@ -13,11 +13,23 @@ digraph "Yena/ynDefine.h"
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="Src/Device.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_device_8cpp.html",tooltip="예제 렌더링 장치 운용 소스."];
   Node3 -> Node5 [id="edge4_Node000003_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="Src/Render.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_render_8cpp.html",tooltip="\\u{2b50} 예제 기본 렌더링/프레임웍 소스"];
+  Node5 [id="Node000005",label="Src/Render.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_render_8cpp.html",tooltip="예제 기본 렌더링/프레임웍 소스"];
   Node3 -> Node6 [id="edge5_Node000003_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="Src/main.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip="예제 애플리케이션 메인 / 윈도 프레임워크 소스"];
   Node2 -> Node7 [id="edge6_Node000002_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="Yena/Yena.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_yena_8cpp.html",tooltip="\\u{2b50} Yena SWR 기본 소스 파일 (v1.x)"];
   Node2 -> Node8 [id="edge7_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="Yena/ynError.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_error_8cpp.html",tooltip="에러, 예외 및 로그 처리 소스 파일"];
+  Node8 [id="Node000008",label="Yena/ynB3Graphics.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_b3_graphics_8cpp.html",tooltip="Yena 그래픽스 엔진 소스 파일"];
+  Node2 -> Node9 [id="edge8_Node000002_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="Yena/ynB3VertexBuffer.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_b3_vertex_buffer_8cpp.html",tooltip="정점 버퍼 운용 클래스 소스"];
+  Node2 -> Node10 [id="edge9_Node000002_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="Yena/ynError.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_error_8cpp.html",tooltip="에러, 예외 및 로그 처리 소스 파일"];
+  Node1 -> Node11 [id="edge10_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="Yena/ynMath.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_math_8h.html",tooltip="\\u{2b50} Yena 수학 라이브러리 Yena Math Library for DirectX / OpenGL"];
+  Node11 -> Node2 [id="edge11_Node000011_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node12 [id="edge12_Node000011_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="Yena/ynMath.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_math_8cpp.html",tooltip="\\u{2b50} Yena 수학 라이브러리 Yena Math Library for DirectX / OpenGL"];
+  Node11 -> Node13 [id="edge13_Node000011_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="Yena/ynx9.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ynx9_8h.html",tooltip="\\u{2b50} Yena SWR 인터페이스 헤더 : DX9 (d3d9.h) 대응"];
+  Node13 -> Node2 [id="edge14_Node000013_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

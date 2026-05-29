@@ -1,4 +1,19 @@
 var searchData=
 [
-  ['a_0',['a',['../struct_b3_y_c_o_l_o_r_ab7997304697613b5b433a5385fe6ada9.html#ab7997304697613b5b433a5385fe6ada9',1,'B3YCOLOR']]]
+  ['_5f11_0',['_11',['../struct_b3_y_m_a_t_r_i_x_a8b0a9827190b46f3091b4aaa2a944d0c.html#a8b0a9827190b46f3091b4aaa2a944d0c',1,'B3YMATRIX']]],
+  ['_5f12_1',['_12',['../struct_b3_y_m_a_t_r_i_x_a78ce34bb9ce025cb1507fe274af1acb9.html#a78ce34bb9ce025cb1507fe274af1acb9',1,'B3YMATRIX']]],
+  ['_5f13_2',['_13',['../struct_b3_y_m_a_t_r_i_x_aa1a54c005a9a805716065171deb6959c.html#aa1a54c005a9a805716065171deb6959c',1,'B3YMATRIX']]],
+  ['_5f14_3',['_14',['../struct_b3_y_m_a_t_r_i_x_a41fd729cc850bcbd8bd2970b8ce60714.html#a41fd729cc850bcbd8bd2970b8ce60714',1,'B3YMATRIX']]],
+  ['_5f21_4',['_21',['../struct_b3_y_m_a_t_r_i_x_a910fe0913c3d2fb4a30b33bc12387313.html#a910fe0913c3d2fb4a30b33bc12387313',1,'B3YMATRIX']]],
+  ['_5f22_5',['_22',['../struct_b3_y_m_a_t_r_i_x_a37f7dcb1c99af7839dfe8c4427cc84b0.html#a37f7dcb1c99af7839dfe8c4427cc84b0',1,'B3YMATRIX']]],
+  ['_5f23_6',['_23',['../struct_b3_y_m_a_t_r_i_x_a240db3a67c741097147eea6368cd59ee.html#a240db3a67c741097147eea6368cd59ee',1,'B3YMATRIX']]],
+  ['_5f24_7',['_24',['../struct_b3_y_m_a_t_r_i_x_a41acea58a77d54236e5b229f3b29a124.html#a41acea58a77d54236e5b229f3b29a124',1,'B3YMATRIX']]],
+  ['_5f31_8',['_31',['../struct_b3_y_m_a_t_r_i_x_ac45c1b85ef1e8cededf4b9e32b433b2a.html#ac45c1b85ef1e8cededf4b9e32b433b2a',1,'B3YMATRIX']]],
+  ['_5f32_9',['_32',['../struct_b3_y_m_a_t_r_i_x_aa4abbee430275b318a1b0f3b1171f429.html#aa4abbee430275b318a1b0f3b1171f429',1,'B3YMATRIX']]],
+  ['_5f33_10',['_33',['../struct_b3_y_m_a_t_r_i_x_ac0190224b53d6c04c118bbcdb2311bf9.html#ac0190224b53d6c04c118bbcdb2311bf9',1,'B3YMATRIX']]],
+  ['_5f34_11',['_34',['../struct_b3_y_m_a_t_r_i_x_a8e1fee235bdf20b91896af0772015f3d.html#a8e1fee235bdf20b91896af0772015f3d',1,'B3YMATRIX']]],
+  ['_5f41_12',['_41',['../struct_b3_y_m_a_t_r_i_x_a3586b12f644d1184d6935f893c0bcb7f.html#a3586b12f644d1184d6935f893c0bcb7f',1,'B3YMATRIX']]],
+  ['_5f42_13',['_42',['../struct_b3_y_m_a_t_r_i_x_a627792f13d4279ea6e8c8180eb5bf7b2.html#a627792f13d4279ea6e8c8180eb5bf7b2',1,'B3YMATRIX']]],
+  ['_5f43_14',['_43',['../struct_b3_y_m_a_t_r_i_x_a0587a5fbee2f0ab21b0bb94a2725f6f5.html#a0587a5fbee2f0ab21b0bb94a2725f6f5',1,'B3YMATRIX']]],
+  ['_5f44_15',['_44',['../struct_b3_y_m_a_t_r_i_x_a8920d4d22cbd54a7843b85ded85103cb.html#a8920d4d22cbd54a7843b85ded85103cb',1,'B3YMATRIX']]]
 ];

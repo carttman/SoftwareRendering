@@ -120,6 +120,7 @@ Private Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>정점 버퍼 운용 인터페이스 : IDirect3DVertexBuffer9 대응 </p>
+<p>정점 버퍼 구현 클래스 : IDirect3DVertexBuffer9 대응</p>
 <dl class="section user"><dt>정점버퍼</dt><dd>정점버퍼는 일련의 기하(Geometry)를 구성하는 정점 데이터가 저장되는 버퍼입니다. <br  />
  이 데이터들은 정점 단위규격(Vertex Format 또는 Vertex Declaration) 으로 배열화 저장되며 읽기 전용으로 GPU 에 전달됩니다. <br  />
  필요시 동적 정점 버퍼 (Dynamic Vertex Buffer) 를 구성하는 것도 가능합니다.</dd></dl>
@@ -132,6 +133,23 @@ Private Member Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>장치(Device)는 파이프라인에 설정된 "현재" 정점 버퍼를 사용하므로 렌더링 명령 (Draw / DrawPrimitive) 전에 장치에 연결(Binding) 되어야 합니다. <br  />
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_i_yena_vertex_buffer9.html" title="정점 버퍼 운용 인터페이스 : IDirect3DVertexBuffer9 대응">IYenaVertexBuffer9</a> </dd>
+<dd>
+<a href="https://learn.microsoft.com/en-us/windows/win32/api/d3d9/nn-d3d9-idirect3dvertexbuffer9">IDirect3DVertexBuffer9</a> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Yena 는 DX 인터페이스와 메소드의 시그니쳐(Signature)를 가능한 동일하게 준수합니다.</dd></dl>
+<dl class="section user"><dt>정점버퍼</dt><dd>정점버퍼는 일련의 기하(Geometry)를 구성하는 정점 데이터가 저장되는 버퍼입니다. <br  />
+ 이 데이터들은 정점 단위규격(Vertex Format 또는 Vertex Declaration) 으로 배열화 저장되며 읽기 전용으로 GPU 에 전달됩니다. <br  />
+ 필요시 동적 정점 버퍼 (Dynamic Vertex Buffer) 를 구성하는 것도 가능합니다.</dd></dl>
+<dl class="section user"><dt>정점버퍼 렌더링 </dt><dd>렌더링 장치는 렌더링 파이프라인에 설정된 정점버퍼를 읽어오며, 렌더링 기하구성(Primitive Topology) 주문에 따라 데이터를 처리합니다. (Vertex Streaming) <br  />
+ 렌더링 파이프라인은 하나 이상의 정점버퍼를 연결(Binding) 할 수 있으며 (DX9, max.16) <br  />
+ 정점 조립 스테이지(Vertex Assembly 또는 Input Assembly Stage) 에서 재구성되어 사용됩니다.</dd></dl>
+<p>&lt;DX9&gt; IDirect3DVertexBuffer9 으로 정점버퍼를 운용합니다. <br  />
+ &lt;Yena&gt; <a class="el" href="class_i_yena_vertex_buffer9.html" title="정점 버퍼 운용 인터페이스 : IDirect3DVertexBuffer9 대응">IYenaVertexBuffer9</a> 으로 DX 인터페이스를 대응합니다. <br  />
+</p>
+<dl class="section note"><dt>Note</dt><dd>장치(Device)는 파이프라인에 설정된 "현재" 정점 버퍼를 사용하므로 렌더링 명령 (Draw / DrawPrimitive) 전에 장치에 연결(Binding) 되어야 합니다. <br  />
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_b3_yena_vertex_buffer9.html" title="\u{2b50} 정점 버퍼 구현 클래스 : IDirect3DVertexBuffer9 대응">B3YenaVertexBuffer9</a> </dd>
+<dd>
+<a class="el" href="class_i_yena_vertex_buffer9.html" title="정점 버퍼 운용 인터페이스 : IDirect3DVertexBuffer9 대응">IYenaVertexBuffer9</a> </dd>
 <dd>
 <a href="https://learn.microsoft.com/en-us/windows/win32/api/d3d9/nn-d3d9-idirect3dvertexbuffer9">IDirect3DVertexBuffer9</a> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Yena 는 DX 인터페이스와 메소드의 시그니쳐(Signature)를 가능한 동일하게 준수합니다.    </dd></dl>

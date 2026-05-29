@@ -14,6 +14,8 @@ var _render_8cpp =
     [ "SystemUpdate", "_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20", null ],
     [ "g_bCulling", "_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7", null ],
     [ "g_bWireFrame", "_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863", null ],
+    [ "g_ClearColor", "_render_8cpp_afc36d032c7a13f68ed3b98bff885b800.html#afc36d032c7a13f68ed3b98bff885b800", null ],
+    [ "g_mTM", "_render_8cpp_a8302400b088d5500406bf82ef2b98fad.html#a8302400b088d5500406bf82ef2b98fad", null ],
     [ "g_pVB", "_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066", null ],
     [ "g_WindowName", "_render_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd", null ]
 ];

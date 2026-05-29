@@ -1,7 +1,6 @@
 //! 
 //! \file	ynx9.h
-//! \brief	\emoji :star:
-//!			Yena SWR 인터페이스 헤더 : DX9 (d3d9.h) 대응
+//! \bstar	Yena SWR 인터페이스 헤더 : DX9 (d3d9.h) 대응
 //!	\version Yena SW Renderer v1.5.x
 //! 
 //! \author	김기홍 / Kihong Kim / onlysonim@gmail.com
@@ -40,11 +39,9 @@ typedef IYenaDevice9* LPDEVICE;				//DX9 대응.
 //  
 // Yena 자료형 선언 
 // 
-// <주> (이전 예제에서 정의된 자료형 이동...)
-//
-#include "ynx9types.h"		//!< Yena SWR 자료형 정의 : D3D9 대응 (d3d9types.h) 
-//#include "ynx9cpas.h"		//!< Yena SWR 자료형 정의 : D3D9 대응 (d3d9caps.h)
-
+#include "ynx9types.h"		// Yena SWR 자료형 정의 : D3D9 대응 (d3d9types.h) 
+//#include "ynx9caps.h"		// Yena SWR 성능값 정의 : D3D9 대응 (d3d9caps.h)
+#include "ynMath.h"			// 수학 라이브러리.★
 
 
 
@@ -55,6 +52,9 @@ typedef IYenaDevice9* LPDEVICE;				//DX9 대응.
 //! \interface	IYenaResource9
 //! \brief		렌더링 자원 기반 인터페이스 
 //! 			: IDirect3DResource9 대응 
+//! 
+//! <DX> 렌더링 자원 관리용 인터페이스 IDirect3DResource9 제공.  
+//! <Yena> 자원 관리 기능은 생략(최소화)하며 전체 인터페이스 구성용으로만 이를 운용합니다.  
 //!
 //! \copydetails B3YenaResource9
 //! \remarks	Yena 는 DX 인터페이스와 메소드의 시그니쳐(Signature)를 가능한 동일하게 준수합니다.  
@@ -243,6 +243,11 @@ public:
 	virtual int SetRenderState	(B3YRENDERSTATETYPE	State, DWORD Value)   pure;
 	virtual int GetRenderState	(B3YRENDERSTATETYPE State, DWORD* pValue) pure;
 
+	//--------------------------------
+	// 변환 행렬 설정.★
+	//--------------------------------
+	virtual int SetTransform	(B3YTRANSFORMSTATETYPE ts, B3YXMATRIX* mTM) pure;
+	virtual int GetTransform	(B3YTRANSFORMSTATETYPE ts, B3YXMATRIX* mTM) pure;
 
 	//--------------------------------
 	// 멤버데이터 접근자 Accessors : Yena 전용

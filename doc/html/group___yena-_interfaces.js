@@ -15,10 +15,12 @@ var group___yena__interfaces =
       [ "GetBkColor", "class_i_yena_device9_a92280bca23975153f7d936af6509341c.html#a92280bca23975153f7d936af6509341c", null ],
       [ "GetRenderState", "class_i_yena_device9_a811c925689002979cc1c8b6f8dc99a9f.html#a811c925689002979cc1c8b6f8dc99a9f", null ],
       [ "GetRT", "class_i_yena_device9_ae37189a1636d423cac24d258fb6f8227.html#ae37189a1636d423cac24d258fb6f8227", null ],
+      [ "GetTransform", "class_i_yena_device9_a9206d794618bfc4b20bfb7f6d8388856.html#a9206d794618bfc4b20bfb7f6d8388856", null ],
       [ "Present", "class_i_yena_device9_a3bd4e49d1aedff71231f6b98e705c3bc.html#a3bd4e49d1aedff71231f6b98e705c3bc", null ],
       [ "SetFVF", "class_i_yena_device9_a3ef0e1146efd76c21cfd595d50a50a16.html#a3ef0e1146efd76c21cfd595d50a50a16", null ],
       [ "SetRenderState", "class_i_yena_device9_ad4b7ec568e20690d2569736ba86c7b7f.html#ad4b7ec568e20690d2569736ba86c7b7f", null ],
-      [ "SetStreamSource", "class_i_yena_device9_a1fc2ad1f91fc6a74c13c4910ebe07a91.html#a1fc2ad1f91fc6a74c13c4910ebe07a91", null ]
+      [ "SetStreamSource", "class_i_yena_device9_a1fc2ad1f91fc6a74c13c4910ebe07a91.html#a1fc2ad1f91fc6a74c13c4910ebe07a91", null ],
+      [ "SetTransform", "class_i_yena_device9_a401ae72a77152af737b9cc5711c46a97.html#a401ae72a77152af737b9cc5711c46a97", null ]
     ] ],
     [ "IYenaDeviceGL", "class_i_yena_device_g_l.html", null ],
     [ "IYenaDeviceVK", "class_i_yena_device_v_k.html", null ],

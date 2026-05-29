@@ -93,6 +93,11 @@
 #define YN_FAIL    YN_FALSE
 #define YN_NULL		nullptr
 
+//렌더링 상태/오류
+#define YN_CULLED	0x80000010
+#define YN_CLIPPED	0x80000020
+#define YN_CHECK(res, v) (((res) & (v)) == (v))
+
 
 
 /////////////////////////////////////////////////////////////////////////////

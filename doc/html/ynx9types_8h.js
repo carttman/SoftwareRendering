@@ -5,6 +5,7 @@ var ynx9types_8h =
     [ "B3YVERTEXBUFFER_DESC", "struct_b3_y_v_e_r_t_e_x_b_u_f_f_e_r___d_e_s_c.html", "struct_b3_y_v_e_r_t_e_x_b_u_f_f_e_r___d_e_s_c" ],
     [ "B3YFVF_DIFFUSE", "ynx9types_8h_a66ef2694dd897b4966dae1d99febcc07.html#a66ef2694dd897b4966dae1d99febcc07", null ],
     [ "B3YFVF_XY", "ynx9types_8h_a23037fc64e91c3da48aaf52fc92b52e8.html#a23037fc64e91c3da48aaf52fc92b52e8", null ],
+    [ "B3YFVF_XYZ", "ynx9types_8h_aa1cac5b36a2bafbfbdcca6059e2a4201.html#aa1cac5b36a2bafbfbdcca6059e2a4201", null ],
     [ "B3YUSAGE_DEPTHSTENCIL", "ynx9types_8h_afb79594b96cd30f3033a5b2d80393a7a.html#afb79594b96cd30f3033a5b2d80393a7a", null ],
     [ "B3YUSAGE_DYNAMIC", "ynx9types_8h_a5248ae96a1abf2444c130fd6424df672.html#a5248ae96a1abf2444c130fd6424df672", null ],
     [ "B3YUSAGE_RENDERTARGET", "ynx9types_8h_a72a40a0a43928b784bac7b34c958be6a.html#a72a40a0a43928b784bac7b34c958be6a", null ],
@@ -56,5 +57,12 @@ var ynx9types_8h =
       [ "B3YRTYPE_TEXTURE", "ynx9types_8h_aef5f05930754330389af9384c26b8ff0.html#aef5f05930754330389af9384c26b8ff0a2b5a87e65fab8c805e80b726a4a4252c", null ],
       [ "B3YRTYPE_VERTEXBUFFER", "ynx9types_8h_aef5f05930754330389af9384c26b8ff0.html#aef5f05930754330389af9384c26b8ff0a594b6e09d71f71f8645accea91fe35aa", null ],
       [ "B3YRTYPE_INDEXBUFFER", "ynx9types_8h_aef5f05930754330389af9384c26b8ff0.html#aef5f05930754330389af9384c26b8ff0a9cade4582dc569aef4c08810bac351fa", null ]
+    ] ],
+    [ "B3YTRANSFORMSTATETYPE", "ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096d", [
+      [ "B3YTS_NONE", "ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096da555985f7a8550a602324d6479e48117c", null ],
+      [ "B3YTS_WORLD", "ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096dab827c53af4ded3a80d21e8a4ac3c1a08", null ],
+      [ "B3YTS_VIEW", "ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096da6cc92963cf0e7a4dafdfa64a669475ff", null ],
+      [ "B3YTS_PROJECTION", "ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096dadcc3271cf733b58b8223039c7875f127", null ],
+      [ "B3YTS_MAX_", "ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096da5caa4f7a12598b840800c92a9f5de032", null ]
     ] ]
 ];

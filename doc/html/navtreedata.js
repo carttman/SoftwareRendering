@@ -25,15 +25,7 @@
 var NAVTREE =
 [
   [ "Yena SWR", "index.html", [
-    [ "01 Diffuse Color (과제제작용3)(GDI)", "index.html#autotoc_md3", [
-      [ "T05 Rasterization", "index.html#autotoc_md2", [
-        [ "Yena SW Renderer Tutorials v1.5.x", "index.html#autotoc_md4", null ],
-        [ "예제 내용", "index.html#autotoc_md6", null ],
-        [ "목표 및 과제", "index.html#autotoc_md7", null ],
-        [ "기본 제공", "index.html#autotoc_md9", null ],
-        [ "프로젝트 개요", "index.html#autotoc_md11", null ]
-      ] ]
-    ] ],
+    [ "T06 Transform (I) 03 World + Rotation (DX.Math)(GDI)", "index.html#autotoc_md2", null ],
     [ "Todo List", "todo.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
@@ -48,7 +40,7 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
@@ -72,7 +64,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_d_x___lambert_8fx.html",
-"main_8cpp.html"
+"functions_a.html",
+"yn_b3_graphics_8cpp_ae6eb97314608c40b2ecb9b477b7ddcc0.html#ae6eb97314608c40b2ecb9b477b7ddcc0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

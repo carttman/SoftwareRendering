@@ -94,7 +94,7 @@ $(function(){initNavTree('_render_8cpp.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p><span class="emoji">&#x2b50;</span> 예제 기본 렌더링/프레임웍 소스  
+<p>예제 기본 렌더링/프레임웍 소스  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;Windows.h&quot;</code><br />
 <code>#include &quot;tchar.h&quot;</code><br />
@@ -115,7 +115,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ae896f1f8b7ad7601a14783ded98418ab" id="r_ae896f1f8b7ad7601a14783ded98418ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab.html#ae896f1f8b7ad7601a14783ded98418ab">FVF_COLVTX</a>&#160;&#160;&#160;(<a class="el" href="ynx9types_8h_a23037fc64e91c3da48aaf52fc92b52e8.html#a23037fc64e91c3da48aaf52fc92b52e8">B3YFVF_XY</a> | <a class="el" href="ynx9types_8h_a66ef2694dd897b4966dae1d99febcc07.html#a66ef2694dd897b4966dae1d99febcc07">B3YFVF_DIFFUSE</a>)</td></tr>
+<tr class="memitem:ae896f1f8b7ad7601a14783ded98418ab" id="r_ae896f1f8b7ad7601a14783ded98418ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab.html#ae896f1f8b7ad7601a14783ded98418ab">FVF_COLVTX</a>&#160;&#160;&#160;(<a class="el" href="ynx9types_8h_aa1cac5b36a2bafbfbdcca6059e2a4201.html#aa1cac5b36a2bafbfbdcca6059e2a4201">B3YFVF_XYZ</a> | <a class="el" href="ynx9types_8h_a66ef2694dd897b4966dae1d99febcc07.html#a66ef2694dd897b4966dae1d99febcc07">B3YFVF_DIFFUSE</a>)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -128,6 +128,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ad2a85bf3afb47a1077c80371f7cc7f86" id="r_ad2a85bf3afb47a1077c80371f7cc7f86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86">ObjRelease</a> ()</td></tr>
 <tr class="memdesc:ad2a85bf3afb47a1077c80371f7cc7f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">오브젝트 : 제거  <br /></td></tr>
 <tr class="memitem:a71264aa9be3cdedfc23d807cca7e27e6" id="r_a71264aa9be3cdedfc23d807cca7e27e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6.html#a71264aa9be3cdedfc23d807cca7e27e6">ObjUpdate</a> (float dTime)</td></tr>
+<tr class="memdesc:a71264aa9be3cdedfc23d807cca7e27e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">오브젝트 : 상태 갱신  <br /></td></tr>
 <tr class="memitem:a6d72e579f5eb095a38091a15d586f1a9" id="r_a6d72e579f5eb095a38091a15d586f1a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_a6d72e579f5eb095a38091a15d586f1a9.html#a6d72e579f5eb095a38091a15d586f1a9">SceneRender</a> ()</td></tr>
 <tr class="memdesc:a6d72e579f5eb095a38091a15d586f1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">장면 그리기  <br /></td></tr>
 <tr class="memitem:af4dd0814523522c2ef17aa2ec8079afc" id="r_af4dd0814523522c2ef17aa2ec8079afc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc">ShowInfo</a> ()</td></tr>
@@ -141,12 +142,14 @@ Variables</h2></td></tr>
 <tr class="memdesc:aaf3a84182728c1cfdec0f03d2aff40a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">뒷면제거 플래그.  <br /></td></tr>
 <tr class="memitem:adf1a509705844e8b5ef04482401ad863" id="r_adf1a509705844e8b5ef04482401ad863"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">g_bWireFrame</a> = FALSE</td></tr>
 <tr class="memdesc:adf1a509705844e8b5ef04482401ad863"><td class="mdescLeft">&#160;</td><td class="mdescRight">와이어 프레임 출력 플래그.  <br /></td></tr>
+<tr class="memitem:afc36d032c7a13f68ed3b98bff885b800" id="r_afc36d032c7a13f68ed3b98bff885b800"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_afc36d032c7a13f68ed3b98bff885b800.html#afc36d032c7a13f68ed3b98bff885b800">g_ClearColor</a> (0.0f, 0.125f, 0.35f, 1.0f)</td></tr>
+<tr class="memitem:a8302400b088d5500406bf82ef2b98fad" id="r_a8302400b088d5500406bf82ef2b98fad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_b3_y_x_m_a_t_r_i_x.html">B3YXMATRIX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_a8302400b088d5500406bf82ef2b98fad.html#a8302400b088d5500406bf82ef2b98fad">g_mTM</a></td></tr>
 <tr class="memitem:a492f8e97776f005fb92889e0fb83c066" id="r_a492f8e97776f005fb92889e0fb83c066"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___yena-_interfaces_ga56c1ec484b079b5f04292bdbb97755ad.html#ga56c1ec484b079b5f04292bdbb97755ad">LPYENAVERTEXBUFFER9</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a> = NULL</td></tr>
 <tr class="memdesc:a492f8e97776f005fb92889e0fb83c066"><td class="mdescLeft">&#160;</td><td class="mdescRight">정점 버퍼 : 정점 데이터 관리용 개체.  <br /></td></tr>
-<tr class="memitem:a71393ff51c8b420e0ad3a43b689f01dd" id="r_a71393ff51c8b420e0ad3a43b689f01dd"><td class="memItemLeft" align="right" valign="top">TCHAR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd">g_WindowName</a> = _T(&quot;Yena SW-Renderer : T05 Rasterization 01 Diffuse Color (과제제작용3)(GDI)&quot;)</td></tr>
+<tr class="memitem:a71393ff51c8b420e0ad3a43b689f01dd" id="r_a71393ff51c8b420e0ad3a43b689f01dd"><td class="memItemLeft" align="right" valign="top">TCHAR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_render_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd">g_WindowName</a> = _T(&quot;Yena SW-Renderer : T06 Transform (I) 03 World + Rotation (DX.Math)(GDI)(과제제작용)&quot;)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><span class="emoji">&#x2b50;</span> 예제 기본 렌더링/프레임웍 소스 </p>
+<div class="textblock"><p>예제 기본 렌더링/프레임웍 소스 </p>
 <dl class="section version"><dt>Version</dt><dd>Yena SWR v1.5.x</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>김기홍 Kihong Kim / <a href="#" onclick="location.href='mai'+'lto:'+'onl'+'ys'+'oni'+'m@'+'gma'+'il'+'.co'+'m'; return false;">onlys<span class="obfuscator">.nosp@m.</span>onim<span class="obfuscator">.nosp@m.</span>@gmai<span class="obfuscator">.nosp@m.</span>l.co<span class="obfuscator">.nosp@m.</span>m</a> / <a href="#" onclick="location.href='mai'+'lto:'+'mad'+'_d'+'og@'+'ha'+'nma'+'il'+'.ne'+'t'; return false;">mad_d<span class="obfuscator">.nosp@m.</span>og@h<span class="obfuscator">.nosp@m.</span>anmai<span class="obfuscator">.nosp@m.</span>l.ne<span class="obfuscator">.nosp@m.</span>t</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2012.01.17. v0.9 DX9.x, VS08 </dd>

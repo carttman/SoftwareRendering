@@ -6,5 +6,6 @@ var searchData=
   ['what_3',['what',['../class_y_e_n_a_1_1yn_exception_ae9ba870d901c238241c909a345999a04.html#ae9ba870d901c238241c909a345999a04',1,'YENA::ynException']]],
   ['width_4',['Width',['../struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_adf3c61991d3725e56d2881394f9c3e2e.html#adf3c61991d3725e56d2881394f9c3e2e',1,'B3YPRESENT_PARAMETERS::Width'],['../struct_b3_y_d_i_s_p_l_a_y_m_o_d_e_a68200ec7d1fa76577f5f140b4d7891d8.html#a68200ec7d1fa76577f5f140b4d7891d8',1,'B3YDISPLAYMODE::Width']]],
   ['windowed_5',['Windowed',['../struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_abfeefea452fc35754264483c3cb0c0fb.html#abfeefea452fc35754264483c3cb0c0fb',1,'B3YPRESENT_PARAMETERS']]],
-  ['winmain_6',['WinMain',['../main_8cpp_a1122673f59be78a3997ec7dd1c4688f9.html#a1122673f59be78a3997ec7dd1c4688f9',1,'main.cpp']]]
+  ['winmain_6',['WinMain',['../main_8cpp_a1122673f59be78a3997ec7dd1c4688f9.html#a1122673f59be78a3997ec7dd1c4688f9',1,'main.cpp']]],
+  ['world_20rotation_20dx_20math_20gdi_7',['T06 Transform (I) 03 World + Rotation (DX.Math)(GDI)',['../index.html#autotoc_md2',1,'']]]
 ];

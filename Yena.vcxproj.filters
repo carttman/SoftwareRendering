@@ -28,6 +28,15 @@
     <Filter Include="Basic_Frameworks\Yena\Core">
       <UniqueIdentifier>{bcad0049-8fdf-474c-a09a-63a499c96966}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Basic_Frameworks\Yena\Device\Graphics">
+      <UniqueIdentifier>{b09080c2-f14a-4e2a-a945-92580294b3f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Basic_Frameworks\Yena\Resource">
+      <UniqueIdentifier>{2c2a9481-ab71-4835-a02e-834daba66015}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Doxy">
+      <UniqueIdentifier>{9c966702-7566-489a-a636-20a6134e896c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\main.cpp">
@@ -48,8 +57,14 @@
     <ClCompile Include="Yena\ynError.cpp">
       <Filter>Basic_Frameworks\Yena\Dbg</Filter>
     </ClCompile>
+    <ClCompile Include="Yena\ynB3Graphics.cpp">
+      <Filter>Basic_Frameworks\Yena\Device\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Yena\ynB3VertexBuffer.cpp">
+      <Filter>Basic_Frameworks\Yena\Resource</Filter>
+    </ClCompile>
     <ClCompile Include="Yena\ynGUID.cpp">
-      <Filter>Basic_Frameworks\Yena\Device</Filter>
+      <Filter>Basic_Frameworks\Yena\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,9 +76,6 @@
     </ClInclude>
     <ClInclude Include="Yena\Yena.h">
       <Filter>Basic_Frameworks\Yena</Filter>
-    </ClInclude>
-    <ClInclude Include="Yena\ynUnknownbase.h">
-      <Filter>Basic_Frameworks\Yena\Device</Filter>
     </ClInclude>
     <ClInclude Include="Yena\ynx9.h">
       <Filter>Basic_Frameworks\Yena\Device</Filter>
@@ -77,10 +89,22 @@
     <ClInclude Include="Yena\ynError.h">
       <Filter>Basic_Frameworks\Yena\Dbg</Filter>
     </ClInclude>
-    <ClInclude Include="Yena\ynGUID.h">
-      <Filter>Basic_Frameworks\Yena\Device</Filter>
-    </ClInclude>
     <ClInclude Include="Yena\ynDefine.h">
+      <Filter>Basic_Frameworks\Yena\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynB3Graphics.h">
+      <Filter>Basic_Frameworks\Yena\Device\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynB3Class.h">
+      <Filter>Basic_Frameworks\Yena\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynB3VertexBuffer.h">
+      <Filter>Basic_Frameworks\Yena\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynGUID.h">
+      <Filter>Basic_Frameworks\Yena\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynUnknownbase.h">
       <Filter>Basic_Frameworks\Yena\Core</Filter>
     </ClInclude>
   </ItemGroup>
@@ -88,6 +112,8 @@
     <Text Include="작업내용.md" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ReadMe.md" />
+    <None Include="ReadMe.md">
+      <Filter>Doxy</Filter>
+    </None>
   </ItemGroup>
 </Project>

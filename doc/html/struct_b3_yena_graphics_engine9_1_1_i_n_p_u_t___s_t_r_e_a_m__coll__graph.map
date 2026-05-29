@@ -1,0 +1,9 @@
+<map id="B3YenaGraphicsEngine9::INPUT_STREAM" name="B3YenaGraphicsEngine9::INPUT_STREAM">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,256,171,299"/>
+<area shape="rect" id="Node000002" href="$class_i_yena_vertex_buffer9.html" title="정점 버퍼 운용 인터페이스 : IDirect3DVertexBuffer9 대응" alt="" coords="22,157,154,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,199,91,255,85,255,85,199"/>
+<area shape="rect" id="Node000003" href="$class_i_yena_resource9.html" title="렌더링 자원 기반 인터페이스 : IDirect3DResource9 대응" alt="" coords="29,81,147,108"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,123,91,157,85,157,85,123"/>
+<area shape="rect" id="Node000004" href="$classyn_i_unknown.html" title="Yena SWR COM 최상위 인터페이스 &lt;간략&gt;" alt="" coords="41,5,135,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="91,47,91,81,85,81,85,47"/>
+</map>

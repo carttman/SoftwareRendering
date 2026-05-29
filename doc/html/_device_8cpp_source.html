@@ -133,233 +133,236 @@ $(function(){initNavTree('_device_8cpp_source.html','',''); });
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// 화면 모드 설정 전역 변수.  </span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">   41</a></span><a class="code hl_typedef" href="ynx9types_8h_a5913be8dd39c1a93bc6549920138cc88.html#a5913be8dd39c1a93bc6549920138cc88">YENADISPLAYMODE</a> <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a> = { 800, 600 };     <span class="comment">//4:3 </span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">//YENADISPLAYMODE g_Mode = { 960, 600 };    //16:10</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// 시스템 폰트.</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">   46</a></span>HFONT       <a class="code hl_variable" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a>     = NULL;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_device_8cpp_a76053dd74350f70eb057d094c40b8436.html#a76053dd74350f70eb057d094c40b8436">   47</a></span>COLORREF    <a class="code hl_variable" href="_device_8cpp_a76053dd74350f70eb057d094c40b8436.html#a76053dd74350f70eb057d094c40b8436">g_SysFnColor</a> = RGB(0, 255, 0);  <span class="comment">//기본 시스템 폰트 색상.</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"></span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">//</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">// 기타 상태 변수들. </span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">//</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="_device_8cpp_abdce14aecbf3c9046e0481de1666f7ad.html#abdce14aecbf3c9046e0481de1666f7ad">   55</a></span>BOOL <a class="code hl_variable" href="_device_8cpp_abdce14aecbf3c9046e0481de1666f7ad.html#abdce14aecbf3c9046e0481de1666f7ad">g_ShowFrame</a> = FALSE;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">//YENADISPLAYMODE g_Mode = { 600, 600 };    //1:1 ★</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">   42</a></span><a class="code hl_typedef" href="ynx9types_8h_a5913be8dd39c1a93bc6549920138cc88.html#a5913be8dd39c1a93bc6549920138cc88">YENADISPLAYMODE</a> <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a> = { 800, 600 };     <span class="comment">//4:3 </span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">//YENADISPLAYMODE g_Mode = { 960, 600 };    //16:10</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">//YENADISPLAYMODE g_Mode = { 1200, 600 };   //2:1 ★</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">//YENADISPLAYMODE g_Mode = { 1800, 600 };   //3:1 ★</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">// 시스템 폰트.</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">   49</a></span>HFONT       <a class="code hl_variable" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a>     = NULL;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="_device_8cpp_a76053dd74350f70eb057d094c40b8436.html#a76053dd74350f70eb057d094c40b8436">   50</a></span>COLORREF    <a class="code hl_variable" href="_device_8cpp_a76053dd74350f70eb057d094c40b8436.html#a76053dd74350f70eb057d094c40b8436">g_SysFnColor</a> = RGB(0, 255, 0);  <span class="comment">//기본 시스템 폰트 색상.</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"></span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">//</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">// 기타 상태 변수들. </span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">//</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="_device_8cpp_abdce14aecbf3c9046e0481de1666f7ad.html#abdce14aecbf3c9046e0481de1666f7ad">   58</a></span>BOOL <a class="code hl_variable" href="_device_8cpp_abdce14aecbf3c9046e0481de1666f7ad.html#abdce14aecbf3c9046e0481de1666f7ad">g_ShowFrame</a> = FALSE;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"></span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">//! 예나 SWR 엔진 구성 : 초기 1회 호출</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">//! </span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">//               </span></div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="_device_8cpp_acca400f5f8053c4279231fc354f439f2.html#acca400f5f8053c4279231fc354f439f2">   66</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_device_8cpp_acca400f5f8053c4279231fc354f439f2.html#acca400f5f8053c4279231fc354f439f2">YenaSetup</a>(HWND hwnd)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">// 예나 생성.(IDirect3D 대응)</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_variable" href="_device_8cpp_afa4ec13e638ab6d4ee313db3d3fd3146.html#afa4ec13e638ab6d4ee313db3d3fd3146">g_pYena</a> = <a class="code hl_function" href="group___yena-_interfaces_gaadd8f307a7460a88e7c4c254bcbe6719.html#gaadd8f307a7460a88e7c4c254bcbe6719">YenaCreate9</a>(<a class="code hl_define" href="group___yena-_interfaces_ga2a5fc3d96c45d8ac357124c36faa0d47.html#ga2a5fc3d96c45d8ac357124c36faa0d47">YENA_VERSION</a>);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="yn_define_8h_a14eccb6846a93ea86b18274635a5711c.html#a14eccb6846a93ea86b18274635a5711c">YN_INVALIED</a>(<a class="code hl_variable" href="_device_8cpp_afa4ec13e638ab6d4ee313db3d3fd3146.html#afa4ec13e638ab6d4ee313db3d3fd3146">g_pYena</a>))</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="comment">//Error...</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_ab2ddfe3c96e19c17cf7e66091a3fea26.html#ab2ddfe3c96e19c17cf7e66091a3fea26">YN_FAIL</a>; </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">// Yena SWR 장치 정보 구성 </span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">// &lt;주&gt; D3D9 운용 필요 데이터 중 Yena 에 필요한 최소한의 정보만 구성)</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_typedef" href="ynx9types_8h_a290e0a590dd684630a8c9c08735919aa.html#a290e0a590dd684630a8c9c08735919aa">YENAPRESENT_PARAMETERS</a> pp;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    ZeroMemory(&amp;pp, <span class="keyword">sizeof</span>(pp));</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    pp.<a class="code hl_variable" href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_adf3c61991d3725e56d2881394f9c3e2e.html#adf3c61991d3725e56d2881394f9c3e2e">Width</a>  = <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a>.Width;        <span class="comment">//해상도 결정.(백버퍼 크기)</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    pp.<a class="code hl_variable" href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8bf79209b95d6cea4b1da6ad6ed1286f.html#a8bf79209b95d6cea4b1da6ad6ed1286f">Height</a> = <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a>.Height;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    pp.<a class="code hl_variable" href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8046df62d538130048da1598de400799.html#a8046df62d538130048da1598de400799">BackBuffercnt</a> = 1;          <span class="comment">//백버퍼 개수. (현재는 1개만 가능)</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    pp.<a class="code hl_variable" href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_abfeefea452fc35754264483c3cb0c0fb.html#abfeefea452fc35754264483c3cb0c0fb">Windowed</a> = TRUE;             <span class="comment">//풀스크린, 창모드 선택.(현재는 창모드만 가능)</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">// Yena SWR 장치 생성 : ID3DDevice9 대응  </span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_variable" href="_device_8cpp_afa4ec13e638ab6d4ee313db3d3fd3146.html#afa4ec13e638ab6d4ee313db3d3fd3146">g_pYena</a>-&gt;CreateDevice(<a class="code hl_variable" href="_device_8h_af6e451d84715c224b60977594e800b81.html#af6e451d84715c224b60977594e800b81">g_hWnd</a>,                              <span class="comment">//디바이스의 렌더링 목표 윈도우 핸들.</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                        &amp;pp,                                    <span class="comment">//디바이스 화면 구성 정보.</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                        <a class="code hl_enumvalue" href="ynx9types_8h_a8efb55e1ce6aaeee37ab0e8266e660fd.html#a8efb55e1ce6aaeee37ab0e8266e660fda5ce5ae4f784687f3a53f4d2fbc0f8de6">YENACREATE_SOFTWARE_VERTEXPROCESSING</a>,   <span class="comment">//정점연산 방법 결정 (현재는 SW 만 가능) &lt;DX&gt; HW &lt;Yena&gt; SW 설정. </span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                        &amp;<a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>                             <span class="comment">//성공시 리턴받을 디바이스 개체 포인터.</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                        );                          </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="yn_define_8h_a14eccb6846a93ea86b18274635a5711c.html#a14eccb6846a93ea86b18274635a5711c">YN_INVALIED</a>(<a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>))</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="comment">//Error..</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_ab2ddfe3c96e19c17cf7e66091a3fea26.html#ab2ddfe3c96e19c17cf7e66091a3fea26">YN_FAIL</a>;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">// 디바이스 기본 상태 옵션 결정.</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// ...</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment">// ...</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">// 시스템 폰트 생성.</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">//</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_variable" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a> = CreateFont(</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                            12, 6,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                            0, 0, 1, 0, 0, 0,   </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                            DEFAULT_CHARSET,    <span class="comment">//HANGUL_CHARSET  </span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                            OUT_DEFAULT_PRECIS,      </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                            CLIP_DEFAULT_PRECIS,  </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                            DEFAULT_QUALITY,</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                            FF_DONTCARE, </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                            _T(<span class="stringliteral">&quot;굴림&quot;</span>) </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                            );</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a>==NULL)</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="comment">// error..! </span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_ab2ddfe3c96e19c17cf7e66091a3fea26.html#ab2ddfe3c96e19c17cf7e66091a3fea26">YN_FAIL</a>;   </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    SelectObject(<a class="code hl_define" href="_device_8cpp_ab5f6f7d3ecf3ac67158505734675db69.html#ab5f6f7d3ecf3ac67158505734675db69">hRT</a>, <a class="code hl_variable" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a>);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_ac2200c63b3f7dca9393e9db0518a5283.html#ac2200c63b3f7dca9393e9db0518a5283">YN_OK</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment"></span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">//! 예나 SWR 엔진 구성 : 초기 1회 호출</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">//! </span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">//               </span></div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="_device_8cpp_acca400f5f8053c4279231fc354f439f2.html#acca400f5f8053c4279231fc354f439f2">   69</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_device_8cpp_acca400f5f8053c4279231fc354f439f2.html#acca400f5f8053c4279231fc354f439f2">YenaSetup</a>(HWND hwnd)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>{</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// 예나 생성.(IDirect3D 대응)</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_variable" href="_device_8cpp_afa4ec13e638ab6d4ee313db3d3fd3146.html#afa4ec13e638ab6d4ee313db3d3fd3146">g_pYena</a> = <a class="code hl_function" href="group___yena-_interfaces_gaadd8f307a7460a88e7c4c254bcbe6719.html#gaadd8f307a7460a88e7c4c254bcbe6719">YenaCreate9</a>(<a class="code hl_define" href="group___yena-_interfaces_ga2a5fc3d96c45d8ac357124c36faa0d47.html#ga2a5fc3d96c45d8ac357124c36faa0d47">YENA_VERSION</a>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="yn_define_8h_a14eccb6846a93ea86b18274635a5711c.html#a14eccb6846a93ea86b18274635a5711c">YN_INVALIED</a>(<a class="code hl_variable" href="_device_8cpp_afa4ec13e638ab6d4ee313db3d3fd3146.html#afa4ec13e638ab6d4ee313db3d3fd3146">g_pYena</a>))</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="comment">//Error...</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_ab2ddfe3c96e19c17cf7e66091a3fea26.html#ab2ddfe3c96e19c17cf7e66091a3fea26">YN_FAIL</a>; </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">// Yena SWR 장치 정보 구성 </span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">// &lt;주&gt; D3D9 운용 필요 데이터 중 Yena 에 필요한 최소한의 정보만 구성)</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_typedef" href="ynx9types_8h_a290e0a590dd684630a8c9c08735919aa.html#a290e0a590dd684630a8c9c08735919aa">YENAPRESENT_PARAMETERS</a> pp;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    ZeroMemory(&amp;pp, <span class="keyword">sizeof</span>(pp));</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    pp.<a class="code hl_variable" href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_adf3c61991d3725e56d2881394f9c3e2e.html#adf3c61991d3725e56d2881394f9c3e2e">Width</a>  = <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a>.Width;        <span class="comment">//해상도 결정.(백버퍼 크기)</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    pp.<a class="code hl_variable" href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8bf79209b95d6cea4b1da6ad6ed1286f.html#a8bf79209b95d6cea4b1da6ad6ed1286f">Height</a> = <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a>.Height;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    pp.<a class="code hl_variable" href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8046df62d538130048da1598de400799.html#a8046df62d538130048da1598de400799">BackBuffercnt</a> = 1;          <span class="comment">//백버퍼 개수. (현재는 1개만 가능)</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    pp.<a class="code hl_variable" href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_abfeefea452fc35754264483c3cb0c0fb.html#abfeefea452fc35754264483c3cb0c0fb">Windowed</a> = TRUE;             <span class="comment">//풀스크린, 창모드 선택.(현재는 창모드만 가능)</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">// Yena SWR 장치 생성 : ID3DDevice9 대응  </span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_variable" href="_device_8cpp_afa4ec13e638ab6d4ee313db3d3fd3146.html#afa4ec13e638ab6d4ee313db3d3fd3146">g_pYena</a>-&gt;CreateDevice(<a class="code hl_variable" href="_device_8h_af6e451d84715c224b60977594e800b81.html#af6e451d84715c224b60977594e800b81">g_hWnd</a>,                              <span class="comment">//디바이스의 렌더링 목표 윈도우 핸들.</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                        &amp;pp,                                    <span class="comment">//디바이스 화면 구성 정보.</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                        <a class="code hl_enumvalue" href="ynx9types_8h_a8efb55e1ce6aaeee37ab0e8266e660fd.html#a8efb55e1ce6aaeee37ab0e8266e660fda5ce5ae4f784687f3a53f4d2fbc0f8de6">YENACREATE_SOFTWARE_VERTEXPROCESSING</a>,   <span class="comment">//정점연산 방법 결정 (현재는 SW 만 가능) &lt;DX&gt; HW &lt;Yena&gt; SW 설정. </span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                        &amp;<a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>                             <span class="comment">//성공시 리턴받을 디바이스 개체 포인터.</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                        );                          </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="yn_define_8h_a14eccb6846a93ea86b18274635a5711c.html#a14eccb6846a93ea86b18274635a5711c">YN_INVALIED</a>(<a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>))</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="comment">//Error..</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_ab2ddfe3c96e19c17cf7e66091a3fea26.html#ab2ddfe3c96e19c17cf7e66091a3fea26">YN_FAIL</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">// 디바이스 기본 상태 옵션 결정.</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">// ...</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">// ...</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// 시스템 폰트 생성.</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_variable" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a> = CreateFont(</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                            12, 6,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                            0, 0, 1, 0, 0, 0,   </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                            DEFAULT_CHARSET,    <span class="comment">//HANGUL_CHARSET  </span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                            OUT_DEFAULT_PRECIS,      </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                            CLIP_DEFAULT_PRECIS,  </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                            DEFAULT_QUALITY,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                            FF_DONTCARE, </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                            _T(<span class="stringliteral">&quot;굴림&quot;</span>) </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                            );</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a>==NULL)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="comment">// error..! </span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_ab2ddfe3c96e19c17cf7e66091a3fea26.html#ab2ddfe3c96e19c17cf7e66091a3fea26">YN_FAIL</a>;   </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    SelectObject(<a class="code hl_define" href="_device_8cpp_ab5f6f7d3ecf3ac67158505734675db69.html#ab5f6f7d3ecf3ac67158505734675db69">hRT</a>, <a class="code hl_variable" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a>);</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
-</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_ac2200c63b3f7dca9393e9db0518a5283.html#ac2200c63b3f7dca9393e9db0518a5283">YN_OK</a>;</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment"></span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">//! 예나 SWR 엔진 제거 : 종료시 1회 호출</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="_device_8cpp_afc209451cd1079d8919b834c908f19ef.html#afc209451cd1079d8919b834c908f19ef">  138</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_device_8cpp_afc209451cd1079d8919b834c908f19ef.html#afc209451cd1079d8919b834c908f19ef">YenaRelease</a>()</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>{   </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="comment">// 폰트 제거.</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    DeleteObject(<a class="code hl_variable" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a>);</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="comment">// 렌더링 객체 제거. </span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <a class="code hl_define" href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">SafeRelease</a>(<a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>);     <span class="comment">//디바이스 제거 </span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <a class="code hl_define" href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">SafeRelease</a>(<a class="code hl_variable" href="_device_8cpp_afa4ec13e638ab6d4ee313db3d3fd3146.html#afa4ec13e638ab6d4ee313db3d3fd3146">g_pYena</a>);     <span class="comment">//예나 제거 </span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>} </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>}</div>
 </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment"></span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">//! 예나 SWR 엔진 제거 : 종료시 1회 호출</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00141" data-start="{" data-end="}">
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="_device_8cpp_afc209451cd1079d8919b834c908f19ef.html#afc209451cd1079d8919b834c908f19ef">  141</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_device_8cpp_afc209451cd1079d8919b834c908f19ef.html#afc209451cd1079d8919b834c908f19ef">YenaRelease</a>()</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>{   </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="comment">// 폰트 제거.</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    DeleteObject(<a class="code hl_variable" href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="comment">// 렌더링 객체 제거. </span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_define" href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">SafeRelease</a>(<a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>);     <span class="comment">//디바이스 제거 </span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <a class="code hl_define" href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">SafeRelease</a>(<a class="code hl_variable" href="_device_8cpp_afa4ec13e638ab6d4ee313db3d3fd3146.html#afa4ec13e638ab6d4ee313db3d3fd3146">g_pYena</a>);     <span class="comment">//예나 제거 </span></div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> <span class="comment"></span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">//! 엔진 타이머 : 초당 프레임(fps) 출력</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">//! </span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment">//! \param  x, y  출력할 화면좌표(2D)</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment">//! \return 없음.</span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15">  160</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15">PutFPS</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>{</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keyword">static</span> UINT  frm = 0;</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keyword">static</span> <span class="keywordtype">float</span> fps = 0.0f;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    ++frm;</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">static</span> ULONGLONG oldtime = GetTickCount64();</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    ULONGLONG        nowtime = GetTickCount64();</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    UINT time = (UINT)(nowtime - oldtime);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">if</span> (time &gt;= 1000)</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    {</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        fps = (float)(frm * 1000) / (float)time;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        frm = 0;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        oldtime = nowtime;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    }</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y, RGB(255, 255, 255), _T(<span class="stringliteral">&quot;FPS=%.1f/%d&quot;</span>), fps, time);</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>} </div>
 </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> <span class="comment"></span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment">//! 엔진 타이머 : 초당 프레임(fps) 출력</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">//! </span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment">//! \param  x, y  출력할 화면좌표(2D)</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment">//! \return 없음.</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15">  163</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15">PutFPS</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>{</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">static</span> UINT  frm = 0;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keyword">static</span> <span class="keywordtype">float</span> fps = 0.0f;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    ++frm;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keyword">static</span> ULONGLONG oldtime = GetTickCount64();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    ULONGLONG        nowtime = GetTickCount64();</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    UINT time = (UINT)(nowtime - oldtime);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">if</span> (time &gt;= 1000)</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        fps = (float)(frm * 1000) / (float)time;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        frm = 0;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        oldtime = nowtime;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    }</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y, RGB(255, 255, 255), _T(<span class="stringliteral">&quot;FPS=%.1f/%d&quot;</span>), fps, time);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>}</div>
+</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment"></span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">//! 엔진 타이머 : 프레임 시간 획득.</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31.html#a76c4195d88ec690c4da612bbd6d55f31">  187</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31.html#a76c4195d88ec690c4da612bbd6d55f31">GetEngineTime</a>()</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>{    </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keyword">static</span> ULONGLONG oldtime = GetTickCount64();</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    ULONGLONG nowtime = GetTickCount64();</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordtype">float</span> dTime = (nowtime - oldtime) * 0.001f;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    oldtime = nowtime;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">return</span> dTime; </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>}</div>
-</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment"></span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">//! 엔진 타이머 : 프레임 시간 획득.</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31.html#a76c4195d88ec690c4da612bbd6d55f31">  190</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31.html#a76c4195d88ec690c4da612bbd6d55f31">GetEngineTime</a>()</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>{    </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keyword">static</span> ULONGLONG oldtime = GetTickCount64();</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    ULONGLONG nowtime = GetTickCount64();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordtype">float</span> dTime = (nowtime - oldtime) * 0.001f;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    oldtime = nowtime;</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment"></span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="comment">//! 문자열 출력 (GDI)</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment">//!</span></div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">//! \param  x, y    출력 화면 좌표.</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment">//! \param  msg     출력 문자열 (형식화 문자열 지원)</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment">//! \return 없음.</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00208" data-start="{" data-end="}">
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">  208</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, COLORREF col, TCHAR* msg, ...)</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>{</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    TCHAR buff[2048]=_T(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    va_list vl;</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    va_start(vl, msg);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    _vstprintf(buff, msg, vl);</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    va_end(vl);</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    RECT rc = { x, y, (LONG)(x + <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a>.Width), (LONG)(y + <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a>.Height) };</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    SetTextColor(<a class="code hl_define" href="_device_8cpp_ab5f6f7d3ecf3ac67158505734675db69.html#ab5f6f7d3ecf3ac67158505734675db69">hRT</a>, col);</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(<a class="code hl_define" href="_device_8cpp_ab5f6f7d3ecf3ac67158505734675db69.html#ab5f6f7d3ecf3ac67158505734675db69">hRT</a>, buff, (<span class="keywordtype">int</span>)_tcslen(buff), &amp;rc, DT_WORDBREAK);</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    SetTextColor(<a class="code hl_define" href="_device_8cpp_ab5f6f7d3ecf3ac67158505734675db69.html#ab5f6f7d3ecf3ac67158505734675db69">hRT</a>, <a class="code hl_variable" href="_device_8cpp_a76053dd74350f70eb057d094c40b8436.html#a76053dd74350f70eb057d094c40b8436">g_SysFnColor</a>);</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="comment">//return res;</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>}</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">return</span> dTime; </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
 </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="comment"></span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment">//! 문자열 출력 (GDI)</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment">//!</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment">//! \param  x, y    출력 화면 좌표.</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment">//! \param  msg     출력 문자열 (형식화 문자열 지원)</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="comment">//! \return 없음.</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00211" data-start="{" data-end="}">
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">  211</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, COLORREF col, TCHAR* msg, ...)</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>{</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    TCHAR buff[2048]=_T(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    va_list vl;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    va_start(vl, msg);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    _vstprintf(buff, msg, vl);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    va_end(vl);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    RECT rc = { x, y, (LONG)(x + <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a>.Width), (LONG)(y + <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a>.Height) };</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    SetTextColor(<a class="code hl_define" href="_device_8cpp_ab5f6f7d3ecf3ac67158505734675db69.html#ab5f6f7d3ecf3ac67158505734675db69">hRT</a>, col);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(<a class="code hl_define" href="_device_8cpp_ab5f6f7d3ecf3ac67158505734675db69.html#ab5f6f7d3ecf3ac67158505734675db69">hRT</a>, buff, (<span class="keywordtype">int</span>)_tcslen(buff), &amp;rc, DT_WORDBREAK);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    SetTextColor(<a class="code hl_define" href="_device_8cpp_ab5f6f7d3ecf3ac67158505734675db69.html#ab5f6f7d3ecf3ac67158505734675db69">hRT</a>, <a class="code hl_variable" href="_device_8cpp_a76053dd74350f70eb057d094c40b8436.html#a76053dd74350f70eb057d094c40b8436">g_SysFnColor</a>);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="comment">//return res;</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>}</div>
+</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">/*********************** end of file &quot;Device.cpp&quot; *********************/</span></div>
-<div class="ttc" id="a_device_8cpp_a2034272a68b183b7651f0195b1d55182_html_a2034272a68b183b7651f0195b1d55182"><div class="ttname"><a href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a></div><div class="ttdeci">void DrawText(int x, int y, COLORREF col, TCHAR *msg,...)</div><div class="ttdef"><b>Definition</b> <a href="#l00208">Device.cpp:208</a></div></div>
-<div class="ttc" id="a_device_8cpp_a260a52ec8ded4507a00baf717b33e88b_html_a260a52ec8ded4507a00baf717b33e88b"><div class="ttname"><a href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a></div><div class="ttdeci">YENADISPLAYMODE g_Mode</div><div class="ttdef"><b>Definition</b> <a href="#l00041">Device.cpp:41</a></div></div>
-<div class="ttc" id="a_device_8cpp_a76053dd74350f70eb057d094c40b8436_html_a76053dd74350f70eb057d094c40b8436"><div class="ttname"><a href="_device_8cpp_a76053dd74350f70eb057d094c40b8436.html#a76053dd74350f70eb057d094c40b8436">g_SysFnColor</a></div><div class="ttdeci">COLORREF g_SysFnColor</div><div class="ttdef"><b>Definition</b> <a href="#l00047">Device.cpp:47</a></div></div>
-<div class="ttc" id="a_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31_html_a76c4195d88ec690c4da612bbd6d55f31"><div class="ttname"><a href="_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31.html#a76c4195d88ec690c4da612bbd6d55f31">GetEngineTime</a></div><div class="ttdeci">float GetEngineTime()</div><div class="ttdoc">엔진 타이머 : 프레임 시간 획득.</div><div class="ttdef"><b>Definition</b> <a href="#l00187">Device.cpp:187</a></div></div>
-<div class="ttc" id="a_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15_html_a8b5e6c31a2a6e19c38a0df9083df6f15"><div class="ttname"><a href="_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15">PutFPS</a></div><div class="ttdeci">void PutFPS(int x, int y)</div><div class="ttdef"><b>Definition</b> <a href="#l00160">Device.cpp:160</a></div></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment">/*********************** end of file &quot;Device.cpp&quot; *********************/</span></div>
+<div class="ttc" id="a_device_8cpp_a2034272a68b183b7651f0195b1d55182_html_a2034272a68b183b7651f0195b1d55182"><div class="ttname"><a href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a></div><div class="ttdeci">void DrawText(int x, int y, COLORREF col, TCHAR *msg,...)</div><div class="ttdef"><b>Definition</b> <a href="#l00211">Device.cpp:211</a></div></div>
+<div class="ttc" id="a_device_8cpp_a260a52ec8ded4507a00baf717b33e88b_html_a260a52ec8ded4507a00baf717b33e88b"><div class="ttname"><a href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a></div><div class="ttdeci">YENADISPLAYMODE g_Mode</div><div class="ttdef"><b>Definition</b> <a href="#l00042">Device.cpp:42</a></div></div>
+<div class="ttc" id="a_device_8cpp_a76053dd74350f70eb057d094c40b8436_html_a76053dd74350f70eb057d094c40b8436"><div class="ttname"><a href="_device_8cpp_a76053dd74350f70eb057d094c40b8436.html#a76053dd74350f70eb057d094c40b8436">g_SysFnColor</a></div><div class="ttdeci">COLORREF g_SysFnColor</div><div class="ttdef"><b>Definition</b> <a href="#l00050">Device.cpp:50</a></div></div>
+<div class="ttc" id="a_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31_html_a76c4195d88ec690c4da612bbd6d55f31"><div class="ttname"><a href="_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31.html#a76c4195d88ec690c4da612bbd6d55f31">GetEngineTime</a></div><div class="ttdeci">float GetEngineTime()</div><div class="ttdoc">엔진 타이머 : 프레임 시간 획득.</div><div class="ttdef"><b>Definition</b> <a href="#l00190">Device.cpp:190</a></div></div>
+<div class="ttc" id="a_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15_html_a8b5e6c31a2a6e19c38a0df9083df6f15"><div class="ttname"><a href="_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15">PutFPS</a></div><div class="ttdeci">void PutFPS(int x, int y)</div><div class="ttdef"><b>Definition</b> <a href="#l00163">Device.cpp:163</a></div></div>
 <div class="ttc" id="a_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6_html_ab142bdfd6670612f5797b3691e1d0aa6"><div class="ttname"><a href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a></div><div class="ttdeci">LPYENADEVICE9 g_pDevice</div><div class="ttdef"><b>Definition</b> <a href="#l00032">Device.cpp:32</a></div></div>
 <div class="ttc" id="a_device_8cpp_ab5f6f7d3ecf3ac67158505734675db69_html_ab5f6f7d3ecf3ac67158505734675db69"><div class="ttname"><a href="_device_8cpp_ab5f6f7d3ecf3ac67158505734675db69.html#ab5f6f7d3ecf3ac67158505734675db69">hRT</a></div><div class="ttdeci">#define hRT</div><div class="ttdef"><b>Definition</b> <a href="#l00036">Device.cpp:36</a></div></div>
-<div class="ttc" id="a_device_8cpp_abdce14aecbf3c9046e0481de1666f7ad_html_abdce14aecbf3c9046e0481de1666f7ad"><div class="ttname"><a href="_device_8cpp_abdce14aecbf3c9046e0481de1666f7ad.html#abdce14aecbf3c9046e0481de1666f7ad">g_ShowFrame</a></div><div class="ttdeci">BOOL g_ShowFrame</div><div class="ttdef"><b>Definition</b> <a href="#l00055">Device.cpp:55</a></div></div>
-<div class="ttc" id="a_device_8cpp_acca400f5f8053c4279231fc354f439f2_html_acca400f5f8053c4279231fc354f439f2"><div class="ttname"><a href="_device_8cpp_acca400f5f8053c4279231fc354f439f2.html#acca400f5f8053c4279231fc354f439f2">YenaSetup</a></div><div class="ttdeci">int YenaSetup(HWND hwnd)</div><div class="ttdef"><b>Definition</b> <a href="#l00066">Device.cpp:66</a></div></div>
-<div class="ttc" id="a_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37_html_acf3469f125aa6416b62dbf1842d2aa37"><div class="ttname"><a href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a></div><div class="ttdeci">HFONT g_hSysFont</div><div class="ttdef"><b>Definition</b> <a href="#l00046">Device.cpp:46</a></div></div>
+<div class="ttc" id="a_device_8cpp_abdce14aecbf3c9046e0481de1666f7ad_html_abdce14aecbf3c9046e0481de1666f7ad"><div class="ttname"><a href="_device_8cpp_abdce14aecbf3c9046e0481de1666f7ad.html#abdce14aecbf3c9046e0481de1666f7ad">g_ShowFrame</a></div><div class="ttdeci">BOOL g_ShowFrame</div><div class="ttdef"><b>Definition</b> <a href="#l00058">Device.cpp:58</a></div></div>
+<div class="ttc" id="a_device_8cpp_acca400f5f8053c4279231fc354f439f2_html_acca400f5f8053c4279231fc354f439f2"><div class="ttname"><a href="_device_8cpp_acca400f5f8053c4279231fc354f439f2.html#acca400f5f8053c4279231fc354f439f2">YenaSetup</a></div><div class="ttdeci">int YenaSetup(HWND hwnd)</div><div class="ttdef"><b>Definition</b> <a href="#l00069">Device.cpp:69</a></div></div>
+<div class="ttc" id="a_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37_html_acf3469f125aa6416b62dbf1842d2aa37"><div class="ttname"><a href="_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37">g_hSysFont</a></div><div class="ttdeci">HFONT g_hSysFont</div><div class="ttdef"><b>Definition</b> <a href="#l00049">Device.cpp:49</a></div></div>
 <div class="ttc" id="a_device_8cpp_afa4ec13e638ab6d4ee313db3d3fd3146_html_afa4ec13e638ab6d4ee313db3d3fd3146"><div class="ttname"><a href="_device_8cpp_afa4ec13e638ab6d4ee313db3d3fd3146.html#afa4ec13e638ab6d4ee313db3d3fd3146">g_pYena</a></div><div class="ttdeci">LPYENA g_pYena</div><div class="ttdef"><b>Definition</b> <a href="#l00031">Device.cpp:31</a></div></div>
-<div class="ttc" id="a_device_8cpp_afc209451cd1079d8919b834c908f19ef_html_afc209451cd1079d8919b834c908f19ef"><div class="ttname"><a href="_device_8cpp_afc209451cd1079d8919b834c908f19ef.html#afc209451cd1079d8919b834c908f19ef">YenaRelease</a></div><div class="ttdeci">void YenaRelease()</div><div class="ttdoc">예나 SWR 엔진 제거 : 종료시 1회 호출</div><div class="ttdef"><b>Definition</b> <a href="#l00138">Device.cpp:138</a></div></div>
+<div class="ttc" id="a_device_8cpp_afc209451cd1079d8919b834c908f19ef_html_afc209451cd1079d8919b834c908f19ef"><div class="ttname"><a href="_device_8cpp_afc209451cd1079d8919b834c908f19ef.html#afc209451cd1079d8919b834c908f19ef">YenaRelease</a></div><div class="ttdeci">void YenaRelease()</div><div class="ttdoc">예나 SWR 엔진 제거 : 종료시 1회 호출</div><div class="ttdef"><b>Definition</b> <a href="#l00141">Device.cpp:141</a></div></div>
 <div class="ttc" id="a_device_8h_af6e451d84715c224b60977594e800b81_html_af6e451d84715c224b60977594e800b81"><div class="ttname"><a href="_device_8h_af6e451d84715c224b60977594e800b81.html#af6e451d84715c224b60977594e800b81">g_hWnd</a></div><div class="ttdeci">HWND g_hWnd</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00025">main.cpp:25</a></div></div>
 <div class="ttc" id="a_device_8h_html"><div class="ttname"><a href="_device_8h.html">Device.h</a></div><div class="ttdoc">예제 렌더링 장치 운용 헤더</div></div>
-<div class="ttc" id="agroup___yena-_interfaces_ga2a5fc3d96c45d8ac357124c36faa0d47_html_ga2a5fc3d96c45d8ac357124c36faa0d47"><div class="ttname"><a href="group___yena-_interfaces_ga2a5fc3d96c45d8ac357124c36faa0d47.html#ga2a5fc3d96c45d8ac357124c36faa0d47">YENA_VERSION</a></div><div class="ttdeci">#define YENA_VERSION</div><div class="ttdef"><b>Definition</b> <a href="ynx9_8h_source.html#l00034">ynx9.h:34</a></div></div>
-<div class="ttc" id="agroup___yena-_interfaces_gaadd8f307a7460a88e7c4c254bcbe6719_html_gaadd8f307a7460a88e7c4c254bcbe6719"><div class="ttname"><a href="group___yena-_interfaces_gaadd8f307a7460a88e7c4c254bcbe6719.html#gaadd8f307a7460a88e7c4c254bcbe6719">YenaCreate9</a></div><div class="ttdeci">IYena * YenaCreate9(DWORD ver)</div><div class="ttdef"><b>Definition</b> <a href="_yena_8cpp_source.html#l00402">Yena.cpp:402</a></div></div>
+<div class="ttc" id="agroup___yena-_interfaces_ga2a5fc3d96c45d8ac357124c36faa0d47_html_ga2a5fc3d96c45d8ac357124c36faa0d47"><div class="ttname"><a href="group___yena-_interfaces_ga2a5fc3d96c45d8ac357124c36faa0d47.html#ga2a5fc3d96c45d8ac357124c36faa0d47">YENA_VERSION</a></div><div class="ttdeci">#define YENA_VERSION</div><div class="ttdef"><b>Definition</b> <a href="ynx9_8h_source.html#l00033">ynx9.h:33</a></div></div>
+<div class="ttc" id="agroup___yena-_interfaces_gaadd8f307a7460a88e7c4c254bcbe6719_html_gaadd8f307a7460a88e7c4c254bcbe6719"><div class="ttname"><a href="group___yena-_interfaces_gaadd8f307a7460a88e7c4c254bcbe6719.html#gaadd8f307a7460a88e7c4c254bcbe6719">YenaCreate9</a></div><div class="ttdeci">IYena * YenaCreate9(DWORD ver)</div><div class="ttdef"><b>Definition</b> <a href="_yena_8cpp_source.html#l00408">Yena.cpp:408</a></div></div>
 <div class="ttc" id="agroup___yena-_interfaces_gabb5675bef47dabe432b3f19346e58f5e_html_gabb5675bef47dabe432b3f19346e58f5e"><div class="ttname"><a href="group___yena-_interfaces_gabb5675bef47dabe432b3f19346e58f5e.html#gabb5675bef47dabe432b3f19346e58f5e">LPYENA</a></div><div class="ttdeci">IYena * LPYENA</div><div class="ttdef"><b>Definition</b> <a href="ynx9_8h_source.html#l00170">ynx9.h:170</a></div></div>
-<div class="ttc" id="agroup___yena-_interfaces_gafba326dc44b65b6a28c93851b9d81a4b_html_gafba326dc44b65b6a28c93851b9d81a4b"><div class="ttname"><a href="group___yena-_interfaces_gafba326dc44b65b6a28c93851b9d81a4b.html#gafba326dc44b65b6a28c93851b9d81a4b">LPYENADEVICE9</a></div><div class="ttdeci">IYenaDevice9 * LPYENADEVICE9</div><div class="ttdef"><b>Definition</b> <a href="ynx9_8h_source.html#l00031">ynx9.h:31</a></div></div>
-<div class="ttc" id="astruct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8046df62d538130048da1598de400799_html_a8046df62d538130048da1598de400799"><div class="ttname"><a href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8046df62d538130048da1598de400799.html#a8046df62d538130048da1598de400799">B3YPRESENT_PARAMETERS::BackBuffercnt</a></div><div class="ttdeci">DWORD BackBuffercnt</div><div class="ttdoc">백버퍼 개수</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00272">ynx9types.h:272</a></div></div>
-<div class="ttc" id="astruct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8bf79209b95d6cea4b1da6ad6ed1286f_html_a8bf79209b95d6cea4b1da6ad6ed1286f"><div class="ttname"><a href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8bf79209b95d6cea4b1da6ad6ed1286f.html#a8bf79209b95d6cea4b1da6ad6ed1286f">B3YPRESENT_PARAMETERS::Height</a></div><div class="ttdeci">DWORD Height</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00271">ynx9types.h:271</a></div></div>
-<div class="ttc" id="astruct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_abfeefea452fc35754264483c3cb0c0fb_html_abfeefea452fc35754264483c3cb0c0fb"><div class="ttname"><a href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_abfeefea452fc35754264483c3cb0c0fb.html#abfeefea452fc35754264483c3cb0c0fb">B3YPRESENT_PARAMETERS::Windowed</a></div><div class="ttdeci">BOOL Windowed</div><div class="ttdoc">창모드 실행 실행 여부. 1 = Windowed, 0 = Full-Screen mode</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00273">ynx9types.h:273</a></div></div>
-<div class="ttc" id="astruct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_adf3c61991d3725e56d2881394f9c3e2e_html_adf3c61991d3725e56d2881394f9c3e2e"><div class="ttname"><a href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_adf3c61991d3725e56d2881394f9c3e2e.html#adf3c61991d3725e56d2881394f9c3e2e">B3YPRESENT_PARAMETERS::Width</a></div><div class="ttdeci">DWORD Width</div><div class="ttdoc">해상도 : 클라이언트 영역기준.</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00270">ynx9types.h:270</a></div></div>
+<div class="ttc" id="agroup___yena-_interfaces_gafba326dc44b65b6a28c93851b9d81a4b_html_gafba326dc44b65b6a28c93851b9d81a4b"><div class="ttname"><a href="group___yena-_interfaces_gafba326dc44b65b6a28c93851b9d81a4b.html#gafba326dc44b65b6a28c93851b9d81a4b">LPYENADEVICE9</a></div><div class="ttdeci">IYenaDevice9 * LPYENADEVICE9</div><div class="ttdef"><b>Definition</b> <a href="ynx9_8h_source.html#l00030">ynx9.h:30</a></div></div>
+<div class="ttc" id="astruct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8046df62d538130048da1598de400799_html_a8046df62d538130048da1598de400799"><div class="ttname"><a href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8046df62d538130048da1598de400799.html#a8046df62d538130048da1598de400799">B3YPRESENT_PARAMETERS::BackBuffercnt</a></div><div class="ttdeci">DWORD BackBuffercnt</div><div class="ttdoc">백버퍼 개수</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00310">ynx9types.h:310</a></div></div>
+<div class="ttc" id="astruct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8bf79209b95d6cea4b1da6ad6ed1286f_html_a8bf79209b95d6cea4b1da6ad6ed1286f"><div class="ttname"><a href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_a8bf79209b95d6cea4b1da6ad6ed1286f.html#a8bf79209b95d6cea4b1da6ad6ed1286f">B3YPRESENT_PARAMETERS::Height</a></div><div class="ttdeci">DWORD Height</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00309">ynx9types.h:309</a></div></div>
+<div class="ttc" id="astruct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_abfeefea452fc35754264483c3cb0c0fb_html_abfeefea452fc35754264483c3cb0c0fb"><div class="ttname"><a href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_abfeefea452fc35754264483c3cb0c0fb.html#abfeefea452fc35754264483c3cb0c0fb">B3YPRESENT_PARAMETERS::Windowed</a></div><div class="ttdeci">BOOL Windowed</div><div class="ttdoc">창모드 실행 실행 여부. 1 = Windowed, 0 = Full-Screen mode</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00311">ynx9types.h:311</a></div></div>
+<div class="ttc" id="astruct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_adf3c61991d3725e56d2881394f9c3e2e_html_adf3c61991d3725e56d2881394f9c3e2e"><div class="ttname"><a href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s_adf3c61991d3725e56d2881394f9c3e2e.html#adf3c61991d3725e56d2881394f9c3e2e">B3YPRESENT_PARAMETERS::Width</a></div><div class="ttdeci">DWORD Width</div><div class="ttdoc">해상도 : 클라이언트 영역기준.</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00308">ynx9types.h:308</a></div></div>
 <div class="ttc" id="ayn_define_8h_a14eccb6846a93ea86b18274635a5711c_html_a14eccb6846a93ea86b18274635a5711c"><div class="ttname"><a href="yn_define_8h_a14eccb6846a93ea86b18274635a5711c.html#a14eccb6846a93ea86b18274635a5711c">YN_INVALIED</a></div><div class="ttdeci">#define YN_INVALIED(res)</div><div class="ttdef"><b>Definition</b> <a href="yn_define_8h_source.html#l00080">ynDefine.h:80</a></div></div>
 <div class="ttc" id="ayn_define_8h_ab2ddfe3c96e19c17cf7e66091a3fea26_html_ab2ddfe3c96e19c17cf7e66091a3fea26"><div class="ttname"><a href="yn_define_8h_ab2ddfe3c96e19c17cf7e66091a3fea26.html#ab2ddfe3c96e19c17cf7e66091a3fea26">YN_FAIL</a></div><div class="ttdeci">#define YN_FAIL</div><div class="ttdef"><b>Definition</b> <a href="yn_define_8h_source.html#l00093">ynDefine.h:93</a></div></div>
 <div class="ttc" id="ayn_define_8h_ac2200c63b3f7dca9393e9db0518a5283_html_ac2200c63b3f7dca9393e9db0518a5283"><div class="ttname"><a href="yn_define_8h_ac2200c63b3f7dca9393e9db0518a5283.html#ac2200c63b3f7dca9393e9db0518a5283">YN_OK</a></div><div class="ttdeci">#define YN_OK</div><div class="ttdef"><b>Definition</b> <a href="yn_define_8h_source.html#l00091">ynDefine.h:91</a></div></div>
-<div class="ttc" id="ayn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6_html_af9805d148b7d14ce7e18a4ee6175fbc6"><div class="ttname"><a href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">SafeRelease</a></div><div class="ttdeci">#define SafeRelease(pBuff)</div><div class="ttdef"><b>Definition</b> <a href="yn_define_8h_source.html#l00111">ynDefine.h:111</a></div></div>
-<div class="ttc" id="aynx9types_8h_a290e0a590dd684630a8c9c08735919aa_html_a290e0a590dd684630a8c9c08735919aa"><div class="ttname"><a href="ynx9types_8h_a290e0a590dd684630a8c9c08735919aa.html#a290e0a590dd684630a8c9c08735919aa">YENAPRESENT_PARAMETERS</a></div><div class="ttdeci">B3YPRESENT_PARAMETERS YENAPRESENT_PARAMETERS</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00282">ynx9types.h:282</a></div></div>
-<div class="ttc" id="aynx9types_8h_a5913be8dd39c1a93bc6549920138cc88_html_a5913be8dd39c1a93bc6549920138cc88"><div class="ttname"><a href="ynx9types_8h_a5913be8dd39c1a93bc6549920138cc88.html#a5913be8dd39c1a93bc6549920138cc88">YENADISPLAYMODE</a></div><div class="ttdeci">B3YDISPLAYMODE YENADISPLAYMODE</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00310">ynx9types.h:310</a></div></div>
-<div class="ttc" id="aynx9types_8h_a8efb55e1ce6aaeee37ab0e8266e660fd_html_a8efb55e1ce6aaeee37ab0e8266e660fda5ce5ae4f784687f3a53f4d2fbc0f8de6"><div class="ttname"><a href="ynx9types_8h_a8efb55e1ce6aaeee37ab0e8266e660fd.html#a8efb55e1ce6aaeee37ab0e8266e660fda5ce5ae4f784687f3a53f4d2fbc0f8de6">YENACREATE_SOFTWARE_VERTEXPROCESSING</a></div><div class="ttdeci">@ YENACREATE_SOFTWARE_VERTEXPROCESSING</div><div class="ttdoc">CPU 가 정점 연산을 처리.&lt;Yena 기본&gt;</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00322">ynx9types.h:322</a></div></div>
+<div class="ttc" id="ayn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6_html_af9805d148b7d14ce7e18a4ee6175fbc6"><div class="ttname"><a href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">SafeRelease</a></div><div class="ttdeci">#define SafeRelease(pBuff)</div><div class="ttdef"><b>Definition</b> <a href="yn_define_8h_source.html#l00116">ynDefine.h:116</a></div></div>
+<div class="ttc" id="aynx9types_8h_a290e0a590dd684630a8c9c08735919aa_html_a290e0a590dd684630a8c9c08735919aa"><div class="ttname"><a href="ynx9types_8h_a290e0a590dd684630a8c9c08735919aa.html#a290e0a590dd684630a8c9c08735919aa">YENAPRESENT_PARAMETERS</a></div><div class="ttdeci">B3YPRESENT_PARAMETERS YENAPRESENT_PARAMETERS</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00320">ynx9types.h:320</a></div></div>
+<div class="ttc" id="aynx9types_8h_a5913be8dd39c1a93bc6549920138cc88_html_a5913be8dd39c1a93bc6549920138cc88"><div class="ttname"><a href="ynx9types_8h_a5913be8dd39c1a93bc6549920138cc88.html#a5913be8dd39c1a93bc6549920138cc88">YENADISPLAYMODE</a></div><div class="ttdeci">B3YDISPLAYMODE YENADISPLAYMODE</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00348">ynx9types.h:348</a></div></div>
+<div class="ttc" id="aynx9types_8h_a8efb55e1ce6aaeee37ab0e8266e660fd_html_a8efb55e1ce6aaeee37ab0e8266e660fda5ce5ae4f784687f3a53f4d2fbc0f8de6"><div class="ttname"><a href="ynx9types_8h_a8efb55e1ce6aaeee37ab0e8266e660fd.html#a8efb55e1ce6aaeee37ab0e8266e660fda5ce5ae4f784687f3a53f4d2fbc0f8de6">YENACREATE_SOFTWARE_VERTEXPROCESSING</a></div><div class="ttdeci">@ YENACREATE_SOFTWARE_VERTEXPROCESSING</div><div class="ttdoc">CPU 가 정점 연산을 처리.&lt;Yena 기본&gt;</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00360">ynx9types.h:360</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="struct_b3_y_v_e_c_t_o_r3.html" target="_top" xlink:title="3성분 벡터 구조체.">
+<g id="a_Node000002"><a xlink:href="struct_b3_y_v_e_c_t_o_r3.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="85.38,-76 3.38,-76 3.38,-56 85.38,-56 85.38,-76"/>
 <text xml:space="preserve" text-anchor="middle" x="44.38" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">B3YVECTOR3</text>
 </a>

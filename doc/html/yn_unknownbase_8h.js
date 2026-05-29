@@ -18,5 +18,6 @@ var yn_unknownbase_8h =
     [ "YN_MIDL_INTERFACE", "yn_unknownbase_8h_a5a5c383bb6b7abe3c49c96adb0785408.html#a5a5c383bb6b7abe3c49c96adb0785408", null ],
     [ "YN_STDMETHOD", "yn_unknownbase_8h_a6a0e861b0446d3c000004612f966c3a9.html#a6a0e861b0446d3c000004612f966c3a9", null ],
     [ "YN_STDMETHODCALLTYPE", "yn_unknownbase_8h_a6ea09bb0d21ce1065969038d31a16d74.html#a6ea09bb0d21ce1065969038d31a16d74", null ],
-    [ "yninterface", "yn_unknownbase_8h_aa27af94366377547aca4f9b1890489b3.html#aa27af94366377547aca4f9b1890489b3", null ]
+    [ "yninterface", "yn_unknownbase_8h_aa27af94366377547aca4f9b1890489b3.html#aa27af94366377547aca4f9b1890489b3", null ],
+    [ "ynGetClassObject", "yn_unknownbase_8h_add774b1d082563a5fac60539282a8c26.html#add774b1d082563a5fac60539282a8c26", null ]
 ];

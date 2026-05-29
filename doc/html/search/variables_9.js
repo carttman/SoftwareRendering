@@ -1,4 +1,27 @@
 var searchData=
 [
-  ['nrm_0',['nrm',['../struct_v_s___o_u_t_p_u_t_a28565e3db352bc9a0afe93584e74adcf.html#a28565e3db352bc9a0afe93584e74adcf',1,'VS_OUTPUT']]]
+  ['m_0',['m',['../struct_b3_y_m_a_t_r_i_x_acedfb528bf5a3eecc392b7ba8997d49e.html#acedfb528bf5a3eecc392b7ba8997d49e',1,'B3YMATRIX']]],
+  ['m_5fbkcolor_1',['m_BkColor',['../class_b3_yena_device9_ae9114a1f608a8d5dbd78cf2379205045.html#ae9114a1f608a8d5dbd78cf2379205045',1,'B3YenaDevice9']]],
+  ['m_5fblocked_2',['m_bLocked',['../class_b3_yena_vertex_buffer9_a50291cf2ea9a9da55f3a43d2c34ec1c2.html#a50291cf2ea9a9da55f3a43d2c34ec1c2',1,'B3YenaVertexBuffer9']]],
+  ['m_5fdesc_3',['m_Desc',['../class_b3_yena_vertex_buffer9_af9b2eabb439d0c56885ed82fbda7490f.html#af9b2eabb439d0c56885ed82fbda7490f',1,'B3YenaVertexBuffer9']]],
+  ['m_5ffvf_4',['m_FVF',['../class_b3_yena_vertex_buffer9_af576dcd87e0613673dbdc845669bb75e.html#af576dcd87e0613673dbdc845669bb75e',1,'B3YenaVertexBuffer9']]],
+  ['m_5fhr_5',['m_hr',['../class_y_e_n_a_1_1yn_exception_a2c1a8b02c66b82c545c61e55e26aef2d.html#a2c1a8b02c66b82c545c61e55e26aef2d',1,'YENA::ynException']]],
+  ['m_5fhrmsg_6',['m_hrMsg',['../class_y_e_n_a_1_1yn_exception_a3177ee782964dc282a4035e2765070c1.html#a3177ee782964dc282a4035e2765070c1',1,'YENA::ynException']]],
+  ['m_5fhrt_7',['m_hRT',['../class_b3_yena_device9_aa80c50699282c899cefe219208a8bb63.html#aa80c50699282c899cefe219208a8bb63',1,'B3YenaDevice9']]],
+  ['m_5fhwnd_8',['m_hWnd',['../class_b3_yena_device9_a5ff734ba8c5d9025f86eb1ea2fdd2e00.html#a5ff734ba8c5d9025f86eb1ea2fdd2e00',1,'B3YenaDevice9']]],
+  ['m_5finput_9',['m_input',['../class_b3_yena_graphics_engine9_a369919af7c9ed8dfdf692c63a114fc8e.html#a369919af7c9ed8dfdf692c63a114fc8e',1,'B3YenaGraphicsEngine9']]],
+  ['m_5fom_10',['m_om',['../class_b3_yena_graphics_engine9_ac41e7723ade15bed945a21effb7b7fde.html#ac41e7723ade15bed945a21effb7b7fde',1,'B3YenaGraphicsEngine9']]],
+  ['m_5fpdev_11',['m_pDev',['../class_b3_yena_graphics_engine9_afbeee885448b6ae7c196c067dca2db27.html#afbeee885448b6ae7c196c067dca2db27',1,'B3YenaGraphicsEngine9']]],
+  ['m_5fpgraphics_12',['m_pGraphics',['../class_b3_yena_device9_a66d3aa0d418e529a19c4d64efa094043.html#a66d3aa0d418e529a19c4d64efa094043',1,'B3YenaDevice9']]],
+  ['m_5fpso_13',['m_pso',['../class_b3_yena_graphics_engine9_aef1a6995c1375b71e0f99e6b5fd64d1b.html#aef1a6995c1375b71e0f99e6b5fd64d1b',1,'B3YenaGraphicsEngine9']]],
+  ['m_5fpvbuffer_14',['m_pVBuffer',['../class_b3_yena_vertex_buffer9_a6101cc70fe58a52a974e573c6030e9e0.html#a6101cc70fe58a52a974e573c6030e9e0',1,'B3YenaVertexBuffer9']]],
+  ['m_5fref_15',['m_ref',['../class_b3_yena_aea6448ea69ef19dca050a067367f54e2.html#aea6448ea69ef19dca050a067367f54e2',1,'B3Yena::m_ref'],['../class_b3_yena_device9_ab3581cf30f175059b50695b452da5828.html#ab3581cf30f175059b50695b452da5828',1,'B3YenaDevice9::m_ref'],['../class_b3_yena_vertex_buffer9_ae82345d92e73d19e41c61a46a926b1fd.html#ae82345d92e73d19e41c61a46a926b1fd',1,'B3YenaVertexBuffer9::m_ref']]],
+  ['m_5fsizeinbyte_16',['m_SizeInByte',['../class_b3_yena_vertex_buffer9_a72842907742ac13802aa4c26ac2874f5.html#a72842907742ac13802aa4c26ac2874f5',1,'B3YenaVertexBuffer9']]],
+  ['m_5fstm_17',['m_stm',['../class_b3_yena_graphics_engine9_a1591152a3e26cacacf13b8ea271a9efa.html#a1591152a3e26cacacf13b8ea271a9efa',1,'B3YenaGraphicsEngine9']]],
+  ['m_5fstrhr_18',['m_strhr',['../class_y_e_n_a_1_1yn_exception_a2e0bc464b73fad70d7e4138de667a40a.html#a2e0bc464b73fad70d7e4138de667a40a',1,'YENA::ynException']]],
+  ['m_5fstride_19',['m_Stride',['../class_b3_yena_vertex_buffer9_a9611f457cd50ae297b69eb90c1240ed3.html#a9611f457cd50ae297b69eb90c1240ed3',1,'B3YenaVertexBuffer9']]],
+  ['m_5ftms_20',['m_tms',['../class_b3_yena_graphics_engine9_a48181320ddf2547f75d2f594245986d9.html#a48181320ddf2547f75d2f594245986d9',1,'B3YenaGraphicsEngine9']]],
+  ['m_5fvertexprocessing_21',['m_VertexProcessing',['../class_b3_yena_device9_a6e5ae88c6fa831d32f0fe54a66bd4e45.html#a6e5ae88c6fa831d32f0fe54a66bd4e45',1,'B3YenaDevice9']]],
+  ['m_5fvtxcnt_22',['m_VtxCnt',['../class_b3_yena_vertex_buffer9_aa81c0559c3c18c8afa426bbe4f02383c.html#aa81c0559c3c18c8afa426bbe4f02383c',1,'B3YenaVertexBuffer9']]],
+  ['mtfm_23',['mTFM',['../struct_b3_yena_graphics_engine9_1_1_t_r_a_n_s_f_o_r_m_aec1cdf174d9961d92fbbd3d30fb30303.html#aec1cdf174d9961d92fbbd3d30fb30303',1,'B3YenaGraphicsEngine9::TRANSFORM']]]
 ];

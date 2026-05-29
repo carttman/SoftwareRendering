@@ -1,28 +1,5 @@
 var searchData=
 [
-  ['g_0',['g',['../struct_b3_y_c_o_l_o_r_ae7def5e54ae6f549d740ad4bc4def553.html#ae7def5e54ae6f549d740ad4bc4def553',1,'B3YCOLOR']]],
-  ['g_5fambientlightcolor_1',['g_AmbientLightColor',['../_d_x___lambert_8fx_a2f36b595ce8cedc5423d9df2275c6aca.html#a2f36b595ce8cedc5423d9df2275c6aca',1,'DX_Lambert.fx']]],
-  ['g_5fbculling_2',['g_bCulling',['../_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7',1,'Render.cpp']]],
-  ['g_5fbloop_3',['g_bLoop',['../main_8cpp_a0cb18f0e10e4b26882abbca917856440.html#a0cb18f0e10e4b26882abbca917856440',1,'main.cpp']]],
-  ['g_5fbwireframe_4',['g_bWireFrame',['../_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863',1,'Render.cpp']]],
-  ['g_5fclassname_5',['g_ClassName',['../main_8cpp_a40ffa0bc1606d19c7a56c48edfbebb04.html#a40ffa0bc1606d19c7a56c48edfbebb04',1,'main.cpp']]],
-  ['g_5fcolor_6',['g_Color',['../_d_x___lambert_8fx_a5f988861b0e1aaeb0882e80afa213752.html#a5f988861b0e1aaeb0882e80afa213752',1,'DX_Lambert.fx']]],
-  ['g_5fhinstance_7',['g_hInstance',['../main_8cpp_ac3ac20e13a0100039a831961a786ca28.html#ac3ac20e13a0100039a831961a786ca28',1,'main.cpp']]],
-  ['g_5fhsysfont_8',['g_hSysFont',['../_device_8cpp_acf3469f125aa6416b62dbf1842d2aa37.html#acf3469f125aa6416b62dbf1842d2aa37',1,'Device.cpp']]],
-  ['g_5fhwnd_9',['g_hWnd',['../_device_8h_af6e451d84715c224b60977594e800b81.html#af6e451d84715c224b60977594e800b81',1,'g_hWnd:&#160;main.cpp'],['../main_8cpp_af6e451d84715c224b60977594e800b81.html#af6e451d84715c224b60977594e800b81',1,'g_hWnd:&#160;main.cpp'],['../_render_8h_af6e451d84715c224b60977594e800b81.html#af6e451d84715c224b60977594e800b81',1,'g_hWnd:&#160;main.cpp']]],
-  ['g_5flightdiffuse_10',['g_LightDiffuse',['../_d_x___lambert_8fx_a3bbb13df31e80c560bca34f73c884f44.html#a3bbb13df31e80c560bca34f73c884f44',1,'DX_Lambert.fx']]],
-  ['g_5flightdir_11',['g_LightDir',['../_d_x___lambert_8fx_a1294006cad665122148fea50a9d7230c.html#a1294006cad665122148fea50a9d7230c',1,'DX_Lambert.fx']]],
-  ['g_5fminvw_12',['g_mInvW',['../_d_x___lambert_8fx_a9aab30925b3bfc674f88b5c87b5294bb.html#a9aab30925b3bfc674f88b5c87b5294bb',1,'DX_Lambert.fx']]],
-  ['g_5fmode_13',['g_Mode',['../_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b',1,'g_Mode:&#160;Device.cpp'],['../_device_8h_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b',1,'g_Mode:&#160;Device.cpp']]],
-  ['g_5fmtrlambient_14',['g_MtrlAmbient',['../_d_x___lambert_8fx_a8de554743ffe27e3c6d43136766a180e.html#a8de554743ffe27e3c6d43136766a180e',1,'DX_Lambert.fx']]],
-  ['g_5fmtrldiffuse_15',['g_MtrlDiffuse',['../_d_x___lambert_8fx_a52f811f83a99e198cfb0efa971be1823.html#a52f811f83a99e198cfb0efa971be1823',1,'DX_Lambert.fx']]],
-  ['g_5fmview_16',['g_mView',['../_d_x___lambert_8fx_a0973ac677a4b21242f18fe6ec5be1a70.html#a0973ac677a4b21242f18fe6ec5be1a70',1,'DX_Lambert.fx']]],
-  ['g_5fmwv_17',['g_mWV',['../_d_x___lambert_8fx_a5b17bb6bfc04b6db04d66b4a52139edc.html#a5b17bb6bfc04b6db04d66b4a52139edc',1,'DX_Lambert.fx']]],
-  ['g_5fmwvp_18',['g_mWVP',['../_d_x___lambert_8fx_a505e6f63c6b82aa467f2ba3c2617003d.html#a505e6f63c6b82aa467f2ba3c2617003d',1,'DX_Lambert.fx']]],
-  ['g_5fpdevice_19',['g_pDevice',['../_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6',1,'g_pDevice:&#160;Device.cpp'],['../_device_8h_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6',1,'g_pDevice:&#160;Device.cpp']]],
-  ['g_5fpvb_20',['g_pVB',['../_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066',1,'Render.cpp']]],
-  ['g_5fpyena_21',['g_pYena',['../_device_8cpp_afa4ec13e638ab6d4ee313db3d3fd3146.html#afa4ec13e638ab6d4ee313db3d3fd3146',1,'Device.cpp']]],
-  ['g_5fshowframe_22',['g_ShowFrame',['../_device_8cpp_abdce14aecbf3c9046e0481de1666f7ad.html#abdce14aecbf3c9046e0481de1666f7ad',1,'g_ShowFrame:&#160;Device.cpp'],['../_device_8h_abdce14aecbf3c9046e0481de1666f7ad.html#abdce14aecbf3c9046e0481de1666f7ad',1,'g_ShowFrame:&#160;Device.cpp']]],
-  ['g_5fsysfncolor_23',['g_SysFnColor',['../_device_8cpp_a76053dd74350f70eb057d094c40b8436.html#a76053dd74350f70eb057d094c40b8436',1,'Device.cpp']]],
-  ['g_5fwindowname_24',['g_WindowName',['../main_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd',1,'g_WindowName:&#160;Render.cpp'],['../_render_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd',1,'g_WindowName:&#160;Render.cpp']]]
+  ['format_0',['Format',['../struct_b3_y_v_e_r_t_e_x_b_u_f_f_e_r___d_e_s_c_a83a6556ca907f4d44ed897f0906115b2.html#a83a6556ca907f4d44ed897f0906115b2',1,'B3YVERTEXBUFFER_DESC']]],
+  ['fvf_1',['FVF',['../struct_b3_yena_graphics_engine9_1_1_i_n_p_u_t___s_t_r_e_a_m_aa12ef252a2811e061665aee918b517ed.html#aa12ef252a2811e061665aee918b517ed',1,'B3YenaGraphicsEngine9::INPUT_STREAM::FVF'],['../struct_b3_y_v_e_r_t_e_x_b_u_f_f_e_r___d_e_s_c_ac255f1e5eaa9f763b3aae985ff435329.html#ac255f1e5eaa9f763b3aae985ff435329',1,'B3YVERTEXBUFFER_DESC::FVF']]]
 ];

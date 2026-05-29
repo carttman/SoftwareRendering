@@ -48,6 +48,10 @@ digraph "Yena/Yena.h"
   Node1 -> Node17 [id="edge25_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="ynx9.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ynx9_8h.html",tooltip="\\u{2b50} Yena SWR 인터페이스 헤더 : DX9 (d3d9.h) 대응"];
   Node17 -> Node16 [id="edge26_Node000017_Node000016",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node18 [id="edge27_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="ynMath.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_math_8h.html",tooltip="Yena Math Library for DirectX / OpenGL Yens SW Renderer v2.x."];
+  Node17 -> Node18 [id="edge27_Node000017_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="ynMath.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$yn_math_8h.html",tooltip="\\u{2b50} Yena 수학 라이브러리 Yena Math Library for DirectX / OpenGL"];
+  Node18 -> Node9 [id="edge28_Node000018_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node18 -> Node19 [id="edge29_Node000018_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="DirectXmath.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node18 [id="edge30_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
 }

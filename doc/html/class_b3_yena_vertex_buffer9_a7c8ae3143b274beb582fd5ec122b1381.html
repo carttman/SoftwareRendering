@@ -126,10 +126,16 @@ $(function(){initNavTree('class_b3_yena_vertex_buffer9_a7c8ae3143b274beb582fd5ec
   </tr>
 </table>
 </div><div class="memdoc">
-<p>정점 버퍼 잠그기.</p>
-<p>&lt;DX&gt; 정점 버퍼(VRAM) 에 데이터를 입력하기 위해서는 CPU 가 접근 가능해야 합니다. Lock 함수는 버퍼를 CPU 의 "쓰기 또는 읽기" 가능 상태로 변경합니다. 전체 버퍼 및 부분 잠금이 가능하며 잠금된 영역은 GPU 의 접근이 제한됩니다.("접근 잠금") 사용이 끝난 버퍼는 UnLock 함수로 잠금을 해제해야 합니다.</p>
-<p>&lt;Yena&gt; "잠금" 및 "해제" 동작을 SW 로 구현,묘사 가능하겠으나 시스템 메모리를 사용중으로 특별한 기능은 추가하지 않겠습니다. DX 의 실제 역활과는 다르지만, 동작의 흐름은 유지합니다.</p>
-<p>[참고] DX9::Lock (<a href="https://learn.microsoft.com/en-us/windows/win32/api/d3d9/nf-d3d9-idirect3dvertexbuffer9-lock">https://learn.microsoft.com/en-us/windows/win32/api/d3d9/nf-d3d9-idirect3dvertexbuffer9-lock</a>)</p>
+<p>정점 버퍼 잠그기. <br  />
+</p>
+<p>&lt;DX&gt; 정점 버퍼(VRAM) 에 데이터를 입력하기 위해서는 CPU 가 접근 가능해야 합니다. <br  />
+ Lock 함수는 버퍼를 CPU 의 "쓰기 또는 읽기" 가능 상태로 변경합니다. <br  />
+ 전체 버퍼 및 부분 잠금이 가능하며 잠금된 영역은 GPU 의 접근이 제한됩니다.("접근 잠금") <br  />
+ 사용이 끝난 버퍼는 UnLock 함수로 잠금을 해제해야 합니다. <br  />
+</p>
+<p>&lt;Yena&gt; "잠금" 및 "해제" 동작을 SW 로 구현,묘사 가능하겠으나 시스템 메모리를 사용중으로 특별한 기능은 추가하지 않겠습니다. <br  />
+ DX 의 실제 역활과는 다르지만, 동작의 흐름은 유지합니다.</p>
+<dl class="section see"><dt>See also</dt><dd>[참고] DX9::Lock (<a href="https://learn.microsoft.com/en-us/windows/win32/api/d3d9/nf-d3d9-idirect3dvertexbuffer9-lock">https://learn.microsoft.com/en-us/windows/win32/api/d3d9/nf-d3d9-idirect3dvertexbuffer9-lock</a>)</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">OffsetToLock</td><td>'잠금' 할 버퍼 (옵셋) 주소. 기본값 0, </td></tr>
@@ -143,7 +149,7 @@ $(function(){initNavTree('class_b3_yena_vertex_buffer9_a7c8ae3143b274beb582fd5ec
 
 <p>Implements <a class="el" href="class_i_yena_vertex_buffer9_aa335ef0d20c44b78f0104a62411f6596.html#aa335ef0d20c44b78f0104a62411f6596">IYenaVertexBuffer9</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_yena_8cpp_source.html#l01653">1653</a> of file <a class="el" href="_yena_8cpp_source.html">Yena.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="yn_b3_vertex_buffer_8cpp_source.html#l00300">300</a> of file <a class="el" href="yn_b3_vertex_buffer_8cpp_source.html">ynB3VertexBuffer.cpp</a>.</p>
 
 </div>
 </div>

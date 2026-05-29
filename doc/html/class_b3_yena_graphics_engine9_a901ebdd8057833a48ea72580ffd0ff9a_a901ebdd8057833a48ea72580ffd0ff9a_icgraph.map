@@ -1,0 +1,7 @@
+<map id="B3YenaGraphicsEngine9::_TempBufferRelease" name="B3YenaGraphicsEngine9::_TempBufferRelease">
+<area shape="rect" id="Node000001" title="각 렌더링 파이프라인에서 생성된 단계별 임시버퍼 제거." alt="" coords="448,5,613,48"/>
+<area shape="rect" id="Node000002" href="$class_b3_yena_graphics_engine9_a38d30c3b393edf9993a84aa23550a2b6.html#a38d30c3b393edf9993a84aa23550a2b6" title="렌더링 엔진 자원 해제." alt="" coords="235,5,400,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="433,29,401,29,401,24,433,24"/>
+<area shape="rect" id="Node000003" href="$class_b3_yena_graphics_engine9_a10018de71439f38ce5747fa98a6688b4.html#a10018de71439f38ce5747fa98a6688b4" title=" " alt="" coords="5,5,187,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="220,29,187,29,187,24,220,24"/>
+</map>

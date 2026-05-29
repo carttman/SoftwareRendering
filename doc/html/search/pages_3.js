@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['diffuse_20color_20과제제작용3_20gdi_0',['01 Diffuse Color (과제제작용3)(GDI)',['../index.html#autotoc_md3',1,'']]],
-  ['dx_20와_20yena_1',['DX 와 Yena',['../_yena-_interfaces_8dox_acc94659dde7865e4641ed2a67e226ffe.html#autotoc_md17',1,'']]],
-  ['dx_20와_20yena_20기능구성_20비교_2',['DX 와 Yena 기능구성 비교',['../_yena-_interfaces_8dox_acc94659dde7865e4641ed2a67e226ffe.html#autotoc_md18',1,'']]]
+  ['gdi_0',['T06 Transform (I) 03 World + Rotation (DX.Math)(GDI)',['../index.html#autotoc_md2',1,'']]],
+  ['guid_20구조체_1',['Yena GUID 구조체',['../_yena-structs_8dox_a3913f1f8b3dcee7db9203d93ee7c87c6.html#autotoc_md13',1,'']]],
+  ['guid_20설정_2',['Yena GUID 설정',['../struct_y_n_i_d.html#autotoc_md1',1,'']]],
+  ['guid_20uuid_20정의_3',['GUID/UUID 정의',['../struct_y_n_i_d.html#autotoc_md0',1,'']]]
 ];

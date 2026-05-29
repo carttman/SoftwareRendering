@@ -1,5 +1,0 @@
-★B3YXCOLOR 타입  정점색 처리
-
-DX 의 D3DXCOLOR 대응.
-
-DWORD 와의 호환성 증대를 위한 연산자 추가.(*-+)

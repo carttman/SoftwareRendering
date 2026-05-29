@@ -94,7 +94,7 @@ $(function(){initNavTree('class_i_yena_resource9.html','','class_i_yena_resource
 </div><!--header-->
 <div class="contents">
 
-<p>&lt; Yena SWR 자료형 정의 : D3D9 대응 (d3d9types.h)  
+<p>렌더링 자원 기반 인터페이스 : IDirect3DResource9 대응  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ynx9_8h_source.html">ynx9.h</a>&gt;</code></p>
@@ -115,8 +115,10 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:aeae7daf0349860bb0dad11091812ee0e" id="r_aeae7daf0349860bb0dad11091812ee0e"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_yena_resource9_aeae7daf0349860bb0dad11091812ee0e.html#aeae7daf0349860bb0dad11091812ee0e">GetPrivateData</a> (<a class="el" href="yn_define_8h_a12cce0e82ea7feba2f65f85aedaa036d.html#a12cce0e82ea7feba2f65f85aedaa036d">_out_</a> void **ppBuffer, <a class="el" href="yn_define_8h_a12cce0e82ea7feba2f65f85aedaa036d.html#a12cce0e82ea7feba2f65f85aedaa036d">_out_</a> UINT *pSizeData) <a class="el" href="yn_unknownbase_8h_a92b5552092e8e63e7e7e7cd27867c95e.html#a92b5552092e8e63e7e7e7cd27867c95e">pure</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>&lt; Yena SWR 자료형 정의 : D3D9 대응 (d3d9types.h) </p>
-<p>렌더링 자원 기반 인터페이스 : IDirect3DResource9 대응</p>
+<div class="textblock"><p>렌더링 자원 기반 인터페이스 : IDirect3DResource9 대응 </p>
+<p>&lt;DX&gt; 렌더링 자원 관리용 인터페이스 IDirect3DResource9 제공. <br  />
+ &lt;Yena&gt; 자원 관리 기능은 생략(최소화)하며 전체 인터페이스 구성용으로만 이를 운용합니다. <br  />
+</p>
 <dl class="section remark"><dt>Remarks</dt><dd>Yena 는 DX 인터페이스와 메소드의 시그니쳐(Signature)를 가능한 동일하게 준수합니다. <br  />
  구현 클래스 B3YenaResource9 을 참고하십시오. </dd></dl>
 

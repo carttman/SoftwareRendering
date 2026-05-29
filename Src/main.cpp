@@ -1,4 +1,17 @@
-
+//
+//! \file   main.cpp 
+//! \brief  예제 애플리케이션 메인 / 윈도 프레임워크 소스 
+//!	\version Yena SW Renderer v1.x
+//!
+//! \author	김기홍 Kihong Kim / onlysonim@gmail.com 
+//! \date   2003.11.04. Updated. DX9.x 
+//! \date   2010.12.01. Updated. DX11, Jun.2010
+//! \date   2016.12.27. Updated. DX11/12, Window SDK 8.1 / Window 10 SDK 10.0.18362
+//! \date   2018.12.30. Updated. DX12.x, Windows 10 SDK 10.0.18362
+//! \date   2020.08.22. Updated. DX12.x, Windows 10 SDK 10.0.19041 
+//! \date   2024.12.10. Updated. DX12.x, Windows 10 SDK 10.0.22621 (VS22)
+//! \ingroup Demo
+//! 
 #include "windows.h"
 #include "tchar.h"
 #include "Device.h"		

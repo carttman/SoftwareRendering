@@ -14,7 +14,7 @@
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="93,215,149,244,174,256,172,261,146,249,90,220"/>
 <area shape="rect" id="Node000010" href="$class_i_yena_device_v_k.html" title=" " alt="" coords="150,309,263,336"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="75,220,107,258,149,295,169,306,166,311,146,299,104,262,71,223"/>
-<area shape="rect" id="Node000011" href="$class_i_yena_resource9.html" title="&lt; Yena SWR 자료형 정의 : D3D9 대응 (d3d9types.h)" alt="" coords="148,360,265,387"/>
+<area shape="rect" id="Node000011" href="$class_i_yena_resource9.html" title="렌더링 자원 기반 인터페이스 : IDirect3DResource9 대응" alt="" coords="148,360,265,387"/>
 <area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="67,222,99,284,122,317,149,346,166,357,163,362,146,350,118,320,94,287,62,225"/>
 <area shape="rect" id="Node000003" href="$class_b3_yena.html" title="\u{2b50} Yena 3D 운용 기반, 구현 클래스, IDirect3D9 대응" alt="" coords="346,5,412,32"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="249,16,345,16,345,21,249,21"/>

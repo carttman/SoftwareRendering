@@ -1,5 +1,5 @@
 <map id="IYenaResource9" name="IYenaResource9">
-<area shape="rect" id="Node000001" title="&lt; Yena SWR 자료형 정의 : D3D9 대응 (d3d9types.h)" alt="" coords="5,80,123,107"/>
+<area shape="rect" id="Node000001" title="렌더링 자원 기반 인터페이스 : IDirect3DResource9 대응" alt="" coords="5,80,123,107"/>
 <area shape="rect" id="Node000002" href="$classyn_i_unknown.html" title="Yena SWR COM 최상위 인터페이스 &lt;간략&gt;" alt="" coords="17,5,111,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,48,67,80,61,80,61,48"/>
 </map>

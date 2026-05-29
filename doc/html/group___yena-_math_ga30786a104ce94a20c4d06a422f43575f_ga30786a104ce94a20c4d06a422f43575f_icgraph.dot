@@ -1,0 +1,14 @@
+digraph "B3YXVECTOR2::B3YXVECTOR2"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="B3YXVECTOR2::B3YXVECTOR2",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="B3YXVECTOR2::operator+",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group___yena-_math_gab7c169f8074f26e005a241eb8152f106.html#gab7c169f8074f26e005a241eb8152f106",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="B3YXVECTOR2::operator-",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group___yena-_math_ga9636f362a2b90fd277e64bb521bc1ac2.html#ga9636f362a2b90fd277e64bb521bc1ac2",tooltip=" "];
+}

@@ -95,278 +95,278 @@ $(function(){initNavTree('_render_8cpp_source.html','',''); });
 <div class="contents">
 <a href="_render_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//! </span><span class="comment"></span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//! \file   Render.cpp</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//! \brief  \emoji :star: </span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//!         예제 기본 렌더링/프레임웍 소스 </span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//! \version Yena SWR v1.5.x</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//! </span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//! \author 김기홍 Kihong Kim / onlysonim@gmail.com / mad_dog@hanmail.net</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//! \date   2012.01.17. v0.9   DX9.x, VS08</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//! \date   2012.02.01. v1.0   DX9.x, VS10</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//! \date   2013.04.10. v1.2.0 DX9.x, VS08</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//! \date   2015.10.10. v1.2.1 DX9.x, VS15</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//! \date   2020.08.22. Updated. DX12.x, Windows 10 SDK 10.0.19041 </span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//! \date   2024.12.10. Updated. DX12.x, Windows 10 SDK 10.0.22621 (VS22)</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//! \date   2025.05.01. v1.5.x, v1.9.0   DX12.X, (VS22)</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//! \ingroup Demo</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//! </span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//#pragma warning(disable:4267 4996)</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">//#pragma warning(disable:4267)</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;Windows.h&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;tchar.h&quot;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;stdio.h&quot;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="_device_8h.html">Device.h</a>&quot;</span>     </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="_render_8h.html">Render.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//! \brief  예제 기본 렌더링/프레임웍 소스 </span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//! \version Yena SWR v1.5.x</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//! </span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//! \author 김기홍 Kihong Kim / onlysonim@gmail.com / mad_dog@hanmail.net</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//! \date   2012.01.17. v0.9   DX9.x, VS08</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//! \date   2012.02.01. v1.0   DX9.x, VS10</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//! \date   2013.04.10. v1.2.0 DX9.x, VS08</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//! \date   2015.10.10. v1.2.1 DX9.x, VS15</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//! \date   2020.08.22. Updated. DX12.x, Windows 10 SDK 10.0.19041 </span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//! \date   2024.12.10. Updated. DX12.x, Windows 10 SDK 10.0.22621 (VS22)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//! \date   2025.05.01. v1.5.x, v1.9.0   DX12.X, (VS22)</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//! \ingroup Demo</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//! </span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//#pragma warning(disable:4267 4996)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;Windows.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;tchar.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;stdio.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="_device_8h.html">Device.h</a>&quot;</span>     </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="_render_8h.html">Render.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="main_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd">   24</a></span>TCHAR* <a class="code hl_variable" href="main_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd">g_WindowName</a> = _T(<span class="stringliteral">&quot;Yena SW-Renderer : T06 Transform (I) 03 World + Rotation (DX.Math)(GDI)(과제제작용)&quot;</span>);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="main_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd">   26</a></span>TCHAR* <a class="code hl_variable" href="main_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd">g_WindowName</a> = _T(<span class="stringliteral">&quot;Yena SW-Renderer : T05 Rasterization 01 Diffuse Color (과제제작용3)(GDI)&quot;</span>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"></span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">// </span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// 전역 데이터</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"></span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">///////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"></span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// </span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// 전역 데이터</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"></span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">///////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">//</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// 정점 관련 데이터들.</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">//</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// 정점 관련 데이터들.</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"></span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">//! 정점 버퍼 : 정점 데이터 관리용 개체. </span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">   42</a></span><a class="code hl_typedef" href="group___yena-_interfaces_ga56c1ec484b079b5f04292bdbb97755ad.html#ga56c1ec484b079b5f04292bdbb97755ad">LPYENAVERTEXBUFFER9</a> <a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a> = NULL;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"></span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">//! 정점 구조체 : 정점 포멧(VERTEX FORMAT) 에 따른 </span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">//!              정점 1개당 정보단위 처리 구조체 선언.</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">//! </span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">//! 이번 데모는 2D 용 { 출력 좌표(Screen) } 으로 구성.</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// \copydoc struct_COLVTX</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_c_o_l_v_t_x.html">   51</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_c_o_l_v_t_x.html">COLVTX</a></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_c_o_l_v_t_x_aaf6b59467f41de7f2a0d31fb7569ff49.html#aaf6b59467f41de7f2a0d31fb7569ff49">   53</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="struct_c_o_l_v_t_x_aaf6b59467f41de7f2a0d31fb7569ff49.html#aaf6b59467f41de7f2a0d31fb7569ff49">x</a>, <a class="code hl_variable" href="struct_c_o_l_v_t_x_a33f84a6cc51def3d44d837ce8c3fd44d.html#a33f84a6cc51def3d44d837ce8c3fd44d">y</a>;           <span class="comment">//2D 화면좌표.</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_c_o_l_v_t_x_a5b9a682438ff33ec93b9699d7356eafd.html#a5b9a682438ff33ec93b9699d7356eafd">   54</a></span>    DWORD <a class="code hl_variable" href="struct_c_o_l_v_t_x_a5b9a682438ff33ec93b9699d7356eafd.html#a5b9a682438ff33ec93b9699d7356eafd">diff</a>;         <span class="comment">//정점색.(DWORD type)★</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"></span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//! 정점 버퍼 : 정점 데이터 관리용 개체. </span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">   40</a></span><a class="code hl_typedef" href="group___yena-_interfaces_ga56c1ec484b079b5f04292bdbb97755ad.html#ga56c1ec484b079b5f04292bdbb97755ad">LPYENAVERTEXBUFFER9</a> <a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a> = NULL;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"></span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">//! 정점 구조체 : 정점 포멧(VERTEX FORMAT) 에 따른 </span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">//!              정점 1개당 정보단위 처리 구조체 선언.</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">//! </span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">//! 3D 용 { Pos(Local Space), Diffuse Color } 으로 구성.</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_c_o_l_v_t_x.html">   48</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_c_o_l_v_t_x.html">COLVTX</a></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_c_o_l_v_t_x_aaf6b59467f41de7f2a0d31fb7569ff49.html#aaf6b59467f41de7f2a0d31fb7569ff49">   50</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="struct_c_o_l_v_t_x_aaf6b59467f41de7f2a0d31fb7569ff49.html#aaf6b59467f41de7f2a0d31fb7569ff49">x</a>, <a class="code hl_variable" href="struct_c_o_l_v_t_x_a33f84a6cc51def3d44d837ce8c3fd44d.html#a33f84a6cc51def3d44d837ce8c3fd44d">y</a>, <a class="code hl_variable" href="struct_c_o_l_v_t_x_ab53804b41ce0dd5defd838cf13ed1b5d.html#ab53804b41ce0dd5defd838cf13ed1b5d">z</a>;       <span class="comment">//3D 좌표(Model Space) : &#39;변환&#39; 해야할 원시(원본) 모델 정보.  </span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_c_o_l_v_t_x_a5b9a682438ff33ec93b9699d7356eafd.html#a5b9a682438ff33ec93b9699d7356eafd">   51</a></span>    DWORD <a class="code hl_variable" href="struct_c_o_l_v_t_x_a5b9a682438ff33ec93b9699d7356eafd.html#a5b9a682438ff33ec93b9699d7356eafd">diff</a>;         <span class="comment">//정점색.(DWORD type)</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
 </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"></span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">//! 정점 포멧의 플래그 조합.. DX9 대응 </span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">//! </span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">//#define FVF_COLVTX (B3YFVF_XY)</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab.html#ae896f1f8b7ad7601a14783ded98418ab">   61</a></span><span class="preprocessor">#define FVF_COLVTX (B3YFVF_XY | B3YFVF_DIFFUSE)     </span><span class="comment">//좌표 + 정점색.★</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">int</span>  <a class="code hl_function" href="_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d.html#a52c38ded8a84ee0b98b47359e5966b4d">ObjLoad</a> ();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86">ObjRelease</a>   ();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6.html#a71264aa9be3cdedfc23d807cca7e27e6">   66</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6.html#a71264aa9be3cdedfc23d807cca7e27e6">ObjUpdate</a> (<span class="keywordtype">float</span> dTime);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="_render_8cpp_acea82b80d6af29d44fba8548f1224762.html#acea82b80d6af29d44fba8548f1224762">   67</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388">ObjDraw</a> (<span class="keywordtype">float</span> dTime);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"></span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">//! 정점 포멧의 플래그 조합.. DX9 대응 </span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">//! </span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">//#define FVF_COLVTX (B3YFVF_XY)</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">//#define FVF_COLVTX (B3YFVF_XY | B3YFVF_DIFFUSE)       //2D 좌표 + 정점색.</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab.html#ae896f1f8b7ad7601a14783ded98418ab">   59</a></span><span class="preprocessor">#define FVF_COLVTX (B3YFVF_XYZ | B3YFVF_DIFFUSE)        </span><span class="comment">//3D 좌표 + 정점색.</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">//D3DXMATRIX g_mTM;     //&#39;주인공&#39; 모델의 월드 변환행렬.(DX)★</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="_render_8cpp_a8302400b088d5500406bf82ef2b98fad.html#a8302400b088d5500406bf82ef2b98fad">   63</a></span><a class="code hl_struct" href="class_b3_y_x_m_a_t_r_i_x.html">B3YXMATRIX</a> <a class="code hl_variable" href="_render_8cpp_a8302400b088d5500406bf82ef2b98fad.html#a8302400b088d5500406bf82ef2b98fad">g_mTM</a>;        <span class="comment">//&#39;주인공&#39; 모델의 월드 변환행렬.(YN)★</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">int</span>  <a class="code hl_function" href="_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d.html#a52c38ded8a84ee0b98b47359e5966b4d">ObjLoad</a> ();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86">ObjRelease</a>   ();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6.html#a71264aa9be3cdedfc23d807cca7e27e6">ObjUpdate</a> (<span class="keywordtype">float</span> dTime);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="_render_8cpp_acea82b80d6af29d44fba8548f1224762.html#acea82b80d6af29d44fba8548f1224762">   69</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388">ObjDraw</a> (<span class="keywordtype">float</span> dTime);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment"></span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">// </span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">// 렌더링 상태 변수 </span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">//</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">   77</a></span>BOOL <a class="code hl_variable" href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">g_bWireFrame</a> = FALSE;      <span class="comment">//!&lt; 와이어 프레임 출력 플래그.</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7">   78</a></span>BOOL <a class="code hl_variable" href="_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7">g_bCulling</a>   = FALSE;        <span class="comment">//!&lt;뒷면제거 플래그.</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment"></span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">// </span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">// 렌더링 상태 변수 </span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">//</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">   78</a></span>BOOL <a class="code hl_variable" href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">g_bWireFrame</a> = FALSE;      <span class="comment">//!&lt; 와이어 프레임 출력 플래그.</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7">   79</a></span>BOOL <a class="code hl_variable" href="_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7">g_bCulling</a>   = FALSE;        <span class="comment">//!&lt;뒷면제거 플래그.</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment"></span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">//! 게임 데이터 및 렌더링 자원 로딩.</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">//! </span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">//! \return 성공시 OK, 실패시 FAIL.</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="_render_8cpp_a57d51554e2556fddd2c6d059b69dc5cb.html#a57d51554e2556fddd2c6d059b69dc5cb">   89</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_render_8cpp_a57d51554e2556fddd2c6d059b69dc5cb.html#a57d51554e2556fddd2c6d059b69dc5cb">DataLoading</a>()</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{   </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">//추가 코드는 여기에...</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">//...</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="comment">//오브젝트 로딩.</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_function" href="_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d.html#a52c38ded8a84ee0b98b47359e5966b4d">ObjLoad</a>(); </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="_render_8cpp_afc36d032c7a13f68ed3b98bff885b800.html#afc36d032c7a13f68ed3b98bff885b800">   82</a></span><a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a>  <a class="code hl_variable" href="_render_8cpp_afc36d032c7a13f68ed3b98bff885b800.html#afc36d032c7a13f68ed3b98bff885b800">g_ClearColor</a>(0.0f, 0.125f, 0.35f, 1.0f);        <span class="comment">//배경색.</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment"></span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">//! 게임 데이터 및 렌더링 자원 로딩.</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">//! </span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">//! \return 성공시 OK, 실패시 FAIL.</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="_render_8cpp_a57d51554e2556fddd2c6d059b69dc5cb.html#a57d51554e2556fddd2c6d059b69dc5cb">   93</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_render_8cpp_a57d51554e2556fddd2c6d059b69dc5cb.html#a57d51554e2556fddd2c6d059b69dc5cb">DataLoading</a>()</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{   </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">//추가 코드는 여기에...</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">//...</span></div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">return</span> TRUE;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
-</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="comment">//오브젝트 로딩.</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_function" href="_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d.html#a52c38ded8a84ee0b98b47359e5966b4d">ObjLoad</a>(); </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment"></span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">//! 게임 데이터 및 렌더링 자원 해제.</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">//!</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">//! \param  없음.</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">//! \return 성공시 OK, 실패시 FAIL.</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="_render_8cpp_a1fd03c204025be83f24bbe60ce3b6055.html#a1fd03c204025be83f24bbe60ce3b6055">  111</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_a1fd03c204025be83f24bbe60ce3b6055.html#a1fd03c204025be83f24bbe60ce3b6055">DataRelease</a>()</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>{</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">// 데이터 해제 코드는 여기에..</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="comment">// ...  </span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">//오브젝트 삭제 </span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_function" href="_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86">ObjRelease</a>();</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">return</span> TRUE;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
 </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment"></span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">//! 게임 데이터 및 렌더링 자원 해제.</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">//!</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">//! \param  없음.</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">//! \return 성공시 OK, 실패시 FAIL.</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="_render_8cpp_a1fd03c204025be83f24bbe60ce3b6055.html#a1fd03c204025be83f24bbe60ce3b6055">  115</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_a1fd03c204025be83f24bbe60ce3b6055.html#a1fd03c204025be83f24bbe60ce3b6055">DataRelease</a>()</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="comment">// 데이터 해제 코드는 여기에..</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">// ...  </span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="comment">//오브젝트 삭제 </span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_function" href="_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86">ObjRelease</a>();</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
+</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment"></span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment"></span> </div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">//</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">// Rendering Object.</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">//</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">// Rendering Object.</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">//</span><span class="comment"></span></div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment"></span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment">//! 오브젝트 : 생성 및 필요 리소스 로딩.</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment">//! </span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">//! \return     성공시 OK, 실패시 FALSE</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment">//! </span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d.html#a52c38ded8a84ee0b98b47359e5966b4d">  150</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d.html#a52c38ded8a84ee0b98b47359e5966b4d">ObjLoad</a>()</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>{</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="comment">//삼각형을 위한 정점 선언 : 정점의 좌표값은 화면(Screen)좌표.</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_struct" href="struct_c_o_l_v_t_x.html">COLVTX</a>    Vertices[] = {</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="comment">//Face 0 : 정삼각형.(CW)</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="comment">// 좌표 (x, y)    색상( a, r, g, b)   a, 곧 Alpha 는 기본값 255 (1.0f)</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        {  50.0f, 250.0f, 0xffff0000 },     <span class="comment">//v0, Red.★  &lt;-- 지정된 색상이 동일위치/색상으로 표현되어야 합니다.</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        { 150.0f,  50.0f, 0xff00ff00 },     <span class="comment">//v1, Green.★ </span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        { 250.0f, 250.0f, 0xff00ffff },     <span class="comment">//v2, Light-Blue.★ </span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="comment">//Face 1 : 역삼각형.(CCW) </span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        {  50.0f, 250.0f, 0xffff0000 },</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        { 150.0f, 450.0f, 0xff00ff00 },</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        { 250.0f, 250.0f, 0xff00ffff },</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment">//////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment"></span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="comment">//! 오브젝트 : 생성 및 필요 리소스 로딩.</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="comment">//! </span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="comment">//! \return     성공시 OK, 실패시 FALSE</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment">//! </span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d.html#a52c38ded8a84ee0b98b47359e5966b4d">  154</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d.html#a52c38ded8a84ee0b98b47359e5966b4d">ObjLoad</a>()</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>{</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="comment">//기하 (3D 모델) 데이터 : 외부 저장기기(HDD) 에서 로딩되었다 가정합니다.</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_struct" href="struct_c_o_l_v_t_x.html">COLVTX</a>    Vertices[] = {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="comment">// 정점 좌표는 모델 공간(Model Space, Local Space) 좌표.</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="comment">// 3D 좌표 (x, y, z)   색상( a, r, g, b)  a, 곧 Alpha 는 기본값 255 (1.0f)</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        {  -0.5f, 0.0f, 0.0f,  0xffff0000 },        <span class="comment">//v0, Red.  </span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        {   0.0f, 1.0f, 0.0f,  0xff00ff00 },        <span class="comment">//v1, Green </span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        {   0.5f, 0.0f, 0.0f,  0xff00ffff },        <span class="comment">//v2, Light-Blue </span></div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="comment">//Face 2: 빗각 삼각형 (CW) 테스트 삼각형 </span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        {  300.0f, 500.0f, 0xffff0000 },</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        {  400.0f, 300.0f, 0xff00ff00 },</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        {  480.0f, 430.0f, 0xff00ffff },</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="comment">//Face 1 : 역삼각형.(CCW) </span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        {  -0.5f, 0.0f, 0.0f,  0xffff0000 },        <span class="comment">//v3, Red.  </span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        {   0.0f,-1.0f, 0.0f,  0xff00ff00 },        <span class="comment">//v4, Green </span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        {   0.5f, 0.0f, 0.0f,  0xff00ffff },        <span class="comment">//v5, Light-Blue  </span></div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="comment">//Face 3: 빗각 삼각형 (CCW) 테스트 삼각형 </span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        {  500.0f, 430.0f, 0xffff0000 },</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        {  680.0f, 500.0f, 0xff00ff00 },</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        {  600.0f, 300.0f, 0xff00ffff },</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="comment">//Face 4 : 직각 삼각2 (CW)</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        {  40.0f,  30.0f, 0xffff0000 },</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        {  90.0f,  30.0f, 0xff00ff00 },</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        {  90.0f, 100.0f, 0xff00ffff },</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="comment">//Face 5 : 직각 삼각1 (CCW)</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        {  10.0f,  30.0f, 0xffff0000 },</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        {  10.0f, 100.0f, 0xff00ff00 },</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        {  60.0f, 100.0f, 0xff00ffff },</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="comment">// */</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    };</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="comment">// 정점 버퍼 생성.</span></div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="yn_define_8h_a01d220b1e2abb6ce311eb1e0d1adc024.html#a01d220b1e2abb6ce311eb1e0d1adc024">YN_FAILED</a>(<a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;CreateVertexBuffer(</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                            <span class="keyword">sizeof</span>(Vertices),           <span class="comment">// 정점 버퍼 크기 (바이트)</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                            0,                          <span class="comment">// 버퍼 사용방식 (기본 0)</span></div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                            <a class="code hl_define" href="_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab.html#ae896f1f8b7ad7601a14783ded98418ab">FVF_COLVTX</a>,                   <span class="comment">// 정점 규격. </span></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                            <a class="code hl_enumvalue" href="ynx9types_8h_acdc725ca686a1fad75f38d4866e0363c.html#acdc725ca686a1fad75f38d4866e0363cad92b9eeb6d65fd92481573d3a330247f">B3YPOOL_SYSTEMMEM</a>,         <span class="comment">// 시스템 메모리 사용. (현재는 이 옵션만 유효) </span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                            &amp;<a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a>,                        <span class="comment">// 성공시 리턴되는 버퍼 운용 객체 인터페이스</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                            NULL                        <span class="comment">// 예약됨. NULL.</span></div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    )))</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    {</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="comment">//... 에러 처리...</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_a86955fd2a27b715a0c0210a3605f118b.html#a86955fd2a27b715a0c0210a3605f118b">YN_FALSE</a>;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    }</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="comment">// 버퍼 주소 얻기</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="comment">// 실제 DX 의 그것과는 역활이 다르지만, 동작의 결과는 동일합니다.</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    VOID* pBuff;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="yn_define_8h_a01d220b1e2abb6ce311eb1e0d1adc024.html#a01d220b1e2abb6ce311eb1e0d1adc024">YN_FAILED</a>(<a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a>-&gt;Lock(0, <span class="keyword">sizeof</span>(Vertices), (<span class="keywordtype">void</span>**)&amp;pBuff, 0)))</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    {</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_a86955fd2a27b715a0c0210a3605f118b.html#a86955fd2a27b715a0c0210a3605f118b">YN_FALSE</a>;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="comment">//버퍼에 정점 데이터 채우기.</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="comment">//&lt;DX&gt; CPU -&gt; VB(GPU/VRAM) 정점 데이터 복사</span></div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="comment">//&lt;Yena&gt; CPU -&gt; VB(SYSMEM) 정점 데이터 복사.</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    memcpy(pBuff, Vertices, <span class="keyword">sizeof</span>(Vertices));</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="comment">//&lt;DX&gt; 작업 완료, 버퍼 사용이 끝나면 버퍼 잠금을 해제(Unlock) 해야합니다.</span></div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="comment">//&lt;Yena&gt; 우리는 이 동작을 간략하게 처리하겠습니다.</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a>-&gt;Unlock();</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="comment">//... 버퍼 생성 완료...</span></div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="comment">//... 이제 적절한 때에 VB 를 장치에 등록(Binding) 하고 렌더링을 수행하면 되겠습니다.</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="comment">//... 생성된 VB 는 사용자가 제거해야 합니다. (Release 호출) </span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    };</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="comment">// 정점 버퍼 생성.</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="yn_define_8h_a01d220b1e2abb6ce311eb1e0d1adc024.html#a01d220b1e2abb6ce311eb1e0d1adc024">YN_FAILED</a>(<a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;CreateVertexBuffer(</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                            <span class="keyword">sizeof</span>(Vertices),           <span class="comment">// 정점 버퍼 크기 (바이트)</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                            0,                          <span class="comment">// 버퍼 사용방식 (기본 0)</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                            <a class="code hl_define" href="_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab.html#ae896f1f8b7ad7601a14783ded98418ab">FVF_COLVTX</a>,                   <span class="comment">// 정점 규격. </span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                            <a class="code hl_enumvalue" href="ynx9types_8h_acdc725ca686a1fad75f38d4866e0363c.html#acdc725ca686a1fad75f38d4866e0363cad92b9eeb6d65fd92481573d3a330247f">B3YPOOL_SYSTEMMEM</a>,         <span class="comment">// 시스템 메모리 사용. (현재는 이 옵션만 유효) </span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                            &amp;<a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a>,                        <span class="comment">// 성공시 리턴되는 버퍼 운용 객체 인터페이스</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                            NULL                        <span class="comment">// 예약됨. NULL.</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    )))</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="comment">//... 에러 처리...</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_a86955fd2a27b715a0c0210a3605f118b.html#a86955fd2a27b715a0c0210a3605f118b">YN_FALSE</a>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="comment">// 버퍼 주소 얻기</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="comment">// 실제 DX 의 그것과는 역활이 다르지만, 동작의 결과는 동일합니다.</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <a class="code hl_struct" href="struct_c_o_l_v_t_x.html">COLVTX</a>* pBuff = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="yn_define_8h_a01d220b1e2abb6ce311eb1e0d1adc024.html#a01d220b1e2abb6ce311eb1e0d1adc024">YN_FAILED</a>(<a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a>-&gt;Lock(0, <span class="keyword">sizeof</span>(Vertices), (<span class="keywordtype">void</span>**)&amp;pBuff, 0)))</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_a86955fd2a27b715a0c0210a3605f118b.html#a86955fd2a27b715a0c0210a3605f118b">YN_FALSE</a>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="comment">//버퍼에 정점 데이터 채우기.</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="comment">//&lt;DX&gt; CPU -&gt; VB(GPU/VRAM) 정점 데이터 복사</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="comment">//&lt;Yena&gt; CPU -&gt; VB(SYSMEM) 정점 데이터 복사.</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    memcpy(pBuff, Vertices, <span class="keyword">sizeof</span>(Vertices));</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="comment">//&lt;DX&gt; 작업 완료, 버퍼 사용이 끝나면 버퍼 잠금을 해제(Unlock) 해야합니다.</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="comment">//&lt;Yena&gt; 우리는 이 동작을 간략하게 처리하겠습니다.</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a>-&gt;Unlock();</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="comment">//... 버퍼 생성 완료...</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="comment">//... 이제 적절한 때에 VB 를 장치에 등록(Binding) 하고 렌더링을 수행하면 되겠습니다.</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="comment">//... 생성된 VB 는 사용자가 제거해야 합니다. (Release 호출) </span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_ac2200c63b3f7dca9393e9db0518a5283.html#ac2200c63b3f7dca9393e9db0518a5283">YN_OK</a>;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>}</div>
+</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment"></span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">//! 오브젝트 : 제거 </span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00220" data-start="{" data-end="}">
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86">  220</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86">ObjRelease</a>()</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>{</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="comment">//정점 버퍼 제거..</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <a class="code hl_define" href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">SafeRelease</a>(<a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a>);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>}</div>
+</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="yn_define_8h_ac2200c63b3f7dca9393e9db0518a5283.html#ac2200c63b3f7dca9393e9db0518a5283">YN_OK</a>;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>}</div>
-</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment"></span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment">//! 오브젝트 : 제거 </span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00238" data-start="{" data-end="}">
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86">  238</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86">ObjRelease</a>()</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>{</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="comment">//정점 버퍼 제거..</span></div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <a class="code hl_define" href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">SafeRelease</a>(<a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a>);</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>}</div>
-</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment"></span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment">/////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="comment">//! 오브젝트 그리기</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00252" data-start="{" data-end="}">
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388">  252</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388">ObjDraw</a>()</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>{</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="comment">//정점 버퍼 등록(Binding) </span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;SetStreamSource(0, <a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a>, 0, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_c_o_l_v_t_x.html">COLVTX</a>));</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment"></span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment">/////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment">//! 오브젝트 : 상태 갱신</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment">// </span></div>
+<div class="foldopen" id="foldopen00234" data-start="{" data-end="}">
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6.html#a71264aa9be3cdedfc23d807cca7e27e6">  234</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6.html#a71264aa9be3cdedfc23d807cca7e27e6">ObjUpdate</a>(<span class="keywordtype">float</span> dTime)</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>{</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="comment">//스케일 처리.</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="comment">//...</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment"></span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">    //! \todo2  기하도형 회전 시키기</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="comment">//회전 처리 &lt;1&gt;</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keyword">static</span> <span class="keywordtype">float</span> angle = 0.0f;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    angle += <a class="code hl_define" href="yn_define_8h_a81ae5234898b499494541a912f145382.html#a81ae5234898b499494541a912f145382">B3Y_PI</a> * 0.5f * dTime;               <span class="comment">//90(도)/sec  즉, 1회전에 4초 소요.</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="comment">//angle += B3YXToRadian(90) * dTime;        //위와 동일코드. 매크로 버전.  </span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="comment">//회전 처리 &lt;2&gt;</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="comment">//angle = ynToRadian(0);                    //수동 입력.★</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <a class="code hl_struct" href="class_b3_y_x_m_a_t_r_i_x.html">B3YXMATRIX</a> mR;                                <span class="comment">//회선성분이 들어간 행렬 만들기★</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <a class="code hl_function" href="group___yena-_math_ga3828aa23962df7cb6bd24519416b70f3.html#ga3828aa23962df7cb6bd24519416b70f3">B3YXMatrixRotationZ</a>(&amp;mR, angle);         <span class="comment">//Z 축 기준 회전:  mR = Z축회전(angle) ★</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="comment">//B3YXMatrixRotationX(&amp;mR, angle);          //X 축 기준 회전</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="comment">//B3YXMatrixRotationY(&amp;mR, angle);          //Y 축 기준 회전</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="comment">//B3YXMatrixRotationZ(&amp;mR, B3YXToRadian(0));  </span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="comment">//B3YXMatrixRotationZ(&amp;mR, B3YXToRadian(-45));  </span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="comment">//정점 형식 설정.</span></div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;SetFVF(<a class="code hl_define" href="_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab.html#ae896f1f8b7ad7601a14783ded98418ab">FVF_COLVTX</a>);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="comment">//이동 처리.</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="comment">//...</span></div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="comment">//&#39;기하도형&#39; 렌더링 : 지금부터 모든 그리기가 시작됩니다...</span></div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="comment">// DX 메소드와 (가능한)동일한 파이프라인을 구현하는 것이 목표입니다.</span></div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;DrawPrimitive(<a class="code hl_enumvalue" href="ynx9types_8h_a05d3e54044f5bd8cf72271ae864e6318.html#a05d3e54044f5bd8cf72271ae864e6318a65d8713d8c2618022622d2b05c5600b1">B3YPT_TRIANGLELIST</a>, 0, 6);      <span class="comment">//Face 6개 그리기...</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="comment">//최종 TM 계산 완료.</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <a class="code hl_variable" href="_render_8cpp_a8302400b088d5500406bf82ef2b98fad.html#a8302400b088d5500406bf82ef2b98fad">g_mTM</a> = mR;</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>}</div>
 </div>
@@ -376,207 +376,248 @@ $(function(){initNavTree('_render_8cpp_source.html','',''); });
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="comment"></span> </div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="comment">/////////////////////////////////////////////////////////////////////////////// </span></div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="comment">//! 엔진 및 시스템 상태 갱신.</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="comment">//! 오브젝트 그리기</span></div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="comment">//</span></div>
 <div class="foldopen" id="foldopen00274" data-start="{" data-end="}">
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20">  274</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20">SystemUpdate</a>()</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388">  274</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388">ObjDraw</a>()</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>{</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="_device_8h_a104895dd1973bfad809b75baa8877526.html#a104895dd1973bfad809b75baa8877526">IsKeyUp</a>(VK_SPACE))   <a class="code hl_variable" href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">g_bWireFrame</a> ^= TRUE;</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="_device_8h_a104895dd1973bfad809b75baa8877526.html#a104895dd1973bfad809b75baa8877526">IsKeyUp</a>(VK_F5))      <a class="code hl_variable" href="_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7">g_bCulling</a> ^= TRUE;           </div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;SetRenderState(<a class="code hl_enumvalue" href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffaa747ea06dd108344b93dd38747e4542d">B3YRS_FILLMODE</a>, <a class="code hl_variable" href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">g_bWireFrame</a> ? <a class="code hl_enumvalue" href="ynx9types_8h_acf9a811888f502b60f6604d67c4454da.html#acf9a811888f502b60f6604d67c4454daa3462517a97c0e43c4fd15a6e8496fad5">B3YFILL_WIREFRAME</a> : <a class="code hl_enumvalue" href="ynx9types_8h_acf9a811888f502b60f6604d67c4454da.html#acf9a811888f502b60f6604d67c4454daa119cb2cbb0bfb46dcb7299eeb6c71801">B3YFILL_SOLID</a>);       </div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;SetRenderState(<a class="code hl_enumvalue" href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffab43c07968f4e61e841bdf0f1dbabea8f">B3YRS_CULLMODE</a>, <a class="code hl_variable" href="_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7">g_bCulling</a> ? <a class="code hl_enumvalue" href="ynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5.html#a8e80073df8d0380c1c3dd54693b740e5aa22c9d32aaad8f382d9d66c26ba4fb38">B3YCULL_CCW</a> : <a class="code hl_enumvalue" href="ynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5.html#a8e80073df8d0380c1c3dd54693b740e5a4f9a6b83b3519b4140b7716d83cbd13c">B3YCULL_NONE</a>);   <span class="comment">//반시계방향 컬링 </span></div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="comment">//g_pDevice-&gt;SetRenderState(B3YRS_CULLMODE,  g_bCulling? B3YCULL_CW : B3YCULL_NONE);  //시계방향 컬링 </span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="comment">//정점 버퍼 등록(Binding) </span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;SetStreamSource(0, <a class="code hl_variable" href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a>, 0, <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_c_o_l_v_t_x.html">COLVTX</a>));</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="comment">//정점 형식 설정.</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;SetFVF(<a class="code hl_define" href="_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab.html#ae896f1f8b7ad7601a14783ded98418ab">FVF_COLVTX</a>);</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>}</div>
-</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="comment">//월드 변환 행렬 설정 : 렌더링 전에 설정 되어야 합니다.</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;SetTransform(<a class="code hl_enumvalue" href="ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096dab827c53af4ded3a80d21e8a4ac3c1a08">B3YTS_WORLD</a>, &amp;<a class="code hl_variable" href="_render_8cpp_a8302400b088d5500406bf82ef2b98fad.html#a8302400b088d5500406bf82ef2b98fad">g_mTM</a>);      <span class="comment">// GPU 에 행렬 공급★  </span></div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="comment"></span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="comment">/////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="comment">//! 도움말 출력</span></div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00292" data-start="{" data-end="}">
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc">  292</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc">ShowInfo</a>() </div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>{ </div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> bShow = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="_device_8h_a104895dd1973bfad809b75baa8877526.html#a104895dd1973bfad809b75baa8877526">IsKeyUp</a>(VK_F1)) bShow ^= <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  </div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keywordflow">if</span>(!bShow) </div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    {</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        <span class="comment">//DrawText(1,20, COLOR(1, 1, 0, 1), &quot;[Help] F1&quot;); </span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    }</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="comment">// Today&#39;s Topic.</span></div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    {</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        <span class="comment">//int x = 350, y = 1;           </span></div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        <span class="keywordtype">int</span> x = <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a>.Width / 2 - 100;</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <span class="keywordtype">int</span> y = 50;</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        COLORREF col  = RGB(255, 255, 255);</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        COLORREF col2 = RGB(255, 255, 0);</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        COLORREF col3 = RGB(150, 150, 0);</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        COLORREF col4 = RGB(150, 150, 150);</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        COLORREF col5 = RGB(200, 200, 200);</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y,  col, _T(<span class="stringliteral">&quot;■ %s&quot;</span>), <a class="code hl_variable" href="main_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd">g_WindowName</a>);</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col3, _T(<span class="stringliteral">&quot;1. 정점(Vertex) 구성&quot;</span>));</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col3, _T(<span class="stringliteral">&quot;4. 삼각형(Face) 출력&quot;</span>));</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        <span class="comment">//DrawText(x, y += 14, col3, _T(&quot;2. 정점 규격(Vertex Format) 의 이해&quot;));</span></div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        <span class="comment">//DrawText(x, y += 14, col3, _T(&quot;3. 정점 버퍼(Vertex Buffer) 구축&quot;));</span></div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        <span class="comment">//DrawText(x, y += 14, col3, _T(&quot;4. 삼각형(Face) 출력 : Wireframe&quot;));</span></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="comment">//DrawText(x, y += 14, col3, _T(&quot;5. 삼각형(Face) 출력 : Fill Mode&quot;));</span></div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col3, _T(<span class="stringliteral">&quot;6. 렌더링 상태 구현 : SetRenderState&quot;</span>));</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        <span class="comment">//DrawText(x, y += 14, col3, _T(&quot;7. 채우기 모드(Fill Mode) 전환 : SPACE BAR&quot;));</span></div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        <span class="comment">//DrawText(x, y += 14, col2, _T(&quot;8. 컬링 모드(Culling Mode) 전환 : F5&quot;));</span></div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col2, _T(<span class="stringliteral">&quot;9. 정점 색상(Vertex Color) 처리&quot;</span>)); </div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        y+=14*2;</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col2, _T(<span class="stringliteral">&quot;&lt;과제 조건 #3&gt;&quot;</span>));</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        <span class="comment">//DrawText(x, y += 14, col2, _T(&quot;* 정점 색상 형식 : DWORD&quot;));</span></div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col2, _T(<span class="stringliteral">&quot;* 정점 색상 형식 : B3YXCOLOR + DWORD&quot;</span>));</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col2, _T(<span class="stringliteral">&quot;* B3YXCOLOR 와 DWORD 타입의 호환성 향상 : 연산자를 재정의&quot;</span>));</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col3, _T(<span class="stringliteral">&quot;* 정점 색상 출력&quot;</span>));</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col3, _T(<span class="stringliteral">&quot;* 픽셀 색상 계산 : 선형보간(Linear Interpolation)&quot;</span>));</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col3, _T(<span class="stringliteral">&quot;* 픽셀 파이프라인 개정 : 레스터(Rasterization) 개정&quot;</span>));</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="comment">//&#39;기하도형&#39; 렌더링 : 지금부터 모든 그리기가 시작됩니다...</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="comment">// DX 메소드와 (가능한)동일한 파이프라인을 구현하는 것이 목표입니다.</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;DrawPrimitive(<a class="code hl_enumvalue" href="ynx9types_8h_a05d3e54044f5bd8cf72271ae864e6318.html#a05d3e54044f5bd8cf72271ae864e6318a65d8713d8c2618022622d2b05c5600b1">B3YPT_TRIANGLELIST</a>, 0, 2);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>}</div>
+</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="comment"></span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="comment">/////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="comment">//! 엔진 및 시스템 상태 갱신.</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00300" data-start="{" data-end="}">
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno"><a class="line" href="_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20">  300</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20">SystemUpdate</a>()</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>{</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="_device_8h_a104895dd1973bfad809b75baa8877526.html#a104895dd1973bfad809b75baa8877526">IsKeyUp</a>(VK_SPACE))   <a class="code hl_variable" href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">g_bWireFrame</a> ^= TRUE;</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="_device_8h_a104895dd1973bfad809b75baa8877526.html#a104895dd1973bfad809b75baa8877526">IsKeyUp</a>(VK_F5))      <a class="code hl_variable" href="_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7">g_bCulling</a> ^= TRUE;           </div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;SetRenderState(<a class="code hl_enumvalue" href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffaa747ea06dd108344b93dd38747e4542d">B3YRS_FILLMODE</a>, <a class="code hl_variable" href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">g_bWireFrame</a> ? <a class="code hl_enumvalue" href="ynx9types_8h_acf9a811888f502b60f6604d67c4454da.html#acf9a811888f502b60f6604d67c4454daa3462517a97c0e43c4fd15a6e8496fad5">B3YFILL_WIREFRAME</a> : <a class="code hl_enumvalue" href="ynx9types_8h_acf9a811888f502b60f6604d67c4454da.html#acf9a811888f502b60f6604d67c4454daa119cb2cbb0bfb46dcb7299eeb6c71801">B3YFILL_SOLID</a>);       </div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;SetRenderState(<a class="code hl_enumvalue" href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffab43c07968f4e61e841bdf0f1dbabea8f">B3YRS_CULLMODE</a>, <a class="code hl_variable" href="_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7">g_bCulling</a> ? <a class="code hl_enumvalue" href="ynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5.html#a8e80073df8d0380c1c3dd54693b740e5aa22c9d32aaad8f382d9d66c26ba4fb38">B3YCULL_CCW</a> : <a class="code hl_enumvalue" href="ynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5.html#a8e80073df8d0380c1c3dd54693b740e5a4f9a6b83b3519b4140b7716d83cbd13c">B3YCULL_NONE</a>);   <span class="comment">//반시계방향 컬링 </span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <span class="comment">//g_pDevice-&gt;SetRenderState(B3YRS_CULLMODE,  g_bCulling? B3YCULL_CW : B3YCULL_NONE);  //시계방향 컬링 </span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="comment">// 렌더링 모드에 따른 배경색 설정.</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">g_bWireFrame</a>) <a class="code hl_variable" href="_render_8cpp_afc36d032c7a13f68ed3b98bff885b800.html#afc36d032c7a13f68ed3b98bff885b800">g_ClearColor</a> = <a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a>(0.20f, 0.20f, 0.20f, 1.0f);</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    <span class="keywordflow">else</span>              <a class="code hl_variable" href="_render_8cpp_afc36d032c7a13f68ed3b98bff885b800.html#afc36d032c7a13f68ed3b98bff885b800">g_ClearColor</a> = <a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a>(0.0f, 0.125f, 0.35f, 1.0f); </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="comment">//else           g_ClearColor = B3YXCOLOR(0, 0, 1, 1);</span></div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>}</div>
+</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="comment"></span> </div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="comment">/////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="comment">//! 도움말 출력</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00324" data-start="{" data-end="}">
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc">  324</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc">ShowInfo</a>() </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>{ </div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> bShow = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="_device_8h_a104895dd1973bfad809b75baa8877526.html#a104895dd1973bfad809b75baa8877526">IsKeyUp</a>(VK_F1)) bShow ^= <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    <span class="keywordflow">if</span>(!bShow) </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    {</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <span class="comment">//DrawText(1,20, COLOR(1, 1, 0, 1), &quot;[Help] F1&quot;); </span></div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    }</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        y += 14;</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y+=14, RGB(0, 255, 255), _T(<span class="stringliteral">&quot;&lt;과제 제작용3&gt;&quot;</span>));</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <span class="comment">//DrawText(x, y+=14, RGB(0, 255, 255), _T(&quot;■ _DrawLine (GDI)&quot;));</span></div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y+=14, RGB(0, 255, 255), _T(<span class="stringliteral">&quot;■ _DrawFace (GDI)&quot;</span>));</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        </div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    }</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    <span class="comment">//좌측 도움말.</span></div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    {</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        <span class="keywordtype">int</span> x = 1;</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        <span class="keywordtype">int</span> y = 100;</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        COLORREF col = RGB(0, 255, 0);</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        DWORD v;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="comment">// Today&#39;s Topic.</span></div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    {</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <span class="comment">//int x = 350, y = 1;           </span></div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        <span class="keywordtype">int</span> x = <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a>.Width / 2 - 150;</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        <span class="keywordtype">int</span> y = 5;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        <a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a> col(1, 1, 1, 1);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        <a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a> col2(1, 1, 0, 1);</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        <a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a> col3(0.5f, 0.5f, 0, 1);</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        <a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a> col4(0.5f, 0.5f, 0.5f, 1);</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        <a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a> col5(0.78f, 0.78f, 0.78f, 1);</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        <a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a> col7(0, 1, 1, 1);</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        <a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a> col8(1, 0.5f, 1, 1);</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        <a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a> col9(1, 0.5f, 0, 1);</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        TCHAR* wmsg[] = { _T(<span class="stringliteral">&quot;N/A&quot;</span>), _T(<span class="stringliteral">&quot;POINT&quot;</span>), _T(<span class="stringliteral">&quot;WIRE&quot;</span>), _T(<span class="stringliteral">&quot;SOILD&quot;</span>) };</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;GetRenderState(<a class="code hl_enumvalue" href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffaa747ea06dd108344b93dd38747e4542d">B3YRS_FILLMODE</a>, &amp;v);       </div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col, _T(<span class="stringliteral">&quot;Fill: Space (%s)&quot;</span>), wmsg[v]);</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        TCHAR* cmsg[] = { _T(<span class="stringliteral">&quot;N/A&quot;</span>), _T(<span class="stringliteral">&quot;NONE&quot;</span>), _T(<span class="stringliteral">&quot;CW&quot;</span>), _T(<span class="stringliteral">&quot;CCW&quot;</span>) };</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;GetRenderState(<a class="code hl_enumvalue" href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffab43c07968f4e61e841bdf0f1dbabea8f">B3YRS_CULLMODE</a>, &amp;v);                       </div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col, _T(<span class="stringliteral">&quot;Cull: F5 (%s)&quot;</span>), cmsg[v]);</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    } </div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>}</div>
-</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span> </div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span><span class="comment"></span> </div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><span class="comment">////////////////////////////////////////////////////////////////////////////// </span></div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="comment">//</span><span class="comment"></span></div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span><span class="comment">//! 장면 그리기</span></div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="comment">//</span></div>
-<div class="foldopen" id="foldopen00368" data-start="{" data-end="}">
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno"><a class="line" href="_render_8cpp_a6d72e579f5eb095a38091a15d586f1a9.html#a6d72e579f5eb095a38091a15d586f1a9">  368</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_a6d72e579f5eb095a38091a15d586f1a9.html#a6d72e579f5eb095a38091a15d586f1a9">SceneRender</a>()</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>{</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>    </div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    <span class="comment">//-------------------------------</span></div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    <span class="comment">// 엔진/시스템 갱신.</span></div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>    <span class="comment">//------------------------------- </span></div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    <span class="comment">//엔진 경과시간 얻기.</span></div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    <span class="comment">//float dTime = GetEngineTime();</span></div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span> </div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    <span class="comment">//엔진 상태 갱신.</span></div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>    <a class="code hl_function" href="_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20">SystemUpdate</a>();</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>    </div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span> </div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>    <span class="comment">// 장면 갱신 </span></div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    <span class="comment">// 기하 데이터: 주인공, 몬스터, 오브제 이동, 충돌검사 등등..</span></div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    <span class="comment">// ...</span></div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    <span class="comment">// 게임 로직 이벤트,층돌,점수계산..</span></div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>    <span class="comment">// ...</span></div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span> </div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y,  col, _T(<span class="stringliteral">&quot;■ %s&quot;</span>), <a class="code hl_variable" href="main_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd">g_WindowName</a>);</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        y+=14;</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col,  _T(<span class="stringliteral">&quot;1. 렌더링 파이프라인(Rendering Pipeline) 의 이해.&quot;</span>));</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        <span class="comment">//DrawText(x, y += 14, col5, _T(&quot;2. 3D-&gt;2D 변환 과정의 이해 및 연구.&quot;));</span></div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        <span class="comment">//DrawText(x, y += 14, col5, _T(&quot;3. Local (Model) Space 의 이해.&quot;));</span></div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col2,  _T(<span class="stringliteral">&quot;2. 월드 변환 (World Transform) : 스케일-회전-이동 변환 구현.&quot;</span>));</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        y += 15;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col7, _T(<span class="stringliteral">&quot;* 삼각형의 회전이 이상해 보이십니까? 왜 그럴까요?&quot;</span>));</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        y += 14;</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col9, _T(<span class="stringliteral">&quot;* 뷰-투영변환 없음 * &quot;</span>));</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        y += 14;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col,  _T(<span class="stringliteral">&quot;* 정점 파이프라인 (Vertex Pipeline) 구현.&quot;</span>));</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col4, _T(<span class="stringliteral">&quot;* 기하 파이프라인 (Geometry Pipeline) 구현.&quot;</span>));</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col4, _T(<span class="stringliteral">&quot;* 픽셀 파이프라인 (Pixel Pipeline) 구현.&quot;</span>));</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span> </div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        <span class="comment">//y += 14;</span></div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        y = <a class="code hl_variable" href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a>.Height - 100;</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col7, _T(<span class="stringliteral">&quot;* DirectX Math : 행렬 및 함수 사용 (XMMATRIX)(과제 제작용)&quot;</span>));</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col8, _T(<span class="stringliteral">&quot;* Yena Math : 행렬 클래스 및 함수 제작 (B3YXMATRIX)(과제)&quot;</span>));</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col7, _T(<span class="stringliteral">&quot;* _DrawFace (GDI)&quot;</span>));</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>    }</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span> </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>    <span class="comment">//좌측 도움말.</span></div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    {</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>        <span class="keywordtype">int</span> x = 1;</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>        <span class="keywordtype">int</span> y = 100;</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>        <a class="code hl_class" href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a> col(0, 1, 0, 1);</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>        DWORD <a class="code hl_define" href="yn_b3_graphics_8cpp_a38bf1e5e0427bdeba2b469eea9befc23.html#a38bf1e5e0427bdeba2b469eea9befc23">v</a>;</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>        TCHAR* wmsg[] = { _T(<span class="stringliteral">&quot;N/A&quot;</span>), _T(<span class="stringliteral">&quot;POINT&quot;</span>), _T(<span class="stringliteral">&quot;WIRE&quot;</span>), _T(<span class="stringliteral">&quot;SOILD&quot;</span>) };</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;GetRenderState(<a class="code hl_enumvalue" href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffaa747ea06dd108344b93dd38747e4542d">B3YRS_FILLMODE</a>, &amp;<a class="code hl_define" href="yn_b3_graphics_8cpp_a38bf1e5e0427bdeba2b469eea9befc23.html#a38bf1e5e0427bdeba2b469eea9befc23">v</a>);      </div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col, _T(<span class="stringliteral">&quot;Fill: Space (%s)&quot;</span>), wmsg[<a class="code hl_define" href="yn_b3_graphics_8cpp_a38bf1e5e0427bdeba2b469eea9befc23.html#a38bf1e5e0427bdeba2b469eea9befc23">v</a>]);</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        TCHAR* cmsg[] = { _T(<span class="stringliteral">&quot;N/A&quot;</span>), _T(<span class="stringliteral">&quot;NONE&quot;</span>), _T(<span class="stringliteral">&quot;CW&quot;</span>), _T(<span class="stringliteral">&quot;CCW&quot;</span>) };</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;GetRenderState(<a class="code hl_enumvalue" href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffab43c07968f4e61e841bdf0f1dbabea8f">B3YRS_CULLMODE</a>, &amp;<a class="code hl_define" href="yn_b3_graphics_8cpp_a38bf1e5e0427bdeba2b469eea9befc23.html#a38bf1e5e0427bdeba2b469eea9befc23">v</a>);                      </div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        <a class="code hl_function" href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a>(x, y += 14, col, _T(<span class="stringliteral">&quot;Cull: F5 (%s)&quot;</span>), cmsg[<a class="code hl_define" href="yn_b3_graphics_8cpp_a38bf1e5e0427bdeba2b469eea9befc23.html#a38bf1e5e0427bdeba2b469eea9befc23">v</a>]);</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    } </div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span> </div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    <span class="comment">//-------------------------------</span></div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    <span class="comment">// 장면 그리기 시작.. </span></div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    <span class="comment">//-------------------------------</span></div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>     </div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    <span class="comment">//장면 그리기 준비..</span></div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;BeginScene();</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span> </div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>        <span class="comment">//렌더타겟(배경) 지우기..    </span></div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>        <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;Clear(RGB(0, 30, 89));</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>        <span class="comment">//g_pDevice-&gt;Clear(RGB(0, 0, 255));</span></div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>     </div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>        <span class="comment">//..지형, 오브제 그리기..등등..</span></div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>        <span class="comment">//... </span></div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span> </div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>        <span class="comment">//오브제 그리기.</span></div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>        <a class="code hl_function" href="_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388">ObjDraw</a>();</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span> </div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>        <span class="comment">//도움말 및 기타 렌더링 정보 출력.</span></div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>        <a class="code hl_function" href="_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15">PutFPS</a>(1, 1);</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        <a class="code hl_function" href="_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc">ShowInfo</a>();</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>    <span class="comment">//장면 그리기 종료...</span></div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;EndScene();</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span> </div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span> </div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>    <span class="comment">//-------------------------------</span></div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    <span class="comment">// 장면 그리기 종료.</span></div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>    <span class="comment">// 1회의 게임 루프 종료.</span></div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    <span class="comment">//------------------------------- </span></div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;Present();          <span class="comment">//화면출력 : Flip! </span></div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>}</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>}</div>
 </div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span> </div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span> </div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span> </div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span><span class="comment"></span> </div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span><span class="comment">////////////////////////////////////////////////////////////////////////////// </span></div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span><span class="comment">//! 장면 그리기</span></div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span><span class="comment">//</span></div>
+<div class="foldopen" id="foldopen00398" data-start="{" data-end="}">
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno"><a class="line" href="_render_8cpp_a6d72e579f5eb095a38091a15d586f1a9.html#a6d72e579f5eb095a38091a15d586f1a9">  398</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_render_8cpp_a6d72e579f5eb095a38091a15d586f1a9.html#a6d72e579f5eb095a38091a15d586f1a9">SceneRender</a>()</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>{</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>    </div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    <span class="comment">//-------------------------------</span></div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>    <span class="comment">// 엔진/시스템 갱신.</span></div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>    <span class="comment">//------------------------------- </span></div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>    <span class="comment">//엔진 경과시간 얻기.</span></div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    <span class="keywordtype">float</span> dTime = <a class="code hl_function" href="_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31.html#a76c4195d88ec690c4da612bbd6d55f31">GetEngineTime</a>();  <span class="comment">//★</span></div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    <span class="comment">//엔진 상태 갱신.</span></div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>    <a class="code hl_function" href="_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20">SystemUpdate</a>();</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    </div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>    <span class="comment">// 장면 갱신 </span></div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>    <span class="comment">// 기하 데이터: 주인공, 몬스터, 오브제 이동, 충돌검사 등등..</span></div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>    <span class="comment">// ...</span></div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>    <span class="comment">// 게임 로직 이벤트,층돌,점수계산..</span></div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    <span class="comment">// ...</span></div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>    <a class="code hl_function" href="_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6.html#a71264aa9be3cdedfc23d807cca7e27e6">ObjUpdate</a>(dTime);        <span class="comment">//★</span></div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>    <span class="comment">//-------------------------------</span></div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    <span class="comment">// 장면 그리기 시작.. </span></div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    <span class="comment">//-------------------------------</span></div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>     </div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>    <span class="comment">//장면 그리기 준비..</span></div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;BeginScene();</div>
 <div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span> </div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span> </div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span> </div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span><span class="comment">/****************** end of file &quot;Render.cpp&quot; *********************************/</span></div>
-<div class="ttc" id="a_device_8cpp_a2034272a68b183b7651f0195b1d55182_html_a2034272a68b183b7651f0195b1d55182"><div class="ttname"><a href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a></div><div class="ttdeci">void DrawText(int x, int y, COLORREF col, TCHAR *msg,...)</div><div class="ttdef"><b>Definition</b> <a href="_device_8cpp_source.html#l00208">Device.cpp:208</a></div></div>
-<div class="ttc" id="a_device_8cpp_a260a52ec8ded4507a00baf717b33e88b_html_a260a52ec8ded4507a00baf717b33e88b"><div class="ttname"><a href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a></div><div class="ttdeci">YENADISPLAYMODE g_Mode</div><div class="ttdef"><b>Definition</b> <a href="_device_8cpp_source.html#l00041">Device.cpp:41</a></div></div>
-<div class="ttc" id="a_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15_html_a8b5e6c31a2a6e19c38a0df9083df6f15"><div class="ttname"><a href="_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15">PutFPS</a></div><div class="ttdeci">void PutFPS(int x, int y)</div><div class="ttdef"><b>Definition</b> <a href="_device_8cpp_source.html#l00160">Device.cpp:160</a></div></div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        <span class="comment">//렌더타겟(배경) 지우기..    </span></div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>        <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;Clear(<a class="code hl_variable" href="_render_8cpp_afc36d032c7a13f68ed3b98bff885b800.html#afc36d032c7a13f68ed3b98bff885b800">g_ClearColor</a>);</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>     </div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>        <span class="comment">//..지형, 오브제 그리기..등등..</span></div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>        <span class="comment">//... </span></div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span> </div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        <span class="comment">//오브제 그리기.</span></div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        <a class="code hl_function" href="_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388">ObjDraw</a>();</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span> </div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        <span class="comment">//도움말 및 기타 렌더링 정보 출력.</span></div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        <a class="code hl_function" href="_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15">PutFPS</a>(1, 1);</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>        <a class="code hl_function" href="_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc">ShowInfo</a>();</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span> </div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>    <span class="comment">//장면 그리기 종료...</span></div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;EndScene();</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span> </div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span> </div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    <span class="comment">//-------------------------------</span></div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>    <span class="comment">// 장면 그리기 종료.</span></div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>    <span class="comment">// 1회의 게임 루프 종료.</span></div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>    <span class="comment">//------------------------------- </span></div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>    <a class="code hl_variable" href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a>-&gt;Present();          <span class="comment">//화면출력 : Flip! </span></div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span> </div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span> </div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>}</div>
+</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span> </div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span> </div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span> </div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span> </div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span> </div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span> </div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span><span class="comment">/****************** end of file &quot;Render.cpp&quot; *********************************/</span></div>
+<div class="ttc" id="a_device_8cpp_a2034272a68b183b7651f0195b1d55182_html_a2034272a68b183b7651f0195b1d55182"><div class="ttname"><a href="_device_8cpp_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182">DrawText</a></div><div class="ttdeci">void DrawText(int x, int y, COLORREF col, TCHAR *msg,...)</div><div class="ttdef"><b>Definition</b> <a href="_device_8cpp_source.html#l00211">Device.cpp:211</a></div></div>
+<div class="ttc" id="a_device_8cpp_a260a52ec8ded4507a00baf717b33e88b_html_a260a52ec8ded4507a00baf717b33e88b"><div class="ttname"><a href="_device_8cpp_a260a52ec8ded4507a00baf717b33e88b.html#a260a52ec8ded4507a00baf717b33e88b">g_Mode</a></div><div class="ttdeci">YENADISPLAYMODE g_Mode</div><div class="ttdef"><b>Definition</b> <a href="_device_8cpp_source.html#l00042">Device.cpp:42</a></div></div>
+<div class="ttc" id="a_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31_html_a76c4195d88ec690c4da612bbd6d55f31"><div class="ttname"><a href="_device_8cpp_a76c4195d88ec690c4da612bbd6d55f31.html#a76c4195d88ec690c4da612bbd6d55f31">GetEngineTime</a></div><div class="ttdeci">float GetEngineTime()</div><div class="ttdoc">엔진 타이머 : 프레임 시간 획득.</div><div class="ttdef"><b>Definition</b> <a href="_device_8cpp_source.html#l00190">Device.cpp:190</a></div></div>
+<div class="ttc" id="a_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15_html_a8b5e6c31a2a6e19c38a0df9083df6f15"><div class="ttname"><a href="_device_8cpp_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15">PutFPS</a></div><div class="ttdeci">void PutFPS(int x, int y)</div><div class="ttdef"><b>Definition</b> <a href="_device_8cpp_source.html#l00163">Device.cpp:163</a></div></div>
 <div class="ttc" id="a_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6_html_ab142bdfd6670612f5797b3691e1d0aa6"><div class="ttname"><a href="_device_8cpp_ab142bdfd6670612f5797b3691e1d0aa6.html#ab142bdfd6670612f5797b3691e1d0aa6">g_pDevice</a></div><div class="ttdeci">LPYENADEVICE9 g_pDevice</div><div class="ttdef"><b>Definition</b> <a href="_device_8cpp_source.html#l00032">Device.cpp:32</a></div></div>
 <div class="ttc" id="a_device_8h_a104895dd1973bfad809b75baa8877526_html_a104895dd1973bfad809b75baa8877526"><div class="ttname"><a href="_device_8h_a104895dd1973bfad809b75baa8877526.html#a104895dd1973bfad809b75baa8877526">IsKeyUp</a></div><div class="ttdeci">#define IsKeyUp(key)</div><div class="ttdef"><b>Definition</b> <a href="_device_8h_source.html#l00095">Device.h:95</a></div></div>
 <div class="ttc" id="a_device_8h_html"><div class="ttname"><a href="_device_8h.html">Device.h</a></div><div class="ttdoc">예제 렌더링 장치 운용 헤더</div></div>
-<div class="ttc" id="a_render_8cpp_a1fd03c204025be83f24bbe60ce3b6055_html_a1fd03c204025be83f24bbe60ce3b6055"><div class="ttname"><a href="_render_8cpp_a1fd03c204025be83f24bbe60ce3b6055.html#a1fd03c204025be83f24bbe60ce3b6055">DataRelease</a></div><div class="ttdeci">void DataRelease()</div><div class="ttdef"><b>Definition</b> <a href="#l00111">Render.cpp:111</a></div></div>
-<div class="ttc" id="a_render_8cpp_a492f8e97776f005fb92889e0fb83c066_html_a492f8e97776f005fb92889e0fb83c066"><div class="ttname"><a href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a></div><div class="ttdeci">LPYENAVERTEXBUFFER9 g_pVB</div><div class="ttdoc">정점 버퍼 : 정점 데이터 관리용 개체.</div><div class="ttdef"><b>Definition</b> <a href="#l00042">Render.cpp:42</a></div></div>
-<div class="ttc" id="a_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d_html_a52c38ded8a84ee0b98b47359e5966b4d"><div class="ttname"><a href="_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d.html#a52c38ded8a84ee0b98b47359e5966b4d">ObjLoad</a></div><div class="ttdeci">int ObjLoad()</div><div class="ttdef"><b>Definition</b> <a href="#l00150">Render.cpp:150</a></div></div>
-<div class="ttc" id="a_render_8cpp_a57d51554e2556fddd2c6d059b69dc5cb_html_a57d51554e2556fddd2c6d059b69dc5cb"><div class="ttname"><a href="_render_8cpp_a57d51554e2556fddd2c6d059b69dc5cb.html#a57d51554e2556fddd2c6d059b69dc5cb">DataLoading</a></div><div class="ttdeci">int DataLoading()</div><div class="ttdef"><b>Definition</b> <a href="#l00089">Render.cpp:89</a></div></div>
-<div class="ttc" id="a_render_8cpp_a6d72e579f5eb095a38091a15d586f1a9_html_a6d72e579f5eb095a38091a15d586f1a9"><div class="ttname"><a href="_render_8cpp_a6d72e579f5eb095a38091a15d586f1a9.html#a6d72e579f5eb095a38091a15d586f1a9">SceneRender</a></div><div class="ttdeci">void SceneRender()</div><div class="ttdoc">장면 그리기</div><div class="ttdef"><b>Definition</b> <a href="#l00368">Render.cpp:368</a></div></div>
-<div class="ttc" id="a_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6_html_a71264aa9be3cdedfc23d807cca7e27e6"><div class="ttname"><a href="_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6.html#a71264aa9be3cdedfc23d807cca7e27e6">ObjUpdate</a></div><div class="ttdeci">void ObjUpdate(float dTime)</div></div>
-<div class="ttc" id="a_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7_html_aaf3a84182728c1cfdec0f03d2aff40a7"><div class="ttname"><a href="_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7">g_bCulling</a></div><div class="ttdeci">BOOL g_bCulling</div><div class="ttdoc">뒷면제거 플래그.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">Render.cpp:78</a></div></div>
-<div class="ttc" id="a_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20_html_ac207065b1fb62c07f89a12f7b4192a20"><div class="ttname"><a href="_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20">SystemUpdate</a></div><div class="ttdeci">void SystemUpdate()</div><div class="ttdoc">엔진 및 시스템 상태 갱신.</div><div class="ttdef"><b>Definition</b> <a href="#l00274">Render.cpp:274</a></div></div>
-<div class="ttc" id="a_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86_html_ad2a85bf3afb47a1077c80371f7cc7f86"><div class="ttname"><a href="_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86">ObjRelease</a></div><div class="ttdeci">void ObjRelease()</div><div class="ttdoc">오브젝트 : 제거</div><div class="ttdef"><b>Definition</b> <a href="#l00238">Render.cpp:238</a></div></div>
-<div class="ttc" id="a_render_8cpp_adf1a509705844e8b5ef04482401ad863_html_adf1a509705844e8b5ef04482401ad863"><div class="ttname"><a href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">g_bWireFrame</a></div><div class="ttdeci">BOOL g_bWireFrame</div><div class="ttdoc">와이어 프레임 출력 플래그.</div><div class="ttdef"><b>Definition</b> <a href="#l00077">Render.cpp:77</a></div></div>
-<div class="ttc" id="a_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388_html_adfe3d7c4f90c898edb95bb1c90d45388"><div class="ttname"><a href="_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388">ObjDraw</a></div><div class="ttdeci">void ObjDraw()</div><div class="ttdoc">오브젝트 그리기</div><div class="ttdef"><b>Definition</b> <a href="#l00252">Render.cpp:252</a></div></div>
-<div class="ttc" id="a_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab_html_ae896f1f8b7ad7601a14783ded98418ab"><div class="ttname"><a href="_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab.html#ae896f1f8b7ad7601a14783ded98418ab">FVF_COLVTX</a></div><div class="ttdeci">#define FVF_COLVTX</div><div class="ttdef"><b>Definition</b> <a href="#l00061">Render.cpp:61</a></div></div>
-<div class="ttc" id="a_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc_html_af4dd0814523522c2ef17aa2ec8079afc"><div class="ttname"><a href="_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc">ShowInfo</a></div><div class="ttdeci">void ShowInfo()</div><div class="ttdoc">도움말 출력</div><div class="ttdef"><b>Definition</b> <a href="#l00292">Render.cpp:292</a></div></div>
+<div class="ttc" id="a_render_8cpp_a1fd03c204025be83f24bbe60ce3b6055_html_a1fd03c204025be83f24bbe60ce3b6055"><div class="ttname"><a href="_render_8cpp_a1fd03c204025be83f24bbe60ce3b6055.html#a1fd03c204025be83f24bbe60ce3b6055">DataRelease</a></div><div class="ttdeci">void DataRelease()</div><div class="ttdef"><b>Definition</b> <a href="#l00115">Render.cpp:115</a></div></div>
+<div class="ttc" id="a_render_8cpp_a492f8e97776f005fb92889e0fb83c066_html_a492f8e97776f005fb92889e0fb83c066"><div class="ttname"><a href="_render_8cpp_a492f8e97776f005fb92889e0fb83c066.html#a492f8e97776f005fb92889e0fb83c066">g_pVB</a></div><div class="ttdeci">LPYENAVERTEXBUFFER9 g_pVB</div><div class="ttdoc">정점 버퍼 : 정점 데이터 관리용 개체.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">Render.cpp:40</a></div></div>
+<div class="ttc" id="a_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d_html_a52c38ded8a84ee0b98b47359e5966b4d"><div class="ttname"><a href="_render_8cpp_a52c38ded8a84ee0b98b47359e5966b4d.html#a52c38ded8a84ee0b98b47359e5966b4d">ObjLoad</a></div><div class="ttdeci">int ObjLoad()</div><div class="ttdef"><b>Definition</b> <a href="#l00154">Render.cpp:154</a></div></div>
+<div class="ttc" id="a_render_8cpp_a57d51554e2556fddd2c6d059b69dc5cb_html_a57d51554e2556fddd2c6d059b69dc5cb"><div class="ttname"><a href="_render_8cpp_a57d51554e2556fddd2c6d059b69dc5cb.html#a57d51554e2556fddd2c6d059b69dc5cb">DataLoading</a></div><div class="ttdeci">int DataLoading()</div><div class="ttdef"><b>Definition</b> <a href="#l00093">Render.cpp:93</a></div></div>
+<div class="ttc" id="a_render_8cpp_a6d72e579f5eb095a38091a15d586f1a9_html_a6d72e579f5eb095a38091a15d586f1a9"><div class="ttname"><a href="_render_8cpp_a6d72e579f5eb095a38091a15d586f1a9.html#a6d72e579f5eb095a38091a15d586f1a9">SceneRender</a></div><div class="ttdeci">void SceneRender()</div><div class="ttdoc">장면 그리기</div><div class="ttdef"><b>Definition</b> <a href="#l00398">Render.cpp:398</a></div></div>
+<div class="ttc" id="a_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6_html_a71264aa9be3cdedfc23d807cca7e27e6"><div class="ttname"><a href="_render_8cpp_a71264aa9be3cdedfc23d807cca7e27e6.html#a71264aa9be3cdedfc23d807cca7e27e6">ObjUpdate</a></div><div class="ttdeci">void ObjUpdate(float dTime)</div><div class="ttdoc">오브젝트 : 상태 갱신</div><div class="ttdef"><b>Definition</b> <a href="#l00234">Render.cpp:234</a></div></div>
+<div class="ttc" id="a_render_8cpp_a8302400b088d5500406bf82ef2b98fad_html_a8302400b088d5500406bf82ef2b98fad"><div class="ttname"><a href="_render_8cpp_a8302400b088d5500406bf82ef2b98fad.html#a8302400b088d5500406bf82ef2b98fad">g_mTM</a></div><div class="ttdeci">B3YXMATRIX g_mTM</div><div class="ttdef"><b>Definition</b> <a href="#l00063">Render.cpp:63</a></div></div>
+<div class="ttc" id="a_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7_html_aaf3a84182728c1cfdec0f03d2aff40a7"><div class="ttname"><a href="_render_8cpp_aaf3a84182728c1cfdec0f03d2aff40a7.html#aaf3a84182728c1cfdec0f03d2aff40a7">g_bCulling</a></div><div class="ttdeci">BOOL g_bCulling</div><div class="ttdoc">뒷면제거 플래그.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">Render.cpp:79</a></div></div>
+<div class="ttc" id="a_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20_html_ac207065b1fb62c07f89a12f7b4192a20"><div class="ttname"><a href="_render_8cpp_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20">SystemUpdate</a></div><div class="ttdeci">void SystemUpdate()</div><div class="ttdoc">엔진 및 시스템 상태 갱신.</div><div class="ttdef"><b>Definition</b> <a href="#l00300">Render.cpp:300</a></div></div>
+<div class="ttc" id="a_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86_html_ad2a85bf3afb47a1077c80371f7cc7f86"><div class="ttname"><a href="_render_8cpp_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86">ObjRelease</a></div><div class="ttdeci">void ObjRelease()</div><div class="ttdoc">오브젝트 : 제거</div><div class="ttdef"><b>Definition</b> <a href="#l00220">Render.cpp:220</a></div></div>
+<div class="ttc" id="a_render_8cpp_adf1a509705844e8b5ef04482401ad863_html_adf1a509705844e8b5ef04482401ad863"><div class="ttname"><a href="_render_8cpp_adf1a509705844e8b5ef04482401ad863.html#adf1a509705844e8b5ef04482401ad863">g_bWireFrame</a></div><div class="ttdeci">BOOL g_bWireFrame</div><div class="ttdoc">와이어 프레임 출력 플래그.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">Render.cpp:78</a></div></div>
+<div class="ttc" id="a_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388_html_adfe3d7c4f90c898edb95bb1c90d45388"><div class="ttname"><a href="_render_8cpp_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388">ObjDraw</a></div><div class="ttdeci">void ObjDraw()</div><div class="ttdoc">오브젝트 그리기</div><div class="ttdef"><b>Definition</b> <a href="#l00274">Render.cpp:274</a></div></div>
+<div class="ttc" id="a_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab_html_ae896f1f8b7ad7601a14783ded98418ab"><div class="ttname"><a href="_render_8cpp_ae896f1f8b7ad7601a14783ded98418ab.html#ae896f1f8b7ad7601a14783ded98418ab">FVF_COLVTX</a></div><div class="ttdeci">#define FVF_COLVTX</div><div class="ttdef"><b>Definition</b> <a href="#l00059">Render.cpp:59</a></div></div>
+<div class="ttc" id="a_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc_html_af4dd0814523522c2ef17aa2ec8079afc"><div class="ttname"><a href="_render_8cpp_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc">ShowInfo</a></div><div class="ttdeci">void ShowInfo()</div><div class="ttdoc">도움말 출력</div><div class="ttdef"><b>Definition</b> <a href="#l00324">Render.cpp:324</a></div></div>
+<div class="ttc" id="a_render_8cpp_afc36d032c7a13f68ed3b98bff885b800_html_afc36d032c7a13f68ed3b98bff885b800"><div class="ttname"><a href="_render_8cpp_afc36d032c7a13f68ed3b98bff885b800.html#afc36d032c7a13f68ed3b98bff885b800">g_ClearColor</a></div><div class="ttdeci">B3YXCOLOR g_ClearColor(0.0f, 0.125f, 0.35f, 1.0f)</div></div>
 <div class="ttc" id="a_render_8h_html"><div class="ttname"><a href="_render_8h.html">Render.h</a></div><div class="ttdoc">예제 기본 렌더링/프레임웍 헤더</div></div>
+<div class="ttc" id="aclass_b3_y_x_c_o_l_o_r_html"><div class="ttname"><a href="class_b3_y_x_c_o_l_o_r.html">B3YXCOLOR</a></div><div class="ttdoc">컬러 클래스 : B3YCOLOR 확장 클래스</div><div class="ttdef"><b>Definition</b> <a href="yn_math_8h_source.html#l00299">ynMath.h:300</a></div></div>
+<div class="ttc" id="aclass_b3_y_x_m_a_t_r_i_x_html"><div class="ttname"><a href="class_b3_y_x_m_a_t_r_i_x.html">B3YXMATRIX</a></div><div class="ttdoc">\u{2b50} 행렬 클래스</div><div class="ttdef"><b>Definition</b> <a href="yn_math_8h_source.html#l00247">ynMath.h:248</a></div></div>
 <div class="ttc" id="agroup___yena-_interfaces_ga56c1ec484b079b5f04292bdbb97755ad_html_ga56c1ec484b079b5f04292bdbb97755ad"><div class="ttname"><a href="group___yena-_interfaces_ga56c1ec484b079b5f04292bdbb97755ad.html#ga56c1ec484b079b5f04292bdbb97755ad">LPYENAVERTEXBUFFER9</a></div><div class="ttdeci">IYenaVertexBuffer9 * LPYENAVERTEXBUFFER9</div><div class="ttdef"><b>Definition</b> <a href="ynx9_8h_source.html#l00121">ynx9.h:121</a></div></div>
-<div class="ttc" id="amain_8cpp_a71393ff51c8b420e0ad3a43b689f01dd_html_a71393ff51c8b420e0ad3a43b689f01dd"><div class="ttname"><a href="main_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd">g_WindowName</a></div><div class="ttdeci">TCHAR * g_WindowName</div><div class="ttdef"><b>Definition</b> <a href="#l00026">Render.cpp:26</a></div></div>
-<div class="ttc" id="astruct_c_o_l_v_t_x_a33f84a6cc51def3d44d837ce8c3fd44d_html_a33f84a6cc51def3d44d837ce8c3fd44d"><div class="ttname"><a href="struct_c_o_l_v_t_x_a33f84a6cc51def3d44d837ce8c3fd44d.html#a33f84a6cc51def3d44d837ce8c3fd44d">COLVTX::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition</b> <a href="#l00053">Render.cpp:53</a></div></div>
-<div class="ttc" id="astruct_c_o_l_v_t_x_a5b9a682438ff33ec93b9699d7356eafd_html_a5b9a682438ff33ec93b9699d7356eafd"><div class="ttname"><a href="struct_c_o_l_v_t_x_a5b9a682438ff33ec93b9699d7356eafd.html#a5b9a682438ff33ec93b9699d7356eafd">COLVTX::diff</a></div><div class="ttdeci">DWORD diff</div><div class="ttdef"><b>Definition</b> <a href="#l00054">Render.cpp:54</a></div></div>
-<div class="ttc" id="astruct_c_o_l_v_t_x_aaf6b59467f41de7f2a0d31fb7569ff49_html_aaf6b59467f41de7f2a0d31fb7569ff49"><div class="ttname"><a href="struct_c_o_l_v_t_x_aaf6b59467f41de7f2a0d31fb7569ff49.html#aaf6b59467f41de7f2a0d31fb7569ff49">COLVTX::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition</b> <a href="#l00053">Render.cpp:53</a></div></div>
-<div class="ttc" id="astruct_c_o_l_v_t_x_html"><div class="ttname"><a href="struct_c_o_l_v_t_x.html">COLVTX</a></div><div class="ttdef"><b>Definition</b> <a href="#l00051">Render.cpp:52</a></div></div>
+<div class="ttc" id="agroup___yena-_math_ga3828aa23962df7cb6bd24519416b70f3_html_ga3828aa23962df7cb6bd24519416b70f3"><div class="ttname"><a href="group___yena-_math_ga3828aa23962df7cb6bd24519416b70f3.html#ga3828aa23962df7cb6bd24519416b70f3">B3YXMatrixRotationZ</a></div><div class="ttdeci">B3YXMATRIX * B3YXMatrixRotationZ(B3YXMATRIX *pOut, float angle)</div><div class="ttdoc">\u{2b50} Z 축 기준 회전행렬 생성함수 (ver.YN) 단 회전량은 라디안.</div><div class="ttdef"><b>Definition</b> <a href="yn_math_8cpp_source.html#l00380">ynMath.cpp:380</a></div></div>
+<div class="ttc" id="amain_8cpp_a71393ff51c8b420e0ad3a43b689f01dd_html_a71393ff51c8b420e0ad3a43b689f01dd"><div class="ttname"><a href="main_8cpp_a71393ff51c8b420e0ad3a43b689f01dd.html#a71393ff51c8b420e0ad3a43b689f01dd">g_WindowName</a></div><div class="ttdeci">TCHAR * g_WindowName</div><div class="ttdef"><b>Definition</b> <a href="#l00024">Render.cpp:24</a></div></div>
+<div class="ttc" id="astruct_c_o_l_v_t_x_a33f84a6cc51def3d44d837ce8c3fd44d_html_a33f84a6cc51def3d44d837ce8c3fd44d"><div class="ttname"><a href="struct_c_o_l_v_t_x_a33f84a6cc51def3d44d837ce8c3fd44d.html#a33f84a6cc51def3d44d837ce8c3fd44d">COLVTX::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition</b> <a href="#l00050">Render.cpp:50</a></div></div>
+<div class="ttc" id="astruct_c_o_l_v_t_x_a5b9a682438ff33ec93b9699d7356eafd_html_a5b9a682438ff33ec93b9699d7356eafd"><div class="ttname"><a href="struct_c_o_l_v_t_x_a5b9a682438ff33ec93b9699d7356eafd.html#a5b9a682438ff33ec93b9699d7356eafd">COLVTX::diff</a></div><div class="ttdeci">DWORD diff</div><div class="ttdef"><b>Definition</b> <a href="#l00051">Render.cpp:51</a></div></div>
+<div class="ttc" id="astruct_c_o_l_v_t_x_aaf6b59467f41de7f2a0d31fb7569ff49_html_aaf6b59467f41de7f2a0d31fb7569ff49"><div class="ttname"><a href="struct_c_o_l_v_t_x_aaf6b59467f41de7f2a0d31fb7569ff49.html#aaf6b59467f41de7f2a0d31fb7569ff49">COLVTX::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition</b> <a href="#l00050">Render.cpp:50</a></div></div>
+<div class="ttc" id="astruct_c_o_l_v_t_x_ab53804b41ce0dd5defd838cf13ed1b5d_html_ab53804b41ce0dd5defd838cf13ed1b5d"><div class="ttname"><a href="struct_c_o_l_v_t_x_ab53804b41ce0dd5defd838cf13ed1b5d.html#ab53804b41ce0dd5defd838cf13ed1b5d">COLVTX::z</a></div><div class="ttdeci">float z</div><div class="ttdef"><b>Definition</b> <a href="#l00050">Render.cpp:50</a></div></div>
+<div class="ttc" id="astruct_c_o_l_v_t_x_html"><div class="ttname"><a href="struct_c_o_l_v_t_x.html">COLVTX</a></div><div class="ttdef"><b>Definition</b> <a href="#l00048">Render.cpp:49</a></div></div>
+<div class="ttc" id="ayn_b3_graphics_8cpp_a38bf1e5e0427bdeba2b469eea9befc23_html_a38bf1e5e0427bdeba2b469eea9befc23"><div class="ttname"><a href="yn_b3_graphics_8cpp_a38bf1e5e0427bdeba2b469eea9befc23.html#a38bf1e5e0427bdeba2b469eea9befc23">v</a></div><div class="ttdeci">#define v</div></div>
 <div class="ttc" id="ayn_define_8h_a01d220b1e2abb6ce311eb1e0d1adc024_html_a01d220b1e2abb6ce311eb1e0d1adc024"><div class="ttname"><a href="yn_define_8h_a01d220b1e2abb6ce311eb1e0d1adc024.html#a01d220b1e2abb6ce311eb1e0d1adc024">YN_FAILED</a></div><div class="ttdeci">#define YN_FAILED(res)</div><div class="ttdef"><b>Definition</b> <a href="yn_define_8h_source.html#l00082">ynDefine.h:82</a></div></div>
+<div class="ttc" id="ayn_define_8h_a81ae5234898b499494541a912f145382_html_a81ae5234898b499494541a912f145382"><div class="ttname"><a href="yn_define_8h_a81ae5234898b499494541a912f145382.html#a81ae5234898b499494541a912f145382">B3Y_PI</a></div><div class="ttdeci">#define B3Y_PI</div><div class="ttdef"><b>Definition</b> <a href="yn_define_8h_source.html#l00133">ynDefine.h:133</a></div></div>
 <div class="ttc" id="ayn_define_8h_a86955fd2a27b715a0c0210a3605f118b_html_a86955fd2a27b715a0c0210a3605f118b"><div class="ttname"><a href="yn_define_8h_a86955fd2a27b715a0c0210a3605f118b.html#a86955fd2a27b715a0c0210a3605f118b">YN_FALSE</a></div><div class="ttdeci">#define YN_FALSE</div><div class="ttdef"><b>Definition</b> <a href="yn_define_8h_source.html#l00092">ynDefine.h:92</a></div></div>
 <div class="ttc" id="ayn_define_8h_ac2200c63b3f7dca9393e9db0518a5283_html_ac2200c63b3f7dca9393e9db0518a5283"><div class="ttname"><a href="yn_define_8h_ac2200c63b3f7dca9393e9db0518a5283.html#ac2200c63b3f7dca9393e9db0518a5283">YN_OK</a></div><div class="ttdeci">#define YN_OK</div><div class="ttdef"><b>Definition</b> <a href="yn_define_8h_source.html#l00091">ynDefine.h:91</a></div></div>
-<div class="ttc" id="ayn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6_html_af9805d148b7d14ce7e18a4ee6175fbc6"><div class="ttname"><a href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">SafeRelease</a></div><div class="ttdeci">#define SafeRelease(pBuff)</div><div class="ttdef"><b>Definition</b> <a href="yn_define_8h_source.html#l00111">ynDefine.h:111</a></div></div>
-<div class="ttc" id="aynx9types_8h_a05d3e54044f5bd8cf72271ae864e6318_html_a05d3e54044f5bd8cf72271ae864e6318a65d8713d8c2618022622d2b05c5600b1"><div class="ttname"><a href="ynx9types_8h_a05d3e54044f5bd8cf72271ae864e6318.html#a05d3e54044f5bd8cf72271ae864e6318a65d8713d8c2618022622d2b05c5600b1">B3YPT_TRIANGLELIST</a></div><div class="ttdeci">@ B3YPT_TRIANGLELIST</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00175">ynx9types.h:175</a></div></div>
-<div class="ttc" id="aynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5_html_a8e80073df8d0380c1c3dd54693b740e5a4f9a6b83b3519b4140b7716d83cbd13c"><div class="ttname"><a href="ynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5.html#a8e80073df8d0380c1c3dd54693b740e5a4f9a6b83b3519b4140b7716d83cbd13c">B3YCULL_NONE</a></div><div class="ttdeci">@ B3YCULL_NONE</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00231">ynx9types.h:231</a></div></div>
-<div class="ttc" id="aynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5_html_a8e80073df8d0380c1c3dd54693b740e5aa22c9d32aaad8f382d9d66c26ba4fb38"><div class="ttname"><a href="ynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5.html#a8e80073df8d0380c1c3dd54693b740e5aa22c9d32aaad8f382d9d66c26ba4fb38">B3YCULL_CCW</a></div><div class="ttdeci">@ B3YCULL_CCW</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00233">ynx9types.h:233</a></div></div>
-<div class="ttc" id="aynx9types_8h_acdc725ca686a1fad75f38d4866e0363c_html_acdc725ca686a1fad75f38d4866e0363cad92b9eeb6d65fd92481573d3a330247f"><div class="ttname"><a href="ynx9types_8h_acdc725ca686a1fad75f38d4866e0363c.html#acdc725ca686a1fad75f38d4866e0363cad92b9eeb6d65fd92481573d3a330247f">B3YPOOL_SYSTEMMEM</a></div><div class="ttdeci">@ B3YPOOL_SYSTEMMEM</div><div class="ttdoc">시스템 메모리 사용 &lt;Yena 옵션&gt;</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00114">ynx9types.h:114</a></div></div>
-<div class="ttc" id="aynx9types_8h_acf9a811888f502b60f6604d67c4454da_html_acf9a811888f502b60f6604d67c4454daa119cb2cbb0bfb46dcb7299eeb6c71801"><div class="ttname"><a href="ynx9types_8h_acf9a811888f502b60f6604d67c4454da.html#acf9a811888f502b60f6604d67c4454daa119cb2cbb0bfb46dcb7299eeb6c71801">B3YFILL_SOLID</a></div><div class="ttdeci">@ B3YFILL_SOLID</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00220">ynx9types.h:220</a></div></div>
-<div class="ttc" id="aynx9types_8h_acf9a811888f502b60f6604d67c4454da_html_acf9a811888f502b60f6604d67c4454daa3462517a97c0e43c4fd15a6e8496fad5"><div class="ttname"><a href="ynx9types_8h_acf9a811888f502b60f6604d67c4454da.html#acf9a811888f502b60f6604d67c4454daa3462517a97c0e43c4fd15a6e8496fad5">B3YFILL_WIREFRAME</a></div><div class="ttdeci">@ B3YFILL_WIREFRAME</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00219">ynx9types.h:219</a></div></div>
-<div class="ttc" id="aynx9types_8h_addcf38f5bef560f398f5333b21478bff_html_addcf38f5bef560f398f5333b21478bffaa747ea06dd108344b93dd38747e4542d"><div class="ttname"><a href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffaa747ea06dd108344b93dd38747e4542d">B3YRS_FILLMODE</a></div><div class="ttdeci">@ B3YRS_FILLMODE</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00193">ynx9types.h:193</a></div></div>
-<div class="ttc" id="aynx9types_8h_addcf38f5bef560f398f5333b21478bff_html_addcf38f5bef560f398f5333b21478bffab43c07968f4e61e841bdf0f1dbabea8f"><div class="ttname"><a href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffab43c07968f4e61e841bdf0f1dbabea8f">B3YRS_CULLMODE</a></div><div class="ttdeci">@ B3YRS_CULLMODE</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00196">ynx9types.h:196</a></div></div>
+<div class="ttc" id="ayn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6_html_af9805d148b7d14ce7e18a4ee6175fbc6"><div class="ttname"><a href="yn_define_8h_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6">SafeRelease</a></div><div class="ttdeci">#define SafeRelease(pBuff)</div><div class="ttdef"><b>Definition</b> <a href="yn_define_8h_source.html#l00116">ynDefine.h:116</a></div></div>
+<div class="ttc" id="aynx9types_8h_a020552fa46019be0eebf114e0ab3096d_html_a020552fa46019be0eebf114e0ab3096dab827c53af4ded3a80d21e8a4ac3c1a08"><div class="ttname"><a href="ynx9types_8h_a020552fa46019be0eebf114e0ab3096d.html#a020552fa46019be0eebf114e0ab3096dab827c53af4ded3a80d21e8a4ac3c1a08">B3YTS_WORLD</a></div><div class="ttdeci">@ B3YTS_WORLD</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00190">ynx9types.h:190</a></div></div>
+<div class="ttc" id="aynx9types_8h_a05d3e54044f5bd8cf72271ae864e6318_html_a05d3e54044f5bd8cf72271ae864e6318a65d8713d8c2618022622d2b05c5600b1"><div class="ttname"><a href="ynx9types_8h_a05d3e54044f5bd8cf72271ae864e6318.html#a05d3e54044f5bd8cf72271ae864e6318a65d8713d8c2618022622d2b05c5600b1">B3YPT_TRIANGLELIST</a></div><div class="ttdeci">@ B3YPT_TRIANGLELIST</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00174">ynx9types.h:174</a></div></div>
+<div class="ttc" id="aynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5_html_a8e80073df8d0380c1c3dd54693b740e5a4f9a6b83b3519b4140b7716d83cbd13c"><div class="ttname"><a href="ynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5.html#a8e80073df8d0380c1c3dd54693b740e5a4f9a6b83b3519b4140b7716d83cbd13c">B3YCULL_NONE</a></div><div class="ttdeci">@ B3YCULL_NONE</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00269">ynx9types.h:269</a></div></div>
+<div class="ttc" id="aynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5_html_a8e80073df8d0380c1c3dd54693b740e5aa22c9d32aaad8f382d9d66c26ba4fb38"><div class="ttname"><a href="ynx9types_8h_a8e80073df8d0380c1c3dd54693b740e5.html#a8e80073df8d0380c1c3dd54693b740e5aa22c9d32aaad8f382d9d66c26ba4fb38">B3YCULL_CCW</a></div><div class="ttdeci">@ B3YCULL_CCW</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00271">ynx9types.h:271</a></div></div>
+<div class="ttc" id="aynx9types_8h_acdc725ca686a1fad75f38d4866e0363c_html_acdc725ca686a1fad75f38d4866e0363cad92b9eeb6d65fd92481573d3a330247f"><div class="ttname"><a href="ynx9types_8h_acdc725ca686a1fad75f38d4866e0363c.html#acdc725ca686a1fad75f38d4866e0363cad92b9eeb6d65fd92481573d3a330247f">B3YPOOL_SYSTEMMEM</a></div><div class="ttdeci">@ B3YPOOL_SYSTEMMEM</div><div class="ttdoc">시스템 메모리 사용 &lt;Yena 옵션&gt;</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00113">ynx9types.h:113</a></div></div>
+<div class="ttc" id="aynx9types_8h_acf9a811888f502b60f6604d67c4454da_html_acf9a811888f502b60f6604d67c4454daa119cb2cbb0bfb46dcb7299eeb6c71801"><div class="ttname"><a href="ynx9types_8h_acf9a811888f502b60f6604d67c4454da.html#acf9a811888f502b60f6604d67c4454daa119cb2cbb0bfb46dcb7299eeb6c71801">B3YFILL_SOLID</a></div><div class="ttdeci">@ B3YFILL_SOLID</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00254">ynx9types.h:254</a></div></div>
+<div class="ttc" id="aynx9types_8h_acf9a811888f502b60f6604d67c4454da_html_acf9a811888f502b60f6604d67c4454daa3462517a97c0e43c4fd15a6e8496fad5"><div class="ttname"><a href="ynx9types_8h_acf9a811888f502b60f6604d67c4454da.html#acf9a811888f502b60f6604d67c4454daa3462517a97c0e43c4fd15a6e8496fad5">B3YFILL_WIREFRAME</a></div><div class="ttdeci">@ B3YFILL_WIREFRAME</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00253">ynx9types.h:253</a></div></div>
+<div class="ttc" id="aynx9types_8h_addcf38f5bef560f398f5333b21478bff_html_addcf38f5bef560f398f5333b21478bffaa747ea06dd108344b93dd38747e4542d"><div class="ttname"><a href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffaa747ea06dd108344b93dd38747e4542d">B3YRS_FILLMODE</a></div><div class="ttdeci">@ B3YRS_FILLMODE</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00226">ynx9types.h:226</a></div></div>
+<div class="ttc" id="aynx9types_8h_addcf38f5bef560f398f5333b21478bff_html_addcf38f5bef560f398f5333b21478bffab43c07968f4e61e841bdf0f1dbabea8f"><div class="ttname"><a href="ynx9types_8h_addcf38f5bef560f398f5333b21478bff.html#addcf38f5bef560f398f5333b21478bffab43c07968f4e61e841bdf0f1dbabea8f">B3YRS_CULLMODE</a></div><div class="ttdeci">@ B3YRS_CULLMODE</div><div class="ttdef"><b>Definition</b> <a href="ynx9types_8h_source.html#l00229">ynx9types.h:229</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -1,9 +1,0 @@
-<map id="B3YenaDevice9::_DrawLine" name="B3YenaDevice9::_DrawLine">
-<area shape="rect" id="Node000001" title="\u{2b50} 라인 그리기. (ver.GDI) ★" alt="" coords="514,31,698,57"/>
-<area shape="rect" id="Node000002" href="$class_b3_yena_device9_a6695b96e87ae660c177822ac9d0c22cb.html#a6695b96e87ae660c177822ac9d0c22cb" title="\u{2b50} 라인 그리기 : 정점색 추가.(B3YXCOLOR 타입)(과제) ★★★" alt="" coords="270,5,454,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="498,35,454,31,455,26,499,30"/>
-<area shape="rect" id="Node000003" href="$class_b3_yena_device9_a94398088bd2e40ab0f5b46d442697d02.html#a94398088bd2e40ab0f5b46d442697d02" title="픽셀 파이프 라인." alt="" coords="258,56,466,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="499,58,467,61,466,56,498,52"/>
-<area shape="rect" id="Node000004" href="$class_b3_yena_device9_a079861db8c9bdeae66491f77af0c0c54.html#a079861db8c9bdeae66491f77af0c0c54" title="\u{2b50} 기하 데이터를 렌더링합니다." alt="" coords="5,56,210,83"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="242,72,210,72,210,67,242,67"/>
-</map>

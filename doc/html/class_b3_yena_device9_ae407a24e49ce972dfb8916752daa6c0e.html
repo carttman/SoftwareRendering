@@ -126,7 +126,11 @@ $(function(){initNavTree('class_b3_yena_device9_ae407a24e49ce972dfb8916752daa6c0
   </tr>
 </table>
 </div><div class="memdoc">
-<p>SetStreamSource : 정점 버퍼를 디바이스에 등록.</p>
+<p>정점 버퍼를 디바이스에 등록. <br  />
+</p>
+<p>&lt;DX&gt; 복수의 정점 버퍼로 동시 '기하 스트리밍'을 지원합니다. (DX9, 최대 16) 또는 지정 VB 내의 데이터중 부분 렌더링(OffsetBytes)도 가능합니다. <br  />
+ </p><div class="fragment"><div class="line">GraphicsEngine.pVB[StreamNumber] = pVB; </div>
+</div><!-- fragment --><p> &lt;Yena&gt; 1개의 정점 버퍼만 사용합니다.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">StreamNumber</td><td>(기하, 정점)스트리밍 색인 (Yena 기본값은 0) </td></tr>
@@ -137,10 +141,12 @@ $(function(){initNavTree('class_b3_yena_device9_ae407a24e49ce972dfb8916752daa6c0
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>성공시 OK, 실패시 FALSE </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>&lt;Yena&gt; 주요 렌더링 작업은 Yena GraphicsEngine 에서 처리합니다. (v1.5.3 이상) </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_b3_yena_graphics_engine9_a9940e0c4000316d644d5a8b66afb9414.html#a9940e0c4000316d644d5a8b66afb9414" title="정점 버퍼 등록.">B3YenaGraphicsEngine9::_SetVertexBuffer</a> </dd></dl>
 
 <p>Implements <a class="el" href="class_i_yena_device9_a1fc2ad1f91fc6a74c13c4910ebe07a91.html#a1fc2ad1f91fc6a74c13c4910ebe07a91">IYenaDevice9</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_yena_8cpp_source.html#l00906">906</a> of file <a class="el" href="_yena_8cpp_source.html">Yena.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_yena_8cpp_source.html#l00954">954</a> of file <a class="el" href="_yena_8cpp_source.html">Yena.cpp</a>.</p>
 
 </div>
 </div>
