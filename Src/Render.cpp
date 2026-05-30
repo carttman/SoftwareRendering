@@ -21,7 +21,7 @@
 #include "Device.h"		
 #include "Render.h"
 
-TCHAR* g_WindowName = _T("Yena SW-Renderer : T06 Transform (I) 03 World + Rotation (DX.Math)(GDI)(과제제작용2)");
+TCHAR* g_WindowName = _T("최형재 : 행렬 회전");
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -248,9 +248,9 @@ void ObjUpdate(float dTime)
 	//angle = ynToRadian(0);					//수동 입력.★
 
 	B3YXMATRIX mR;								//회선성분이 들어간 행렬 만들기★
-	B3YXMatrixRotationZ(&mR, angle);			//Z 축 기준 회전:  mR = Z축회전(angle) ★
+	//B3YXMatrixRotationZ(&mR, angle);			//Z 축 기준 회전:  mR = Z축회전(angle) ★
 	//B3YXMatrixRotationX(&mR, angle);			//X 축 기준 회전
-	//B3YXMatrixRotationY(&mR, angle);			//Y 축 기준 회전
+	B3YXMatrixRotationY(&mR, angle);			//Y 축 기준 회전
 	//B3YXMatrixRotationZ(&mR, B3YXToRadian(0));  
 	//B3YXMatrixRotationZ(&mR, B3YXToRadian(-45));  
 
@@ -348,25 +348,7 @@ void ShowInfo()
 		B3YXCOLOR col9(1, 0.5f, 0, 1);
 
 		DrawText(x, y,  col, _T("■ %s"), g_WindowName);
-		y+=14;
-		DrawText(x, y += 14, col,  _T("1. 렌더링 파이프라인(Rendering Pipeline) 의 이해."));
-		//DrawText(x, y += 14, col5, _T("2. 3D->2D 변환 과정의 이해 및 연구."));
-		//DrawText(x, y += 14, col5, _T("3. Local (Model) Space 의 이해."));
-		DrawText(x, y += 14, col2,  _T("2. 월드 변환 (World Transform) : 스케일-회전-이동 변환 구현."));
-		y += 15;
-		DrawText(x, y += 14, col7, _T("* 삼각형의 회전이 이상해 보이십니까? 왜 그럴까요?"));
-		y += 14;
-		DrawText(x, y += 14, col9, _T("* 뷰-투영변환 없음 * "));
-		y += 14;
-		DrawText(x, y += 14, col,  _T("* 정점 파이프라인 (Vertex Pipeline) 구현."));
-		DrawText(x, y += 14, col4, _T("* 기하 파이프라인 (Geometry Pipeline) 구현."));
-		DrawText(x, y += 14, col4, _T("* 픽셀 파이프라인 (Pixel Pipeline) 구현."));
 
-		//y += 14;
-		y = g_Mode.Height - 100;
-		DrawText(x, y += 14, col7, _T("* DirectX Math : 행렬 및 함수 사용 (XMMATRIX)(과제 제작용)"));
-		DrawText(x, y += 14, col8, _T("* Yena Math : 행렬 클래스 및 함수 제작 (B3YXMATRIX)(과제)"));
-		DrawText(x, y += 14, col7, _T("* _DrawFace (GDI)"));
 	}
 
 
@@ -448,10 +430,3 @@ void SceneRender()
 
 
 }
-
-
-
- 
-
-
-/****************** end of file "Render.cpp" *********************************/
