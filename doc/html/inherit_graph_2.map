@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_b3_yena_core.html" title=" " alt="" coords="5,5,100,32"/>
-<area shape="rect" id="Node000001" href="$class_b3_yena_graphics_engine9.html" title="\u{2b50} Yena 그래픽스 엔진 클래스" alt="" coords="148,5,313,32"/>
+<area shape="rect" id="Node000000" href="$a00180.html" title="Yena SWR 엔진 기반 클래스" alt="" coords="5,5,100,32"/>
+<area shape="rect" id="Node000001" href="$a00184.html" title="Yena 그래픽스 엔진 클래스" alt="" coords="148,5,313,32"/>
 <area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="115,16,147,16,147,21,115,21"/>
 </map>

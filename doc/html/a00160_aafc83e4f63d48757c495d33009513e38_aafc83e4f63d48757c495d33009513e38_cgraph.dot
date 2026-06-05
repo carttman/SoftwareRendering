@@ -1,0 +1,19 @@
+digraph "B3YenaDevice9::_Create"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="B3YenaDevice9::_Create",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="지정 렌더링 디바이스 개체 생성 메소드."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="B3YenaGraphicsEngine9\l::_GetDCRT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00184_aad14572abb8c674cf9eff7646d42bb6f.html#aad14572abb8c674cf9eff7646d42bb6f",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="B3YenaGraphicsEngine9\l::_RenderTargetCreate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00184_a8fcaaf43ea2dd7bd85c07df5988cbfe3.html#a8fcaaf43ea2dd7bd85c07df5988cbfe3",tooltip="백버퍼용 렌더타겟을 생성."];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="B3YenaGraphicsEngine9\l::SetDev",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00184_a30de4268f29c1354c0e520c2e16e6027.html#a30de4268f29c1354c0e520c2e16e6027",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="B3YenaGraphicsEngine9\l::B3YenaDevice9",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00184_ab190b19331f0f9cc68628e0e90abf4fc.html#ab190b19331f0f9cc68628e0e90abf4fc",tooltip=" "];
+  Node5 -> Node5 [id="edge5_Node000005_Node000005",color="steelblue1",style="solid",tooltip=" "];
+}

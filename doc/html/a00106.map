@@ -1,0 +1,33 @@
+<map id="Yena/ynGrid.h" name="Yena/ynGrid.h">
+<area shape="rect" id="Node000001" title="그리드 클래스 헤더." alt="" coords="612,5,715,32"/>
+<area shape="rect" id="Node000002" href="$a00068.html" title="Yena SWR 기본 헤더 파일 (v1.x)" alt="" coords="616,80,711,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="658,47,659,79,654,80,652,48"/>
+<area shape="rect" id="Node000013" href="$a00101.html" title="그리드 클래스 소스 파일." alt="" coords="1264,155,1381,181"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="731,32,1266,152,1265,157,730,38"/>
+<area shape="poly" id="edge15_Node000002_Node000001" title=" " alt="" coords="670,65,668,33,673,32,675,64"/>
+<area shape="rect" id="Node000003" href="$a00053.html" title="예제 렌더링 장치 운용 헤더" alt="" coords="148,155,246,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="601,106,445,128,257,157,247,159,246,154,257,152,444,122,600,100"/>
+<area shape="rect" id="Node000007" href="$a00065.html" title="Yena SWR 기본 소스 파일 (v1.x)" alt="" coords="270,155,378,181"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="602,110,379,158,378,152,601,105"/>
+<area shape="rect" id="Node000008" href="$a00071.html" title="공간축 클래스 소스 파일." alt="" coords="424,229,543,256"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="602,106,507,125,467,140,443,156,438,174,444,193,456,211,471,227,467,231,452,215,439,195,432,174,439,153,465,135,506,120,601,100"/>
+<area shape="rect" id="Node000009" href="$a00074.html" title="공간축 클래스 헤더." alt="" coords="454,155,559,181"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="616,116,528,156,526,152,614,111"/>
+<area shape="rect" id="Node000010" href="$a00080.html" title="Yena 그래픽스 엔진 소스 파일" alt="" coords="583,155,744,181"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="666,122,666,154,661,154,661,122"/>
+<area shape="rect" id="Node000011" href="$a00086.html" title="정점 버퍼 운용 클래스 소스" alt="" coords="768,155,948,181"/>
+<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="713,110,825,152,823,157,711,115"/>
+<area shape="rect" id="Node000012" href="$a00095.html" title="에러, 예외 및 로그 처리 소스 파일" alt="" coords="972,155,1094,181"/>
+<area shape="poly" id="edge13_Node000002_Node000012" title=" " alt="" coords="727,104,973,152,972,157,726,109"/>
+<area shape="poly" id="edge14_Node000002_Node000013" title=" " alt="" coords="727,97,958,118,1252,152,1264,154,1263,159,1251,157,958,123,726,102"/>
+<area shape="rect" id="Node000014" href="$a00113.html" title="\u{2b50} Yena 수학 라이브러리 Yena Math Library for DirectX / OpenGL" alt="" coords="1117,155,1240,181"/>
+<area shape="poly" id="edge16_Node000002_Node000014" title=" " alt="" coords="726,100,1107,152,1117,154,1116,159,1106,157,726,105"/>
+<area shape="rect" id="Node000004" href="$a00050.html" title="예제 렌더링 장치 운용 소스." alt="" coords="5,229,117,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="161,191,86,231,84,226,159,187"/>
+<area shape="rect" id="Node000005" href="$a00059.html" title="\u{2b50} 예제 기본 렌더링/프레임웍 소스" alt="" coords="141,229,253,256"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="200,197,200,229,194,229,194,197"/>
+<area shape="rect" id="Node000006" href="$a00056.html" title="예제 애플리케이션 메인 / 윈도 프레임워크 소스" alt="" coords="277,229,376,256"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="234,187,305,226,302,231,231,192"/>
+<area shape="poly" id="edge9_Node000009_Node000002" title=" " alt="" coords="554,146,642,105,644,110,556,150"/>
+<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="500,197,490,230,485,228,495,196"/>
+</map>

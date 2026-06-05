@@ -25,8 +25,8 @@
 var NAVTREE =
 [
   [ "Yena SWR", "index.html", [
-    [ "T06 Transform (I) 03 World + Rotation (DX.Math)(GDI)", "index.html#autotoc_md2", null ],
-    [ "Todo List", "todo.html", null ],
+    [ "T06 Transform (I) 07 Matrix Composition (Move) 02 (Grid/Axis)(Class)(DX.Math)", "index.html#autotoc_md0", null ],
+    [ "Todo List", "a00134.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -43,6 +43,7 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
+        [ "Enumerator", "functions_eval.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -63,9 +64,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_d_x___lambert_8fx.html",
-"functions_a.html",
-"yn_b3_graphics_8cpp_ae6eb97314608c40b2ecb9b477b7ddcc0.html#ae6eb97314608c40b2ecb9b477b7ddcc0"
+"a00011.html",
+"a00144.html",
+"a00244_ab5b8972599e47cf919178b5448d37c38.html#ab5b8972599e47cf919178b5448d37c38"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

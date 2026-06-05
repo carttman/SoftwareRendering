@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['제공_0',['기본 제공',['../index.html#autotoc_md9',1,'']]]
+  ['정의_0',['GUID/UUID 정의',['../a00228.html#autotoc_md15',1,'']]]
 ];

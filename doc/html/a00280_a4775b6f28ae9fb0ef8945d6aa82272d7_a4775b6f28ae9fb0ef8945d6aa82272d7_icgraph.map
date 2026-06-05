@@ -1,0 +1,7 @@
+<map id="ynIUnknown::Release" name="ynIUnknown::Release">
+<area shape="rect" id="Node000001" title="참조 카운트 감소&#45;1, 0 이되면 객체 제거" alt="" coords="436,5,586,32"/>
+<area shape="rect" id="Node000002" href="$a00280_a721518b0e07c2955201ae1deabe7f407.html#a721518b0e07c2955201ae1deabe7f407" title="참조 카운트 증가+1" alt="" coords="242,5,388,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="420,21,388,21,388,16,420,16"/>
+<area shape="rect" id="Node000003" href="$a00280_a22d4a9a7e7136997acad30a5dd804fee.html#a22d4a9a7e7136997acad30a5dd804fee" title="지정 ID 의 인터페이스 획득." alt="" coords="5,5,194,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="226,21,194,21,194,16,226,16"/>
+</map>

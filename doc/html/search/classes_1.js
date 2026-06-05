@@ -1,4 +1,22 @@
 var searchData=
 [
-  ['colvtx_0',['COLVTX',['../struct_c_o_l_v_t_x.html',1,'']]]
+  ['b3ycolor_0',['B3YCOLOR',['../a00272.html',1,'']]],
+  ['b3ydisplaymode_1',['B3YDISPLAYMODE',['../a00324.html',1,'']]],
+  ['b3yena_2',['B3Yena',['../a00156.html',1,'']]],
+  ['b3yenacore_3',['B3YenaCore',['../a00180.html',1,'']]],
+  ['b3yenadevice9_4',['B3YenaDevice9',['../a00160.html',1,'']]],
+  ['b3yenagraphicsengine9_5',['B3YenaGraphicsEngine9',['../a00184.html',1,'']]],
+  ['b3yenavertexbuffer9_6',['B3YenaVertexBuffer9',['../a00208.html',1,'']]],
+  ['b3ymatrix_7',['B3YMATRIX',['../a00256.html',1,'']]],
+  ['b3ypresent_5fparameters_8',['B3YPRESENT_PARAMETERS',['../a00320.html',1,'']]],
+  ['b3yvector2_9',['B3YVECTOR2',['../a00232.html',1,'']]],
+  ['b3yvector3_10',['B3YVECTOR3',['../a00236.html',1,'']]],
+  ['b3yvector4_11',['B3YVECTOR4',['../a00240.html',1,'']]],
+  ['b3yvertexbuffer_5fdesc_12',['B3YVERTEXBUFFER_DESC',['../a00328.html',1,'']]],
+  ['b3yviewport_13',['B3YVIEWPORT',['../a00332.html',1,'']]],
+  ['b3yxcolor_14',['B3YXCOLOR',['../a00276.html',1,'']]],
+  ['b3yxmatrix_15',['B3YXMATRIX',['../a00268.html',1,'']]],
+  ['b3yxvector2_16',['B3YXVECTOR2',['../a00244.html',1,'']]],
+  ['b3yxvector3_17',['B3YXVECTOR3',['../a00248.html',1,'']]],
+  ['b3yxvector4_18',['B3YXVECTOR4',['../a00252.html',1,'']]]
 ];

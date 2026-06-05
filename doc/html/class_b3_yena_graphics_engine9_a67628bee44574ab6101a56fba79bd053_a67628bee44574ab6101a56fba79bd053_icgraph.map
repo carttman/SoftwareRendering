@@ -1,7 +1,0 @@
-<map id="B3YenaGraphicsEngine9::_PixelPipeline2" name="B3YenaGraphicsEngine9::_PixelPipeline2">
-<area shape="rect" id="Node000001" title=" " alt="" coords="432,5,597,48"/>
-<area shape="rect" id="Node000002" href="$class_b3_yena_graphics_engine9_aeebbaf1081457875a8f5923ba8569424.html#aeebbaf1081457875a8f5923ba8569424" title="\u{2b50} 픽셀 파이프 라인 연산을 수행." alt="" coords="219,5,384,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="417,29,385,29,385,24,417,24"/>
-<area shape="rect" id="Node000003" href="$class_b3_yena_graphics_engine9_a9124b197c0763305a85b3d27dc71ac87.html#a9124b197c0763305a85b3d27dc71ac87" title="\bstar 그래픽 엔진, 렌더링 시작." alt="" coords="5,5,171,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="203,29,171,29,171,24,203,24"/>
-</map>

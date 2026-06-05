@@ -1,0 +1,28 @@
+<map id="YENA::ynGrid" name="YENA::ynGrid">
+<area shape="rect" id="Node000001" title="그리드 : 공간 격자 클래스" alt="" coords="724,129,828,156"/>
+<area shape="rect" id="Node000002" href="$a00296.html" title="Yena 렌더링 디바이스 운용 인터페이스 : IDirect3DDevice9 대응" alt="" coords="306,19,409,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="424,27,485,28,556,35,630,49,701,74,739,99,766,127,762,131,735,103,699,79,628,54,555,40,484,33,424,32"/>
+<area shape="rect" id="Node000003" href="$a00280.html" title="Yena SWR COM 최상위 인터페이스 &lt;간략&gt;" alt="" coords="13,45,107,72"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="122,51,306,34,306,39,123,56"/>
+<area shape="rect" id="Node000005" href="$a00284.html" title="렌더링 자원 기반 인터페이스 : IDirect3DResource9 대응" alt="" coords="164,76,282,103"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="123,68,165,76,164,81,122,73"/>
+<area shape="rect" id="Node000004" href="$a00288.html" title="정점 버퍼 운용 인터페이스 : IDirect3DVertexBuffer9 대응" alt="" coords="456,79,588,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="605,98,701,115,739,126,737,131,699,120,604,103"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="298,87,456,89,456,94,298,93"/>
+<area shape="rect" id="Node000006" href="$a00220.html" title=" " alt="" coords="433,129,612,156"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="628,140,723,140,723,145,628,145"/>
+<area shape="rect" id="Node000007" href="$a00248.html" title="벡터 클래스 (3성분)" alt="" coords="164,129,282,156"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="298,140,433,140,433,145,298,145"/>
+<area shape="rect" id="Node000008" href="$a00236.html" title=" " alt="" coords="5,129,115,156"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="130,140,163,140,163,145,130,145"/>
+<area shape="rect" id="Node000009" href="$a00268.html" title="\u{2b50} 행렬 클래스" alt="" coords="470,184,575,211"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="590,189,644,181,699,170,743,154,745,159,701,175,645,187,591,194"/>
+<area shape="rect" id="Node000010" href="$a00256.html" title="\u{2b50} 행렬 구조체" alt="" coords="175,184,271,211"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="287,195,469,195,469,200,287,200"/>
+<area shape="rect" id="Node000011" href="$a00224.html" title=" " alt="" coords="433,239,612,265"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="626,238,663,227,699,213,736,184,763,155,767,158,740,188,701,217,665,232,627,243"/>
+<area shape="rect" id="Node000012" href="$a00276.html" title="컬러 클래스 : B3YCOLOR 확장 클래스" alt="" coords="172,239,274,265"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="290,249,433,249,433,255,290,255"/>
+<area shape="rect" id="Node000013" href="$a00272.html" title=" " alt="" coords="13,239,107,265"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="123,249,172,249,172,255,123,255"/>
+</map>

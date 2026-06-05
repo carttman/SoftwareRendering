@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['size_0',['Size',['../struct_b3_y_v_e_r_t_e_x_b_u_f_f_e_r___d_e_s_c_aa19a7fd3cfbc79636c0c0344c567b0ab.html#aa19a7fd3cfbc79636c0c0344c567b0ab',1,'B3YVERTEXBUFFER_DESC']]],
-  ['startvertex_1',['StartVertex',['../struct_b3_yena_graphics_engine9_1_1_i_n_p_u_t___s_t_r_e_a_m_a6cb24b6a1f3e2456c78099e7cae975d3.html#a6cb24b6a1f3e2456c78099e7cae975d3',1,'B3YenaGraphicsEngine9::INPUT_STREAM']]],
-  ['stride_2',['Stride',['../struct_b3_yena_graphics_engine9_1_1_i_n_p_u_t___s_t_r_e_a_m_a6f04475adb1aa5d04c2ed6a2118db0db.html#a6f04475adb1aa5d04c2ed6a2118db0db',1,'B3YenaGraphicsEngine9::INPUT_STREAM']]]
+  ['r_0',['r',['../a00272_a6e648f4aed499799e1c0b408967d8432.html#a6e648f4aed499799e1c0b408967d8432',1,'B3YCOLOR']]],
+  ['res_1',['res',['../a00172_ab19ece7a6a1f844377a84b8d5abd33ec.html#ab19ece7a6a1f844377a84b8d5abd33ec',1,'YENA::ynAxis::AXISINFO::res'],['../a00224_afaa30498f4ab8389b5175648597541d4.html#afaa30498f4ab8389b5175648597541d4',1,'YENA::ynGrid::GRIDINFO::res']]],
+  ['rstate_2',['RState',['../a00200_ab0b05b660cce863cb8d9e5a14a0a760c.html#ab0b05b660cce863cb8d9e5a14a0a760c',1,'B3YenaGraphicsEngine9::PIPELINE_STATE']]]
 ];

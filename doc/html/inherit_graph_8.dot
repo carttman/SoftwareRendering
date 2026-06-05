@@ -6,7 +6,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="B3YMATRIX",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_b3_y_m_a_t_r_i_x.html",tooltip="\\u{2b50} 행렬 구조체"];
+  Node0 [id="Node000000",label="B3YMATRIX",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00256.html",tooltip="\\u{2b50} 행렬 구조체"];
   Node0 -> Node1 [id="edge3_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="B3YXMATRIX",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_b3_y_x_m_a_t_r_i_x.html",tooltip="\\u{2b50} 행렬 클래스"];
+  Node1 [id="Node000001",label="B3YXMATRIX",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00268.html",tooltip="\\u{2b50} 행렬 클래스"];
 }

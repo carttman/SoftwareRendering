@@ -6,7 +6,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="B3YenaCore",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_b3_yena_core.html",tooltip=" "];
+  Node0 [id="Node000000",label="B3YenaCore",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00180.html",tooltip="Yena SWR 엔진 기반 클래스"];
   Node0 -> Node1 [id="edge2_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="B3YenaGraphicsEngine9",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_b3_yena_graphics_engine9.html",tooltip="\\u{2b50} Yena 그래픽스 엔진 클래스"];
+  Node1 [id="Node000001",label="B3YenaGraphicsEngine9",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00184.html",tooltip="Yena 그래픽스 엔진 클래스"];
 }

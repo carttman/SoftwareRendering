@@ -1,0 +1,7 @@
+<map id="B3YenaDevice9" name="B3YenaDevice9">
+<area shape="rect" id="Node000001" title="Yena 렌더링 장치 Device 구현 클래스 : IDirect3DDevice9 대응" alt="" coords="5,155,120,181"/>
+<area shape="rect" id="Node000002" href="$a00296.html" title="Yena 렌더링 디바이스 운용 인터페이스 : IDirect3DDevice9 대응" alt="" coords="11,80,114,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,122,65,154,60,154,60,122"/>
+<area shape="rect" id="Node000003" href="$a00280.html" title="Yena SWR COM 최상위 인터페이스 &lt;간략&gt;" alt="" coords="15,5,110,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,48,65,80,60,80,60,48"/>
+</map>

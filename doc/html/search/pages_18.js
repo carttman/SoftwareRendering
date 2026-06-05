@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['비교_0',['DX 와 Yena 기능구성 비교',['../_yena-_interfaces_8dox_acc94659dde7865e4641ed2a67e226ffe.html#autotoc_md18',1,'']]]
+  ['및_20과제_0',['및 과제',['../index.html#autotoc_md5',1,'목표 및 과제'],['../a00134.html#_todo000001',1,'목표 및 과제'],['../a00134.html#_todo000002',1,'목표 및 과제'],['../a00134.html#_todo000003',1,'목표 및 과제'],['../a00134.html#_todo000004',1,'목표 및 과제']]]
 ];

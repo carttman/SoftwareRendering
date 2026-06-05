@@ -1,6 +1,6 @@
 //! 
 //! \file	Yena.h
-//! \bstar	Yena SWR 기본 헤더 파일 (v1.x)   
+//! \brief	Yena SWR 기본 헤더 파일 (v1.x)   
 //!	\details Yena SWR 인터페이스 및 헬퍼 클레스 선언 및 플랫폼 헤더 포함.  
 //!			 사용자 Yena 기본 표준 헤더.  
 //!	\version Yena SW Renderer v1.5.x  
@@ -61,8 +61,8 @@ using namespace std;
 
 
 // Yena 서비스 클래스들
-//#include "ynGrid.h"		//그리드.
-//#include "ynAxis.h"		//방향축.
+#include "ynGrid.h"			//그리드.
+#include "ynAxis.h"			//방향축.
 
 using namespace YENA;
 

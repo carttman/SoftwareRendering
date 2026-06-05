@@ -38,11 +38,8 @@ LPYENADEVICE9	g_pDevice = NULL;
  
 // 화면 모드 설정 전역 변수.  
 //
-//YENADISPLAYMODE g_Mode = { 600, 600 };	//1:1 ★
 YENADISPLAYMODE g_Mode = { 800, 600 };		//4:3 
 //YENADISPLAYMODE g_Mode = { 960, 600 };	//16:10
-//YENADISPLAYMODE g_Mode = { 1200, 600 };	//2:1 ★
-//YENADISPLAYMODE g_Mode = { 1800, 600 };	//3:1 ★
 
 
 // 시스템 폰트.
@@ -176,7 +173,7 @@ void PutFPS(int x, int y)
 		oldtime = nowtime;
 	}
 
-	DrawText(x, y, RGB(255, 255, 255), _T("FPS=%.1f/%d"), fps, time);
+	DrawText(x, y, RGB(0, 255, 0), _T("FPS=%.1f/%d"), fps, time);
 }
 
 
@@ -205,6 +202,7 @@ float GetEngineTime()
 //! 문자열 출력 (GDI)
 //!
 //! \param	x, y	출력 화면 좌표.
+//! \param	col		출력 색상
 //! \param	msg		출력 문자열 (형식화 문자열 지원)
 //! \return	없음.
 //

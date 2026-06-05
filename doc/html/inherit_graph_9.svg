@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="struct_b3_y_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s.html" target="_top" xlink:title="스왑체인 정보기술 구조체 : D3DPRESENT_PARAMETERS 대응">
+<g id="a_Node000000"><a xlink:href="a00320.html" target="_top" xlink:title="스왑체인 정보기술 구조체 : D3DPRESENT_PARAMETERS 대응">
 <polygon fill="white" stroke="#666666" points="157,-20 0,-20 0,0 157,0 157,-20"/>
 <text xml:space="preserve" text-anchor="middle" x="78.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">B3YPRESENT_PARAMETERS</text>
 </a>

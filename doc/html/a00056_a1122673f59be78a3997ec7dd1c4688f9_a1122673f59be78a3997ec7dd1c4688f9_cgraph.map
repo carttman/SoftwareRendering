@@ -1,0 +1,77 @@
+<map id="WinMain" name="WinMain">
+<area shape="rect" id="Node000001" title="애플리케이션 메인 함수." alt="" coords="5,335,78,361"/>
+<area shape="rect" id="Node000002" href="$a00059_a57d51554e2556fddd2c6d059b69dc5cb.html#a57d51554e2556fddd2c6d059b69dc5cb" title=" " alt="" coords="133,81,227,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,333,77,262,123,169,157,119,161,122,128,172,81,264,51,335"/>
+<area shape="rect" id="Node000008" href="$a00059_a1fd03c204025be83f24bbe60ce3b6055.html#a1fd03c204025be83f24bbe60ce3b6055" title=" " alt="" coords="131,183,228,209"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="51,332,124,245,150,218,154,222,128,248,55,336"/>
+<area shape="rect" id="Node000010" href="$a00056_ac2106f07f578d8091d9948c889e60d44.html#ac2106f07f578d8091d9948c889e60d44" title=" " alt="" coords="137,259,223,285"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="66,332,140,291,142,295,69,336"/>
+<area shape="rect" id="Node000014" href="$a00056_ab9fdb11deae0525b065d73d356b9ad1c.html#ab9fdb11deae0525b065d73d356b9ad1c" title=" " alt="" coords="126,335,234,361"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="78,345,110,345,110,351,78,351"/>
+<area shape="rect" id="Node000015" href="$a00059_a6d72e579f5eb095a38091a15d586f1a9.html#a6d72e579f5eb095a38091a15d586f1a9" title="\u{2b50} 장면 그리기" alt="" coords="130,411,230,437"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="69,360,142,401,140,405,66,364"/>
+<area shape="rect" id="Node000030" href="$a00050_afc209451cd1079d8919b834c908f19ef.html#afc209451cd1079d8919b834c908f19ef" title="예나 SWR 엔진 제거 : 종료시 1회 호출" alt="" coords="131,461,229,488"/>
+<area shape="poly" id="edge35_Node000001_Node000030" title=" " alt="" coords="53,360,83,402,104,426,127,447,133,451,130,455,124,451,100,430,79,405,49,363"/>
+<area shape="rect" id="Node000031" href="$a00050_acca400f5f8053c4279231fc354f439f2.html#acca400f5f8053c4279231fc354f439f2" title=" " alt="" coords="138,588,222,615"/>
+<area shape="poly" id="edge36_Node000001_Node000031" title=" " alt="" coords="53,361,166,573,162,576,48,363"/>
+<area shape="rect" id="Node000003" href="$a00059_a52c38ded8a84ee0b98b47359e5966b4d.html#a52c38ded8a84ee0b98b47359e5966b4d" title=" " alt="" coords="320,5,389,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,78,281,42,305,32,307,37,283,46,208,83"/>
+<area shape="rect" id="Node000004" href="$a00140_gaad9460ee22a8ee275572ea50c92ff61b.html#gaad9460ee22a8ee275572ea50c92ff61b" title=" " alt="" coords="282,56,427,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="227,85,267,79,267,85,228,91"/>
+<area shape="rect" id="Node000006" href="$a00140_ga24c7dbebe357c67a5b80d1d84acd561c.html#ga24c7dbebe357c67a5b80d1d84acd561c" title=" " alt="" coords="283,107,426,133"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="228,99,268,105,267,110,227,104"/>
+<area shape="rect" id="Node000005" href="$a00164_aef61ffdd4b7434fc15a91d5d0d3da9c9.html#aef61ffdd4b7434fc15a91d5d0d3da9c9" title=" " alt="" coords="509,56,641,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="428,67,493,67,493,72,428,72"/>
+<area shape="rect" id="Node000007" href="$a00216_af7034e8f9a295f0d40458d5a090e541d.html#af7034e8f9a295f0d40458d5a090e541d" title=" " alt="" coords="510,107,640,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="427,117,494,117,494,123,427,123"/>
+<area shape="rect" id="Node000009" href="$a00059_ad2a85bf3afb47a1077c80371f7cc7f86.html#ad2a85bf3afb47a1077c80371f7cc7f86" title="오브젝트 : 제거" alt="" coords="310,157,399,184"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="229,186,294,177,295,182,230,192"/>
+<area shape="rect" id="Node000011" href="$a00056_a8a4c0ca15f926a2f75bc9c8e9201ca91.html#a8a4c0ca15f926a2f75bc9c8e9201ca91" title=" " alt="" coords="318,208,391,235"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="223,257,302,234,304,239,224,262"/>
+<area shape="rect" id="Node000012" href="$a00056_a5b47edfe2b8081af0e701fc23ea47543.html#a5b47edfe2b8081af0e701fc23ea47543" title=" " alt="" coords="300,259,409,285"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="223,269,285,269,285,275,223,275"/>
+<area shape="rect" id="Node000013" href="$a00056_a8380605dd55834edf34db4fea057f078.html#a8380605dd55834edf34db4fea057f078" title=" " alt="" coords="522,247,628,273"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="410,266,506,261,506,266,410,272"/>
+<area shape="rect" id="Node000016" href="$a00059_a2351adafd60182efe5d511e0c2aa26b1.html#a2351adafd60182efe5d511e0c2aa26b1" title=" " alt="" coords="300,309,409,336"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="195,408,232,377,281,346,293,340,295,345,283,350,236,382,198,412"/>
+<area shape="rect" id="Node000020" href="$a00050_a76c4195d88ec690c4da612bbd6d55f31.html#a76c4195d88ec690c4da612bbd6d55f31" title="엔진 타이머 : 프레임 시간 획득." alt="" coords="299,360,410,387"/>
+<area shape="poly" id="edge20_Node000015_Node000020" title=" " alt="" coords="228,407,291,389,292,394,229,413"/>
+<area shape="rect" id="Node000021" href="$a00059_adfe3d7c4f90c898edb95bb1c90d45388.html#adfe3d7c4f90c898edb95bb1c90d45388" title="\u{2b50} 오브젝트 그리기" alt="" coords="318,411,391,437"/>
+<area shape="poly" id="edge21_Node000015_Node000021" title=" " alt="" coords="231,421,303,421,303,427,231,427"/>
+<area shape="rect" id="Node000022" href="$a00059_a71264aa9be3cdedfc23d807cca7e27e6.html#a71264aa9be3cdedfc23d807cca7e27e6" title=" " alt="" coords="313,461,396,488"/>
+<area shape="poly" id="edge22_Node000015_Node000022" title=" " alt="" coords="229,435,299,456,297,461,228,441"/>
+<area shape="rect" id="Node000026" href="$a00050_a8b5e6c31a2a6e19c38a0df9083df6f15.html#a8b5e6c31a2a6e19c38a0df9083df6f15" title=" " alt="" coords="321,512,388,539"/>
+<area shape="poly" id="edge29_Node000015_Node000026" title=" " alt="" coords="216,435,236,447,250,461,260,474,269,486,283,498,308,510,305,515,281,502,265,489,256,477,246,464,232,451,213,440"/>
+<area shape="rect" id="Node000028" href="$a00059_af4dd0814523522c2ef17aa2ec8079afc.html#af4dd0814523522c2ef17aa2ec8079afc" title="도움말 출력" alt="" coords="316,563,393,589"/>
+<area shape="poly" id="edge32_Node000015_Node000028" title=" " alt="" coords="220,436,236,448,254,474,260,500,266,525,284,549,303,561,300,566,280,553,261,527,255,501,249,476,232,451,217,440"/>
+<area shape="rect" id="Node000029" href="$a00059_ac207065b1fb62c07f89a12f7b4192a20.html#ac207065b1fb62c07f89a12f7b4192a20" title="엔진 및 시스템 상태 갱신." alt="" coords="300,613,409,640"/>
+<area shape="poly" id="edge34_Node000015_Node000029" title=" " alt="" coords="221,436,236,448,250,468,257,488,260,526,263,563,270,581,284,600,289,604,285,608,280,603,265,584,258,564,254,526,252,489,245,470,232,451,218,440"/>
+<area shape="rect" id="Node000017" href="$a00141_ga9735d0ed90f18f6601eff62e699f59fe.html#ga9735d0ed90f18f6601eff62e699f59fe" title="뷰 변환 행렬 생성 : D3DXMatrixLookAtLH 대응." alt="" coords="500,297,650,324"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="410,317,485,313,485,318,410,322"/>
+<area shape="rect" id="Node000019" href="$a00141_gab141b564e1c257402780d61a62a7230a.html#gab141b564e1c257402780d61a62a7230a" title="투영 변환 행렬 생성 : D3DXMatrixPerspectiveFovLH 대응." alt="" coords="475,348,675,375"/>
+<area shape="poly" id="edge18_Node000016_Node000019" title=" " alt="" coords="410,330,481,342,480,347,409,335"/>
+<area shape="rect" id="Node000018" href="$a00141_ga02a75a42a0bae280a3396ecdb1c124e7.html#ga02a75a42a0bae280a3396ecdb1c124e7" title="행렬 단위화(초기화) 함수" alt="" coords="723,399,857,425"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="644,322,676,334,722,359,762,387,759,391,719,364,674,338,642,327"/>
+<area shape="poly" id="edge19_Node000019_Node000018" title=" " alt="" coords="635,373,716,392,715,397,634,378"/>
+<area shape="rect" id="Node000023" href="$a00141_gad8e630c14218a38be5a8afaa29be1f95.html#gad8e630c14218a38be5a8afaa29be1f95" title="Y 축 기준 회전행렬 생성함수 (ver.YN) 단 회전량은 라디안." alt="" coords="500,399,650,425"/>
+<area shape="poly" id="edge23_Node000022_Node000023" title=" " alt="" coords="396,459,475,435,502,427,504,432,476,440,397,464"/>
+<area shape="rect" id="Node000024" href="$a00141_gae984f2b96f4d146a09bc7ec514d31fb9.html#gae984f2b96f4d146a09bc7ec514d31fb9" title="스케일 행렬 생성 : D3DXMatrixScaling 대응." alt="" coords="508,449,642,476"/>
+<area shape="poly" id="edge25_Node000022_Node000024" title=" " alt="" coords="397,470,492,464,492,470,397,475"/>
+<area shape="rect" id="Node000025" href="$a00141_ga39d89af6e45cb22dc8cecfec6b9631eb.html#ga39d89af6e45cb22dc8cecfec6b9631eb" title="이동 행렬 생성 : D3DXMatrixTranslation 대응." alt="" coords="497,500,653,527"/>
+<area shape="poly" id="edge27_Node000022_Node000025" title=" " alt="" coords="397,479,482,494,481,500,396,485"/>
+<area shape="poly" id="edge24_Node000023_Node000018" title=" " alt="" coords="650,409,707,409,707,415,650,415"/>
+<area shape="poly" id="edge26_Node000024_Node000018" title=" " alt="" coords="634,446,715,427,716,432,635,451"/>
+<area shape="poly" id="edge28_Node000025_Node000018" title=" " alt="" coords="642,497,674,486,719,460,759,433,762,437,722,465,676,490,644,502"/>
+<area shape="rect" id="Node000027" href="$a00050_a2034272a68b183b7651f0195b1d55182.html#a2034272a68b183b7651f0195b1d55182" title=" " alt="" coords="536,575,614,601"/>
+<area shape="poly" id="edge30_Node000026_Node000027" title=" " alt="" coords="389,532,522,570,521,575,388,537"/>
+<area shape="poly" id="edge31_Node000027_Node000027" title=" " alt="" coords="539,576,532,566,537,556,551,550,575,548,601,551,614,557,612,562,599,556,575,553,552,555,540,560,537,565,543,573"/>
+<area shape="poly" id="edge33_Node000028_Node000027" title=" " alt="" coords="394,575,521,582,521,588,393,581"/>
+<area shape="rect" id="Node000032" href="$a00139_gaadd8f307a7460a88e7c4c254bcbe6719.html#gaadd8f307a7460a88e7c4c254bcbe6719" title=" " alt="" coords="306,664,403,691"/>
+<area shape="poly" id="edge37_Node000031_Node000032" title=" " alt="" coords="208,613,283,650,299,656,297,661,281,654,205,618"/>
+<area shape="rect" id="Node000033" href="$a00156_adf8a3574135e4d16506bc86ee677c7b7.html#adf8a3574135e4d16506bc86ee677c7b7" title=" " alt="" coords="495,664,655,691"/>
+<area shape="poly" id="edge38_Node000032_Node000033" title=" " alt="" coords="403,675,479,675,479,680,403,680"/>
+<area shape="rect" id="Node000034" href="$a00156_af4a43b4057eea79e48143c6da0de48ce.html#af4a43b4057eea79e48143c6da0de48ce" title=" " alt="" coords="731,639,849,665"/>
+<area shape="poly" id="edge39_Node000033_Node000034" title=" " alt="" coords="655,665,715,658,716,663,656,671"/>
+<area shape="rect" id="Node000035" href="$a00137_ga9e2aa2b3bba79319041923d1db833f2a.html#ga9e2aa2b3bba79319041923d1db833f2a" title=" " alt="" coords="741,689,838,716"/>
+<area shape="poly" id="edge40_Node000033_Node000035" title=" " alt="" coords="656,684,726,693,726,698,655,689"/>
+</map>

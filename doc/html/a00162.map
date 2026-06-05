@@ -1,0 +1,25 @@
+<map id="YENA::ynAxis" name="YENA::ynAxis">
+<area shape="rect" id="Node000001" title="공간축 표시 클래스" alt="" coords="738,162,844,189"/>
+<area shape="rect" id="Node000002" href="$a00296.html" title="Yena 렌더링 디바이스 운용 인터페이스 : IDirect3DDevice9 대응" alt="" coords="306,21,409,47"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="424,27,488,28,563,35,642,52,680,65,715,82,739,100,758,121,785,160,780,163,754,124,735,104,713,87,677,70,640,57,563,40,488,33,424,32"/>
+<area shape="rect" id="Node000003" href="$a00280.html" title="Yena SWR COM 최상위 인터페이스 &lt;간략&gt;" alt="" coords="13,53,107,79"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="122,57,306,37,306,42,123,62"/>
+<area shape="rect" id="Node000005" href="$a00284.html" title="렌더링 자원 기반 인터페이스 : IDirect3DResource9 대응" alt="" coords="164,78,282,105"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="123,73,165,80,164,85,122,78"/>
+<area shape="rect" id="Node000004" href="$a00288.html" title="정점 버퍼 운용 인터페이스 : IDirect3DVertexBuffer9 대응" alt="" coords="456,81,588,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="604,105,659,117,715,134,767,159,765,164,713,139,658,122,603,110"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="297,89,455,91,455,96,297,95"/>
+<area shape="rect" id="Node000006" href="$a00168.html" title=" " alt="" coords="433,203,611,230"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="626,208,713,195,748,187,749,192,715,201,627,213"/>
+<area shape="rect" id="Node000007" href="$a00248.html" title="벡터 클래스 (3성분)" alt="" coords="164,167,282,194"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="297,172,306,171,548,168,738,171,738,176,548,173,306,177,298,177"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="298,194,307,195,432,209,432,214,306,201,297,199"/>
+<area shape="rect" id="Node000008" href="$a00236.html" title=" " alt="" coords="5,167,115,194"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="130,178,163,178,163,183,130,183"/>
+<area shape="rect" id="Node000009" href="$a00268.html" title="\u{2b50} 행렬 클래스" alt="" coords="469,254,574,281"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="590,263,651,255,713,236,749,213,776,187,780,191,752,217,715,241,652,260,590,269"/>
+<area shape="rect" id="Node000010" href="$a00256.html" title="\u{2b50} 행렬 구조체" alt="" coords="175,254,271,281"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="287,265,469,265,469,270,287,270"/>
+<area shape="rect" id="Node000011" href="$a00332.html" title="출력 화면 영역 정보 구조체. &#160;&#160;뷰포트 멥핑(Viewport Mapping) 의 변환 정보를 관리한다. D3DVIEWPORT9 대응." alt="" coords="463,305,580,331"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="596,318,656,310,685,300,713,287,738,265,758,238,782,188,787,191,762,241,742,268,715,291,687,305,657,315,596,323"/>
+</map>

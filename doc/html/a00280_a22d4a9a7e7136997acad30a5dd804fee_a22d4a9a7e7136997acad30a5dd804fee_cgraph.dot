@@ -1,0 +1,14 @@
+digraph "ynIUnknown::QueryInterface"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="ynIUnknown::QueryInterface",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="지정 ID 의 인터페이스 획득."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="ynIUnknown::AddRef",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00280_a721518b0e07c2955201ae1deabe7f407.html#a721518b0e07c2955201ae1deabe7f407",tooltip="참조 카운트 증가+1"];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="ynIUnknown::Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00280_a4775b6f28ae9fb0ef8945d6aa82272d7.html#a4775b6f28ae9fb0ef8945d6aa82272d7",tooltip="참조 카운트 감소-1, 0 이되면 객체 제거"];
+}

@@ -1,0 +1,61 @@
+<map id="Src/Device.h" name="Src/Device.h">
+<area shape="rect" id="Node000001" title="예제 렌더링 장치 운용 헤더" alt="" coords="580,5,677,32"/>
+<area shape="rect" id="Node000002" href="$a00068.html" title="Yena SWR 기본 헤더 파일 (v1.x)" alt="" coords="598,80,659,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="631,33,631,64,626,64,626,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="550,379,633,405"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="598,96,515,97,397,104,263,122,195,137,130,157,60,182,35,199,13,230,8,247,13,262,27,276,49,290,112,315,194,336,286,353,379,366,534,383,534,389,378,372,285,358,193,341,111,320,46,295,24,280,9,264,3,247,8,228,31,196,57,177,128,152,194,132,262,117,397,99,514,92,598,91"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="22,229,83,256"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="598,97,523,99,419,106,301,125,242,139,186,157,128,187,80,221,77,217,125,183,184,152,241,134,300,119,418,101,522,93,597,92"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="107,229,169,256"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="598,99,406,118,301,135,258,146,227,157,188,186,158,219,154,215,184,182,225,152,257,140,300,130,405,113,598,94"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="193,229,254,256"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="598,98,516,102,412,112,314,129,276,142,250,157,240,169,233,183,227,215,221,213,228,182,236,166,247,153,274,137,313,124,412,106,516,97,597,93"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="261,155,314,181"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="598,102,484,123,330,157,329,152,483,118,597,97"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="399,229,456,256"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="613,109,458,222,455,218,610,105"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="480,229,554,256"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="618,109,575,156,534,217,529,214,571,153,614,105"/>
+<area shape="rect" id="Node000010" href="$a00092.html" title="Yena SWR 엔진 기본 정의 문서." alt="" coords="903,304,987,331"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="660,93,706,97,763,106,824,124,881,152,902,169,916,185,937,228,945,259,948,289,942,289,939,260,932,230,912,188,898,173,878,157,822,129,762,111,705,102,660,98"/>
+<area shape="rect" id="Node000012" href="$a00098.html" title="에러, 예외 및 로그 처리 헤더 파일" alt="" coords="629,155,703,181"/>
+<area shape="poly" id="edge12_Node000002_Node000012" title=" " alt="" coords="638,106,655,140,650,142,633,108"/>
+<area shape="rect" id="Node000014" href="$a00110.html" title="Yena SWR COM / GUID 헤더" alt="" coords="338,155,418,181"/>
+<area shape="poly" id="edge14_Node000002_Node000014" title=" " alt="" coords="598,106,434,153,432,148,597,101"/>
+<area shape="rect" id="Node000016" href="$a00122.html" title="Yena SWR COM 기반 헤더 (v2.x)" alt="" coords="527,304,656,331"/>
+<area shape="poly" id="edge22_Node000002_Node000016" title=" " alt="" coords="629,108,619,155,598,289,593,288,614,154,624,107"/>
+<area shape="rect" id="Node000017" href="$a00128.html" title="Yena SW 엔진 자료형 정의 : DX9 (d3d9types.h) 대응" alt="" coords="731,229,823,256"/>
+<area shape="poly" id="edge24_Node000002_Node000017" title=" " alt="" coords="653,105,685,126,717,153,744,184,764,215,760,218,739,187,714,157,681,130,650,110"/>
+<area shape="rect" id="Node000018" href="$a00125.html" title="Yena SWR 인터페이스 헤더 : DX9 (d3d9.h) 대응" alt="" coords="779,155,839,181"/>
+<area shape="poly" id="edge26_Node000002_Node000018" title=" " alt="" coords="661,105,765,146,763,151,659,110"/>
+<area shape="rect" id="Node000019" href="$a00116.html" title="\u{2b50} Yena 수학 라이브러리 Yena Math Library for DirectX / OpenGL" alt="" coords="847,229,922,256"/>
+<area shape="poly" id="edge31_Node000002_Node000019" title=" " alt="" coords="660,92,702,95,754,104,806,122,831,136,853,153,873,182,883,213,878,215,869,184,850,157,828,140,804,127,752,109,702,100,660,97"/>
+<area shape="rect" id="Node000021" href="$a00104.html" title="그리드 클래스 헤더." alt="" coords="964,155,1035,181"/>
+<area shape="poly" id="edge32_Node000002_Node000021" title=" " alt="" coords="660,99,935,152,949,155,948,160,934,157,659,104"/>
+<area shape="rect" id="Node000022" href="$a00074.html" title="공간축 클래스 헤더." alt="" coords="1059,155,1132,181"/>
+<area shape="poly" id="edge35_Node000002_Node000022" title=" " alt="" coords="660,96,821,117,1035,152,1045,154,1044,159,1034,157,820,123,660,102"/>
+<area shape="poly" id="edge10_Node000010_Node000003" title=" " alt="" coords="903,331,892,333,649,382,648,377,891,328,902,326"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="991,379,1059,405"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="960,329,1002,366,998,370,957,333"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="629,229,706,256"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="669,182,670,214,664,214,664,182"/>
+<area shape="poly" id="edge15_Node000014_Node000003" title=" " alt="" coords="360,184,341,199,324,216,315,236,315,245,319,255,339,281,363,303,420,339,480,363,535,378,534,384,478,369,418,344,360,308,335,284,314,257,310,246,310,235,320,213,337,195,356,180"/>
+<area shape="poly" id="edge16_Node000014_Node000004" title=" " alt="" coords="338,181,327,184,214,207,99,231,98,226,213,201,326,179,337,176"/>
+<area shape="poly" id="edge17_Node000014_Node000005" title=" " alt="" coords="338,184,185,230,183,225,337,179"/>
+<area shape="poly" id="edge18_Node000014_Node000006" title=" " alt="" coords="352,184,265,225,263,220,350,179"/>
+<area shape="poly" id="edge19_Node000014_Node000008" title=" " alt="" coords="389,180,413,215,408,218,384,183"/>
+<area shape="poly" id="edge21_Node000014_Node000009" title=" " alt="" coords="403,180,480,219,478,224,401,184"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="328,229,375,256"/>
+<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="376,183,364,216,359,214,371,181"/>
+<area shape="poly" id="edge23_Node000016_Node000003" title=" " alt="" coords="594,331,594,363,589,363,589,331"/>
+<area shape="poly" id="edge25_Node000017_Node000003" title=" " alt="" coords="763,259,670,333,621,371,618,367,667,329,760,254"/>
+<area shape="poly" id="edge27_Node000018_Node000017" title=" " alt="" coords="806,183,791,216,786,214,801,181"/>
+<area shape="poly" id="edge28_Node000018_Node000019" title=" " alt="" coords="824,180,863,217,859,221,820,184"/>
+<area shape="poly" id="edge29_Node000019_Node000010" title=" " alt="" coords="897,255,927,290,923,294,893,258"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="773,304,879,331"/>
+<area shape="poly" id="edge30_Node000019_Node000020" title=" " alt="" coords="877,258,848,293,844,290,872,255"/>
+<area shape="poly" id="edge33_Node000021_Node000002" title=" " alt="" coords="963,158,958,157,675,104,676,99,959,152,964,153"/>
+<area shape="poly" id="edge34_Node000021_Node000011" title=" " alt="" coords="1004,182,1024,363,1019,364,998,182"/>
+<area shape="poly" id="edge36_Node000022_Node000002" title=" " alt="" coords="1058,157,1058,157,844,123,674,102,675,96,845,117,1059,152,1059,152"/>
+<area shape="poly" id="edge37_Node000022_Node000011" title=" " alt="" coords="1094,183,1036,365,1031,363,1089,181"/>
+</map>

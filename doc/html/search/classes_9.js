@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['yenadisplaymode_0',['YENADISPLAYMODE',['../struct_y_e_n_a_d_i_s_p_l_a_y_m_o_d_e.html',1,'']]],
-  ['yenapresent_5fparameters_1',['YENAPRESENT_PARAMETERS',['../struct_y_e_n_a_p_r_e_s_e_n_t___p_a_r_a_m_e_t_e_r_s.html',1,'']]],
-  ['ynexception_2',['ynException',['../class_y_e_n_a_1_1yn_exception.html',1,'YENA']]],
-  ['yniunknown_3',['ynIUnknown',['../classyn_i_unknown.html',1,'']]]
+  ['vs_5foutput_0',['VS_OUTPUT',['../a00176.html',1,'']]],
+  ['vtx_5faxis_1',['VTX_AXIS',['../a00168.html',1,'YENA::ynAxis']]],
+  ['vtx_5fgrid_2',['VTX_GRID',['../a00220.html',1,'YENA::ynGrid']]]
 ];

@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['x_0',['x',['../struct_c_o_l_v_t_x_aaf6b59467f41de7f2a0d31fb7569ff49.html#aaf6b59467f41de7f2a0d31fb7569ff49',1,'COLVTX::x'],['../struct_b3_y_v_e_c_t_o_r2_ab8a432844ff83a9b2271eb70fedbf67a.html#ab8a432844ff83a9b2271eb70fedbf67a',1,'B3YVECTOR2::x'],['../struct_b3_y_v_e_c_t_o_r3_adff021bdb8b46ead2e8eb5e880e165e7.html#adff021bdb8b46ead2e8eb5e880e165e7',1,'B3YVECTOR3::x'],['../struct_b3_y_v_e_c_t_o_r4_a230ec1b628e61eaf9b70f77a411d1438.html#a230ec1b628e61eaf9b70f77a411d1438',1,'B3YVECTOR4::x']]]
+  ['w_0',['w',['../a00240_ab29bc976637321f91c5ed0be2f78b6bd.html#ab29bc976637321f91c5ed0be2f78b6bd',1,'B3YVECTOR4']]],
+  ['width_1',['Width',['../a00320_adf3c61991d3725e56d2881394f9c3e2e.html#adf3c61991d3725e56d2881394f9c3e2e',1,'B3YPRESENT_PARAMETERS::Width'],['../a00324_a68200ec7d1fa76577f5f140b4d7891d8.html#a68200ec7d1fa76577f5f140b4d7891d8',1,'B3YDISPLAYMODE::Width'],['../a00332_a05de8314d4b2a7be90e3521f86c0024e.html#a05de8314d4b2a7be90e3521f86c0024e',1,'B3YVIEWPORT::Width']]],
+  ['width_2',['width',['../a00224_a21fc8969af9b3cae2665b9de4fcc85d6.html#a21fc8969af9b3cae2665b9de4fcc85d6',1,'YENA::ynGrid::GRIDINFO']]],
+  ['windowed_3',['Windowed',['../a00320_abfeefea452fc35754264483c3cb0c0fb.html#abfeefea452fc35754264483c3cb0c0fb',1,'B3YPRESENT_PARAMETERS']]]
 ];

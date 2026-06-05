@@ -1,6 +1,6 @@
 //! 
 //! \file	ynDefine.h
-//! \brief	Yena SW 엔진 기본 정의 문서. 
+//! \brief	Yena SWR 엔진 기본 정의 문서. 
 //!	\version Yena S/W Renderer v1.x  
 //! 
 //! \author	김기홍 / Kihong Kim / onlysonim@gmail.com / mad_dog@hanmail.net

@@ -1,0 +1,9 @@
+<map id="B3YenaGraphicsEngine9::_Viewport" name="B3YenaGraphicsEngine9::_Viewport">
+<area shape="rect" id="Node000001" title="뷰포트 멥핑 (Viewport)" alt="" coords="645,5,811,48"/>
+<area shape="rect" id="Node000002" href="$a00184_a6299cce5b5e70bfddf67d6ffa138d505.html#a6299cce5b5e70bfddf67d6ffa138d505" title=" " alt="" coords="432,5,597,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="630,29,598,29,598,24,630,24"/>
+<area shape="rect" id="Node000003" href="$a00184_a256a127eaa2aa8bd182f038090cb514e.html#a256a127eaa2aa8bd182f038090cb514e" title="기하 파이프라인 연산을 수행." alt="" coords="219,5,384,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="417,29,385,29,385,24,417,24"/>
+<area shape="rect" id="Node000004" href="$a00184_a9124b197c0763305a85b3d27dc71ac87.html#a9124b197c0763305a85b3d27dc71ac87" title=" " alt="" coords="5,5,171,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="203,29,171,29,171,24,203,24"/>
+</map>

@@ -1,9 +1,0 @@
-<map id="ynHLine" name="ynHLine">
-<area shape="rect" id="Node000001" title="수평선 그리기" alt="" coords="135,56,204,83"/>
-<area shape="rect" id="Node000002" href="$group___yena-_math_gab2c73f58aab9838f1c03246a6c3d1055.html#gab2c73f58aab9838f1c03246a6c3d1055" title=" " alt="" coords="5,5,87,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,52,79,35,81,30,122,47"/>
-<area shape="rect" id="Node000003" href="$group___yena-_math_ga75779bae3d43d233b29be1612f74148f.html#ga75779bae3d43d233b29be1612f74148f" title="삼각형 채우기" alt="" coords="5,56,87,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,72,87,72,87,67,119,67"/>
-<area shape="rect" id="Node000004" href="$group___yena-_math_ga0b334395c09fbc1b9841abcb1159adc9.html#ga0b334395c09fbc1b9841abcb1159adc9" title=" " alt="" coords="16,107,76,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="122,92,77,110,75,105,120,87"/>
-</map>

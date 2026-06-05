@@ -1,7 +1,0 @@
-<map id="B3YenaGraphicsEngine9::SetDev" name="B3YenaGraphicsEngine9::SetDev">
-<area shape="rect" id="Node000001" title=" " alt="" coords="424,5,589,48"/>
-<area shape="rect" id="Node000002" href="$class_b3_yena_device9_aafc83e4f63d48757c495d33009513e38.html#aafc83e4f63d48757c495d33009513e38" title="지정 렌더링 디바이스 개체 생성 메소드." alt="" coords="208,13,376,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="409,29,376,29,376,24,409,24"/>
-<area shape="rect" id="Node000003" href="$class_b3_yena_aabee24d21c10bcb9b80af7a0a0cba13c.html#aabee24d21c10bcb9b80af7a0a0cba13c" title="Yena SWR 렌더링 디바이스 개체 생성 : D3D9 대응" alt="" coords="5,13,160,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="192,29,160,29,160,24,192,24"/>
-</map>

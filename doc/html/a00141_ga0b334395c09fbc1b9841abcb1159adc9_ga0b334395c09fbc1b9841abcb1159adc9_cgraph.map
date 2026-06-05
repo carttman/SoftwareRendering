@@ -1,0 +1,7 @@
+<map id="ynLine" name="ynLine">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,65,57"/>
+<area shape="rect" id="Node000002" href="$a00141_gaba6c36b1a763b8b3ae65962c788202db.html#gaba6c36b1a763b8b3ae65962c788202db" title="수평선 그리기" alt="" coords="113,5,182,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,35,97,27,98,32,66,40"/>
+<area shape="rect" id="Node000003" href="$a00141_ga692ccf4262a41b1452e10da737cb17a4.html#ga692ccf4262a41b1452e10da737cb17a4" title="선형보간 (Linear Interpolation) 함수" alt="" coords="117,56,178,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="66,48,103,57,101,62,65,53"/>
+</map>

@@ -1,0 +1,35 @@
+<map id="Yena/ynx9.h" name="Yena/ynx9.h">
+<area shape="rect" id="Node000001" title="Yena SWR 인터페이스 헤더 : DX9 (d3d9.h) 대응" alt="" coords="714,5,808,32"/>
+<area shape="rect" id="Node000002" href="$a00068.html" title="Yena SWR 기본 헤더 파일 (v1.x)" alt="" coords="714,80,808,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="764,48,764,80,758,80,758,48"/>
+<area shape="rect" id="Node000003" href="$a00053.html" title="예제 렌더링 장치 운용 헤더" alt="" coords="148,155,246,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="698,103,501,124,257,157,247,159,246,154,257,152,501,119,698,98"/>
+<area shape="rect" id="Node000007" href="$a00065.html" title="Yena SWR 기본 소스 파일 (v1.x)" alt="" coords="270,155,378,181"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="699,108,379,160,378,155,698,102"/>
+<area shape="rect" id="Node000008" href="$a00071.html" title="공간축 클래스 소스 파일." alt="" coords="424,229,543,256"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="699,100,628,105,551,116,484,133,459,144,443,156,438,165,437,173,443,193,456,212,471,227,468,231,452,215,439,195,432,174,433,163,439,153,456,139,482,128,550,111,627,100,699,95"/>
+<area shape="rect" id="Node000009" href="$a00074.html" title="공간축 클래스 헤더." alt="" coords="454,155,559,181"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="700,113,545,157,543,151,698,108"/>
+<area shape="rect" id="Node000010" href="$a00080.html" title="Yena 그래픽스 엔진 소스 파일" alt="" coords="583,155,744,181"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="734,118,682,156,679,152,730,114"/>
+<area shape="rect" id="Node000011" href="$a00086.html" title="정점 버퍼 운용 클래스 소스" alt="" coords="768,155,948,181"/>
+<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="792,114,843,152,840,156,788,118"/>
+<area shape="rect" id="Node000012" href="$a00095.html" title="에러, 예외 및 로그 처리 소스 파일" alt="" coords="972,155,1094,181"/>
+<area shape="poly" id="edge13_Node000002_Node000012" title=" " alt="" coords="824,109,986,151,985,157,822,114"/>
+<area shape="rect" id="Node000013" href="$a00101.html" title="그리드 클래스 소스 파일." alt="" coords="1117,229,1234,256"/>
+<area shape="poly" id="edge14_Node000002_Node000013" title=" " alt="" coords="824,98,980,118,1055,133,1108,152,1129,169,1148,190,1172,227,1167,230,1143,193,1126,173,1105,157,1054,138,979,123,823,103"/>
+<area shape="rect" id="Node000014" href="$a00104.html" title="그리드 클래스 헤더." alt="" coords="1169,155,1273,181"/>
+<area shape="poly" id="edge15_Node000002_Node000014" title=" " alt="" coords="824,103,1139,152,1169,157,1169,162,1138,157,823,108"/>
+<area shape="rect" id="Node000015" href="$a00113.html" title="\u{2b50} Yena 수학 라이브러리 Yena Math Library for DirectX / OpenGL" alt="" coords="1297,155,1420,181"/>
+<area shape="poly" id="edge18_Node000002_Node000015" title=" " alt="" coords="824,98,1029,120,1285,152,1297,154,1296,159,1285,157,1029,125,823,104"/>
+<area shape="rect" id="Node000004" href="$a00050.html" title="예제 렌더링 장치 운용 소스." alt="" coords="5,229,117,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="161,191,86,231,84,226,159,187"/>
+<area shape="rect" id="Node000005" href="$a00059.html" title="\u{2b50} 예제 기본 렌더링/프레임웍 소스" alt="" coords="141,229,253,256"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="200,197,200,229,194,229,194,197"/>
+<area shape="rect" id="Node000006" href="$a00056.html" title="예제 애플리케이션 메인 / 윈도 프레임워크 소스" alt="" coords="277,229,376,256"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="234,187,305,226,302,231,231,192"/>
+<area shape="poly" id="edge9_Node000009_Node000002" title=" " alt="" coords="572,148,723,105,724,110,573,153"/>
+<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="500,197,490,230,485,228,495,196"/>
+<area shape="poly" id="edge16_Node000014_Node000002" title=" " alt="" coords="1153,156,808,103,809,98,1154,151"/>
+<area shape="poly" id="edge17_Node000014_Node000013" title=" " alt="" coords="1207,196,1186,230,1181,228,1203,193"/>
+</map>

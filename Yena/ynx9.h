@@ -1,6 +1,6 @@
 //! 
 //! \file	ynx9.h
-//! \bstar	Yena SWR 인터페이스 헤더 : DX9 (d3d9.h) 대응
+//! \brief	Yena SWR 인터페이스 헤더 : DX9 (d3d9.h) 대응
 //!	\version Yena SW Renderer v1.5.x
 //! 
 //! \author	김기홍 / Kihong Kim / onlysonim@gmail.com
@@ -41,7 +41,7 @@ typedef IYenaDevice9* LPDEVICE;				//DX9 대응.
 // 
 #include "ynx9types.h"		// Yena SWR 자료형 정의 : D3D9 대응 (d3d9types.h) 
 //#include "ynx9caps.h"		// Yena SWR 성능값 정의 : D3D9 대응 (d3d9caps.h)
-#include "ynMath.h"			// 수학 라이브러리.★
+#include "ynMath.h"			// 수학 라이브러리.
 
 
 
@@ -185,7 +185,7 @@ IYena* YenaCreate9(DWORD ver);
 /////////////////////////////////////////////////////////////////////////////// 
 //
 //! \interface	IYenaDevice9 
-//! \bstar		Yena 렌더링 디바이스 운용 인터페이스 
+//! \brief		Yena 렌더링 디바이스 운용 인터페이스 
 //!				: IDirect3DDevice9 대응 
 //!                 
 //! DX 는 IDirect3DDevice9 을 통해 3차원 렌더링 장치(Device) 를 접근하며 다음과 같은 작업을 처리합니다.   
@@ -244,7 +244,7 @@ public:
 	virtual int GetRenderState	(B3YRENDERSTATETYPE State, DWORD* pValue) pure;
 
 	//--------------------------------
-	// 변환 행렬 설정.★
+	// 변환 행렬 설정.
 	//--------------------------------
 	virtual int SetTransform	(B3YTRANSFORMSTATETYPE ts, B3YXMATRIX* mTM) pure;
 	virtual int GetTransform	(B3YTRANSFORMSTATETYPE ts, B3YXMATRIX* mTM) pure;
@@ -255,6 +255,12 @@ public:
 	virtual HDC		 GetRT		() pure;
 	virtual COLORREF GetBkColor	() pure; 
 
+
+	//---------------------------
+	// 공간 가시화 장치 (Gizmos) :  <DX> 미지원. <Yena> 전용 "친절한 예나씨" 
+	//---------------------------
+	virtual void DrawGrid	() pure;		//!< 그리드 출력 \star
+	virtual void DrawAxis	() pure;		//!< 공간축 출력 \star
 };
 
 typedef IYenaDevice9* LPYENADEVICE9;

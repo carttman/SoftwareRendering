@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['z_0',['z',['../struct_c_o_l_v_t_x_ab53804b41ce0dd5defd838cf13ed1b5d.html#ab53804b41ce0dd5defd838cf13ed1b5d',1,'COLVTX::z'],['../struct_b3_y_v_e_c_t_o_r3_aa29eea508f0f19a1c4e943f99858bfc4.html#aa29eea508f0f19a1c4e943f99858bfc4',1,'B3YVECTOR3::z'],['../struct_b3_y_v_e_c_t_o_r4_a0c237c0c99a2696ade55361f295815fb.html#a0c237c0c99a2696ade55361f295815fb',1,'B3YVECTOR4::z']]]
+  ['y_0',['Y',['../a00332_ab59e932506291ec8bdb8b43aa85fabc9.html#ab59e932506291ec8bdb8b43aa85fabc9',1,'B3YVIEWPORT']]],
+  ['y_1',['y',['../a00152_a33f84a6cc51def3d44d837ce8c3fd44d.html#a33f84a6cc51def3d44d837ce8c3fd44d',1,'COLVTX::y'],['../a00232_a83328c777d36dd9389a98671babdcaf1.html#a83328c777d36dd9389a98671babdcaf1',1,'B3YVECTOR2::y'],['../a00236_ae9f3b0c133878355d4b39ac4d30b6096.html#ae9f3b0c133878355d4b39ac4d30b6096',1,'B3YVECTOR3::y'],['../a00240_a26394f41aac3c61925c427589edc25b4.html#a26394f41aac3c61925c427589edc25b4',1,'B3YVECTOR4::y']]]
 ];

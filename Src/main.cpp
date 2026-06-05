@@ -213,7 +213,7 @@ int MessagePump()
 //! \param width	변경할 새 가로 크기
 //! \param height	변경할 새 세로 크기
 //! \return			없음
-//
+//!
 //! \date 2004.05.28. 버전업.
 //
 void ResizeWindow(HWND hWnd, UINT width, UINT height)

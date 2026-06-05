@@ -37,6 +37,9 @@
     <Filter Include="Doxy">
       <UniqueIdentifier>{9c966702-7566-489a-a636-20a6134e896c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Basic_Frameworks\Yena\Gizmo">
+      <UniqueIdentifier>{72a151e6-fb39-4a36-a10a-a946c5e66d51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\main.cpp">
@@ -65,6 +68,12 @@
     </ClCompile>
     <ClCompile Include="Yena\ynGUID.cpp">
       <Filter>Basic_Frameworks\Yena\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Yena\ynAxis.cpp">
+      <Filter>Basic_Frameworks\Yena\Gizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="Yena\ynGrid.cpp">
+      <Filter>Basic_Frameworks\Yena\Gizmo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +115,12 @@
     </ClInclude>
     <ClInclude Include="Yena\ynUnknownbase.h">
       <Filter>Basic_Frameworks\Yena\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynAxis.h">
+      <Filter>Basic_Frameworks\Yena\Gizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="Yena\ynGrid.h">
+      <Filter>Basic_Frameworks\Yena\Gizmo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

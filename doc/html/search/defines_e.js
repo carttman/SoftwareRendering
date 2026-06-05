@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['tocolor16_0',['toColor16',['../yn_math_8cpp_ae0a51eb51f0ac1b6ff8c9e74244c87ab.html#ae0a51eb51f0ac1b6ff8c9e74244c87ab',1,'ynMath.cpp']]],
-  ['topic_5fdx9_5fpipeline_1',['topic_DX9_Pipeline',['../_yena-topics_8dox_ac0d9cd58e1f8bf9203f2fcecab669a42.html#ac0d9cd58e1f8bf9203f2fcecab669a42',1,'Yena-topics.dox']]],
-  ['topic_5fdx9_5fpipeline2_2',['topic_DX9_Pipeline2',['../_yena-topics_8dox_a65844782c5385916f053e318b54050e8.html#a65844782c5385916f053e318b54050e8',1,'Yena-topics.dox']]],
-  ['topic_5fmrt_3',['topic_mrt',['../_yena-topics_8dox_a148ce35ef313c5938c739b7ca1c8e22e.html#a148ce35ef313c5938c739b7ca1c8e22e',1,'Yena-topics.dox']]],
-  ['topic_5fmrt_5fsurface_4',['topic_mrt_surface',['../_yena-topics_8dox_a0fbab2c7fe634a39cc4b6306e79c2d5e.html#a0fbab2c7fe634a39cc4b6306e79c2d5e',1,'Yena-topics.dox']]],
-  ['topic_5fshader_5',['topic_Shader',['../_yena-topics_8dox_a3e0ba489f428ed11a74d42d970935a75.html#a3e0ba489f428ed11a74d42d970935a75',1,'Yena-topics.dox']]],
-  ['topic_5fshader_5fx_6',['topic_Shader_x',['../_yena-topics_8dox_a7aac93892a946d32b93ab5b2f106d5f4.html#a7aac93892a946d32b93ab5b2f106d5f4',1,'Yena-topics.dox']]],
-  ['topic_5fyn_5fpipeline2_7',['topic_YN_Pipeline2',['../_yena-topics_8dox_a37ff2a08d39a0dffbd18ba3eff54c117.html#a37ff2a08d39a0dffbd18ba3eff54c117',1,'Yena-topics.dox']]],
-  ['tostring_8',['ToString',['../yn_error_8h_a747a51405db71f0de18a02a6c6d28b6a.html#a747a51405db71f0de18a02a6c6d28b6a',1,'ynError.h']]]
+  ['safedelarry_0',['SafeDelArry',['../a00092_a2430d27742ac5e2a2ec42b82656a06d9.html#a2430d27742ac5e2a2ec42b82656a06d9',1,'ynDefine.h']]],
+  ['safedelete_1',['SafeDelete',['../a00092_a745d31a3deb911352bfef34e5124fa8e.html#a745d31a3deb911352bfef34e5124fa8e',1,'ynDefine.h']]],
+  ['saferelease_2',['SafeRelease',['../a00092_af9805d148b7d14ce7e18a4ee6175fbc6.html#af9805d148b7d14ce7e18a4ee6175fbc6',1,'ynDefine.h']]],
+  ['struct_5fb3ycolor_3',['struct_B3YCOLOR',['../a00029_a8c5d821dce027d022d025454f3d1d0e6.html#a8c5d821dce027d022d025454f3d1d0e6',1,'Yena-structs.dox']]],
+  ['struct_5fb3yfloat4_4',['struct_B3YFLOAT4',['../a00029_a4cdfaed4a637dddd1c7b23b9ac7f940e.html#a4cdfaed4a637dddd1c7b23b9ac7f940e',1,'Yena-structs.dox']]],
+  ['struct_5fb3ymatrix_5',['struct_B3YMATRIX',['../a00029_a69fecd0620bd5cfd750b27b099c9e24e.html#a69fecd0620bd5cfd750b27b099c9e24e',1,'Yena-structs.dox']]],
+  ['struct_5fcolvtx_6',['struct_COLVTX',['../a00029_a69d318002509ec2a0856a4eabc0a76ad.html#a69d318002509ec2a0856a4eabc0a76ad',1,'Yena-structs.dox']]],
+  ['struct_5fvsout2_7',['struct_VSOUT2',['../a00029_a668ed4981e3abf3400492c5ceb50ff27.html#a668ed4981e3abf3400492c5ceb50ff27',1,'Yena-structs.dox']]],
+  ['struct_5fvsout3_8',['struct_VSOUT3',['../a00029_a1ab2d55edbf6147ba4ecb4bb4cd2e951.html#a1ab2d55edbf6147ba4ecb4bb4cd2e951',1,'Yena-structs.dox']]],
+  ['struct_5fynid_9',['struct_YNID',['../a00029_a3913f1f8b3dcee7db9203d93ee7c87c6.html#a3913f1f8b3dcee7db9203d93ee7c87c6',1,'Yena-structs.dox']]]
 ];

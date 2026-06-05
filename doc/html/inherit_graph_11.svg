@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="struct_b3_y_v_e_c_t_o_r3.html" target="_top" xlink:title=" ">
+<g id="a_Node000000"><a xlink:href="a00236.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="82,-20 0,-20 0,0 82,0 82,-20"/>
 <text xml:space="preserve" text-anchor="middle" x="41" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">B3YVECTOR3</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:href="class_b3_y_x_v_e_c_t_o_r3.html" target="_top" xlink:title="벡터 클래스 (3성분)">
+<g id="a_Node000001"><a xlink:href="a00248.html" target="_top" xlink:title="벡터 클래스 (3성분)">
 <polygon fill="white" stroke="#666666" points="206.75,-20 118,-20 118,0 206.75,0 206.75,-20"/>
 <text xml:space="preserve" text-anchor="middle" x="162.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">B3YXVECTOR3</text>
 </a>

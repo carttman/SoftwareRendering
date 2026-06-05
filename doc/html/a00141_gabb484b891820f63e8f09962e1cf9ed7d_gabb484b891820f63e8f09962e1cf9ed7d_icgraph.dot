@@ -1,0 +1,12 @@
+digraph "B3YXMatrixMultiply"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="B3YXMatrixMultiply",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="행렬 결합 : D3DXMatrixMultiply 대응."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="B3YXMATRIX::operator*",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$a00268_abeece791c50fd8b3a2879e2f7bed88bc.html#abeece791c50fd8b3a2879e2f7bed88bc",tooltip="행렬곱 연산자 오버로딩.   B3YXMatrixMultiply 와 기능적으로는 동일합니다."];
+}

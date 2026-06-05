@@ -1,6 +1,6 @@
 //! 
 //! \file	ynx9Types.h
-//! \bstar	Yena SW 엔진 자료형 정의 : DX9 (d3d9types.h) 대응  
+//! \brief	Yena SW 엔진 자료형 정의 : DX9 (d3d9types.h) 대응  
 //!	\version Yena SW Renderer v1.x
 //! 
 //! \author	김기홍 / Kihong Kim / onlysonim@gmail.com / mad_dog@hanmail.net
@@ -182,7 +182,7 @@ enum B3YPRIMITIVETYPE
 
 /////////////////////////////////////////////////////////////////////////////// 
 //
-//! 변환 상태 설정 타입. : D3DTRANSFORMSTATETYPE  대응.★
+//! 변환 상태 설정 타입. : D3DTRANSFORMSTATETYPE  대응.
 //
 enum B3YTRANSFORMSTATETYPE 
 {
@@ -202,7 +202,7 @@ enum B3YTRANSFORMSTATETYPE
 	B3YTS_MAX_
 };
 
-//! [도움2] B3YTS_WORLD 매크로 정의 : D3DTS_WORLD 대응.★
+//! [도움2] B3YTS_WORLD 매크로 정의 : D3DTS_WORLD 대응.
 //! : DX 에서는 아래와 같이 정의 되어있으나 (Vertex Blending 용) 
 //!   우리에게는 불필요, 사용 안 함.
 //#define B3YTS_WORLDMATRIX(index) (B3YTRANSFORMSTATETYPE)(index + 256)
@@ -232,6 +232,10 @@ enum B3YRENDERSTATETYPE {
 	//B3YRS_SPECULARENABLE      = 29,   // TRUE to enable specular  
 	//B3YRS_LIGHTING            = 137,
 	//B3YRS_AMBIENT             = 139, 
+
+	B3YRS_GRIDMODE				= 220,	//그리드 On/Off. <DX> 미지원 <Yena> 전용 
+	B3YRS_AXISMODE				= 221,	//방향축 On/Off. <DX> 미지원 <Yena> 전용 
+
 
 	//렌더링 상태값이 계속 추가될 예정.
 	//..
@@ -388,6 +392,27 @@ struct B3YVERTEXBUFFER_DESC
 	DWORD               FVF;		//!< 정점 규격
 };
 
+
+
+
+/////////////////////////////////////////////////////////////////////////////// 
+//
+//! \struct B3YVIEWPORT 
+//! \brief	출력 화면 영역 정보 구조체.  
+//!			뷰포트 멥핑(Viewport Mapping) 의 변환 정보를 관리한다. D3DVIEWPORT9 대응. 
+//! 
+//! \see [참고] D3DVIEWPORT9 (https://learn.microsoft.com/en-us/windows/win32/direct3d9/d3dviewport9)
+// 
+struct B3YVIEWPORT {		
+	DWORD X;				//!< 뷰포트 좌측 상단 위치 X (Pixel), 렌더타겟 기준, 기본값 0
+	DWORD Y;				//!< 뷰포트 좌측 상단 위치 Y (Pixel), 렌더타겟 기준, 기본값 0
+	DWORD Width;			//!< 뷰포트 가로 너비 (Pixel), 기본값은 렌더타겟 해상도 지정 (ex) 800x600
+	DWORD Height;			//!< 뷰포트 세로 너비 (Pixel), 기본값은 렌더타겟 해상도 지정 (ex) 800x600
+	float MinZ;				//!< 뷰포트 최소 깊이 (Depth), 출력 장면의 깊이를 결정한다.
+	float MaxZ;				//!< 뷰포트 최대 깊이 (Depth), 출력 장면의 깊이를 결정한다.
+};
+
+typedef B3YVIEWPORT VIEWPORT;
 
 
 

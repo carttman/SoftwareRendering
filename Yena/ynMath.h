@@ -41,8 +41,8 @@ using namespace DirectX;
 #define YNToAngle	ynToAngle
 #define YNToDegree	ynToDegree
 
-#define B3YXToRadian  YNToRadian			//D3DXToRadian 대응.★
-#define B3YXToDegree  YNToDegree			//D3DXToDegreee 대응.★
+#define B3YXToRadian  YNToRadian			//D3DXToRadian 대응.
+#define B3YXToDegree  YNToDegree			//D3DXToDegreee 대응.
 
 
 
@@ -97,6 +97,7 @@ struct B3YVECTOR4 {
 class B3YXVECTOR3;
 class B3YXVECTOR4;
 class B3YXMATRIX;		
+struct B3YVIEWPORT;			
 
 
 
@@ -157,6 +158,9 @@ public:
 	B3YXVECTOR3(float _x, float _y, float _z){ x = _x;  y = _y;   z = _z; 	}
 	B3YXVECTOR3(const B3YVECTOR3&  v)		 { x = v.x; y = v.y;  z = v.z; 	}  
 	B3YXVECTOR3(const B3YXVECTOR4& v);
+	//B3YXVECTOR4(const D3DXVECTOR4& v) 	 { x = v.x;  y = v.y;  z = v.z; }		//D3DX 행렬 대응 
+	B3YXVECTOR3(const XMFLOAT3& v)			 { x = v.x;  y = v.y;  z = v.z; }		//XMMath 행렬 대응 ★
+	B3YXVECTOR3(const XMFLOAT4& v)			 { x = v.x;  y = v.y;  z = v.z; }		//XMMath 행렬 대응 ★
 
 	//연산자 오버로딩.
 	operator B3YXVECTOR2 ();					
@@ -164,8 +168,26 @@ public:
 };
 typedef B3YXVECTOR3 VECTOR3;
 
-//전역 연산자 오버로딩★
+//전역 연산자 오버로딩
 B3YXVECTOR3  operator - (B3YXVECTOR3 rhs);
+
+//벡터 노멀라이즈 : D3DXVec3Normalize 대응.
+B3YXVECTOR3* B3YXVec3Normalize	(B3YXVECTOR3* pOut, CONST B3YXVECTOR3* pV);
+//벡터곱-내적: D3DXVec3Dot 대응.
+float		 B3YXVec3Dot		(CONST B3YXVECTOR3* pV1, CONST B3YXVECTOR3* pV2);
+//벡터곱-외적: D3DXVec3Cross 대응.
+B3YXVECTOR3* B3YXVec3Cross		(B3YXVECTOR3* pOut, CONST B3YXVECTOR3* pV1, CONST B3YXVECTOR3* pV2);
+//3성분 벡터와 행렬 곱 : D3DXVec3Transform 대응. 
+B3YXVECTOR4* B3YXVec3Transform	(B3YXVECTOR4 *pOut, CONST B3YXVECTOR3 *pV, CONST B3YXMATRIX *pM );
+//3성분 벡터와 행렬 곱 : D3DXVec3TransformCoord 대응. 
+B3YXVECTOR3* B3YXVec3TransformCoord	(B3YXVECTOR3* pOut, CONST B3YXVECTOR3* pV, CONST B3YXMATRIX* pM);
+
+//3성분투영 : D3DXVec3Project 대응.
+B3YXVECTOR3* B3YXVec3Project	(B3YXVECTOR3 *pOut, CONST B3YXVECTOR3 *pV, 
+								CONST B3YVIEWPORT *pViewport, CONST B3YXMATRIX *pProjection, 
+								CONST B3YXMATRIX *pView, CONST B3YXMATRIX *pWorld);
+
+
 
 
 
@@ -192,13 +214,14 @@ public:
 
 	//연산자 오버로딩.
 	B3YXVECTOR4 operator = (const B3YXVECTOR3& rhs);		
+	B3YXVECTOR4 operator / (float rhs);				
 	operator B3YXVECTOR2 ();						
 
 };
 typedef B3YXVECTOR4 VECTOR4;
 
 
-// 벡터-행렬 곱 함수. <Yena> Out = v * M; ★
+// 벡터-행렬 곱 함수. <Yena> Out = v * M; 
 B3YXVECTOR4* B3YXVec4Transform(B3YXVECTOR4* pOut, CONST B3YXVECTOR4* pV, CONST B3YXMATRIX* pM);
 
 // 벡터-행렬 곱 함수. <DX> Out = v * M;
@@ -217,7 +240,7 @@ B3YXVECTOR4* B3YXVec4Transform(B3YXVECTOR4* pOut, CONST B3YXVECTOR4* pV, CONST B
 //! 
 struct B3YMATRIX
 {
-	//4X4 행렬 성분 추가....(과제)  ★
+	//4X4 행렬 성분 추가....(과제)  
 	union
 	{
 		struct {
@@ -235,14 +258,14 @@ struct B3YMATRIX
 
 ////////////////////////////////////////////////////////////////////////////////
 // 
-//! \struct B3YXMATRIX 
+//! \class	B3YXMATRIX 
 //! \bstar	행렬 클래스
 //! 
 //! \todo2	[과제] 행렬 클래스 만들기 \n
 //!			DX 행렬 클래스를 참고하여 필요한 기능을 구현하십시오.
 //! \see	[D3DXMATRIX](https://learn.microsoft.com/en-us/windows/win32/direct3d9/d3dxmatrix)
 //! \see	[XMMATRIX](https://learn.microsoft.com/en-us/windows/win32/api/directxmath/ns-directxmath-xmmatrix)
-//! \see	B3YXMATRIX
+//! \see	B3YMATRIX
 //
 class B3YXMATRIX : public B3YMATRIX
 {
@@ -251,9 +274,10 @@ public:
 
 public:
 	B3YXMATRIX() {}
-	B3YXMATRIX(const XMFLOAT4X4& m);		//DX 호환용.★
+	B3YXMATRIX(const XMFLOAT4X4& m);		//DX 호환용.
 
-	//연산자 오버로딩도 필요합니다.(필요시)(과제) ★
+	//연산자 오버로딩도 필요합니다.(필요시)(과제) 
+	B3YXMATRIX operator* (CONST B3YXMATRIX& rhs) CONST;	
 
 };
 typedef B3YXMATRIX MATRIX;
@@ -261,13 +285,24 @@ typedef B3YXMATRIX MATRIX;
 
 //행렬 단위화(초기화) 함수 <DX> Out = I. 
 //D3DXMATRIX* D3DXMatrixIdentity ( D3DXMATRIX *pOut );
-//행렬 단위화(초기화) 함수 <Yena> Out = I. ★
+//행렬 단위화(초기화) 함수 <Yena> Out = I. 
 B3YXMATRIX* B3YXMatrixIdentity		(B3YXMATRIX* pOut);
+//행렬 결합 : D3DXMatrixMultiply 대응. Out = m1 * m2. 
+B3YXMATRIX* B3YXMatrixMultiply		(B3YXMATRIX* pOut, CONST B3YXMATRIX* pM1, CONST B3YXMATRIX* pM2);
+//이동 행렬 생성 : D3DXMatrixTranslation 대응. Out = treans(x, y, z) 
+B3YXMATRIX* B3YXMatrixTranslation	(B3YXMATRIX* pOut, float x, float y, float z);
+//스케일 행렬 생성 : D3DXMatrixScaling 대응. Out = scaling(sx, sy, sz) 
+B3YXMATRIX* B3YXMatrixScaling		(B3YXMATRIX* pOut, float sx, float sy, float sz);
 
-//회전축 기준 회전행렬 생성 함수, 회전량은 라디안. ★
+//회전축 기준 회전행렬 생성 함수, 회전량은 라디안. 
 B3YXMATRIX* B3YXMatrixRotationX		(B3YXMATRIX* pOut, float angle);		// X 축 회전 행렬 계산 
 B3YXMATRIX* B3YXMatrixRotationY		(B3YXMATRIX* pOut, float angle);		// Y 축 회전 행렬 계산 
 B3YXMATRIX* B3YXMatrixRotationZ		(B3YXMATRIX* pOut, float angle);		// Z 축 회전 행렬 계산 
+
+//뷰 변환 행렬 생성 : D3DXMatrixLookAtLH 대응.(과제)★
+B3YXMATRIX* B3YXMatrixLookAtLH			(B3YXMATRIX* pOut, CONST B3YXVECTOR3* pEye, CONST B3YXVECTOR3* pAt, CONST B3YXVECTOR3* pUp);
+//투영 변환 행렬 생성 : D3DXMatrixPerspectiveFovLH 대응.(과제)★
+B3YXMATRIX* B3YXMatrixPerspectiveFovLH	(B3YXMATRIX* pOut, FLOAT fovy, FLOAT Aspect, FLOAT zn, FLOAT zf);
 
 
 

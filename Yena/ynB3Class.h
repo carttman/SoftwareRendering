@@ -1,6 +1,6 @@
 //! 
 //! \file	ynB3Class.h
-//! \brief	B3Yena 클래스 선행 선언 헤더. 
+//! \brief	Yena 클래스 선행 선언 헤더. 
 //!	\version Yena S/W Renderer v1.5.x  
 //! 
 //! \author	김기홍 Kihong Kim / onlysonim@gmail.com / mad_dog@hanmail.net

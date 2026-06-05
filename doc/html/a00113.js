@@ -1,0 +1,27 @@
+var a00113 =
+[
+    [ "GLYMATH_VERSION", "a00113_a0a2647e31209e296144edfdd93a4c486.html#a0a2647e31209e296144edfdd93a4c486", null ],
+    [ "vp", "a00113_a2a38a8952a41e00cab30267196540522.html#a2a38a8952a41e00cab30267196540522", null ],
+    [ "B3YXMatrixIdentity", "a00141_ga02a75a42a0bae280a3396ecdb1c124e7.html#ga02a75a42a0bae280a3396ecdb1c124e7", null ],
+    [ "B3YXMatrixLookAtLH", "a00141_ga9735d0ed90f18f6601eff62e699f59fe.html#ga9735d0ed90f18f6601eff62e699f59fe", null ],
+    [ "B3YXMatrixMultiply", "a00141_gabb484b891820f63e8f09962e1cf9ed7d.html#gabb484b891820f63e8f09962e1cf9ed7d", null ],
+    [ "B3YXMatrixPerspectiveFovLH", "a00141_gab141b564e1c257402780d61a62a7230a.html#gab141b564e1c257402780d61a62a7230a", null ],
+    [ "B3YXMatrixRotationX", "a00141_gad6d8d9ec90c4ebdef634fc0a5a3a4c92.html#gad6d8d9ec90c4ebdef634fc0a5a3a4c92", null ],
+    [ "B3YXMatrixRotationY", "a00141_gad8e630c14218a38be5a8afaa29be1f95.html#gad8e630c14218a38be5a8afaa29be1f95", null ],
+    [ "B3YXMatrixRotationZ", "a00141_ga3828aa23962df7cb6bd24519416b70f3.html#ga3828aa23962df7cb6bd24519416b70f3", null ],
+    [ "B3YXMatrixScaling", "a00141_gae984f2b96f4d146a09bc7ec514d31fb9.html#gae984f2b96f4d146a09bc7ec514d31fb9", null ],
+    [ "B3YXMatrixTranslation", "a00141_ga39d89af6e45cb22dc8cecfec6b9631eb.html#ga39d89af6e45cb22dc8cecfec6b9631eb", null ],
+    [ "B3YXVec2CCW", "a00141_ga89e31da65b4263dc188d888ae164223c.html#ga89e31da65b4263dc188d888ae164223c", null ],
+    [ "B3YXVec2Length", "a00141_gaf47fe29b708dde75f206d44e0d1ddfee.html#gaf47fe29b708dde75f206d44e0d1ddfee", null ],
+    [ "B3YXVec2Length", "a00141_ga7393fc083022da641945b52f54776378.html#ga7393fc083022da641945b52f54776378", null ],
+    [ "B3YXVec3Cross", "a00141_ga14646177c8627a47b1113d49d1119f9e.html#ga14646177c8627a47b1113d49d1119f9e", null ],
+    [ "B3YXVec3Dot", "a00141_ga35a4aa80a66401e56be9696aff6bf946.html#ga35a4aa80a66401e56be9696aff6bf946", null ],
+    [ "B3YXVec3Normalize", "a00141_gad971f3f86694e99a3fffecf79bca74c0.html#gad971f3f86694e99a3fffecf79bca74c0", null ],
+    [ "B3YXVec3Project", "a00141_gae33ed96e457cfeafdfa0980121e64115.html#gae33ed96e457cfeafdfa0980121e64115", null ],
+    [ "B3YXVec3Transform", "a00141_ga6f604711fa1e89302f99919907fb5c48.html#ga6f604711fa1e89302f99919907fb5c48", null ],
+    [ "B3YXVec3TransformCoord", "a00141_gaab4b8a133234f6db34eefb2cd378860b.html#gaab4b8a133234f6db34eefb2cd378860b", null ],
+    [ "B3YXVec4Transform", "a00141_gac92d3779970783c90541ce2d7186f3bf.html#gac92d3779970783c90541ce2d7186f3bf", null ],
+    [ "operator-", "a00113_a8683470dc82c1ec9e2027c0d55adf2d5.html#a8683470dc82c1ec9e2027c0d55adf2d5", null ],
+    [ "ynLerp", "a00141_ga3b0580772d6e37f0feb5f968039cde6e.html#ga3b0580772d6e37f0feb5f968039cde6e", null ],
+    [ "ynLerp", "a00141_ga692ccf4262a41b1452e10da737cb17a4.html#ga692ccf4262a41b1452e10da737cb17a4", null ]
+];

@@ -1,0 +1,7 @@
+<map id="YENA::ynGrid::GRIDINFO" name="YENA::ynGrid::GRIDINFO">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,180,184,207"/>
+<area shape="rect" id="Node000002" href="$a00276.html" title="컬러 클래스 : B3YCOLOR 확장 클래스" alt="" coords="43,81,146,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,124,97,180,92,180,92,124"/>
+<area shape="rect" id="Node000003" href="$a00272.html" title=" " alt="" coords="48,5,141,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,47,97,81,92,81,92,47"/>
+</map>

@@ -1,5 +1,0 @@
-<map id="ynIUnknown::AddRef" name="ynIUnknown::AddRef">
-<area shape="rect" id="Node000001" title="참조 카운트 증가+1" alt="" coords="5,5,152,32"/>
-<area shape="rect" id="Node000002" href="$classyn_i_unknown_a4775b6f28ae9fb0ef8945d6aa82272d7.html#a4775b6f28ae9fb0ef8945d6aa82272d7" title="참조 카운트 감소&#45;1, 0 이되면 객체 제거" alt="" coords="200,5,350,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,16,184,16,184,21,152,21"/>
-</map>

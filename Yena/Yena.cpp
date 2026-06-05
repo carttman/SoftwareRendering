@@ -1,7 +1,6 @@
 //! 
 //! \file	Yena.cpp
-//! \brief	\emoji :star: 
-//!			Yena SWR 기본 소스 파일 (v1.x) 
+//! \brief	Yena SWR 기본 소스 파일 (v1.x) 
 //!	\version Yena SW Renderer v1.5.x  
 //! 
 //! \author	김기홍 / Kihong Kim / onlysonim@gmail.com
@@ -51,46 +50,15 @@
 #define m_Stride			m_pGraphics->m_input.Stride
 #define m_TopologyVtxSize	m_pGraphics->m_input.TopologyVtxSize
 //#define m_PrimVtxCnt		m_pGraphics->m_input.PrimTypeVtxSize
-
-//#undef m_mWorld
-//#undef m_mView
-//#undef m_mProj
 #define m_mWorld			m_pGraphics->m_tms.mTFM[B3YTS_WORLD]
 #define m_mView				m_pGraphics->m_tms.mTFM[B3YTS_VIEW] 
 #define m_mProj				m_pGraphics->m_tms.mTFM[B3YTS_PROJECTION]
 #define m_mTFM				m_pGraphics->m_tms.mTFM
 //#define m_mInvProj		m_pGraphics->m_tms.mInvProj
-
-//#define m_Light			m_pGraphics->m_lits.Light
-//#define m_LightEnable		m_pGraphics->m_lits.LightEnable
-//#define m_bLighting		m_pGraphics->m_lits.bLighting
-//#define m_GlobalAmbient	m_pGraphics->m_lits.GlobalAmbient
-//#define m_Mtrl			m_pGraphics->m_lits.Mtrl
-//
-//#define m_Sampler			m_pGraphics->m_texs.Sampler
-//#define m_TSState			m_pGraphics->m_texs.TSState
-
 #define m_RState			m_pGraphics->m_pso.RState
-
-//#define m_hWnd			m_pGraphics->m_om.hWnd
 #define m_PresentParam		m_pGraphics->m_om.PresentParam
-//#define m_hBmpRT			m_pGraphics->m_om.hBmpRT
-//#define m_hRT				m_pGraphics->m_om.hRT
-//#define m_hSurfaceRT		m_pGraphics->m_om.hRT
-//#define m_pRT				m_pGraphics->m_om.pRT
-//#define m_pDepth			m_pGraphics->m_om.pDepth
-//#define m_Viewport		m_pGraphics->m_om.Viewport
-//#define m_hClipRgn		m_pGraphics->m_om.hClipRgn
 
-//#define m_DbgInfo			(*m_pDbgInfo)
-//#define m_dbgInfo			(*m_pDbgInfo)
-//
-//#define _DrawLine			m_pGraphics->_Line
-//#define _DrawFace			m_pGraphics->_Face
-//#define _HLine			m_pGraphics->_HLine
-//#define _VLine			m_pGraphics->_VLine
 
-//#define m_DbgInfo			(*m_pDbgInfo)
 
 
 
@@ -99,7 +67,7 @@
 /////////////////////////////////////////////////////////////////////////////// 
 //
 //! \class	B3Yena 
-//! \bstar	Yena 3D 운용 기반, 구현 클래스, IDirect3D9 대응 
+//! \brief	Yena 3D 운용 기반, 구현 클래스, IDirect3D9 대응 
 //! 
 //! <DX>	DX9 3D 렌더링 장치(Device)를 생성하려면 우선 Direct3D9 객체가 필요합니다.  
 //!			이 Direct3D9 는 시스템이 보유한 물리적 장치(GPU, Adaptor) 의 지원 성능(Features)을 점검하고 렌더링 장치(Direct3DDevice9) 을 생성합니다.  
@@ -178,7 +146,7 @@ public:
 /////////////////////////////////////////////////////////////////////////////// 
 //
 //! \class	B3YenaDevice9 
-//! \bstar	Yena 렌더링 장치 Device 구현 클래스 
+//! \brief	Yena 렌더링 장치 Device 구현 클래스 
 //!			 : IDirect3DDevice9 대응   
 //! 
 //! 3D 프로그래밍에서 장치(Device)는 시스템에 설치된 그래픽 하드웨어(어뎁터 Adaptor) 를 
@@ -243,7 +211,7 @@ protected:
 	#define m_hSurfaceRT m_hRT				//!< 렌더타겟 DC 핸들 (구형호환 재정의)
 
 
-	//! 렌더링 그래픽스 엔진 \star
+	//! 렌더링 그래픽스 엔진
 	B3YenaGraphicsEngine9* m_pGraphics;
 	#define m_pGX	m_pGraphics
 
@@ -314,7 +282,7 @@ public:
 	virtual int GetRenderState	(B3YRENDERSTATETYPE State, DWORD* pValue);
 
 	//--------------------------------
-	// 변환 행렬 설정.★
+	// 변환 행렬 설정.
 	//--------------------------------
 	virtual int SetTransform	(B3YTRANSFORMSTATETYPE ts, B3YXMATRIX* mTM);
 	virtual int GetTransform	(B3YTRANSFORMSTATETYPE ts, B3YXMATRIX* mTM);
@@ -325,6 +293,13 @@ public:
 	//--------------------------------
 	virtual HDC		 GetRT		();
 	virtual COLORREF GetBkColor	();
+
+
+	//---------------------------
+	// 공간 가시화 장치 (Gizmos) :  <DX> 미지원. <Yena> 전용 "친절한 예나씨" 
+	//---------------------------
+	virtual void  DrawGrid		();		//그리드 출력.
+	virtual void  DrawAxis		();		//방향축 출력.
 
 
 	//--------------------------------
@@ -350,31 +325,9 @@ public:
 
 /////////////////////////////////////////////////////////////////////////////// 
 //
-//! \class	B3YenaVertexBuffer9
-//! \bstar	정점 버퍼 구현 클래스
+//! class	B3YenaVertexBuffer9
+//! brief	정점 버퍼 구현 클래스
 //!			: IDirect3DVertexBuffer9 대응  
-//! 
-//! \par 정점버퍼
-//! 정점버퍼는 일련의 기하(Geometry)를 구성하는 정점 데이터가 저장되는 버퍼입니다.  
-//! 이 데이터들은 정점 단위규격(Vertex Format 또는 Vertex Declaration) 으로 배열화 저장되며 읽기 전용으로 GPU 에 전달됩니다.  
-//! 필요시 동적 정점 버퍼 (Dynamic Vertex Buffer) 를 구성하는 것도 가능합니다.
-//! 
-//! \par 정점버퍼 렌더링 
-//! 렌더링 장치는 렌더링 파이프라인에 설정된 정점버퍼를 읽어오며, 렌더링 기하구성(Primitive Topology) 
-//! 주문에 따라 데이터를 처리합니다. (Vertex Streaming)  
-//! 렌더링 파이프라인은 하나 이상의 정점버퍼를 연결(Binding) 할 수 있으며 (DX9, max.16)  
-//! 정점 조립 스테이지(Vertex Assembly 또는 Input Assembly Stage) 에서 재구성되어 사용됩니다.
-//! 
-//! <DX9> IDirect3DVertexBuffer9 으로 정점버퍼를 운용합니다.  
-//! <Yena> IYenaVertexBuffer9 으로 DX 인터페이스를 대응합니다.  
-//! 
-//! \note	장치(Device)는 파이프라인에 설정된 "현재" 정점 버퍼를 사용하므로 렌더링 명령
-//!			(Draw / DrawPrimitive) 전에 장치에 연결(Binding) 되어야 합니다.  
-//! 
-//! \see	IYenaVertexBuffer9
-//! \see	[IDirect3DVertexBuffer9](https://learn.microsoft.com/en-us/windows/win32/api/d3d9/nn-d3d9-idirect3dvertexbuffer9)
-//! \remarks Yena 는 DX 인터페이스와 메소드의 시그니쳐(Signature)를 가능한 동일하게 준수합니다.
-//! \ingroup 	Yena-Class 
 // 
 /////////////////////////////////////////////////////////////////////////////// 
 /*
@@ -1095,6 +1048,35 @@ int B3YenaDevice9::GetTransform(B3YTRANSFORMSTATETYPE ts, B3YXMATRIX* m)
 }
 
 
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//! 공간 가시화 : 격자(Grid) 그리기
+//! 
+//! <DX> 미지원. "친절한 예나씨" , 내부의 코드는 '그려려니' 합시다.
+//
+void B3YenaDevice9::DrawGrid()
+{
+	m_pGraphics->_DrawGrid();
+}
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//! 공간 가시화 : 방향축(Axis) 그리기
+//! 
+//! <DX> 미지원. "친절한 예나씨" , 내부의 코드는 '그려려니' 합시다.
+//
+void B3YenaDevice9::DrawAxis()
+{
+	m_pGraphics->_DrawAxis();
+}
+
+
+
+
  
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1190,40 +1172,12 @@ int B3YenaDevice9::QueryInterface(YN_IID riid, _out_ void** ppvObject)
 #undef m_Stride 
 #undef m_TopologyVtxSize
 //#undef m_PrimVtxCnt
-
 #undef m_mWorld 
 #undef m_mView 
 #undef m_mProj 
 #undef m_mTFM 
-//#undef m_mInvProj
-//
-//#undef m_Light 
-//#undef m_LightEnable 
-//#undef m_bLighting 
-//#undef m_GlobalAmbient 
-//#undef m_Mtrl 
-//
-//#undef m_Sampler 
-//#undef m_TSState 
-
 #undef m_RState
-
-//#undef m_hWnd
 #undef m_PresentParam 
-//#undef m_hBmpRT
-//#undef m_hRT 
-//#undef m_hSurfaceRT 
-//#undef m_pRT
-//#undef m_pDepth
-//#undef m_Viewport
-//#undef m_hClipRgn
-
-//#undef _DrawLine
-//#undef _DrawFace
-//#undef _HLine
-//#undef _VLine
-
-//#undef m_DbgInfo
 
 
 

@@ -23,6 +23,8 @@
     <ClCompile Include="Src\main.cpp" />
     <ClCompile Include="Src\Render.cpp" />
     <ClCompile Include="Yena\Yena.cpp" />
+    <ClCompile Include="Yena\ynAxis.cpp" />
+    <ClCompile Include="Yena\ynGrid.cpp" />
     <ClCompile Include="Yena\ynError.cpp" />
     <ClCompile Include="Yena\ynB3Graphics.cpp" />
     <ClCompile Include="Yena\ynGUID.cpp" />
@@ -33,7 +35,9 @@
     <ClInclude Include="Src\Device.h" />
     <ClInclude Include="Src\Render.h" />
     <ClInclude Include="Yena\Yena.h" />
+    <ClInclude Include="Yena\ynAxis.h" />
     <ClInclude Include="Yena\ynB3Class.h" />
+    <ClInclude Include="Yena\ynGrid.h" />
     <ClInclude Include="Yena\ynDefine.h" />
     <ClInclude Include="Yena\ynError.h" />
     <ClInclude Include="Yena\ynB3Graphics.h" />
@@ -55,7 +59,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>B3Yena</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>T06_Transform(I)_03_World+Rot_(DX.Math)(GDI)(ready)</ProjectName>
+    <ProjectName>T06_Transform(I)_07_MatrixComp_(Move)_02_(DX.Math)(GDI)(Ready)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
