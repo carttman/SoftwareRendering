@@ -1414,7 +1414,7 @@ int B3YenaGraphicsEngine9::_Line(
 								B3YXCOLOR   c0, B3YXCOLOR   c1
 								)
 {
-	//! \todo2 <과제> 라인 그리기 ★
+	//! \todo2 <과제> 라인 그리기 ★ ok
 	//!	정점 사이의 간격만큼 각 정점색상을 보간하여 라인색을 출력합니다. 
 	// ... 
 	//
@@ -1508,15 +1508,12 @@ int B3YenaGraphicsEngine9::_Face(
 								B3YXCOLOR   col[3]
 								)
 {
-	//! \todo2 <과제> 삼각형 그리기 ★
+	//! \todo2 <과제> 삼각형 그리기 ★ ok
 	//! 정점 3개와 색상 3개를 이용해 삼각형에 색상을 채웁니다.★
 	// ...
 	//
 	// 함수 시그니쳐(Signature : 인자/리턴값/이름) 의 변경없이,
 	// 함수의 Body 를 완성 하십시요.★
-	// ...
-
-	// <GDI 버전> 임시 그리기.. (삭제후 과제 수행)★
 	// ...
 	#define v0 pos[0]
 	#define v1 pos[1]

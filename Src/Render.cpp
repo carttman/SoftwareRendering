@@ -267,7 +267,7 @@ void ObjUpdate(float dTime)
 	// 스케일 처리
 	//
 	B3YXMATRIX mScale;
-	B3YXMatrixScaling(&mScale, 1, 1, 1);				//원본 100%
+	B3YXMatrixScaling(&mScale, 3, 3, 3);				//원본 100%
 	//B3YXMatrixScaling(&mScale, 2, 1, 1);				//원본 200% (x축)
 	//B3YXMatrixScaling(&mScale, 3, 3, 3);				//원본 300%
 

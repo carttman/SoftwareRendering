@@ -196,7 +196,7 @@ B3YXVECTOR3* B3YXVec3Normalize(B3YXVECTOR3* pOut, CONST B3YXVECTOR3* pV)
 {
 	B3YXVECTOR3 v;
 
-	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ^
+	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 	
 	float length = sqrt((pV->x * pV->x) + (pV->y * pV->y) + (pV->z * pV->z));
 
@@ -215,7 +215,7 @@ float B3YXVec3Dot(CONST B3YXVECTOR3* pV1, CONST B3YXVECTOR3* pV2)
 {
 	float dt = 0;
 
-	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ^
+	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 
 	dt = (pV1->x * pV2->x) + (pV1->y * pV2->y) + (pV1->z * pV2->z);
 
@@ -230,7 +230,7 @@ B3YXVECTOR3* B3YXVec3Cross(B3YXVECTOR3* pOut, CONST B3YXVECTOR3* pV1, CONST B3YX
 {
 	B3YXVECTOR3 v;
 
-	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ^
+	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 	
 
 	v = {pV1->y * pV2->z - pV1->z * pV2->x,
@@ -298,13 +298,6 @@ B3YXVECTOR3* B3YXVec3Project(B3YXVECTOR3* pOut, CONST B3YXVECTOR3* pV,
 
 	B3YXVECTOR3 v;
 
-
-
-
-	if (pOut) *pOut = v;					//결과를 외부로 복사..
-
-	return pOut;
-}
 	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★
 	//{
 	//	#define vp	(*pViewport)
@@ -324,6 +317,13 @@ B3YXVECTOR3* B3YXVec3Project(B3YXVECTOR3* pOut, CONST B3YXVECTOR3* pV,
 
 	//	#undef vp
 	//}
+
+
+
+	if (pOut) *pOut = v;					//결과를 외부로 복사..
+
+	return pOut;
+}
 
 
 
@@ -381,7 +381,7 @@ B3YXVECTOR4* B3YXVec4Transform(B3YXVECTOR4* pOut, CONST B3YXVECTOR4* pV, CONST B
 {
 	B3YXVECTOR4 v;
 
-	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ^
+	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 	
 
 	// 1 x 4 벡터와 4 x 4 행렬을 곱셈
@@ -495,7 +495,7 @@ B3YXMATRIX* B3YXMatrixMultiply(B3YXMATRIX* pOut, CONST B3YXMATRIX* pM1, CONST B3
 	B3YXMATRIX m;
 	B3YXMatrixIdentity(&m);
 
-	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ^
+	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 	
 	
 	m._11 = (pM1->_11 * pM2->_11) + (pM1->_12 * pM2->_21) + (pM1->_13 * pM2->_31) + (pM1->_14 * pM2->_41);
@@ -539,7 +539,7 @@ B3YXMATRIX* B3YXMatrixTranslation(B3YXMATRIX* pOut, float x, float y, float z)
 	B3YXMATRIX m;
 	B3YXMatrixIdentity(&m);
 	
-	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ^
+	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 
 	m._41 += x;
 	m._42 += y;
@@ -566,13 +566,10 @@ B3YXMATRIX* B3YXMatrixScaling(B3YXMATRIX* pOut, float sx, float sy, float sz)
 	B3YXMATRIX m;
 	B3YXMatrixIdentity(&m);
 	
-	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★
-	//{
-	//	//<DX> 수학 사용. (과제 제시, 참고용) : 동작 코드는 그려려니 합시다. ★
-	//	XMFLOAT4X4  xm;
-	//	XMStoreFloat4x4(&xm, XMMatrixScaling(sx, sy, sz));
-	//	m = xm;
-	//}
+	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
+	m._11 = sx;
+	m._22 = sy;
+	m._33 = sz;
 
 	if (pOut) *pOut = m;					//결과를 외부로 복사..
 
@@ -603,7 +600,7 @@ B3YXMATRIX* B3YXMatrixRotationX(B3YXMATRIX* pOut, float angle)
 	B3YXMATRIX m;
 	B3YXMatrixIdentity(&m);
 
-	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ^
+	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 	const float cos = cosf(angle);
 	const float sin = sinf(angle);
 
@@ -640,7 +637,7 @@ B3YXMATRIX* B3YXMatrixRotationY(B3YXMATRIX* pOut, float angle)
 	B3YXMATRIX m;
 	B3YXMatrixIdentity(&m);
 
-	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ^
+	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 	const float cos = cosf(angle);
 	const float sin = sinf(angle);
 
@@ -679,7 +676,7 @@ B3YXMATRIX* B3YXMatrixRotationZ(B3YXMATRIX* pOut, float angle)
 	B3YXMATRIX m;
 	B3YXMatrixIdentity(&m);
 	
-	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ^
+	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 	// cos, sin 값을 구한다
 	const float cos = cosf(angle);
 	const float sin = sinf(angle);
