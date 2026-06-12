@@ -747,6 +747,55 @@ B3YXMATRIX* B3YXMatrixLookAtLH(B3YXMATRIX* pOut, CONST B3YXVECTOR3* pEye, CONST 
 		m = xm;
 	}
 
+	B3YXVECTOR4 eye, lookat, up;
+
+	eye.x = pEye->x;
+	eye.y = pEye->y;
+	eye.z = pEye->z;
+	eye.w = 1;
+
+	lookat.x = pLookAt->x;
+	lookat.y = pLookAt->y;
+	lookat.z = pLookAt->z;
+	lookat.x = 1;
+
+	up.x = pUp->x;
+	up.y = pUp->y;
+	up.z = pUp->z;
+	up.x = 0;
+
+	B3YXVECTOR4 EyeDirection = {lookat.x - eye.x, lookat.y - eye.y, lookat.z - eye.z, lookat.w - lookat.w};
+	// normalize
+	float length = sqrt((EyeDirection.x * EyeDirection.x) + (EyeDirection.y * EyeDirection.y) + (EyeDirection.z * EyeDirection.z));
+	EyeDirection = { EyeDirection.x / length, EyeDirection.y / length, EyeDirection.z / length };
+
+	B3YXVECTOR4 R0  = { { {
+			(V1.vector4_f32[1] * V2.vector4_f32[2]) - (V1.vector4_f32[2] * V2.vector4_f32[1]),
+			(V1.vector4_f32[2] * V2.vector4_f32[0]) - (V1.vector4_f32[0] * V2.vector4_f32[2]),
+			(V1.vector4_f32[0] * V2.vector4_f32[1]) - (V1.vector4_f32[1] * V2.vector4_f32[0]),
+			0.0f
+		} } };
+
+	XMVECTOR R0 = XMVector3Cross(UpDirection, R2);
+	R0 = XMVector3Normalize(R0);
+
+	XMVECTOR R1 = XMVector3Cross(R2, R0);
+
+	XMVECTOR NegEyePosition = XMVectorNegate(EyePosition);
+
+	XMVECTOR D0 = XMVector3Dot(R0, NegEyePosition);
+	XMVECTOR D1 = XMVector3Dot(R1, NegEyePosition);
+	XMVECTOR D2 = XMVector3Dot(R2, NegEyePosition);
+
+	XMMATRIX M;
+	M.r[0] = XMVectorSelect(D0, R0, g_XMSelect1110.v);
+	M.r[1] = XMVectorSelect(D1, R1, g_XMSelect1110.v);
+	M.r[2] = XMVectorSelect(D2, R2, g_XMSelect1110.v);
+	M.r[3] = g_XMIdentityR3.v;
+
+	M = XMMatrixTranspose(M);
+
+
 	if (pOut) *pOut = m;		//결과를 외부로 복사..
 
 	return pOut;
