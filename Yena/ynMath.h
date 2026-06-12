@@ -1,17 +1,4 @@
-//! 
-//! \file	ynMath.h
-//! \bstar	Yena 수학 라이브러리
-//!			Yena Math Library for DirectX / OpenGL 
-//!	\version Yena SW Renderer v2.x
-//! 
-//! \author	Kihong Kim / onlysonim@gmail.com / mad_dog@hanmail.net
-//! \date	2004.05.07. Updated.
-//! \date	2010.07.20. Updatee.
-//! \date	2015.11.20. Updated.
-//! \date	2025.04.28. Updated. (v1.x)(VS22)
-//! \addtogroup Yena-Math
-//! \{
-//
+
 #pragma once
 
 

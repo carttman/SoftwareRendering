@@ -1,26 +1,4 @@
-//! 
-//! \file	ynMath.cpp
-//! \bstar	Yena 수학 라이브러리
-//!			Yena Math Library for DirectX / OpenGL 
-//!	\version Yena SW Renderer v2.x
-//! 
-//! \author	Kihong Kim / mad_dog@hanmail.net
-//! \date	2004.05.07. Updated.
-//! \date	2010.07.20. Updatee.
-//! \date	2010.10.10. Updated. glyVec3Add, glyVec3Sub
-//! \date	2015.11.20. Updated.
-//! \date	2025.04.28. Updated. (v1.x)(VS22)
-//
-/*
-#include "Windows.h"  
-#include "stdio.h"
-#include "stdlib.h" 
-#include "math.h"
 
-#include "vector"
-#include "algorithm"
-using namespace std;
-*/
 #include "Yena.h"		
 #include "ynMath.h"
 
@@ -198,7 +176,7 @@ B3YXVECTOR3* B3YXVec3Normalize(B3YXVECTOR3* pOut, CONST B3YXVECTOR3* pV)
 
 	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 	
-	float length = sqrt((pV->x * pV->x) + (pV->y * pV->y) + (pV->z * pV->z));
+	float length = sqrtf((pV->x * pV->x) + (pV->y * pV->y) + (pV->z * pV->z));
 
 	v = {pV->x / length, pV->y / length, pV->z / length};
 
@@ -213,11 +191,10 @@ B3YXVECTOR3* B3YXVec3Normalize(B3YXVECTOR3* pOut, CONST B3YXVECTOR3* pV)
 //
 float B3YXVec3Dot(CONST B3YXVECTOR3* pV1, CONST B3YXVECTOR3* pV2)
 {
-	float dt = 0;
 
 	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 
-	dt = (pV1->x * pV2->x) + (pV1->y * pV2->y) + (pV1->z * pV2->z);
+	const float dt = (pV1->x * pV2->x) + (pV1->y * pV2->y) + (pV1->z * pV2->z);
 
 	return dt;
 }
@@ -233,7 +210,7 @@ B3YXVECTOR3* B3YXVec3Cross(B3YXVECTOR3* pOut, CONST B3YXVECTOR3* pV1, CONST B3YX
 	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★ ok
 	
 
-	v = {pV1->y * pV2->z - pV1->z * pV2->x,
+	v = {pV1->y * pV2->z - pV1->z * pV2->y,
 		 pV1->z * pV2->x - pV1->x * pV2->z,
 		 pV1->x * pV2->y - pV1->y * pV2->x};
 
@@ -295,30 +272,75 @@ B3YXVECTOR3* B3YXVec3Project(B3YXVECTOR3* pOut, CONST B3YXVECTOR3* pV,
 							CONST B3YXMATRIX* pView, CONST B3YXMATRIX* pWorld
 							)
 {
-
 	B3YXVECTOR3 v;
 
 	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★
-	//{
-	//	#define vp	(*pViewport)
-
-	//	//<DX> 수학 사용. (과제 제시, 참고용) : 동작 코드는 그려려니 합시다. ★
-	//	XMMATRIX mProj, mView, mWorld;
-	//	mProj = mView = mWorld = XMMatrixIdentity();
-	//	if(pProjection) mProj  = XMLoadFloat4x4(&XMFLOAT4X4((float*)pProjection));
-	//	if(pView)		mView  = XMLoadFloat4x4(&XMFLOAT4X4((float*)pView));
-	//	if(pWorld)		mWorld = XMLoadFloat4x4(&XMFLOAT4X4((float*)pWorld));
-	//	XMVECTOR xv		= XMVectorSet(pV->x, pV->y, pV->z, 0);
-	//	xv = XMVector3Project(xv, (float)vp.X, (float)vp.Y, (float)vp.Width, (float)vp.Height, vp.MinZ, vp.MaxZ, mProj, mView, mWorld);
-	//	XMFLOAT3 fv;
-	//	XMStoreFloat3(&fv, xv);
-
-	//	v = fv;
-
-	//	#undef vp
-	//}
-
-
+	
+	// {
+	// 	#define vp	(*pViewport)
+	//
+	// 	//<DX> 수학 사용. (과제 제시, 참고용) : 동작 코드는 그려려니 합시다. ★
+	// 	XMMATRIX mProj, mView, mWorld;
+	// 	mProj = mView = mWorld = XMMatrixIdentity();
+	// 	if(pProjection) mProj  = XMLoadFloat4x4(&XMFLOAT4X4((float*)pProjection));
+	// 	if(pView)		mView  = XMLoadFloat4x4(&XMFLOAT4X4((float*)pView));
+	// 	if(pWorld)		mWorld = XMLoadFloat4x4(&XMFLOAT4X4((float*)pWorld));
+	// 	XMVECTOR xv		= XMVectorSet(pV->x, pV->y, pV->z, 0);
+	// 	xv = XMVector3Project(xv, (float)vp.X, (float)vp.Y, (float)vp.Width, (float)vp.Height, vp.MinZ, vp.MaxZ, mProj, mView, mWorld);
+	// 	XMFLOAT3 fv;
+	// 	XMStoreFloat3(&fv, xv);
+	//
+	// 	v = fv;
+	//
+	// 	#undef vp
+	// }
+	
+	// 1단계 — 행렬 준비
+	// 단위 행렬
+	B3YXMATRIX mWorld, mView, mProj, mCombined;
+	B3YXMatrixIdentity(&mWorld);
+	B3YXMatrixIdentity(&mView);
+	B3YXMatrixIdentity(&mProj);
+	
+	if (pWorld)      mWorld = *pWorld;
+	if (pView)       mView  = *pView;
+	if (pProjection) mProj  = *pProjection;
+	
+	// 2단계 — 결합 변환 행렬
+	// 2. 결합 변환 행렬: World * View * Projection
+	//    행 벡터 규칙: v_clip = v * (World * View * Proj)
+	// 행 벡터 규칙(D3D 관례)이므로 v * M 순서로 좌→우 결합
+	B3YXMatrixMultiply(&mCombined, &mWorld, &mView);
+	B3YXMatrixMultiply(&mCombined, &mCombined, &mProj);
+	
+	// 3단계 — 클립 공간 변환
+	// 3. 4D 동차 벡터 변환 (w=1 확장 후 행렬 적용)
+	B3YXVECTOR4 vClip(*pV);				// v = (x, y, z, 1)
+	B3YXVec4Transform(&vClip, &vClip, &mCombined);
+	
+	// 4단계 - 원근 분할(NDC)
+	// 원근 분할
+	float invW = 1.0f / vClip.w;
+	float ndcX =  vClip.x * invW;
+	float ndcY =  vClip.y * invW;
+	float ndcZ =  vClip.z * invW;
+	
+	// 5. 뷰포트 변환
+	// Y축은 NDC에서 +가 위, 화면에서 +가 아래이므로 부호 반전이 필요합니다.
+	if (pViewport)
+	{
+		float halfW = (float)pViewport->Width  * 0.5f;
+		float halfH = (float)pViewport->Height * 0.5f;
+		v.x =  ndcX *  halfW + ((float)pViewport->X + halfW);
+		v.y =  ndcY * -halfH + ((float)pViewport->Y + halfH);
+		v.z =  ndcZ * (pViewport->MaxZ - pViewport->MinZ) + pViewport->MinZ;
+	}
+	else
+	{
+		v.x = ndcX;
+		v.y = ndcY;
+		v.z = ndcZ;
+	}
 
 	if (pOut) *pOut = v;					//결과를 외부로 복사..
 
@@ -736,65 +758,60 @@ B3YXMATRIX* B3YXMatrixLookAtLH(B3YXMATRIX* pOut, CONST B3YXVECTOR3* pEye, CONST 
 	B3YXMatrixIdentity(&m);
 
 	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★
-	{
-		//<DX> 수학 사용. (과제 제시, 참고용) : 동작 코드는 그려려니 합시다. ★
-		XMFLOAT4X4 xm;
-		XMVECTOR eye, lookat, up;		 
-		eye    = XMVectorSet(pEye->x, pEye->y, pEye->z, 1);
-		lookat = XMVectorSet(pLookAt->x, pLookAt->y, pLookAt->z, 1);
-		up     = XMVectorSet(pUp->x, pUp->y, pUp->z, 0);
-		XMStoreFloat4x4(&xm, XMMatrixLookAtLH(eye, lookat, up));
-		m = xm;
-	}
+	// {
+	// 	//<DX> 수학 사용. (과제 제시, 참고용) : 동작 코드는 그려려니 합시다. ★
+	// 	XMFLOAT4X4 xm;
+	// 	XMVECTOR eye, lookat, up;		 
+	// 	eye    = XMVectorSet(pEye->x, pEye->y, pEye->z, 1);
+	// 	lookat = XMVectorSet(pLookAt->x, pLookAt->y, pLookAt->z, 1);
+	// 	up     = XMVectorSet(pUp->x, pUp->y, pUp->z, 0);
+	// 	XMStoreFloat4x4(&xm, XMMatrixLookAtLH(eye, lookat, up));
+	// 	m = xm;
+	// }
+	
+	// 1. 카메라 좌표축 계산 (왼손 좌표계)
+	//    zAxis (+Z, 전방): Eye → LookAt 방향
+	
+	//    xAxis (+X, 우측): Up × zAxis
+	
+	//    yAxis (+Y, 위쪽): zAxis × xAxis (단위 직교벡터 외적이므로 정규화 불필요)
 
-	B3YXVECTOR4 eye, lookat, up;
+	// 수학 원리 정리
+	// 뷰 행렬은 두 변환의 합성입니다: 회전 × 이동
+	// 좌표축 계산 (왼손계)
+	//    zAxis (전방) = normalize(LookAt − Eye)
+	//	  xAxis (우측) = normalize(Up × zAxis)
+	//	  yAxis (위) = zAxis × xAxis  ← 두 단위 직교벡터의 외적이므로 이미 단위벡터
+	
+	B3YXVECTOR3 zAxis = *pLookAt - *pEye;
+	B3YXVec3Normalize(&zAxis, &zAxis);
 
-	eye.x = pEye->x;
-	eye.y = pEye->y;
-	eye.z = pEye->z;
-	eye.w = 1;
+	B3YXVECTOR3 xAxis;
+	B3YXVec3Cross(&xAxis, pUp, &zAxis);
+	B3YXVec3Normalize(&xAxis, &xAxis);
 
-	lookat.x = pLookAt->x;
-	lookat.y = pLookAt->y;
-	lookat.z = pLookAt->z;
-	lookat.x = 1;
+	B3YXVECTOR3 yAxis;
+	B3YXVec3Cross(&yAxis, &zAxis, &xAxis);
 
-	up.x = pUp->x;
-	up.y = pUp->y;
-	up.z = pUp->z;
-	up.x = 0;
-
-	B3YXVECTOR4 EyeDirection = {lookat.x - eye.x, lookat.y - eye.y, lookat.z - eye.z, lookat.w - lookat.w};
-	// normalize
-	float length = sqrt((EyeDirection.x * EyeDirection.x) + (EyeDirection.y * EyeDirection.y) + (EyeDirection.z * EyeDirection.z));
-	EyeDirection = { EyeDirection.x / length, EyeDirection.y / length, EyeDirection.z / length };
-
-	B3YXVECTOR4 R0  = { { {
-			(V1.vector4_f32[1] * V2.vector4_f32[2]) - (V1.vector4_f32[2] * V2.vector4_f32[1]),
-			(V1.vector4_f32[2] * V2.vector4_f32[0]) - (V1.vector4_f32[0] * V2.vector4_f32[2]),
-			(V1.vector4_f32[0] * V2.vector4_f32[1]) - (V1.vector4_f32[1] * V2.vector4_f32[0]),
-			0.0f
-		} } };
-
-	XMVECTOR R0 = XMVector3Cross(UpDirection, R2);
-	R0 = XMVector3Normalize(R0);
-
-	XMVECTOR R1 = XMVector3Cross(R2, R0);
-
-	XMVECTOR NegEyePosition = XMVectorNegate(EyePosition);
-
-	XMVECTOR D0 = XMVector3Dot(R0, NegEyePosition);
-	XMVECTOR D1 = XMVector3Dot(R1, NegEyePosition);
-	XMVECTOR D2 = XMVector3Dot(R2, NegEyePosition);
-
-	XMMATRIX M;
-	M.r[0] = XMVectorSelect(D0, R0, g_XMSelect1110.v);
-	M.r[1] = XMVectorSelect(D1, R1, g_XMSelect1110.v);
-	M.r[2] = XMVectorSelect(D2, R2, g_XMSelect1110.v);
-	M.r[3] = g_XMIdentityR3.v;
-
-	M = XMMatrixTranspose(M);
-
+	// 2. 뷰 행렬 구성 (D3D 행 벡터 규칙)
+	//
+	//   [ xAxis.x    yAxis.x    zAxis.x    0 ]
+	//   [ xAxis.y    yAxis.y    zAxis.y    0 ]
+	//   [ xAxis.z    yAxis.z    zAxis.z    0 ]
+	//   [-dot(x,Eye)-dot(y,Eye)-dot(z,Eye) 1 ]
+	//
+	//   회전 부분: 카메라 좌표축을 행으로 배치 (역행렬 = 전치)
+	//   이동 부분: Eye를 카메라 공간 원점으로 옮기는 변환
+	//	 상단 3×3: 카메라 좌표축을 각 열에 배치 → 이는 카메라의 회전 행렬의 역행렬(전치)
+	//   4행: Eye 위치를 카메라 원점으로 이동시키는 변환 (-dot = 카메라 공간에서의 이동량)
+	
+	m._11 = xAxis.x;  m._12 = yAxis.x;  m._13 = zAxis.x;  m._14 = 0.0f;
+	m._21 = xAxis.y;  m._22 = yAxis.y;  m._23 = zAxis.y;  m._24 = 0.0f;
+	m._31 = xAxis.z;  m._32 = yAxis.z;  m._33 = zAxis.z;  m._34 = 0.0f;
+	m._41 = -B3YXVec3Dot(&xAxis, pEye);
+	m._42 = -B3YXVec3Dot(&yAxis, pEye);
+	m._43 = -B3YXVec3Dot(&zAxis, pEye);
+	m._44 = 1.0f;
 
 	if (pOut) *pOut = m;		//결과를 외부로 복사..
 
@@ -843,17 +860,37 @@ B3YXMATRIX* B3YXMatrixLookAtLH(B3YXMATRIX* pOut, CONST B3YXVECTOR3* pEye, CONST 
 //
 B3YXMATRIX* B3YXMatrixPerspectiveFovLH(B3YXMATRIX* pOut, FLOAT fovy, FLOAT aspect, FLOAT zn, FLOAT zf)
 {
-
 	B3YXMATRIX m;
 	B3YXMatrixIdentity(&m);
 
 	//<Yena> 다음의 코드 블럭을 제거하고, 수학 기능을 직접 제작 하십시오. (과제) ★
-	{
-		//<DX> 수학 사용. (과제 제시, 참고용) : 동작 코드는 그려려니 합시다. ★
-		XMFLOAT4X4 xm;
-		XMStoreFloat4x4(&xm, XMMatrixPerspectiveFovLH(fovy, aspect, zn, zf));
-		m = xm;
-	}
+	// {
+	// 	//<DX> 수학 사용. (과제 제시, 참고용) : 동작 코드는 그려려니 합시다. ★
+	// 	XMFLOAT4X4 xm;
+	// 	XMStoreFloat4x4(&xm, XMMatrixPerspectiveFovLH(fovy, aspect, zn, zf));
+	// 	m = xm;
+	// }
+	
+	// 수학 원리 정리
+	// yScale = cot(fovy/2) = 1 / tan(fovy/2)
+	// xScale = yScale / aspect
+	//
+	// D3D 행 벡터 규칙, 깊이 범위 [0, 1] (왼손 좌표계):
+	//
+	//   [ xScale   0        0              0 ]
+	//   [ 0        yScale   0              0 ]
+	//   [ 0        0        zf/(zf-zn)     1 ] ← _34=1 : w에 z값 복사 (원근 나누기용)
+	//   [ 0        0       -zn*zf/(zf-zn)  0 ] ← _44=0
+	
+	float yScale = 1.0f / tanf(fovy * 0.5f);
+	float xScale = yScale / aspect;
+
+	m._11 = xScale;
+	m._22 = yScale;
+	m._33 = zf / (zf - zn);
+	m._34 = 1.0f;
+	m._43 = -zn * zf / (zf - zn);
+	m._44 = 0.0f;
 
 	if (pOut) *pOut = m;		//결과를 외부로 복사..
 

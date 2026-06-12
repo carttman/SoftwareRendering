@@ -1,19 +1,3 @@
-//! 
-//! \file	Yena.cpp
-//! \brief	Yena SWR 기본 소스 파일 (v1.x) 
-//!	\version Yena SW Renderer v1.5.x  
-//! 
-//! \author	김기홍 / Kihong Kim / onlysonim@gmail.com
-//! \date	2003.11.4. Kihong Kim / mad_dog@hanmail.net
-//! \date	2004.05.07. Updated.
-//! \date	2005.09.23. Update (.Net) 
-//! \date	2010.07.20. Update
-//! \date	2015.11.20. Update
-//! \date	2020.08.22. Updated. (DX12.x Windows 10 SDK 10.0.x)
-//! \date	2024.04.28. Updated. (VS22)
-//! \date	2025.05.20. Updated. (VS22)(v1.5.x)
-//
-
 
 ///////////////////////////////////////////////////////////////////////////////
 //
