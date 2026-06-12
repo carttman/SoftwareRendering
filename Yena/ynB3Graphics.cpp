@@ -1422,16 +1422,16 @@ int B3YenaGraphicsEngine9::_Line(
 	//! 함수의 Body 를 완성 하십시오.★
 	// ...
 
-	const int dx = v0.x - v1.x;
-	const int dy = v0.y - v1.y;
+	const float dx = v1.x - v0.x;
+	const float dy = v1.y - v0.y;
 
-	const float length = sqrt(dx * dx + dy * dy);
+	const float length = sqrtf(dx * dx + dy * dy);
 
 	const float unitX = dx / length; // 단위벡터
 	const float unitY = dy / length;
 
-	float curX = v1.x;
-	float curY = v1.y;
+	float curX = v0.x;			
+	float curY = v0.y;
 
 	for (int i = 0; i <= (int)length; i++) // 거리만큼 단위벡터를 더해가면서 점을 찍는다
 	{
@@ -1443,7 +1443,7 @@ int B3YenaGraphicsEngine9::_Line(
 		color.b = c0.b + (c1.b - c0.b) * t;
 		color.a = c0.a + (c1.a - c0.a) * t;
 
-		SetPixel(m_hSurfaceRT, (int)(curX), (int)(curY + 0.5f), color);
+		SetPixel(m_hSurfaceRT, (int)(curX + 0.5f), (int)(curY + 0.5f), color);	// X/Y 반올림 통일
 		curX += unitX;
 		curY += unitY;
 	}
